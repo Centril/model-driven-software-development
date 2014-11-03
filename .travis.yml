@@ -6,8 +6,14 @@ jdk:
 env:
 - TERM=dumb
 
-before_install: chmod +x ./application/gradlew
+before_install:
+- cd application
+- chmod +x gradlew
 
-script: ./application/gradlew clean build
+script:
+- cd application
+- ./gradlew clean build
 
-after_success: ./application/gradlew jacocoTestReport
+after_success:
+- cd application
+- ./gradlew jacocoTestReport coveralls
