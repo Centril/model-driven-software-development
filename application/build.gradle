@@ -1,0 +1,96 @@
+/*
+ * Config:
+ */
+ext.giturl = "https://github.com/${gitrepo}"
+ext.spock = [
+	// Testing framework versions.
+	spockVersion : '0.7-groovy-2.0',
+	groovyVersion: '2.3.6',
+	clibVersion  : '3.1',
+	objenesisVersion: '2.1'
+]
+
+/*
+ * Buildscript dependencies:
+ */
+buildscript {
+	repositories {
+		jcenter()
+	}
+	dependencies {
+		classpath 'com.github.ben-manes:gradle-versions-plugin:0.5'
+		classpath 'nl.javadude.gradle.plugins:license-gradle-plugin:0.11.+'
+		classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.+'
+	}
+}
+
+/*
+ * Apply plugins:
+ */
+['idea', 'eclipse',
+ 'groovy', 'application',
+ 'jacoco', 'com.github.kt3k.coveralls',
+ 'com.github.ben-manes.versions', 'com.github.hierynomus.license']
+		.each { apply plugin: it }
+
+/*
+ * Application class:
+ */
+mainClassName = "mdsd.group12.Application"
+tasks.run.dependsOn tasks.build
+
+/*
+ * Wrapper:
+ */
+task wrapper( type: Wrapper ) {
+	gradleVersion = '2.10'
+}
+
+/*
+ * Tasks for clearing:
+ */
+task cleanMaven( type: Delete ) { delete 'maven-deploy' }
+task cleanGradle( type: Delete ) { delete '.gradle' }
+task cleanAll( dependsOn: [clean, cleanGradle, cleanMaven, cleanIdea] ) {}
+task c( dependsOn: cleanAll )
+
+/*
+ * License:
+ */
+license {
+	header = rootProject.file('config/HEADER')
+	strictCheck = true
+	ignoreFailures = false
+	useDefaultMappings = true
+	ext.year = '2014'
+}
+
+/*
+ * jacoco:
+ */
+jacocoTestReport {
+    reports {
+    	// coveralls plugin depends on xml format report
+        xml.enabled = true
+        html.enabled = true
+    }
+}
+
+/*
+ * Dependencies:
+ */
+repositories {
+	jcenter()
+}
+dependencies {
+	testCompile "org.codehaus.groovy:groovy-all:${spock.groovyVersion}"
+	testCompile "org.spockframework:spock-core:${spock.spockVersion}"
+	testCompile "cglib:cglib-nodep:${spock.clibVersion}"
+	testCompile "org.objenesis:objenesis:${spock.objenesisVersion}"
+}
+
+/*
+ * JDK7 compatibility.
+ */
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
