@@ -29,7 +29,6 @@ buildscript {
  */
 ['idea', 'eclipse',
  'groovy', 'application',
- 'jacoco', 'com.github.kt3k.coveralls',
  'com.github.ben-manes.versions', 'com.github.hierynomus.license']
 		.each { apply plugin: it }
 
@@ -63,17 +62,6 @@ license {
 	ignoreFailures = false
 	useDefaultMappings = true
 	ext.year = '2014'
-}
-
-/*
- * jacoco:
- */
-jacocoTestReport {
-    reports {
-    	// coveralls plugin depends on xml format report
-        xml.enabled = true
-        html.enabled = true
-    }
 }
 
 /*
