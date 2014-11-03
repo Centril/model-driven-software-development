@@ -11,9 +11,4 @@ before_install:
 - chmod +x gradlew
 
 script:
-- cd application
-- ./gradlew clean build
-
-after_success:
-- cd application
-- ./gradlew jacocoTestReport coveralls
+- ./gradlew build
