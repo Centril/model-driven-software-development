@@ -52,7 +52,7 @@ For changes related to Java: [Travis CI] will then automatically test the pull-r
 <!-- references -->
 
 [badge: Build Status]: https://magnum.travis-ci.com/Centril/model-driven-software-development.svg?token=tJzANbfoJzwBBDyvGhPs&branch=master&style=flat
-[badge url: Build Status]: https://travis-ci.org/Centril/gradle-plugin-robospock
+[badge url: Build Status]: https://magnum.travis-ci.com/Centril/model-driven-software-development
 [badge: Semver 2.0.0]: http://img.shields.io/badge/semver-2.0.0-blue.svg
 [badge url: Semver 2.0.0]: http://semver.org/spec/v2.0.0.html
 
