@@ -3,12 +3,27 @@
   <uml:Package xmi:id="_WybP0G8pEeSRVaIs1fgb7w" name="domain-model">
     <packagedElement xmi:type="uml:Class" xmi:id="_4-5d0G71EeSZbeWdREhOAA" name="Search Parameters"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_cfUpYG72EeSZbeWdREhOAA" name="Search Query"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_h7pSsG73EeSZbeWdREhOAA" name="Booking Suggestion"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_h7pSsG73EeSZbeWdREhOAA" name="Booking Suggestion">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_7GZZMHGPEeSy77IYCfDWQA" name="numberAdults"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_8Sh1IHGPEeSy77IYCfDWQA" name="numberChildren"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="__7F3QHGPEeSy77IYCfDWQA" name="price"/>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_3cng0G73EeSZbeWdREhOAA" name="Booking">
       <generalization xmi:type="uml:Generalization" xmi:id="_Oow-4HGLEeSuQMaBhNqxGw" general="_MLT6cHGKEeSTxKrKBjAoUw"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_pny0UHGPEeSy77IYCfDWQA" name="price"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_uAKiwHGPEeSy77IYCfDWQA" name="checkInTime"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_vwYjMHGPEeSy77IYCfDWQA" name="checkOutTime"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_NruAQG74EeSZbeWdREhOAA" name="Room"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_Og-NQG74EeSZbeWdREhOAA" name="Occupancy"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_NruAQG74EeSZbeWdREhOAA" name="Room">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_UD9C8HGQEeSy77IYCfDWQA" name="basePrice"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_WpC14HGQEeSy77IYCfDWQA" name="id"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_YpwJYHGQEeSy77IYCfDWQA" name="outOfOrder"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Og-NQG74EeSZbeWdREhOAA" name="Occupancy">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xENYAHGOEeSy77IYCfDWQA" name="numberKeys"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_yYuT4HGOEeSy77IYCfDWQA" name="moveInTime"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Xv4XkHGPEeSy77IYCfDWQA" name="moveOutTime"/>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_4k4hsG79EeSZbeWdREhOAA" name="Pricing Rule">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_4k4hsW79EeSZbeWdREhOAA" name="roomTime" type="_Og-NQG74EeSZbeWdREhOAA">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4k4hsm79EeSZbeWdREhOAA" value="1"/>
@@ -20,10 +35,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_TLVSgG8XEeSRVaIs1fgb7w" name="Customer">
       <generalization xmi:type="uml:Generalization" xmi:id="_qDnK0G9kEeSO9rzbcp0d0Q" general="_gKwPUG9kEeSO9rzbcp0d0Q"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_GkvBkHGMEeSuQMaBhNqxGw" name="invoice" type="_mPvQMHGLEeSuQMaBhNqxGw" association="_GkvBk3GMEeSuQMaBhNqxGw">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GkvBkXGMEeSuQMaBhNqxGw" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GkvBknGMEeSuQMaBhNqxGw" value="1"/>
-      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_LzUCcHGQEeSy77IYCfDWQA" name="paymentInfo"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Wzr5QG8XEeSRVaIs1fgb7w" name="Service">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_8RR40HCbEeS634op6MPGiw" name="label">
@@ -39,16 +51,19 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_pJ7QwG8XEeSRVaIs1fgb7w" name="Stay">
       <generalization xmi:type="uml:Generalization" xmi:id="_7_hL0HGKEeSuQMaBhNqxGw" general="_MLT6cHGKEeSTxKrKBjAoUw"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_096YAHGPEeSy77IYCfDWQA" name="checkInTime"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_2XG_kHGPEeSy77IYCfDWQA" name="checkOutTime"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_qVt5AG8YEeSRVaIs1fgb7w" name="Guest">
       <generalization xmi:type="uml:Generalization" xmi:id="_pUxu4G9kEeSO9rzbcp0d0Q" general="_gKwPUG9kEeSO9rzbcp0d0Q"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_N0srYHGQEeSy77IYCfDWQA" name="age"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_FcVhAG8ZEeSRVaIs1fgb7w" name="Discount">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_T_RU8HCYEeS634op6MPGiw" name="label"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_XiwCwHCYEeS634op6MPGiw" name="value"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_1qkRwG9iEeSO9rzbcp0d0Q" name="Search Result">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_dJqrIHCcEeS634op6MPGiw" name="Attribute1">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_dJqrIHCcEeS634op6MPGiw" name="relevance">
         <ownedComment xmi:type="uml:Comment" xmi:id="_djNMgHCcEeS634op6MPGiw">
           <body>Relevance</body>
         </ownedComment>
@@ -172,18 +187,6 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9Wbz4m73EeSZbeWdREhOAA" value="*"/>
       </ownedEnd>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_qQRQwG72EeSZbeWdREhOAA" memberEnd="_qQRQwW72EeSZbeWdREhOAA _qQFDgG72EeSZbeWdREhOAA">
-      <ownedEnd xmi:type="uml:Property" xmi:id="_qQRQwW72EeSZbeWdREhOAA" name=" " association="_qQRQwG72EeSZbeWdREhOAA">
-        <type xmi:type="uml:Class" href="model.uml#_4-5d0G71EeSZbeWdREhOAA"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qQRQwm72EeSZbeWdREhOAA"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qQRQw272EeSZbeWdREhOAA" value="*"/>
-      </ownedEnd>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_qQFDgG72EeSZbeWdREhOAA" name=" " association="_qQRQwG72EeSZbeWdREhOAA">
-        <type xmi:type="uml:Class" href="model.uml#_cfUpYG72EeSZbeWdREhOAA"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qQFDgW72EeSZbeWdREhOAA" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qQFDgm72EeSZbeWdREhOAA" value="1"/>
-      </ownedEnd>
-    </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_JKLrw28ZEeSRVaIs1fgb7w" memberEnd="_JKLrxG8ZEeSRVaIs1fgb7w _JKLrwG8ZEeSRVaIs1fgb7w">
       <ownedEnd xmi:type="uml:Property" xmi:id="_JKLrxG8ZEeSRVaIs1fgb7w" name="search Result" association="_JKLrw28ZEeSRVaIs1fgb7w">
         <type xmi:type="uml:Class" href="model.uml#_h7pSsG73EeSZbeWdREhOAA"/>
@@ -268,7 +271,7 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j7fWAm9kEeSO9rzbcp0d0Q" value="*"/>
       </ownedEnd>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_vynVAG9kEeSO9rzbcp0d0Q" memberEnd="_vynVAW9kEeSO9rzbcp0d0Q _vyk4wG9kEeSO9rzbcp0d0Q">
+    <packagedElement xmi:type="uml:Association" xmi:id="_vynVAG9kEeSO9rzbcp0d0Q" name="bonus" memberEnd="_vynVAW9kEeSO9rzbcp0d0Q _vyk4wG9kEeSO9rzbcp0d0Q">
       <ownedEnd xmi:type="uml:Property" xmi:id="_vynVAW9kEeSO9rzbcp0d0Q" name="customer" type="_TLVSgG8XEeSRVaIs1fgb7w" association="_vynVAG9kEeSO9rzbcp0d0Q">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vynVAm9kEeSO9rzbcp0d0Q" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vynVA29kEeSO9rzbcp0d0Q" value="1"/>
@@ -298,24 +301,41 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Tyn41nGEEeSy77IYCfDWQA" value="1"/>
       </ownedEnd>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_MLT6cHGKEeSTxKrKBjAoUw" name="Invoicable">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_zhh2YHGLEeSuQMaBhNqxGw" name="invoice" type="_mPvQMHGLEeSuQMaBhNqxGw" association="_zhh2Y3GLEeSuQMaBhNqxGw">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zhh2YXGLEeSuQMaBhNqxGw"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zhh2YnGLEeSuQMaBhNqxGw" value="1"/>
-      </ownedAttribute>
+    <packagedElement xmi:type="uml:Class" xmi:id="_MLT6cHGKEeSTxKrKBjAoUw" name="Invoicable"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_mPvQMHGLEeSuQMaBhNqxGw" name="Invoice">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_lK3LcHGOEeSy77IYCfDWQA" name="sum"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_nPc5YHGOEeSy77IYCfDWQA" name="isPaid"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_HL_SAHGQEeSy77IYCfDWQA" name="dueDate"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ImI70HGQEeSy77IYCfDWQA" name="issueDate"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_mPvQMHGLEeSuQMaBhNqxGw" name="Invoice"/>
     <packagedElement xmi:type="uml:Association" xmi:id="_zhh2Y3GLEeSuQMaBhNqxGw" memberEnd="_zhh2ZHGLEeSuQMaBhNqxGw _zhh2YHGLEeSuQMaBhNqxGw">
       <ownedEnd xmi:type="uml:Property" xmi:id="_zhh2ZHGLEeSuQMaBhNqxGw" name="invoicable" type="_MLT6cHGKEeSTxKrKBjAoUw" association="_zhh2Y3GLEeSuQMaBhNqxGw">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zhh2ZXGLEeSuQMaBhNqxGw" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zhh2ZnGLEeSuQMaBhNqxGw" value="1"/>
       </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_zhh2YHGLEeSuQMaBhNqxGw" name="invoice" type="_mPvQMHGLEeSuQMaBhNqxGw" association="_zhh2Y3GLEeSuQMaBhNqxGw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zhh2YXGLEeSuQMaBhNqxGw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zhh2YnGLEeSuQMaBhNqxGw" value="1"/>
+      </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_GkvBk3GMEeSuQMaBhNqxGw" memberEnd="_GkvBlHGMEeSuQMaBhNqxGw _GkvBkHGMEeSuQMaBhNqxGw">
-      <name xsi:nil="true"/>
       <ownedEnd xmi:type="uml:Property" xmi:id="_GkvBlHGMEeSuQMaBhNqxGw" name="customer" type="_TLVSgG8XEeSRVaIs1fgb7w" association="_GkvBk3GMEeSuQMaBhNqxGw">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GkvBlXGMEeSuQMaBhNqxGw" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GkvBlnGMEeSuQMaBhNqxGw" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_GkvBkHGMEeSuQMaBhNqxGw" name="invoice" type="_mPvQMHGLEeSuQMaBhNqxGw" association="_GkvBk3GMEeSuQMaBhNqxGw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GkvBkXGMEeSuQMaBhNqxGw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GkvBknGMEeSuQMaBhNqxGw" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_UM09AHGOEeSy77IYCfDWQA" memberEnd="_UM09AXGOEeSy77IYCfDWQA _UMygwHGOEeSy77IYCfDWQA">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_UM09AXGOEeSy77IYCfDWQA" name=" " type="_4-5d0G71EeSZbeWdREhOAA" association="_UM09AHGOEeSy77IYCfDWQA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UM09AnGOEeSy77IYCfDWQA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UM09A3GOEeSy77IYCfDWQA" value="*"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_UMygwHGOEeSy77IYCfDWQA" name=" " type="_cfUpYG72EeSZbeWdREhOAA" association="_UM09AHGOEeSy77IYCfDWQA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UMygwXGOEeSy77IYCfDWQA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UMygwnGOEeSy77IYCfDWQA" value="1"/>
       </ownedEnd>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_9ViLIHCbEeS634op6MPGiw">
