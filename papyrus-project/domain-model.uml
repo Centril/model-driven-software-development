@@ -263,7 +263,7 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_hssjMG9kEeSO9rzbcp0d0Q" name="Blacklist"/>
     <packagedElement xmi:type="uml:Association" xmi:id="_j7hLMG9kEeSO9rzbcp0d0Q" memberEnd="_j7hLMW9kEeSO9rzbcp0d0Q _j7fWAG9kEeSO9rzbcp0d0Q">
       <ownedEnd xmi:type="uml:Property" xmi:id="_j7hLMW9kEeSO9rzbcp0d0Q" name="blacklist" type="_hssjMG9kEeSO9rzbcp0d0Q" association="_j7hLMG9kEeSO9rzbcp0d0Q">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_j7hLMm9kEeSO9rzbcp0d0Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_j7hLMm9kEeSO9rzbcp0d0Q"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j7hLM29kEeSO9rzbcp0d0Q" value="1"/>
       </ownedEnd>
       <ownedEnd xmi:type="uml:Property" xmi:id="_j7fWAG9kEeSO9rzbcp0d0Q" name="person" type="_gKwPUG9kEeSO9rzbcp0d0Q" association="_j7hLMG9kEeSO9rzbcp0d0Q">
