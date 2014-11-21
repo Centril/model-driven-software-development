@@ -1,13 +1,8 @@
-*{}
-
-/* Hack to hide default roles */
 Association > Label:SourceRole, 
 Association > Label:TargetRole {
-	/*visible:false;*/
-	maskLabel: name;
+	maskLabel: name; /* Only show names with role labels */
 }
 
 Property {
-	maskLabel: name;
+	maskLabel: name; /* Only show names for properties/attributes, not visibility or types */
 }
-
