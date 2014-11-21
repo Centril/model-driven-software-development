@@ -1,0 +1,13 @@
+*{}
+
+/* Hack to hide default roles */
+Association > Label:SourceRole, 
+Association > Label:TargetRole {
+	/*visible:false;*/
+	maskLabel: name;
+}
+
+Property {
+	maskLabel: name;
+}
+
