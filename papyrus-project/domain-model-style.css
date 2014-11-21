@@ -1,0 +1,8 @@
+Association > Label:SourceRole, 
+Association > Label:TargetRole {
+	maskLabel: name; /* Only show names with role labels */
+}
+
+Property {
+	maskLabel: name; /* Only show names for properties/attributes, not visibility or types */
+}
