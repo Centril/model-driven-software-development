@@ -278,6 +278,16 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZHwRMm9lEeSO9rzbcp0d0Q" value="*"/>
       </ownedEnd>
     </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Tyn403GEEeSy77IYCfDWQA" name="contact" memberEnd="_Tyn41HGEEeSy77IYCfDWQA _Tyn40HGEEeSy77IYCfDWQA">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Tyn40HGEEeSy77IYCfDWQA" name=" " type="_3cng0G73EeSZbeWdREhOAA" association="_Tyn403GEEeSy77IYCfDWQA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Tyn40XGEEeSy77IYCfDWQA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Tyn40nGEEeSy77IYCfDWQA" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Tyn41HGEEeSy77IYCfDWQA" name=" " type="_qVt5AG8YEeSRVaIs1fgb7w" association="_Tyn403GEEeSy77IYCfDWQA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Tyn41XGEEeSy77IYCfDWQA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Tyn41nGEEeSy77IYCfDWQA" value="1"/>
+      </ownedEnd>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_9ViLIHCbEeS634op6MPGiw">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9XKi0HCbEeS634op6MPGiw" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>

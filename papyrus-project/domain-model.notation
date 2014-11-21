@@ -976,6 +976,30 @@
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ZH6CMG9lEeSO9rzbcp0d0Q" id="(0.5234375,0.0)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tgx_0G9lEeSO9rzbcp0d0Q" id="(0.2857142857142857,1.0)"/>
     </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_Tyn413GEEeSy77IYCfDWQA" type="4001" source="_qVt5AW8YEeSRVaIs1fgb7w" target="_3cng0W73EeSZbeWdREhOAA" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Tyn42nGEEeSy77IYCfDWQA" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Tyn423GEEeSy77IYCfDWQA" y="-20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Tyn43HGEEeSy77IYCfDWQA" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Tyn43XGEEeSy77IYCfDWQA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_TyxCwHGEEeSy77IYCfDWQA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_TyxCwXGEEeSy77IYCfDWQA" y="-20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_TyxCwnGEEeSy77IYCfDWQA" type="6005">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_TyxCw3GEEeSy77IYCfDWQA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_TyxCxHGEEeSy77IYCfDWQA" type="6033">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_TyxCxXGEEeSy77IYCfDWQA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_TyxCxnGEEeSy77IYCfDWQA" type="6034">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_TyxCx3GEEeSy77IYCfDWQA" y="-20"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Tyn42HGEEeSy77IYCfDWQA"/>
+      <element xmi:type="uml:Association" href="domain-model.uml#_Tyn403GEEeSy77IYCfDWQA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Tyn42XGEEeSy77IYCfDWQA" points="[25, -38, -306, 300]$[25, -62, -306, 276]$[304, -62, -27, 276]$[304, -311, -27, 27]"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TzEkwHGEEeSy77IYCfDWQA" id="(0.7894736842105263,0.578125)"/>
+    </edges>
   </notation:Diagram>
   <css:ModelStyleSheets xmi:id="_sI0PgG8yEeSO9rzbcp0d0Q">
     <stylesheets xmi:type="css:StyleSheetReference" xmi:id="_EPL4oHCeEeSQ16C6tmy71w" path="/HotelSystem/domain-model-style.css"/>
