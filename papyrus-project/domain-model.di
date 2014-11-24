@@ -6,10 +6,6 @@
         <children>
           <emfPageIdentifier href="domain-model.notation#_GNtd8G71EeSB8cSs6UB1Ew"/>
         </children>
-        <children/>
-        <children>
-          <emfPageIdentifier href="model.notation#_GN5rMG71EeSB8cSs6UB1Ew"/>
-        </children>
       </children>
     </windows>
   </sashModel>
