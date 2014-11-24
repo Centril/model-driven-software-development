@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_gpRDoHO_EeSGppoau5iR6g" name="use-cases">
+  <packagedElement xmi:type="uml:Actor" xmi:id="_Bk-2wHPAEeSGppoau5iR6g" name="Customer"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_Lt_HEHPAEeSGppoau5iR6g" name="Receptionist">
+    <generalization xmi:type="uml:Generalization" xmi:id="_RRxDQHPBEeSGppoau5iR6g" general="_Bk-2wHPAEeSGppoau5iR6g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_NiwQUHPAEeSGppoau5iR6g" name="Privileged staff">
+    <generalization xmi:type="uml:Generalization" xmi:id="_Ov4VUHPBEeSGppoau5iR6g" general="_Lt_HEHPAEeSGppoau5iR6g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_YyXjYHPAEeSGppoau5iR6g" name="Admin">
+    <generalization xmi:type="uml:Generalization" xmi:id="_TfcbwHPBEeSGppoau5iR6g" general="_NiwQUHPAEeSGppoau5iR6g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_sGjJ0HPAEeSGppoau5iR6g" name="Search"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_EUWVIHPCEeSGppoau5iR6g" name="Ordering">
+    <include xmi:type="uml:Include" xmi:id="_eSzwUHPEEeSyaOiYcJ0X_Q" addition="_sGjJ0HPAEeSGppoau5iR6g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_w0micHPCEeSGppoau5iR6g" name="Check in"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_yKxEIHPCEeSGppoau5iR6g" name="Check out"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_zaNSwHPCEeSGppoau5iR6g" name="Register payment"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_1lbNIHPCEeSGppoau5iR6g" name="System setup"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_3XH0QHPCEeSGppoau5iR6g" name="Remove booking"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_542KIHPCEeSGppoau5iR6g" name="Adjust properties"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="__HCtUHPCEeSGppoau5iR6g" name="Adjust settings"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Bjru4HPDEeSGppoau5iR6g" name="Get info"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_D_EzQHPDEeSGppoau5iR6g" name="Cancel booking"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_KRFj4HPDEeSGppoau5iR6g" name="Give discount"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_SmehgHPDEeSGppoau5iR6g" name="Blacklist"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ZcfhoHPEEeSyaOiYcJ0X_Q" memberEnd="_ZcfhoXPEEeSyaOiYcJ0X_Q _ZcfhpHPEEeSyaOiYcJ0X_Q">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ZcfhoXPEEeSyaOiYcJ0X_Q" name="customer" type="_Bk-2wHPAEeSGppoau5iR6g" association="_ZcfhoHPEEeSyaOiYcJ0X_Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZcfhonPEEeSyaOiYcJ0X_Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Zcfho3PEEeSyaOiYcJ0X_Q" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ZcfhpHPEEeSyaOiYcJ0X_Q" name="search" type="_sGjJ0HPAEeSGppoau5iR6g" association="_ZcfhoHPEEeSyaOiYcJ0X_Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZcfhpXPEEeSyaOiYcJ0X_Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZcfhpnPEEeSyaOiYcJ0X_Q" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_dpdRUHPEEeSyaOiYcJ0X_Q" memberEnd="_dpdRUXPEEeSyaOiYcJ0X_Q _dpdRVHPEEeSyaOiYcJ0X_Q">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_dpdRUXPEEeSyaOiYcJ0X_Q" name="customer" type="_Bk-2wHPAEeSGppoau5iR6g" association="_dpdRUHPEEeSyaOiYcJ0X_Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dpdRUnPEEeSyaOiYcJ0X_Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dpdRU3PEEeSyaOiYcJ0X_Q" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_dpdRVHPEEeSyaOiYcJ0X_Q" name="ordering" type="_EUWVIHPCEeSGppoau5iR6g" association="_dpdRUHPEEeSyaOiYcJ0X_Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dpdRVXPEEeSyaOiYcJ0X_Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dpdRVnPEEeSyaOiYcJ0X_Q" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_ak4wQHPIEeSyaOiYcJ0X_Q" name="Payment system"/>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_AMn7EHQgEeS_re4Zo0uQbA" name="Ordering" node="_DO6AUHQgEeS_re4Zo0uQbA _ELF7wHQgEeS_re4Zo0uQbA _FoxasHQgEeS_re4Zo0uQbA">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_HuDsMHQgEeS_re4Zo0uQbA" target="_ELF7wHQgEeS_re4Zo0uQbA" source="_DO6AUHQgEeS_re4Zo0uQbA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_IjHE4HQgEeS_re4Zo0uQbA" target="_FoxasHQgEeS_re4Zo0uQbA" source="_ELF7wHQgEeS_re4Zo0uQbA"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_DO6AUHQgEeS_re4Zo0uQbA" name="InitialNode1" outgoing="_HuDsMHQgEeS_re4Zo0uQbA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_ELF7wHQgEeS_re4Zo0uQbA" name="Do magic" incoming="_HuDsMHQgEeS_re4Zo0uQbA" outgoing="_IjHE4HQgEeS_re4Zo0uQbA"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_FoxasHQgEeS_re4Zo0uQbA" name="ActivityFinalNode1" incoming="_IjHE4HQgEeS_re4Zo0uQbA"/>
+  </packagedElement>
+</uml:Model>
