@@ -53,4 +53,31 @@
     <node xmi:type="uml:OpaqueAction" xmi:id="_ELF7wHQgEeS_re4Zo0uQbA" name="Do magic" incoming="_HuDsMHQgEeS_re4Zo0uQbA" outgoing="_IjHE4HQgEeS_re4Zo0uQbA"/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_FoxasHQgEeS_re4Zo0uQbA" name="ActivityFinalNode1" incoming="_IjHE4HQgEeS_re4Zo0uQbA"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_FmjZQHSFEeSLh6xK0PKH3w" name="Search" node="_MfY5UHSFEeSLh6xK0PKH3w _nRg4AHSFEeSLh6xK0PKH3w _9sYikHSFEeSLh6xK0PKH3w _Pj26cHSGEeSLh6xK0PKH3w _UVL7cHSGEeSLh6xK0PKH3w _-02KAHSGEeSI75B5GNy5Jw _JwpJMHSHEeSI75B5GNy5Jw _Z50MMHSHEeSI75B5GNy5Jw _fbwx0HSHEeSI75B5GNy5Jw _zPWREHSHEeSI75B5GNy5Jw _BhkkEHSJEeSI75B5GNy5Jw _VIzpYHSJEeSI75B5GNy5Jw _bkNmkHSJEeSI75B5GNy5Jw">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_4GQAgHSFEeSLh6xK0PKH3w" target="_nRg4AHSFEeSLh6xK0PKH3w" source="_MfY5UHSFEeSLh6xK0PKH3w"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_NlxdIHSGEeSLh6xK0PKH3w" target="_9sYikHSFEeSLh6xK0PKH3w" source="_nRg4AHSFEeSLh6xK0PKH3w"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_BLaYwHSHEeSI75B5GNy5Jw" target="_-02KAHSGEeSI75B5GNy5Jw" source="_9sYikHSFEeSLh6xK0PKH3w"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_K6ma4HSHEeSI75B5GNy5Jw" name="Not privileged" target="_JwpJMHSHEeSI75B5GNy5Jw" source="_-02KAHSGEeSI75B5GNy5Jw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_M9dqgHSHEeSI75B5GNy5Jw" target="_-02KAHSGEeSI75B5GNy5Jw" source="_9sYikHSFEeSLh6xK0PKH3w"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_awUWYHSHEeSI75B5GNy5Jw" target="_Z50MMHSHEeSI75B5GNy5Jw" source="_JwpJMHSHEeSI75B5GNy5Jw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pdA0UHSHEeSI75B5GNy5Jw" name="Priveleged" target="_fbwx0HSHEeSI75B5GNy5Jw" source="_-02KAHSGEeSI75B5GNy5Jw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_0DSPcHSHEeSI75B5GNy5Jw" target="_zPWREHSHEeSI75B5GNy5Jw" source="_fbwx0HSHEeSI75B5GNy5Jw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_eKrSgHSJEeSI75B5GNy5Jw" name="Privileged" target="_BhkkEHSJEeSI75B5GNy5Jw" source="_-02KAHSGEeSI75B5GNy5Jw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_fimuwHSJEeSI75B5GNy5Jw" target="_VIzpYHSJEeSI75B5GNy5Jw" source="_BhkkEHSJEeSI75B5GNy5Jw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gS3HAHSJEeSI75B5GNy5Jw" target="_bkNmkHSJEeSI75B5GNy5Jw" source="_VIzpYHSJEeSI75B5GNy5Jw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_hA7t8HSJEeSI75B5GNy5Jw" target="_zPWREHSHEeSI75B5GNy5Jw" source="_bkNmkHSJEeSI75B5GNy5Jw"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_MfY5UHSFEeSLh6xK0PKH3w" name="InitialNode1" outgoing="_4GQAgHSFEeSLh6xK0PKH3w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_nRg4AHSFEeSLh6xK0PKH3w" name="Actor inputs parameters for a search to the system" incoming="_4GQAgHSFEeSLh6xK0PKH3w" outgoing="_NlxdIHSGEeSLh6xK0PKH3w"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_9sYikHSFEeSLh6xK0PKH3w" name="The system checks if the actor meets the privilege requirement for the parameters" incoming="_NlxdIHSGEeSLh6xK0PKH3w" outgoing="_BLaYwHSHEeSI75B5GNy5Jw _M9dqgHSHEeSI75B5GNy5Jw"/>
+    <node xmi:type="uml:ValueSpecificationAction" xmi:id="_Pj26cHSGEeSLh6xK0PKH3w" name="ValueSpecificationAction1"/>
+    <node xmi:type="uml:ValueSpecificationAction" xmi:id="_UVL7cHSGEeSLh6xK0PKH3w" name="ValueSpecificationAction2"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_-02KAHSGEeSI75B5GNy5Jw" name="DecisionNode1" incoming="_BLaYwHSHEeSI75B5GNy5Jw _M9dqgHSHEeSI75B5GNy5Jw" outgoing="_K6ma4HSHEeSI75B5GNy5Jw _pdA0UHSHEeSI75B5GNy5Jw _eKrSgHSJEeSI75B5GNy5Jw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_JwpJMHSHEeSI75B5GNy5Jw" name="System tells actor which parameters are not allowed" incoming="_K6ma4HSHEeSI75B5GNy5Jw" outgoing="_awUWYHSHEeSI75B5GNy5Jw"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_Z50MMHSHEeSI75B5GNy5Jw" name="ActivityFinalNode1" incoming="_awUWYHSHEeSI75B5GNy5Jw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_fbwx0HSHEeSI75B5GNy5Jw" name="System provides the actor with a list of search results, sorted by relevance, according to the search parameters" incoming="_pdA0UHSHEeSI75B5GNy5Jw" outgoing="_0DSPcHSHEeSI75B5GNy5Jw"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_zPWREHSHEeSI75B5GNy5Jw" name="ActivityFinalNode2" incoming="_0DSPcHSHEeSI75B5GNy5Jw _hA7t8HSJEeSI75B5GNy5Jw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_BhkkEHSJEeSI75B5GNy5Jw" name="System tries to find search results" incoming="_eKrSgHSJEeSI75B5GNy5Jw" outgoing="_fimuwHSJEeSI75B5GNy5Jw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_VIzpYHSJEeSI75B5GNy5Jw" name="System sorts search results according to relevance" incoming="_fimuwHSJEeSI75B5GNy5Jw" outgoing="_gS3HAHSJEeSI75B5GNy5Jw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_bkNmkHSJEeSI75B5GNy5Jw" name="System presents search results to actor" incoming="_gS3HAHSJEeSI75B5GNy5Jw" outgoing="_hA7t8HSJEeSI75B5GNy5Jw"/>
+  </packagedElement>
 </uml:Model>
