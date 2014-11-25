@@ -46,7 +46,7 @@
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Actor" xmi:id="_ak4wQHPIEeSyaOiYcJ0X_Q" name="Payment system"/>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_AMn7EHQgEeS_re4Zo0uQbA" name="Ordering" node="_DO6AUHQgEeS_re4Zo0uQbA _ELF7wHQgEeS_re4Zo0uQbA _ICU0IHSxEeStMaJl8Y9S0g _PsMIgHSxEeStMaJl8Y9S0g _Z7t3kHSxEeStMaJl8Y9S0g _lEh_EHSxEeStMaJl8Y9S0g _7N7fIHSxEeStMaJl8Y9S0g _A21BUHSyEeStMaJl8Y9S0g _jLwDEHSyEeStMaJl8Y9S0g _z9GgYHSyEeStMaJl8Y9S0g __5QwYHSyEeStMaJl8Y9S0g _KL42wHSzEeStMaJl8Y9S0g _d2xF8HSzEeStMaJl8Y9S0g _kCuR4HSzEeStMaJl8Y9S0g _rUsqsHSzEeStMaJl8Y9S0g _0MkDQHSzEeStMaJl8Y9S0g _6hHxkHSzEeStMaJl8Y9S0g _9BD-wHSzEeStMaJl8Y9S0g _BymbIHS0EeStMaJl8Y9S0g _IbPjEHS0EeStMaJl8Y9S0g _N-1HcHS0EeStMaJl8Y9S0g _R7yFMHS0EeStMaJl8Y9S0g _T-u0YHS0EeStMaJl8Y9S0g _Xpw7sHS0EeStMaJl8Y9S0g _dyXRoHS0EeStMaJl8Y9S0g _tB1sgHS0EeStMaJl8Y9S0g _vXGTsHS0EeStMaJl8Y9S0g _LEKQoHS1EeStMaJl8Y9S0g _sFSIMHS1EeStMaJl8Y9S0g" group="_c7gFoHS1EeStMaJl8Y9S0g">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_AMn7EHQgEeS_re4Zo0uQbA" name="Ordering" node="_DO6AUHQgEeS_re4Zo0uQbA _ELF7wHQgEeS_re4Zo0uQbA _ICU0IHSxEeStMaJl8Y9S0g _PsMIgHSxEeStMaJl8Y9S0g _Z7t3kHSxEeStMaJl8Y9S0g _lEh_EHSxEeStMaJl8Y9S0g _7N7fIHSxEeStMaJl8Y9S0g _A21BUHSyEeStMaJl8Y9S0g _jLwDEHSyEeStMaJl8Y9S0g _z9GgYHSyEeStMaJl8Y9S0g __5QwYHSyEeStMaJl8Y9S0g _KL42wHSzEeStMaJl8Y9S0g _d2xF8HSzEeStMaJl8Y9S0g _kCuR4HSzEeStMaJl8Y9S0g _rUsqsHSzEeStMaJl8Y9S0g _6hHxkHSzEeStMaJl8Y9S0g _9BD-wHSzEeStMaJl8Y9S0g _BymbIHS0EeStMaJl8Y9S0g _IbPjEHS0EeStMaJl8Y9S0g _N-1HcHS0EeStMaJl8Y9S0g _R7yFMHS0EeStMaJl8Y9S0g _T-u0YHS0EeStMaJl8Y9S0g _Xpw7sHS0EeStMaJl8Y9S0g _dyXRoHS0EeStMaJl8Y9S0g _tB1sgHS0EeStMaJl8Y9S0g _vXGTsHS0EeStMaJl8Y9S0g _LEKQoHS1EeStMaJl8Y9S0g _sFSIMHS1EeStMaJl8Y9S0g">
     <ownedComment xmi:type="uml:Comment" xmi:id="_XYap0HSwEeStMaJl8Y9S0g" annotatedElement="_ELF7wHQgEeS_re4Zo0uQbA">
       <body>See the SearchActivityDiagram&#xD;
 </body>
@@ -70,7 +70,6 @@
     <edge xmi:type="uml:ControlFlow" xmi:id="_fgAUoHSzEeStMaJl8Y9S0g" target="_d2xF8HSzEeStMaJl8Y9S0g" source="_KL42wHSzEeStMaJl8Y9S0g"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_orfz0HSzEeStMaJl8Y9S0g" name="Requirements not met" target="_kCuR4HSzEeStMaJl8Y9S0g" source="_d2xF8HSzEeStMaJl8Y9S0g"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_uNrqAHSzEeStMaJl8Y9S0g" name="Requirements met" target="_rUsqsHSzEeStMaJl8Y9S0g" source="_d2xF8HSzEeStMaJl8Y9S0g"/>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_1Iya8HSzEeStMaJl8Y9S0g" target="_0MkDQHSzEeStMaJl8Y9S0g" source="_kCuR4HSzEeStMaJl8Y9S0g"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_7bsjcHSzEeStMaJl8Y9S0g" target="_6hHxkHSzEeStMaJl8Y9S0g" source="_rUsqsHSzEeStMaJl8Y9S0g"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_Ae7MwHS0EeStMaJl8Y9S0g" name="At least one guest is blacklisted" target="_9BD-wHSzEeStMaJl8Y9S0g" source="_6hHxkHSzEeStMaJl8Y9S0g"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_C-ltIHS0EeStMaJl8Y9S0g" target="_BymbIHS0EeStMaJl8Y9S0g" source="_9BD-wHSzEeStMaJl8Y9S0g"/>
@@ -83,7 +82,7 @@
     <edge xmi:type="uml:ControlFlow" xmi:id="_uipX8HS0EeStMaJl8Y9S0g" target="_tB1sgHS0EeStMaJl8Y9S0g" source="_dyXRoHS0EeStMaJl8Y9S0g"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_xDUk8HS0EeStMaJl8Y9S0g" target="_vXGTsHS0EeStMaJl8Y9S0g" source="_tB1sgHS0EeStMaJl8Y9S0g"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_MDeYkHS1EeStMaJl8Y9S0g" target="_LEKQoHS1EeStMaJl8Y9S0g" source="_vXGTsHS0EeStMaJl8Y9S0g"/>
-    <group xmi:type="uml:InterruptibleActivityRegion" xmi:id="_c7gFoHS1EeStMaJl8Y9S0g" name="InterruptibleActivityRegion1"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_LC4MUHS3EeStMaJl8Y9S0g" target="_z9GgYHSyEeStMaJl8Y9S0g" source="_kCuR4HSzEeStMaJl8Y9S0g"/>
     <node xmi:type="uml:InitialNode" xmi:id="_DO6AUHQgEeS_re4Zo0uQbA" name="InitialNode1" outgoing="_HuDsMHQgEeS_re4Zo0uQbA"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_ELF7wHQgEeS_re4Zo0uQbA" name="Search" incoming="_HuDsMHQgEeS_re4Zo0uQbA _dNpiYHSxEeStMaJl8Y9S0g _UlXBcHSyEeStMaJl8Y9S0g" outgoing="_OnfxUHSxEeStMaJl8Y9S0g"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_ICU0IHSxEeStMaJl8Y9S0g" name="Actor selects search results to book" incoming="_OnfxUHSxEeStMaJl8Y9S0g" outgoing="_YSeB0HSxEeStMaJl8Y9S0g"/>
@@ -93,13 +92,12 @@
     <node xmi:type="uml:DecisionNode" xmi:id="_7N7fIHSxEeStMaJl8Y9S0g" name="DecisionNode2" incoming="_9igw4HSxEeStMaJl8Y9S0g" outgoing="_Ol4LQHSyEeStMaJl8Y9S0g _rlswkHSyEeStMaJl8Y9S0g"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_A21BUHSyEeStMaJl8Y9S0g" name="System notifies user that at least one search result needs to be selected" incoming="_Ol4LQHSyEeStMaJl8Y9S0g" outgoing="_UlXBcHSyEeStMaJl8Y9S0g"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_jLwDEHSyEeStMaJl8Y9S0g" name="System checks if the results are still available for booking" incoming="_rlswkHSyEeStMaJl8Y9S0g" outgoing="_3vkscHSyEeStMaJl8Y9S0g"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_z9GgYHSyEeStMaJl8Y9S0g" name="Actor tells system information about guest(s) and contact(s)" incoming="_3vkscHSyEeStMaJl8Y9S0g" outgoing="_FLna0HSzEeStMaJl8Y9S0g"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_z9GgYHSyEeStMaJl8Y9S0g" name="Actor tells system information about guest(s) and contact(s)" incoming="_3vkscHSyEeStMaJl8Y9S0g _LC4MUHS3EeStMaJl8Y9S0g" outgoing="_FLna0HSzEeStMaJl8Y9S0g"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="__5QwYHSyEeStMaJl8Y9S0g" name="Actor selects services that they want" incoming="_FLna0HSzEeStMaJl8Y9S0g" outgoing="_St6iMHSzEeStMaJl8Y9S0g"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_KL42wHSzEeStMaJl8Y9S0g" name="System checks if the contact(s) meet the age requirements" incoming="_St6iMHSzEeStMaJl8Y9S0g" outgoing="_fgAUoHSzEeStMaJl8Y9S0g"/>
     <node xmi:type="uml:DecisionNode" xmi:id="_d2xF8HSzEeStMaJl8Y9S0g" name="DecisionNode3" incoming="_fgAUoHSzEeStMaJl8Y9S0g" outgoing="_orfz0HSzEeStMaJl8Y9S0g _uNrqAHSzEeStMaJl8Y9S0g"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_kCuR4HSzEeStMaJl8Y9S0g" name="System tells actor which guest(s) do not meet the requirements" incoming="_orfz0HSzEeStMaJl8Y9S0g" outgoing="_1Iya8HSzEeStMaJl8Y9S0g"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_kCuR4HSzEeStMaJl8Y9S0g" name="System tells actor which guest(s) do not meet the requirements" incoming="_orfz0HSzEeStMaJl8Y9S0g" outgoing="_LC4MUHS3EeStMaJl8Y9S0g"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_rUsqsHSzEeStMaJl8Y9S0g" name="System checks if any guest is blacklisted" incoming="_uNrqAHSzEeStMaJl8Y9S0g" outgoing="_7bsjcHSzEeStMaJl8Y9S0g"/>
-    <node xmi:type="uml:ActivityFinalNode" xmi:id="_0MkDQHSzEeStMaJl8Y9S0g" name="ActivityFinalNode1" incoming="_1Iya8HSzEeStMaJl8Y9S0g"/>
     <node xmi:type="uml:DecisionNode" xmi:id="_6hHxkHSzEeStMaJl8Y9S0g" name="DecisionNode4" incoming="_7bsjcHSzEeStMaJl8Y9S0g" outgoing="_Ae7MwHS0EeStMaJl8Y9S0g _Lcsh4HS0EeStMaJl8Y9S0g"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_9BD-wHSzEeStMaJl8Y9S0g" name="System tells actor which guest(s) are blacklisted" incoming="_Ae7MwHS0EeStMaJl8Y9S0g" outgoing="_C-ltIHS0EeStMaJl8Y9S0g"/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_BymbIHS0EeStMaJl8Y9S0g" name="ActivityFinalNode2" incoming="_C-ltIHS0EeStMaJl8Y9S0g"/>
