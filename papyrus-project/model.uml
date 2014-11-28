@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_ge4zEHZFEeSR9P-Gs7HenQ" name="model">
+  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_4lv0YHcAEeS3Y6dvXnWwog" name="Realization0" client="_4lsKAHcAEeS3Y6dvXnWwog" supplier="_4lxCgHcAEeS3Y6dvXnWwog" contract="_4lxCgHcAEeS3Y6dvXnWwog"/>
+  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_4lxpkHcAEeS3Y6dvXnWwog" name="Realization1" client="_4lsKAHcAEeS3Y6dvXnWwog" supplier="_4ltYIHcAEeS3Y6dvXnWwog" contract="_4ltYIHcAEeS3Y6dvXnWwog"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_DNbkwHcBEeS3Y6dvXnWwog" name="BankComponent">
+    <packagedElement xmi:type="uml:Component" xmi:id="_4lsKAHcAEeS3Y6dvXnWwog" name="BankComponent"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_4lxCgHcAEeS3Y6dvXnWwog" name="CustomerProvides">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_4lxCgXcAEeS3Y6dvXnWwog" name="makePayment">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4lxCgncAEeS3Y6dvXnWwog" name="ccNumber">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4lxCg3cAEeS3Y6dvXnWwog" name="ccv">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4lxChHcAEeS3Y6dvXnWwog" name="expiryMonth">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4lxChXcAEeS3Y6dvXnWwog" name="expiryYear">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4lxChncAEeS3Y6dvXnWwog" name="firstName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4lxCh3cAEeS3Y6dvXnWwog" name="lastName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4lxCiHcAEeS3Y6dvXnWwog" name="sum">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4lxCiXcAEeS3Y6dvXnWwog" name="success" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_4lxCincAEeS3Y6dvXnWwog" name="isCreditCardValid">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4lxCi3cAEeS3Y6dvXnWwog" name="ccNumber">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4lxCjHcAEeS3Y6dvXnWwog" name="ccv">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4lxCjXcAEeS3Y6dvXnWwog" name="expiryMonth">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4lxCjncAEeS3Y6dvXnWwog" name="expiryYear">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4lxCj3cAEeS3Y6dvXnWwog" name="firstName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4lxCkHcAEeS3Y6dvXnWwog" name="lastName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4lxCkXcAEeS3Y6dvXnWwog" name="success" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_4ltYIHcAEeS3Y6dvXnWwog" name="AdministratorProvides">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_4ltYIXcAEeS3Y6dvXnWwog" name="makeDeposit">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYIncAEeS3Y6dvXnWwog" name="ccNumber">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYI3cAEeS3Y6dvXnWwog" name="ccv">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYJHcAEeS3Y6dvXnWwog" name="expiryMonth">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYJXcAEeS3Y6dvXnWwog" name="expiryYear">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYJncAEeS3Y6dvXnWwog" name="firstName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYJ3cAEeS3Y6dvXnWwog" name="lastName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYKHcAEeS3Y6dvXnWwog" name="sum">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYKXcAEeS3Y6dvXnWwog" name="balance" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_4ltYKncAEeS3Y6dvXnWwog" name="addCreditCard">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYK3cAEeS3Y6dvXnWwog" name="ccNumber">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYLHcAEeS3Y6dvXnWwog" name="ccv">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYLXcAEeS3Y6dvXnWwog" name="expiryMonth">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYLncAEeS3Y6dvXnWwog" name="expiryYear">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYL3cAEeS3Y6dvXnWwog" name="firstName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYMHcAEeS3Y6dvXnWwog" name="lastName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYMXcAEeS3Y6dvXnWwog" name="success" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_4ltYMncAEeS3Y6dvXnWwog" name="removeCreditCard">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYM3cAEeS3Y6dvXnWwog" name="ccNumber">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYNHcAEeS3Y6dvXnWwog" name="ccv">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYNXcAEeS3Y6dvXnWwog" name="expiryMonth">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYNncAEeS3Y6dvXnWwog" name="expiryYear">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYN3cAEeS3Y6dvXnWwog" name="firstName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYOHcAEeS3Y6dvXnWwog" name="lastName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYOXcAEeS3Y6dvXnWwog" name="success" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_4ltYOncAEeS3Y6dvXnWwog" name="getBalance">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYO3cAEeS3Y6dvXnWwog" name="ccNumber">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYPHcAEeS3Y6dvXnWwog" name="ccv">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYPXcAEeS3Y6dvXnWwog" name="expiryMonth">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYPncAEeS3Y6dvXnWwog" name="expiryYear">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYP3cAEeS3Y6dvXnWwog" name="firstName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYQHcAEeS3Y6dvXnWwog" name="lastName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ltYQXcAEeS3Y6dvXnWwog" name="balance" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_F8--cHcFEeS3Y6dvXnWwog" name="Customer">
+    <packagedElement xmi:type="uml:Component" xmi:id="_B-FqgHcGEeS3Y6dvXnWwog" name="Customer"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_COSpsHcGEeS3Y6dvXnWwog" name="Receptionist"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_FCZwEHcGEeS3Y6dvXnWwog" name="Privileged Staff">
+    <packagedElement xmi:type="uml:Component" xmi:id="_dCE1QHcGEeS3Y6dvXnWwog" name="Privileged Staff"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_dLNjIHcGEeS3Y6dvXnWwog" name="Admin"/>
+</uml:Model>
