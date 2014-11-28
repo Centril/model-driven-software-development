@@ -153,12 +153,8 @@
       </ownedOperation>
     </packagedElement>
   </packagedElement>
-  <packagedElement xmi:type="uml:Component" xmi:id="_F8--cHcFEeS3Y6dvXnWwog" name="Customer">
-    <packagedElement xmi:type="uml:Component" xmi:id="_B-FqgHcGEeS3Y6dvXnWwog" name="Customer"/>
-  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_F8--cHcFEeS3Y6dvXnWwog" name="Customer"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_COSpsHcGEeS3Y6dvXnWwog" name="Receptionist"/>
-  <packagedElement xmi:type="uml:Component" xmi:id="_FCZwEHcGEeS3Y6dvXnWwog" name="Privileged Staff">
-    <packagedElement xmi:type="uml:Component" xmi:id="_dCE1QHcGEeS3Y6dvXnWwog" name="Privileged Staff"/>
-  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_FCZwEHcGEeS3Y6dvXnWwog" name="Privileged Staff"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_dLNjIHcGEeS3Y6dvXnWwog" name="Admin"/>
 </uml:Model>
