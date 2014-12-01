@@ -183,4 +183,5 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_1rdF8HlPEeSA5MODJ_COwQ" name="r" type="_COSpsHcGEeS3Y6dvXnWwog"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_GpTHIHlQEeSA5MODJ_COwQ" name="Lifeline" represents="_1rdF8HlPEeSA5MODJ_COwQ"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ZjwpMHlUEeSA5MODJ_COwQ" name="Room"/>
 </uml:Model>
