@@ -163,4 +163,24 @@
     <lifeline xmi:type="uml:Lifeline" xmi:id="_VNYbcHkrEeSSzsyH_2a38g" name="Lifeline" represents="_9HRhoHkrEeSSzsyH_2a38g"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_NPSHAHksEeSSzsyH_2a38g" name="Lifeline0" represents="_XYekkHksEeSSzsyH_2a38g"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_poWyYHlNEeSA5MODJ_COwQ" name="Search">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_cHDeoHlPEeSA5MODJ_COwQ" name="c" type="_F8--cHcFEeS3Y6dvXnWwog"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_4HJFQHlPEeSA5MODJ_COwQ" name="Lifeline" represents="_cHDeoHlPEeSA5MODJ_COwQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_dLS_UHlOEeSA5MODJ_COwQ" name="CheckIn">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_vusMkHlPEeSA5MODJ_COwQ" name="r" type="_COSpsHcGEeS3Y6dvXnWwog"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_6gKyIHlPEeSA5MODJ_COwQ" name="Lifeline" represents="_vusMkHlPEeSA5MODJ_COwQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_f4Gj0HlOEeSA5MODJ_COwQ" name="CheckOut">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_z51XUHlPEeSA5MODJ_COwQ" name="r" type="_COSpsHcGEeS3Y6dvXnWwog"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_BsoY0HlQEeSA5MODJ_COwQ" name="Lifeline" represents="_z51XUHlPEeSA5MODJ_COwQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_9U6AEHlOEeSA5MODJ_COwQ" name="HandlePayment">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_i7Q9YHlPEeSA5MODJ_COwQ" name="c" type="_F8--cHcFEeS3Y6dvXnWwog"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_EXYu4HlQEeSA5MODJ_COwQ" name="Lifeline" represents="_i7Q9YHlPEeSA5MODJ_COwQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_CLTuUHlPEeSA5MODJ_COwQ" name="RemoveBooking">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_1rdF8HlPEeSA5MODJ_COwQ" name="r" type="_COSpsHcGEeS3Y6dvXnWwog"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_GpTHIHlQEeSA5MODJ_COwQ" name="Lifeline" represents="_1rdF8HlPEeSA5MODJ_COwQ"/>
+  </packagedElement>
 </uml:Model>
