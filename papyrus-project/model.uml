@@ -157,4 +157,10 @@
   <packagedElement xmi:type="uml:Component" xmi:id="_COSpsHcGEeS3Y6dvXnWwog" name="Receptionist"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_FCZwEHcGEeS3Y6dvXnWwog" name="Privileged Staff"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_dLNjIHcGEeS3Y6dvXnWwog" name="Admin"/>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_RdMuYHkrEeSSzsyH_2a38g" name="Ordering">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_9HRhoHkrEeSSzsyH_2a38g" name="c" type="_F8--cHcFEeS3Y6dvXnWwog"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_XYekkHksEeSSzsyH_2a38g" name="cp" type="_4lxCgHcAEeS3Y6dvXnWwog"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_VNYbcHkrEeSSzsyH_2a38g" name="Lifeline" represents="_9HRhoHkrEeSSzsyH_2a38g"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_NPSHAHksEeSSzsyH_2a38g" name="Lifeline0" represents="_XYekkHksEeSSzsyH_2a38g"/>
+  </packagedElement>
 </uml:Model>
