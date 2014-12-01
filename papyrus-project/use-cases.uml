@@ -187,7 +187,7 @@
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_jFjTQHl6EeSh9a4hKcCEEg" name="" memberEnd="_jFjTQXl6EeSh9a4hKcCEEg _jFjTRHl6EeSh9a4hKcCEEg">
-    <ownedEnd xmi:type="uml:Property" xmi:id="_jFjTQXl6EeSh9a4hKcCEEg" name="receptionist" type="_Lt_HEHPAEeSGppoau5iR6g" association="_jFjTQHl6EeSh9a4hKcCEEg">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_jFjTQXl6EeSh9a4hKcCEEg" name="receptionist" type="_Bk-2wHPAEeSGppoau5iR6g" association="_jFjTQHl6EeSh9a4hKcCEEg">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jFjTQnl6EeSh9a4hKcCEEg" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jFjTQ3l6EeSh9a4hKcCEEg" value="1"/>
     </ownedEnd>
