@@ -171,14 +171,18 @@
       <lifeline xmi:type="uml:Lifeline" xmi:id="_FNKKUHpCEeS2zv6zlhm8qQ" name="Lifeline0"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_dLS_UHlOEeSA5MODJ_COwQ" name="CheckIn">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_1PUpEHpLEeS2zv6zlhm8qQ">
+        <body>return ok : bool&#xD;
+</body>
+      </ownedComment>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_vusMkHlPEeSA5MODJ_COwQ" name="r" type="_COSpsHcGEeS3Y6dvXnWwog"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_M-KMAHpDEeS2zv6zlhm8qQ" name="h" type="_YptNIHpDEeS2zv6zlhm8qQ"/>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_6gKyIHlPEeSA5MODJ_COwQ" name="Lifeline" represents="_vusMkHlPEeSA5MODJ_COwQ" coveredBy="_d1zpIHpEEeS2zv6zlhm8qQ _srVoEHpGEeS2zv6zlhm8qQ"/>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_EjTDEHpEEeS2zv6zlhm8qQ" name="Lifeline0" represents="_M-KMAHpDEeS2zv6zlhm8qQ" coveredBy="_d1zpIXpEEeS2zv6zlhm8qQ _srVoEXpGEeS2zv6zlhm8qQ"/>
-      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_srVoEXpGEeS2zv6zlhm8qQ" name="checkIn_MessageRecv" covered="_EjTDEHpEEeS2zv6zlhm8qQ" message="_srTL0HpGEeS2zv6zlhm8qQ"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_d1zpIHpEEeS2zv6zlhm8qQ" name="startCheckIn_MessageSend" covered="_6gKyIHlPEeSA5MODJ_COwQ" message="_d1qfMHpEEeS2zv6zlhm8qQ"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_d1zpIXpEEeS2zv6zlhm8qQ" name="startCheckIn_MessageRecv" covered="_EjTDEHpEEeS2zv6zlhm8qQ" message="_d1qfMHpEEeS2zv6zlhm8qQ"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_srVoEHpGEeS2zv6zlhm8qQ" name="checkIn_MessageSend" covered="_6gKyIHlPEeSA5MODJ_COwQ" message="_srTL0HpGEeS2zv6zlhm8qQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_srVoEXpGEeS2zv6zlhm8qQ" name="checkIn_MessageRecv" covered="_EjTDEHpEEeS2zv6zlhm8qQ" message="_srTL0HpGEeS2zv6zlhm8qQ"/>
       <message xmi:type="uml:Message" xmi:id="_d1qfMHpEEeS2zv6zlhm8qQ" name="startCheckIn_Message" messageSort="asynchCall" receiveEvent="_d1zpIXpEEeS2zv6zlhm8qQ" sendEvent="_d1zpIHpEEeS2zv6zlhm8qQ" signature="_MN-20HpEEeS2zv6zlhm8qQ"/>
       <message xmi:type="uml:Message" xmi:id="_srTL0HpGEeS2zv6zlhm8qQ" name="checkIn_Message" messageSort="asynchCall" receiveEvent="_srVoEXpGEeS2zv6zlhm8qQ" sendEvent="_srVoEHpGEeS2zv6zlhm8qQ" signature="_os-VEHpGEeS2zv6zlhm8qQ"/>
     </packagedElement>
@@ -870,9 +874,13 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_ay2OcHpEEeS2zv6zlhm8qQ" name="person" type="_FzWa8HluEeS-dbwPGgzjtw"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_os-VEHpGEeS2zv6zlhm8qQ" name="checkIn">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_CbT7gHpHEeS2zv6zlhm8qQ" name="person" type="_FzWa8HluEeS-dbwPGgzjtw"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_YDKbcHpMEeS2zv6zlhm8qQ" name="b" type="_qX9ogHpMEeS2zv6zlhm8qQ"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_mdKm4HpMEeS2zv6zlhm8qQ" name="numKeys">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
         </ownedOperation>
       </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_qX9ogHpMEeS2zv6zlhm8qQ" name="IBooking"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_zj-_Eno_EeSTh5yDLLqE0Q">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zlBg4Ho_EeSTh5yDLLqE0Q" source="http://www.eclipse.org/uml2/2.0.0/UML">

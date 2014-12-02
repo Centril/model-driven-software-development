@@ -209,6 +209,11 @@
           <element xmi:type="uml:Lifeline" href="model.uml#_EjTDEHpEEeS2zv6zlhm8qQ"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EjTDEnpEEeS2zv6zlhm8qQ" x="329" y="10" width="75"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_1PV3MHpLEeS2zv6zlhm8qQ" type="3009">
+          <children xmi:type="notation:DecorationNode" xmi:id="_1PWeQHpLEeS2zv6zlhm8qQ" type="5006"/>
+          <element xmi:type="uml:Comment" href="model.uml#_1PUpEHpLEeS2zv6zlhm8qQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1PV3MXpLEeS2zv6zlhm8qQ" x="133" y="177" width="118" height="39"/>
+        </children>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d5ZbdHlOEeSA5MODJ_COwQ"/>
       </children>
       <element xmi:type="uml:Interaction" href="model.uml#_dLS_UHlOEeSA5MODJ_COwQ"/>
@@ -247,8 +252,8 @@
       <styles xmi:type="notation:LineStyle" xmi:id="_src82HpGEeS2zv6zlhm8qQ"/>
       <element xmi:type="uml:Message" href="model.uml#_srTL0HpGEeS2zv6zlhm8qQ"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_src803pGEeS2zv6zlhm8qQ" points="[1, 6, -244, 0]$[245, 6, 0, 0]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sr3zkHpGEeS2zv6zlhm8qQ" id="(0.0,0.2420091324200913)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sr3zkXpGEeS2zv6zlhm8qQ" id="(0.0,0.2694063926940639){R}"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sr3zkHpGEeS2zv6zlhm8qQ" id="(0.0,0.5753424657534246)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sr3zkXpGEeS2zv6zlhm8qQ" id="(0.0,0.5753424657534246){R}"/>
     </edges>
   </notation:Diagram>
   <notation:Diagram xmi:id="_gRcQ4HlOEeSA5MODJ_COwQ" type="PapyrusUMLSequenceDiagram" name="CheckOut" measurementUnit="Pixel">
