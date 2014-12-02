@@ -13,15 +13,10 @@
   <packagedElement xmi:type="uml:UseCase" xmi:id="_sGjJ0HPAEeSGppoau5iR6g" name="Search"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_EUWVIHPCEeSGppoau5iR6g" name="Ordering">
     <include xmi:type="uml:Include" xmi:id="_eSzwUHPEEeSyaOiYcJ0X_Q" addition="_sGjJ0HPAEeSGppoau5iR6g"/>
-    <include xmi:type="uml:Include" xmi:id="_WajK0Hl7EeSh9a4hKcCEEg" addition="_zaNSwHPCEeSGppoau5iR6g"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_w0micHPCEeSGppoau5iR6g" name="Check in">
-    <include xmi:type="uml:Include" xmi:id="_TSjfIHl7EeSh9a4hKcCEEg" addition="_zaNSwHPCEeSGppoau5iR6g"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_yKxEIHPCEeSGppoau5iR6g" name="Check out">
-    <include xmi:type="uml:Include" xmi:id="_S8-3wHl7EeSh9a4hKcCEEg" addition="_zaNSwHPCEeSGppoau5iR6g"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_zaNSwHPCEeSGppoau5iR6g" name="Register payment"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_w0micHPCEeSGppoau5iR6g" name="Check in"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_yKxEIHPCEeSGppoau5iR6g" name="Check out"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_zaNSwHPCEeSGppoau5iR6g" name="Pay invoice"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_1lbNIHPCEeSGppoau5iR6g" name="System setup"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_3XH0QHPCEeSGppoau5iR6g" name="Remove booking"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_542KIHPCEeSGppoau5iR6g" name="Adjust properties"/>
