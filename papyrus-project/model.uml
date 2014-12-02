@@ -398,6 +398,17 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_7xd-4Ho0EeSTh5yDLLqE0Q" name="addDiscount">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_DlPdMHo1EeSTh5yDLLqE0Q" name="label">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_F1Y64Ho1EeSTh5yDLLqE0Q" name="value">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_IC9lsHo1EeSTh5yDLLqE0Q" name="expirationDate">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_z_LuYHlwEeS-dbwPGgzjtw" name="ICreditCardInfo">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_LEgrMHlxEeS-dbwPGgzjtw" name="getCCV">
