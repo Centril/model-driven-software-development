@@ -175,6 +175,10 @@
         <body>return ok : bool&#xD;
 </body>
       </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_m9N3kHpaEeSJULlkSE75Zg">
+        <body>return bookings&#xD;
+</body>
+      </ownedComment>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_vusMkHlPEeSA5MODJ_COwQ" name="r" type="_COSpsHcGEeS3Y6dvXnWwog"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_M-KMAHpDEeS2zv6zlhm8qQ" name="h" type="_YptNIHpDEeS2zv6zlhm8qQ"/>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_6gKyIHlPEeSA5MODJ_COwQ" name="Lifeline" represents="_vusMkHlPEeSA5MODJ_COwQ" coveredBy="_d1zpIHpEEeS2zv6zlhm8qQ _srVoEHpGEeS2zv6zlhm8qQ"/>
@@ -183,8 +187,11 @@
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_d1zpIXpEEeS2zv6zlhm8qQ" name="startCheckIn_MessageRecv" covered="_EjTDEHpEEeS2zv6zlhm8qQ" message="_d1qfMHpEEeS2zv6zlhm8qQ"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_srVoEHpGEeS2zv6zlhm8qQ" name="checkIn_MessageSend" covered="_6gKyIHlPEeSA5MODJ_COwQ" message="_srTL0HpGEeS2zv6zlhm8qQ"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_srVoEXpGEeS2zv6zlhm8qQ" name="checkIn_MessageRecv" covered="_EjTDEHpEEeS2zv6zlhm8qQ" message="_srTL0HpGEeS2zv6zlhm8qQ"/>
+      <formalGate xmi:type="uml:Gate" xmi:id="_aupo8HpaEeSJULlkSE75Zg" name="gate0" message="_av_swHpaEeSJULlkSE75Zg"/>
+      <formalGate xmi:type="uml:Gate" xmi:id="_avsx0HpaEeSJULlkSE75Zg" name="gate1" message="_av_swHpaEeSJULlkSE75Zg"/>
       <message xmi:type="uml:Message" xmi:id="_d1qfMHpEEeS2zv6zlhm8qQ" name="startCheckIn_Message" messageSort="asynchCall" receiveEvent="_d1zpIXpEEeS2zv6zlhm8qQ" sendEvent="_d1zpIHpEEeS2zv6zlhm8qQ" signature="_MN-20HpEEeS2zv6zlhm8qQ"/>
       <message xmi:type="uml:Message" xmi:id="_srTL0HpGEeS2zv6zlhm8qQ" name="checkIn_Message" messageSort="asynchCall" receiveEvent="_srVoEXpGEeS2zv6zlhm8qQ" sendEvent="_srVoEHpGEeS2zv6zlhm8qQ" signature="_os-VEHpGEeS2zv6zlhm8qQ"/>
+      <message xmi:type="uml:Message" xmi:id="_av_swHpaEeSJULlkSE75Zg" name="Message" messageSort="asynchCall" receiveEvent="_aupo8HpaEeSJULlkSE75Zg" sendEvent="_avsx0HpaEeSJULlkSE75Zg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_f4Gj0HlOEeSA5MODJ_COwQ" name="CheckOut">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_z51XUHlPEeSA5MODJ_COwQ" name="r" type="_COSpsHcGEeS3Y6dvXnWwog"/>
