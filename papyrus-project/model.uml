@@ -194,8 +194,27 @@
       <message xmi:type="uml:Message" xmi:id="_av_swHpaEeSJULlkSE75Zg" name="Message" messageSort="asynchCall" receiveEvent="_aupo8HpaEeSJULlkSE75Zg" sendEvent="_avsx0HpaEeSJULlkSE75Zg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_f4Gj0HlOEeSA5MODJ_COwQ" name="CheckOut">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Y-9FkHpdEeSJULlkSE75Zg">
+        <body>Return rooms</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_bNA4kHpdEeSJULlkSE75Zg">
+        <body>ok</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_epFW0HpdEeSJULlkSE75Zg">
+        <body>ok</body>
+      </ownedComment>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_z51XUHlPEeSA5MODJ_COwQ" name="r" type="_COSpsHcGEeS3Y6dvXnWwog"/>
-      <lifeline xmi:type="uml:Lifeline" xmi:id="_BsoY0HlQEeSA5MODJ_COwQ" name="Lifeline" represents="_z51XUHlPEeSA5MODJ_COwQ"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_BsoY0HlQEeSA5MODJ_COwQ" name="Lifeline" represents="_z51XUHlPEeSA5MODJ_COwQ" coveredBy="_oSiZ0HpcEeSJULlkSE75Zg _Ie828XpdEeSJULlkSE75Zg _TIhdsXpdEeSJULlkSE75Zg"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_bo4nIHpbEeSJULlkSE75Zg" name="h:" represents="_M-KMAHpDEeS2zv6zlhm8qQ" coveredBy="_oSiZ0XpcEeSJULlkSE75Zg _IfGn8HpdEeSJULlkSE75Zg _TIhdsnpdEeSJULlkSE75Zg"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_oSiZ0HpcEeSJULlkSE75Zg" name="startCheckOut_MessageSend" covered="_BsoY0HlQEeSA5MODJ_COwQ" message="_oSYo0HpcEeSJULlkSE75Zg"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_oSiZ0XpcEeSJULlkSE75Zg" name="startCheckOut_MessageRecv" covered="_bo4nIHpbEeSJULlkSE75Zg" message="_oSYo0HpcEeSJULlkSE75Zg"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Ie828XpdEeSJULlkSE75Zg" name="returnKeys_MessageSend" covered="_BsoY0HlQEeSA5MODJ_COwQ" message="_Ie828HpdEeSJULlkSE75Zg"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_IfGn8HpdEeSJULlkSE75Zg" name="returnKeys_MessageRecv" covered="_bo4nIHpbEeSJULlkSE75Zg" message="_Ie828HpdEeSJULlkSE75Zg"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_TIhdsXpdEeSJULlkSE75Zg" name="checkOut_MessageSend" covered="_BsoY0HlQEeSA5MODJ_COwQ" message="_TIhdsHpdEeSJULlkSE75Zg"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_TIhdsnpdEeSJULlkSE75Zg" name="checkOut_MessageRecv" covered="_bo4nIHpbEeSJULlkSE75Zg" message="_TIhdsHpdEeSJULlkSE75Zg"/>
+      <message xmi:type="uml:Message" xmi:id="_oSYo0HpcEeSJULlkSE75Zg" name="startCheckOut_Message" messageSort="asynchCall" receiveEvent="_oSiZ0XpcEeSJULlkSE75Zg" sendEvent="_oSiZ0HpcEeSJULlkSE75Zg" signature="_oRWHAHpcEeSJULlkSE75Zg"/>
+      <message xmi:type="uml:Message" xmi:id="_Ie828HpdEeSJULlkSE75Zg" name="returnKeys_Message" messageSort="asynchCall" receiveEvent="_IfGn8HpdEeSJULlkSE75Zg" sendEvent="_Ie828XpdEeSJULlkSE75Zg" signature="_IeDfEHpdEeSJULlkSE75Zg"/>
+      <message xmi:type="uml:Message" xmi:id="_TIhdsHpdEeSJULlkSE75Zg" name="checkOut_Message" messageSort="asynchCall" receiveEvent="_TIhdsnpdEeSJULlkSE75Zg" sendEvent="_TIhdsXpdEeSJULlkSE75Zg" signature="_THeU0HpdEeSJULlkSE75Zg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_9U6AEHlOEeSA5MODJ_COwQ" name="HandlePayment">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_i7Q9YHlPEeSA5MODJ_COwQ" name="c" type="_F8--cHcFEeS3Y6dvXnWwog"/>
@@ -915,6 +934,9 @@
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
         </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_oRWHAHpcEeSJULlkSE75Zg" name="startCheckOut"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_IeDfEHpdEeSJULlkSE75Zg" name="returnKeys"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_THeU0HpdEeSJULlkSE75Zg" name="checkOut"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_qX9ogHpMEeS2zv6zlhm8qQ" name="IBooking"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_Gg5zsHpOEeSTh5yDLLqE0Q" memberEnd="_Gg5zsXpOEeSTh5yDLLqE0Q _Gg5MoHpOEeSTh5yDLLqE0Q">
