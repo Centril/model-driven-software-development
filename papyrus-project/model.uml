@@ -1004,6 +1004,12 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SKXrsXvDEeSHatiNfZ-sGg" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SKXrsnvDEeSHatiNfZ-sGg" value="1"/>
           </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_0Ln20HwAEeSHatiNfZ-sGg" name="startTime">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_42r3wHwAEeSHatiNfZ-sGg" name="endTime">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedAttribute>
           <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_YVdKYHvCEeSHatiNfZ-sGg" client="_9NVDcHo1EeSTh5yDLLqE0Q" supplier="_XDoWIHvCEeSHatiNfZ-sGg" contract="_XDoWIHvCEeSHatiNfZ-sGg"/>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_sn_PcXvCEeSHatiNfZ-sGg" name="Operation1"/>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_uAWwkHvCEeSHatiNfZ-sGg" name="getPrice"/>
@@ -1341,6 +1347,16 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_whDLsHvCEeSHatiNfZ-sGg" name="getProperties">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_6P5PkHvCEeSHatiNfZ-sGg" name="properties" direction="return">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EMap"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_7eDioHwAEeSHatiNfZ-sGg" name="getStartTime">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-tnO4HwAEeSHatiNfZ-sGg" name="startTime" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="__N54gHwAEeSHatiNfZ-sGg" name="getEndTime">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_C0-F0HwBEeSHatiNfZ-sGg" name="endTime" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
           </ownedParameter>
         </ownedOperation>
       </packagedElement>
