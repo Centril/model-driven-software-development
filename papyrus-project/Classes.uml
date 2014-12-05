@@ -291,6 +291,9 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_ZivqwHo_EeSTh5yDLLqE0Q" name="Hotel">
     <packagedElement xmi:type="uml:Component" xmi:id="_dA6awHo_EeSTh5yDLLqE0Q" name="Hotel">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_JozHsHvNEeSHatiNfZ-sGg" annotatedElement="_nw0pIHo2EeSTh5yDLLqE0Q">
+        <body>Will sort the SearchResults according to relevance.</body>
+      </ownedComment>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_gz3vAHo_EeSTh5yDLLqE0Q" name="Room">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_yhLeQHo_EeSTh5yDLLqE0Q" name="id" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
