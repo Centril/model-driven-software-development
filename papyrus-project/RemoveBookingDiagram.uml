@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_iNSvEH1rEeSezLtI9Ootng" name="RemoveBookingDiagram">
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_CLTuUHlPEeSA5MODJ_COwQ" name="RemoveBooking">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_1rdF8HlPEeSA5MODJ_COwQ" name="r">
+      <type xmi:type="uml:Component" href="model.uml#_COSpsHcGEeS3Y6dvXnWwog"/>
+    </ownedAttribute>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_GpTHIHlQEeSA5MODJ_COwQ" name="Lifeline" represents="_1rdF8HlPEeSA5MODJ_COwQ"/>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_AnluUH1sEeSezLtI9Ootng">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AoV8QH1sEeSezLtI9Ootng" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
+    </eAnnotations>
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AoWjUH1sEeSezLtI9Ootng" source="duplicatedProfile"/>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Package>

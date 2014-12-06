@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_DI5X8HlPEeSA5MODJ_COwQ" type="PapyrusUMLSequenceDiagram" name="RemoveBooking" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_DI5X8XlPEeSA5MODJ_COwQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_DI5X8nlPEeSA5MODJ_COwQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_DI5X83lPEeSA5MODJ_COwQ" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_GpTHIXlQEeSA5MODJ_COwQ" type="3001">
+        <children xmi:type="notation:DecorationNode" xmi:id="_GpTHI3lQEeSA5MODJ_COwQ" type="5002"/>
+        <element xmi:type="uml:Lifeline" href="RemoveBookingDiagram.uml#_GpTHIHlQEeSA5MODJ_COwQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GpTHInlQEeSA5MODJ_COwQ" x="51" y="10" width="106"/>
+      </children>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DI5X9HlPEeSA5MODJ_COwQ"/>
+    </children>
+    <element xmi:type="uml:Interaction" href="RemoveBookingDiagram.uml#_CLTuUHlPEeSA5MODJ_COwQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DI5X9XlPEeSA5MODJ_COwQ"/>
+  </children>
+  <styles xmi:type="notation:StringValueStyle" xmi:id="_DI5X9nlPEeSA5MODJ_COwQ" name="diagram_compatibility_version" stringValue="1.0.0"/>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_DI5X93lPEeSA5MODJ_COwQ"/>
+  <styles xmi:type="style:PapyrusViewStyle" xmi:id="_DI5X-HlPEeSA5MODJ_COwQ">
+    <owner xmi:type="uml:Package" href="RemoveBookingDiagram.uml#_iNSvEH1rEeSezLtI9Ootng"/>
+  </styles>
+  <element xmi:type="uml:Interaction" href="RemoveBookingDiagram.uml#_CLTuUHlPEeSA5MODJ_COwQ"/>
+</notation:Diagram>

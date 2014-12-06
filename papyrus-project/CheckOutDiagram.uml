@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_g9wZ0H1rEeSezLtI9Ootng" name="CheckOutDiagram">
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_f4Gj0HlOEeSA5MODJ_COwQ" name="CheckOut">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_Y-9FkHpdEeSJULlkSE75Zg">
+      <body>Return rooms</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_bNA4kHpdEeSJULlkSE75Zg">
+      <body>ok</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_epFW0HpdEeSJULlkSE75Zg">
+      <body>ok</body>
+    </ownedComment>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_z51XUHlPEeSA5MODJ_COwQ" name="r">
+      <type xmi:type="uml:Component" href="model.uml#_COSpsHcGEeS3Y6dvXnWwog"/>
+    </ownedAttribute>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_BsoY0HlQEeSA5MODJ_COwQ" name="Lifeline" represents="_z51XUHlPEeSA5MODJ_COwQ"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_0wgdwHpZEeSgf6-u89OUJA" name="Lifeline0"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_BsoY0HlQEeSA5MODJ_COwQ" name="Lifeline" represents="_z51XUHlPEeSA5MODJ_COwQ" coveredBy="_oSiZ0HpcEeSJULlkSE75Zg _Ie828XpdEeSJULlkSE75Zg _TIhdsXpdEeSJULlkSE75Zg"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_bo4nIHpbEeSJULlkSE75Zg" name="h:" coveredBy="_oSiZ0XpcEeSJULlkSE75Zg _IfGn8HpdEeSJULlkSE75Zg _TIhdsnpdEeSJULlkSE75Zg">
+      <represents xmi:type="uml:Property" href="CheckInDiagram.uml#_M-KMAHpDEeS2zv6zlhm8qQ"/>
+    </lifeline>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_oSiZ0HpcEeSJULlkSE75Zg" name="startCheckOut_MessageSend" covered="_BsoY0HlQEeSA5MODJ_COwQ" message="_oSYo0HpcEeSJULlkSE75Zg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_oSiZ0XpcEeSJULlkSE75Zg" name="startCheckOut_MessageRecv" covered="_bo4nIHpbEeSJULlkSE75Zg" message="_oSYo0HpcEeSJULlkSE75Zg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Ie828XpdEeSJULlkSE75Zg" name="returnKeys_MessageSend" covered="_BsoY0HlQEeSA5MODJ_COwQ" message="_Ie828HpdEeSJULlkSE75Zg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_IfGn8HpdEeSJULlkSE75Zg" name="returnKeys_MessageRecv" covered="_bo4nIHpbEeSJULlkSE75Zg" message="_Ie828HpdEeSJULlkSE75Zg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_TIhdsXpdEeSJULlkSE75Zg" name="checkOut_MessageSend" covered="_BsoY0HlQEeSA5MODJ_COwQ" message="_TIhdsHpdEeSJULlkSE75Zg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_TIhdsnpdEeSJULlkSE75Zg" name="checkOut_MessageRecv" covered="_bo4nIHpbEeSJULlkSE75Zg" message="_TIhdsHpdEeSJULlkSE75Zg"/>
+    <message xmi:type="uml:Message" xmi:id="_oSYo0HpcEeSJULlkSE75Zg" name="startCheckOut_Message" messageSort="asynchCall" receiveEvent="_oSiZ0XpcEeSJULlkSE75Zg" sendEvent="_oSiZ0HpcEeSJULlkSE75Zg"/>
+    <message xmi:type="uml:Message" xmi:id="_Ie828HpdEeSJULlkSE75Zg" name="returnKeys_Message" messageSort="asynchCall" receiveEvent="_IfGn8HpdEeSJULlkSE75Zg" sendEvent="_Ie828XpdEeSJULlkSE75Zg"/>
+    <message xmi:type="uml:Message" xmi:id="_TIhdsHpdEeSJULlkSE75Zg" name="checkOut_Message" messageSort="asynchCall" receiveEvent="_TIhdsnpdEeSJULlkSE75Zg" sendEvent="_TIhdsXpdEeSJULlkSE75Zg">
+      <signature xmi:type="uml:Operation" href="Classes.uml#_THeU0HpdEeSJULlkSE75Zg"/>
+    </message>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="__e0IYH1rEeSezLtI9Ootng">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__fkWUH1rEeSezLtI9Ootng" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
+    </eAnnotations>
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__fk9YH1rEeSezLtI9Ootng" source="duplicatedProfile"/>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Package>

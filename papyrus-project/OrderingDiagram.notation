@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_T2ikUHkrEeSSzsyH_2a38g" type="PapyrusUMLSequenceDiagram" name="Ordering" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_T2ikUXkrEeSSzsyH_2a38g" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_T2ikUnkrEeSSzsyH_2a38g" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_T2ikU3krEeSSzsyH_2a38g" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_VNd7AHkrEeSSzsyH_2a38g" type="3001">
+        <children xmi:type="notation:DecorationNode" xmi:id="_VNd7AnkrEeSSzsyH_2a38g" type="5002"/>
+        <element xmi:type="uml:Lifeline" href="OrderingDiagram.uml#_VNYbcHkrEeSSzsyH_2a38g"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VNd7AXkrEeSSzsyH_2a38g" x="80" y="10" width="95" height="390"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_NPT8MHksEeSSzsyH_2a38g" type="3001">
+        <children xmi:type="notation:DecorationNode" xmi:id="_NPUjQHksEeSSzsyH_2a38g" type="5002"/>
+        <element xmi:type="uml:Lifeline" href="OrderingDiagram.uml#_NPSHAHksEeSSzsyH_2a38g"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NPT8MXksEeSSzsyH_2a38g" x="534" y="10" width="147" height="385"/>
+      </children>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T2ikVHkrEeSSzsyH_2a38g"/>
+    </children>
+    <element xmi:type="uml:Interaction" href="OrderingDiagram.uml#_RdMuYHkrEeSSzsyH_2a38g"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T2ikVXkrEeSSzsyH_2a38g"/>
+  </children>
+  <styles xmi:type="notation:StringValueStyle" xmi:id="_T2ikVnkrEeSSzsyH_2a38g" name="diagram_compatibility_version" stringValue="1.0.0"/>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_T2ikV3krEeSSzsyH_2a38g"/>
+  <styles xmi:type="style:PapyrusViewStyle" xmi:id="_T2ikWHkrEeSSzsyH_2a38g">
+    <owner xmi:type="uml:Package" href="OrderingDiagram.uml#_cxhC4H1rEeSezLtI9Ootng"/>
+  </styles>
+  <element xmi:type="uml:Interaction" href="OrderingDiagram.uml#_RdMuYHkrEeSSzsyH_2a38g"/>
+</notation:Diagram>
