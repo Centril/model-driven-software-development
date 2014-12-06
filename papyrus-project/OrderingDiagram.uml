@@ -7,8 +7,17 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_XYekkHksEeSSzsyH_2a38g" name="cp">
       <type xmi:type="uml:Interface" href="model.uml#_4lxCgHcAEeS3Y6dvXnWwog"/>
     </ownedAttribute>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_VNYbcHkrEeSSzsyH_2a38g" name="Lifeline" represents="_9HRhoHkrEeSSzsyH_2a38g"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_VNYbcHkrEeSSzsyH_2a38g" name="Lifeline" represents="_9HRhoHkrEeSSzsyH_2a38g" coveredBy="_CKx4AH1vEeSezLtI9Ootng _CKyfEH1vEeSezLtI9Ootng"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_NPSHAHksEeSSzsyH_2a38g" name="Lifeline0" represents="_XYekkHksEeSSzsyH_2a38g"/>
+    <fragment xmi:type="uml:CombinedFragment" xmi:id="_CKx4AH1vEeSezLtI9Ootng" name="CombinedFragment" covered="_VNYbcHkrEeSSzsyH_2a38g">
+      <operand xmi:type="uml:InteractionOperand" xmi:id="_CKyfEH1vEeSezLtI9Ootng" name="InteractionOperand" covered="_VNYbcHkrEeSSzsyH_2a38g">
+        <guard xmi:type="uml:InteractionConstraint" xmi:id="_CKyfEX1vEeSezLtI9Ootng">
+          <specification xmi:type="uml:LiteralString" xmi:id="_CKzGIH1vEeSezLtI9Ootng" value="reference to Search"/>
+          <maxint xmi:type="uml:LiteralInteger" xmi:id="_CKzGIn1vEeSezLtI9Ootng" value="1"/>
+          <minint xmi:type="uml:LiteralInteger" xmi:id="_CKzGIX1vEeSezLtI9Ootng"/>
+        </guard>
+      </operand>
+    </fragment>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_95zSYH1rEeSezLtI9Ootng">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_96iSMH1rEeSezLtI9Ootng" source="http://www.eclipse.org/uml2/2.0.0/UML">

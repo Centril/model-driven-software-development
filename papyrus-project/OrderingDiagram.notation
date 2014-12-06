@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_T2ikUHkrEeSSzsyH_2a38g" type="PapyrusUMLSequenceDiagram" name="Ordering" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_T2ikUHkrEeSSzsyH_2a38g" type="PapyrusUMLSequenceDiagram" name="Ordering" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_T2ikUXkrEeSSzsyH_2a38g" type="2001">
     <children xmi:type="notation:DecorationNode" xmi:id="_T2ikUnkrEeSSzsyH_2a38g" type="5001"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_T2ikU3krEeSSzsyH_2a38g" type="7001">
@@ -12,6 +12,29 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_NPUjQHksEeSSzsyH_2a38g" type="5002"/>
         <element xmi:type="uml:Lifeline" href="OrderingDiagram.uml#_NPSHAHksEeSSzsyH_2a38g"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NPT8MXksEeSSzsyH_2a38g" x="534" y="10" width="147" height="385"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_CK0UQH1vEeSezLtI9Ootng" type="3004">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZeHboH1vEeSezLtI9Ootng" source="PapyrusHyperLink_Object">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZeHboX1vEeSezLtI9Ootng" key="tooltip_text"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZeHbon1vEeSezLtI9Ootng" key="pageName" value="PapyrusHyperLink_Object"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZeHbo31vEeSezLtI9Ootng" key="is_default_navigation" value="false"/>
+          <references xmi:type="notation:Diagram" href="SearchDiagram.notation#_qUtiEHlNEeSA5MODJ_COwQ"/>
+        </eAnnotations>
+        <children xmi:type="notation:DecorationNode" xmi:id="_CK0UQn1vEeSezLtI9Ootng" type="7004">
+          <children xmi:type="notation:Shape" xmi:id="_CK07UH1vEeSezLtI9Ootng" type="3005">
+            <children xmi:type="notation:DecorationNode" xmi:id="_CK07Un1vEeSezLtI9Ootng" type="InteractionOperand_Guard">
+              <element xmi:type="uml:InteractionConstraint" href="OrderingDiagram.uml#_CKyfEX1vEeSezLtI9Ootng"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CK07U31vEeSezLtI9Ootng" x="5" y="5"/>
+            </children>
+            <element xmi:type="uml:InteractionOperand" href="OrderingDiagram.uml#_CKyfEH1vEeSezLtI9Ootng"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CK07UX1vEeSezLtI9Ootng" width="214" height="34"/>
+          </children>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_CK0UQ31vEeSezLtI9Ootng"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_CK0URH1vEeSezLtI9Ootng"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CK0URX1vEeSezLtI9Ootng"/>
+        </children>
+        <element xmi:type="uml:CombinedFragment" href="OrderingDiagram.uml#_CKx4AH1vEeSezLtI9Ootng"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CK0UQX1vEeSezLtI9Ootng" x="108" y="62" width="216" height="58"/>
       </children>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T2ikVHkrEeSSzsyH_2a38g"/>
     </children>
