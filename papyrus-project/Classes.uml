@@ -288,6 +288,7 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_ihUGHnowEeS_Y-yub0PNVA" name="person" type="_FzWa8HluEeS-dbwPGgzjtw"/>
       </ownedOperation>
     </packagedElement>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_yIT68H1jEeSIJZbJ_H4bYw" name="Realization0" client="_8hQzQHlnEeS-dbwPGgzjtw" supplier="_ZuF88HowEeS_Y-yub0PNVA" contract="_ZuF88HowEeS_Y-yub0PNVA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_ZivqwHo_EeSTh5yDLLqE0Q" name="Hotel">
     <packagedElement xmi:type="uml:Component" xmi:id="_dA6awHo_EeSTh5yDLLqE0Q" name="Hotel">
@@ -844,6 +845,12 @@
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_v25R8H1jEeSIJZbJ_H4bYw" name="Realization0" client="_dA6awHo_EeSTh5yDLLqE0Q" supplier="_YptNIHpDEeS2zv6zlhm8qQ" contract="_YptNIHpDEeS2zv6zlhm8qQ"/>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_wj7-IH1jEeSIJZbJ_H4bYw" name="Realization1" client="_dA6awHo_EeSTh5yDLLqE0Q" supplier="_2IPy8Ho8EeSTh5yDLLqE0Q" contract="_2IPy8Ho8EeSTh5yDLLqE0Q"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_3i2RAH1jEeSIJZbJ_H4bYw" name="Usage0" client="_dA6awHo_EeSTh5yDLLqE0Q">
+      <supplier xmi:type="uml:Interface" href="model.uml#_4lxCgHcAEeS3Y6dvXnWwog"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_5HzcoH1jEeSIJZbJ_H4bYw" name="Usage1" client="_dA6awHo_EeSTh5yDLLqE0Q" supplier="_ZuF88HowEeS_Y-yub0PNVA"/>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_yWHgwHyPEeSahu9FXjYTpw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yYNLcHyPEeSahu9FXjYTpw" source="http://www.eclipse.org/uml2/2.0.0/UML">

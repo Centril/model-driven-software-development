@@ -275,6 +275,12 @@
       <lifeline xmi:type="uml:Lifeline" xmi:id="_GpTHIHlQEeSA5MODJ_COwQ" name="Lifeline" represents="_1rdF8HlPEeSA5MODJ_COwQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" href="Classes.uml#_fLCL8HyPEeSahu9FXjYTpw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_NC_YsH1kEeSIJZbJ_H4bYw" name="Usage0" client="_F8--cHcFEeS3Y6dvXnWwog">
+      <supplier xmi:type="uml:Interface" href="Classes.uml#_2IPy8Ho8EeSTh5yDLLqE0Q"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_N0YZYH1kEeSIJZbJ_H4bYw" name="Usage1" client="_F8--cHcFEeS3Y6dvXnWwog">
+      <supplier xmi:type="uml:Interface" href="Classes.uml#_YptNIHpDEeS2zv6zlhm8qQ"/>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_zj-_Eno_EeSTh5yDLLqE0Q">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zlBg4Ho_EeSTh5yDLLqE0Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
