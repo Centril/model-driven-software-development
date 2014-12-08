@@ -612,7 +612,7 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VAQQpno3EeSTh5yDLLqE0Q" value="1"/>
         </ownedEnd>
       </nestedClassifier>
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_yhzQsHo8EeSTh5yDLLqE0Q" name="SearchImpl">
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_yhzQsHo8EeSTh5yDLLqE0Q" name="Search">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_BHzAAHpZEeS2zv6zlhm8qQ" name="searchQuery" type="_nw0pIHo2EeSTh5yDLLqE0Q" association="_BH01MHpZEeS2zv6zlhm8qQ">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BHzAAXpZEeS2zv6zlhm8qQ" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BHzAAnpZEeS2zv6zlhm8qQ" value="1"/>
@@ -620,8 +620,7 @@
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="__YczAHo8EeSTh5yDLLqE0Q" client="_yhzQsHo8EeSTh5yDLLqE0Q" supplier="_2IPy8Ho8EeSTh5yDLLqE0Q" contract="_2IPy8Ho8EeSTh5yDLLqE0Q"/>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Association" xmi:id="_BH01MHpZEeS2zv6zlhm8qQ" memberEnd="_BH01MXpZEeS2zv6zlhm8qQ _BHzAAHpZEeS2zv6zlhm8qQ">
-        <name xsi:nil="true"/>
-        <ownedEnd xmi:type="uml:Property" xmi:id="_BH01MXpZEeS2zv6zlhm8qQ" name="searchImpl" type="_yhzQsHo8EeSTh5yDLLqE0Q" association="_BH01MHpZEeS2zv6zlhm8qQ">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_BH01MXpZEeS2zv6zlhm8qQ" name="search" type="_yhzQsHo8EeSTh5yDLLqE0Q" association="_BH01MHpZEeS2zv6zlhm8qQ">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BH01MnpZEeS2zv6zlhm8qQ" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BH01M3pZEeS2zv6zlhm8qQ" value="1"/>
         </ownedEnd>
