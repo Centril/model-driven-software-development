@@ -696,7 +696,7 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_2IPy8Ho8EeSTh5yDLLqE0Q" name="ISearch">
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_zZgvQHpREeSTh5yDLLqE0Q" name="search" visibility="private">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_zZgvQHpREeSTh5yDLLqE0Q" name="search" visibility="public">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_vGQTQIIFEeSUauS9r1lcVA" name="startTime">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
         </ownedParameter>
@@ -710,7 +710,10 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sT0jsIIMEeSUauS9r1lcVA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sT0jsYIMEeSUauS9r1lcVA" value="*"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_eQh2IHvMEeSHatiNfZ-sGg" name="searchResults" type="_G1hv0HvCEeSHatiNfZ-sGg" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_eQh2IHvMEeSHatiNfZ-sGg" name="searchResults" type="_G1hv0HvCEeSHatiNfZ-sGg" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wxhY4IIeEeS38dEnsY2oZg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wxhY4YIeEeS38dEnsY2oZg" value="*"/>
+        </ownedParameter>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_G1hv0HvCEeSHatiNfZ-sGg" name="ISearchResult">
