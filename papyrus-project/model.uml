@@ -177,6 +177,24 @@
     <packagedElement xmi:type="uml:Package" href="CheckOutDiagram.uml#_g9wZ0H1rEeSezLtI9Ootng"/>
     <packagedElement xmi:type="uml:Package" href="HandlePaymentDiagram.uml#_hk5SUH1rEeSezLtI9Ootng"/>
     <packagedElement xmi:type="uml:Package" href="RemoveBookingDiagram.uml#_iNSvEH1rEeSezLtI9Ootng"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_d1ix4H-_EeS595cEgG9Bew" name="Usage2" client="_COSpsHcGEeS3Y6dvXnWwog">
+      <supplier xmi:type="uml:Interface" href="Classes.uml#_YptNIHpDEeS2zv6zlhm8qQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_eV2poH-_EeS595cEgG9Bew" name="Usage3" client="_FCZwEHcGEeS3Y6dvXnWwog">
+      <supplier xmi:type="uml:Interface" href="Classes.uml#_YptNIHpDEeS2zv6zlhm8qQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_e6scEH-_EeS595cEgG9Bew" name="Usage4" client="_dLNjIHcGEeS3Y6dvXnWwog">
+      <supplier xmi:type="uml:Interface" href="Classes.uml#_YptNIHpDEeS2zv6zlhm8qQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_fhsxsH-_EeS595cEgG9Bew" name="Usage5" client="_COSpsHcGEeS3Y6dvXnWwog">
+      <supplier xmi:type="uml:Interface" href="Classes.uml#_2IPy8Ho8EeSTh5yDLLqE0Q"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_hu_vsH-_EeS595cEgG9Bew" name="Usage6" client="_FCZwEHcGEeS3Y6dvXnWwog">
+      <supplier xmi:type="uml:Interface" href="Classes.uml#_2IPy8Ho8EeSTh5yDLLqE0Q"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_ii4DsH-_EeS595cEgG9Bew" name="Usage7" client="_dLNjIHcGEeS3Y6dvXnWwog">
+      <supplier xmi:type="uml:Interface" href="Classes.uml#_2IPy8Ho8EeSTh5yDLLqE0Q"/>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_zj-_Eno_EeSTh5yDLLqE0Q">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zlBg4Ho_EeSTh5yDLLqE0Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
