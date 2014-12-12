@@ -195,6 +195,18 @@
     <packagedElement xmi:type="uml:Usage" xmi:id="_ii4DsH-_EeS595cEgG9Bew" name="Usage7" client="_dLNjIHcGEeS3Y6dvXnWwog">
       <supplier xmi:type="uml:Interface" href="Classes.uml#_2IPy8Ho8EeSTh5yDLLqE0Q"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_uP_VcIIMEeSUauS9r1lcVA" name="IRoomProperty">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_ape-AIIOEeSUauS9r1lcVA" name="getKey">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_h7_iUIIOEeSUauS9r1lcVA" name="key" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_tPmkkIIOEeSUauS9r1lcVA" name="getValue">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4wDI8IIOEeSUauS9r1lcVA" name="value" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_zj-_Eno_EeSTh5yDLLqE0Q">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zlBg4Ho_EeSTh5yDLLqE0Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>

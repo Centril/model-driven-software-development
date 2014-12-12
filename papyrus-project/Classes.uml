@@ -292,7 +292,7 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_ZivqwHo_EeSTh5yDLLqE0Q" name="Hotel">
     <packagedElement xmi:type="uml:Component" xmi:id="_dA6awHo_EeSTh5yDLLqE0Q" name="Hotel">
-      <ownedComment xmi:type="uml:Comment" xmi:id="_JozHsHvNEeSHatiNfZ-sGg" annotatedElement="_nw0pIHo2EeSTh5yDLLqE0Q">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_JozHsHvNEeSHatiNfZ-sGg">
         <body>Will sort the SearchResults according to relevance.</body>
       </ownedComment>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_gz3vAHo_EeSTh5yDLLqE0Q" name="Room">
@@ -367,6 +367,10 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_h3akwHpBEeSTh5yDLLqE0Q" name="value">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_iNXboIINEeSUauS9r1lcVA" client="_l0ZpoHo_EeSTh5yDLLqE0Q">
+          <supplier xmi:type="uml:Interface" href="model.uml#_uP_VcIIMEeSUauS9r1lcVA"/>
+          <contract xmi:type="uml:Interface" href="model.uml#_uP_VcIIMEeSUauS9r1lcVA"/>
+        </interfaceRealization>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_oSNI0Ho_EeSTh5yDLLqE0Q" name="Occupancy">
         <ownedAttribute xmi:type="uml:Property" xmi:id="__aN7UHpBEeSTh5yDLLqE0Q" name="nbrOfKeys">
@@ -568,44 +572,6 @@
         </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_IgpN0HvCEeSHatiNfZ-sGg" client="_kAgZMHo2EeSTh5yDLLqE0Q" supplier="_G1hv0HvCEeSHatiNfZ-sGg" contract="_G1hv0HvCEeSHatiNfZ-sGg"/>
       </nestedClassifier>
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_nw0pIHo2EeSTh5yDLLqE0Q" name="SearchQuery">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_z0iSoHo2EeSTh5yDLLqE0Q" name="searchParam" type="_qDJ4IHo2EeSTh5yDLLqE0Q" association="_z0iSo3o2EeSTh5yDLLqE0Q">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_z0iSoXo2EeSTh5yDLLqE0Q"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_z0iSono2EeSTh5yDLLqE0Q" value="*"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_81sxIHo2EeSTh5yDLLqE0Q" name="searchResult" type="_kAgZMHo2EeSTh5yDLLqE0Q" association="_81sxI3o2EeSTh5yDLLqE0Q">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_81sxIXo2EeSTh5yDLLqE0Q"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_81sxIno2EeSTh5yDLLqE0Q" value="*"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_dnpTkHwAEeSHatiNfZ-sGg" name="occupancy" type="_oSNI0Ho_EeSTh5yDLLqE0Q" association="_dnpTk3wAEeSHatiNfZ-sGg">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dnpTkXwAEeSHatiNfZ-sGg"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dnpTknwAEeSHatiNfZ-sGg" value="*"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_h_0NsHwAEeSHatiNfZ-sGg" name="room" type="_gz3vAHo_EeSTh5yDLLqE0Q" association="_h_0Ns3wAEeSHatiNfZ-sGg">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_h_0NsXwAEeSHatiNfZ-sGg"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_h_0NsnwAEeSHatiNfZ-sGg" value="*"/>
-        </ownedAttribute>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_qDJ4IHo2EeSTh5yDLLqE0Q" name="SearchParam">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_yAAvEHo4EeSTh5yDLLqE0Q" name="key">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_2657wHo4EeSTh5yDLLqE0Q" name="value">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:Association" xmi:id="_z0iSo3o2EeSTh5yDLLqE0Q" memberEnd="_z0iSpHo2EeSTh5yDLLqE0Q _z0iSoHo2EeSTh5yDLLqE0Q">
-        <ownedEnd xmi:type="uml:Property" xmi:id="_z0iSpHo2EeSTh5yDLLqE0Q" name="searchQuery" type="_nw0pIHo2EeSTh5yDLLqE0Q" association="_z0iSo3o2EeSTh5yDLLqE0Q">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_z0iSpXo2EeSTh5yDLLqE0Q" value="1"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_z0iSpno2EeSTh5yDLLqE0Q" value="1"/>
-        </ownedEnd>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:Association" xmi:id="_81sxI3o2EeSTh5yDLLqE0Q" memberEnd="_81sxJHo2EeSTh5yDLLqE0Q _81sxIHo2EeSTh5yDLLqE0Q">
-        <ownedEnd xmi:type="uml:Property" xmi:id="_81sxJHo2EeSTh5yDLLqE0Q" name="searchQuery" type="_nw0pIHo2EeSTh5yDLLqE0Q" association="_81sxI3o2EeSTh5yDLLqE0Q">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_81sxJXo2EeSTh5yDLLqE0Q" value="1"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_81sxJno2EeSTh5yDLLqE0Q" value="1"/>
-        </ownedEnd>
-      </nestedClassifier>
       <nestedClassifier xmi:type="uml:Association" xmi:id="_VAQQo3o3EeSTh5yDLLqE0Q" memberEnd="_VAQQpHo3EeSTh5yDLLqE0Q _VAQQoHo3EeSTh5yDLLqE0Q">
         <ownedEnd xmi:type="uml:Property" xmi:id="_VAQQpHo3EeSTh5yDLLqE0Q" name="searchResult" type="_kAgZMHo2EeSTh5yDLLqE0Q" association="_VAQQo3o3EeSTh5yDLLqE0Q">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VAQQpXo3EeSTh5yDLLqE0Q" value="1"/>
@@ -613,17 +579,11 @@
         </ownedEnd>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_yhzQsHo8EeSTh5yDLLqE0Q" name="Search">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_BHzAAHpZEeS2zv6zlhm8qQ" name="searchQuery" type="_nw0pIHo2EeSTh5yDLLqE0Q" association="_BH01MHpZEeS2zv6zlhm8qQ">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_BHzAAHpZEeS2zv6zlhm8qQ" name="searchQuery">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BHzAAXpZEeS2zv6zlhm8qQ" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BHzAAnpZEeS2zv6zlhm8qQ" value="1"/>
         </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="__YczAHo8EeSTh5yDLLqE0Q" client="_yhzQsHo8EeSTh5yDLLqE0Q" supplier="_2IPy8Ho8EeSTh5yDLLqE0Q" contract="_2IPy8Ho8EeSTh5yDLLqE0Q"/>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:Association" xmi:id="_BH01MHpZEeS2zv6zlhm8qQ" memberEnd="_BH01MXpZEeS2zv6zlhm8qQ _BHzAAHpZEeS2zv6zlhm8qQ">
-        <ownedEnd xmi:type="uml:Property" xmi:id="_BH01MXpZEeS2zv6zlhm8qQ" name="search" type="_yhzQsHo8EeSTh5yDLLqE0Q" association="_BH01MHpZEeS2zv6zlhm8qQ">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BH01MnpZEeS2zv6zlhm8qQ" value="1"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BH01M3pZEeS2zv6zlhm8qQ" value="1"/>
-        </ownedEnd>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_u9vzoHvHEeSHatiNfZ-sGg" name="Hotel">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_aDOsEHvIEeSHatiNfZ-sGg" name="booking" type="_CWQjwHpEEeSTh5yDLLqE0Q" association="_aDOsE3vIEeSHatiNfZ-sGg">
@@ -672,18 +632,6 @@
         <ownedEnd xmi:type="uml:Property" xmi:id="_1sGTRHvNEeSHatiNfZ-sGg" name="order" type="_E7nKgHpGEeSTh5yDLLqE0Q" association="_1sGTQ3vNEeSHatiNfZ-sGg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1sGTRXvNEeSHatiNfZ-sGg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1sGTRnvNEeSHatiNfZ-sGg" value="1"/>
-        </ownedEnd>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:Association" xmi:id="_dnpTk3wAEeSHatiNfZ-sGg" memberEnd="_dnpTlHwAEeSHatiNfZ-sGg _dnpTkHwAEeSHatiNfZ-sGg">
-        <ownedEnd xmi:type="uml:Property" xmi:id="_dnpTlHwAEeSHatiNfZ-sGg" name="searchQuery" type="_nw0pIHo2EeSTh5yDLLqE0Q" association="_dnpTk3wAEeSHatiNfZ-sGg">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dnpTlXwAEeSHatiNfZ-sGg"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dnpTlnwAEeSHatiNfZ-sGg" value="*"/>
-        </ownedEnd>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:Association" xmi:id="_h_0Ns3wAEeSHatiNfZ-sGg" memberEnd="_h_0NtHwAEeSHatiNfZ-sGg _h_0NsHwAEeSHatiNfZ-sGg">
-        <ownedEnd xmi:type="uml:Property" xmi:id="_h_0NtHwAEeSHatiNfZ-sGg" name="searchQuery" type="_nw0pIHo2EeSTh5yDLLqE0Q" association="_h_0Ns3wAEeSHatiNfZ-sGg">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_h_0NtXwAEeSHatiNfZ-sGg"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_h_0NtnwAEeSHatiNfZ-sGg" value="*"/>
         </ownedEnd>
       </nestedClassifier>
     </packagedElement>
@@ -788,8 +736,10 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_8ftVwIIHEeSUauS9r1lcVA" name="numberOfPersons">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_KFpI8HpSEeSTh5yDLLqE0Q" name="searchParam">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EMap"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_KFpI8HpSEeSTh5yDLLqE0Q" name="roomProperties">
+          <type xmi:type="uml:Interface" href="model.uml#_uP_VcIIMEeSUauS9r1lcVA"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sT0jsIIMEeSUauS9r1lcVA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sT0jsYIMEeSUauS9r1lcVA" value="*"/>
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_eQh2IHvMEeSHatiNfZ-sGg" name="searchResults" type="_G1hv0HvCEeSHatiNfZ-sGg" direction="return"/>
       </ownedOperation>
