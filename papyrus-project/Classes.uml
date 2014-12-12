@@ -363,10 +363,7 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_h3akwHpBEeSTh5yDLLqE0Q" name="value">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
-        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_iNXboIINEeSUauS9r1lcVA" client="_l0ZpoHo_EeSTh5yDLLqE0Q">
-          <supplier xmi:type="uml:Interface" href="model.uml#_uP_VcIIMEeSUauS9r1lcVA"/>
-          <contract xmi:type="uml:Interface" href="model.uml#_uP_VcIIMEeSUauS9r1lcVA"/>
-        </interfaceRealization>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_iNXboIINEeSUauS9r1lcVA" client="_l0ZpoHo_EeSTh5yDLLqE0Q" supplier="_uP_VcIIMEeSUauS9r1lcVA" contract="_uP_VcIIMEeSUauS9r1lcVA"/>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_oSNI0Ho_EeSTh5yDLLqE0Q" name="Occupancy">
         <ownedAttribute xmi:type="uml:Property" xmi:id="__aN7UHpBEeSTh5yDLLqE0Q" name="nbrOfKeys">
@@ -716,8 +713,7 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_8ftVwIIHEeSUauS9r1lcVA" name="numberOfPersons">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_KFpI8HpSEeSTh5yDLLqE0Q" name="roomProperties">
-          <type xmi:type="uml:Interface" href="model.uml#_uP_VcIIMEeSUauS9r1lcVA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_KFpI8HpSEeSTh5yDLLqE0Q" name="roomProperties" type="_uP_VcIIMEeSUauS9r1lcVA">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sT0jsIIMEeSUauS9r1lcVA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sT0jsYIMEeSUauS9r1lcVA" value="*"/>
         </ownedParameter>
@@ -799,6 +795,18 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ReQV1YIUEeSYnfSmtfib8g" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ReQV1oIUEeSYnfSmtfib8g" value="1"/>
       </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_uP_VcIIMEeSUauS9r1lcVA" name="IRoomProperty">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_ape-AIIOEeSUauS9r1lcVA" name="getKey">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_h7_iUIIOEeSUauS9r1lcVA" name="key" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_tPmkkIIOEeSUauS9r1lcVA" name="getValue">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4wDI8IIOEeSUauS9r1lcVA" name="value" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_yWHgwHyPEeSahu9FXjYTpw">
