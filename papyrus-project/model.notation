@@ -1405,11 +1405,11 @@
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_uQIfaIIMEeSUauS9r1lcVA" type="7007">
         <children xmi:type="notation:Shape" xmi:id="_apovAIIOEeSUauS9r1lcVA" type="3007">
-          <element xmi:type="uml:Operation" href="model.uml#_ape-AIIOEeSUauS9r1lcVA"/>
+          <element xmi:type="uml:Operation" href="Classes.uml#_ape-AIIOEeSUauS9r1lcVA"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_apovAYIOEeSUauS9r1lcVA"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_tPmkkYIOEeSUauS9r1lcVA" type="3007">
-          <element xmi:type="uml:Operation" href="model.uml#_tPmkkIIOEeSUauS9r1lcVA"/>
+          <element xmi:type="uml:Operation" href="Classes.uml#_tPmkkIIOEeSUauS9r1lcVA"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_tPmkkoIOEeSUauS9r1lcVA"/>
         </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_uQIfaYIMEeSUauS9r1lcVA"/>
@@ -1423,7 +1423,7 @@
         <styles xmi:type="notation:FilteringStyle" xmi:id="_uQIfcIIMEeSUauS9r1lcVA"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uQIfcYIMEeSUauS9r1lcVA"/>
       </children>
-      <element xmi:type="uml:Interface" href="model.uml#_uP_VcIIMEeSUauS9r1lcVA"/>
+      <element xmi:type="uml:Interface" href="Classes.uml#_uP_VcIIMEeSUauS9r1lcVA"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uQIfYYIMEeSUauS9r1lcVA" x="1684" y="-76"/>
     </children>
     <styles xmi:type="notation:StringValueStyle" xmi:id="_S1faYXlUEeSA5MODJ_COwQ" name="diagram_compatibility_version" stringValue="1.0.0"/>
