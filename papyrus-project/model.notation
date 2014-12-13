@@ -1436,7 +1436,7 @@
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_m-rGIIIbEeSCXNIgmavKgQ" type="7007">
         <children xmi:type="notation:Shape" xmi:id="_U9XAUIIcEeSCXNIgmavKgQ" type="3007">
-          <element xmi:type="uml:Operation" href="model.uml#_U9SH0IIcEeSCXNIgmavKgQ"/>
+          <element xmi:type="uml:Operation" href="Classes.uml#_U9SH0IIcEeSCXNIgmavKgQ"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_U9XAUYIcEeSCXNIgmavKgQ"/>
         </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_m-rGIYIbEeSCXNIgmavKgQ"/>
@@ -1450,7 +1450,7 @@
         <styles xmi:type="notation:FilteringStyle" xmi:id="_m-rGKIIbEeSCXNIgmavKgQ"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m-rGKYIbEeSCXNIgmavKgQ"/>
       </children>
-      <element xmi:type="uml:Interface" href="model.uml#_m-ancIIbEeSCXNIgmavKgQ"/>
+      <element xmi:type="uml:Interface" href="Classes.uml#_m-ancIIbEeSCXNIgmavKgQ"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m-kYcYIbEeSCXNIgmavKgQ" x="2797" y="634"/>
     </children>
     <styles xmi:type="notation:StringValueStyle" xmi:id="_S1faYXlUEeSA5MODJ_COwQ" name="diagram_compatibility_version" stringValue="1.0.0"/>
