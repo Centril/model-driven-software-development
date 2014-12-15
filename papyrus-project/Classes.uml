@@ -352,6 +352,7 @@
         </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_w6KdAHvHEeSHatiNfZ-sGg" client="_u9vzoHvHEeSHatiNfZ-sGg" supplier="_YptNIHpDEeS2zv6zlhm8qQ" contract="_YptNIHpDEeS2zv6zlhm8qQ"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_iMYzwIRIEeS-E_c58KLc5g" client="_u9vzoHvHEeSHatiNfZ-sGg" supplier="_2IPy8Ho8EeSTh5yDLLqE0Q" contract="_2IPy8Ho8EeSTh5yDLLqE0Q"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_VBZ-MIReEeS-E_c58KLc5g" client="_u9vzoHvHEeSHatiNfZ-sGg" supplier="_Alz5MIRdEeS-E_c58KLc5g" contract="_Alz5MIRdEeS-E_c58KLc5g"/>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Association" xmi:id="_mpg3I3vIEeSHatiNfZ-sGg" memberEnd="_mpg3JHvIEeSHatiNfZ-sGg _mpg3IHvIEeSHatiNfZ-sGg">
         <ownedEnd xmi:type="uml:Property" xmi:id="_mpg3JHvIEeSHatiNfZ-sGg" name="hotel" type="_u9vzoHvHEeSHatiNfZ-sGg" association="_mpg3I3vIEeSHatiNfZ-sGg">
@@ -400,7 +401,7 @@
         </ownedOperation>
       </nestedClassifier>
     </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_YptNIHpDEeS2zv6zlhm8qQ" name="IHotel">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_YptNIHpDEeS2zv6zlhm8qQ" name="IFrontDesk">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_os-VEHpGEeS2zv6zlhm8qQ" name="checkIn" visibility="public">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_YDKbcHpMEeS2zv6zlhm8qQ" name="booking" type="_qX9ogHpMEeS2zv6zlhm8qQ"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_mdKm4HpMEeS2zv6zlhm8qQ" name="numKeys">
@@ -446,6 +447,8 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
         </ownedParameter>
       </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_Alz5MIRdEeS-E_c58KLc5g" name="IOrdering">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_juaS8Hv_EeSHatiNfZ-sGg" name="placeOrder">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_JptYEIRcEeS-E_c58KLc5g" name="orderRequest" type="_swvogIQ2EeSXhZNlyip4WA"/>
       </ownedOperation>
