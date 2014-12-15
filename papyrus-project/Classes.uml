@@ -10,10 +10,6 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-563QXloEeS-dbwPGgzjtw"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-563QnloEeS-dbwPGgzjtw" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_N6qLMHlsEeS-dbwPGgzjtw" name="personalDiscount">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N6qLMXlsEeS-dbwPGgzjtw"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N6qLMnlsEeS-dbwPGgzjtw" value="*"/>
-        </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_YYOO4HlvEeS-dbwPGgzjtw" client="_8hQzRXlnEeS-dbwPGgzjtw" supplier="_FzWa8HluEeS-dbwPGgzjtw" contract="_FzWa8HluEeS-dbwPGgzjtw"/>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_OCMTYHloEeS-dbwPGgzjtw" name="Blacklist">
@@ -189,18 +185,6 @@
   <packagedElement xmi:type="uml:Package" xmi:id="_ZivqwHo_EeSTh5yDLLqE0Q" name="Hotel">
     <packagedElement xmi:type="uml:Component" xmi:id="_dA6awHo_EeSTh5yDLLqE0Q" name="Hotel">
       <nestedClassifier xmi:type="uml:Class" xmi:id="_gz3vAHo_EeSTh5yDLLqE0Q" name="Room">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_-YLsAHpAEeSTh5yDLLqE0Q" name="pricingRule">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-YLsAXpAEeSTh5yDLLqE0Q" value="1"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-YLsAnpAEeSTh5yDLLqE0Q" value="1"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_pIJncHpBEeSTh5yDLLqE0Q" name="roomProperty">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pIJncXpBEeSTh5yDLLqE0Q"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pIJncnpBEeSTh5yDLLqE0Q" value="*"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_5We3QHpBEeSTh5yDLLqE0Q" name="roomType">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5We3QXpBEeSTh5yDLLqE0Q" value="1"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5We3QnpBEeSTh5yDLLqE0Q" value="1"/>
-        </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_O4GCIIRUEeS_Fud_KU3BbA" client="_gz3vAHo_EeSTh5yDLLqE0Q" supplier="_GcRsYIRUEeS_Fud_KU3BbA" contract="_GcRsYIRUEeS_Fud_KU3BbA"/>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_oSNI0Ho_EeSTh5yDLLqE0Q" name="Occupancy">
@@ -223,14 +207,6 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_mLfzoHpCEeSTh5yDLLqE0Q" name="occupancy" type="_oSNI0Ho_EeSTh5yDLLqE0Q" association="_mLfzo3pCEeSTh5yDLLqE0Q">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mLfzoXpCEeSTh5yDLLqE0Q" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mLfzonpCEeSTh5yDLLqE0Q" value="*"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_CTuXsHpFEeSTh5yDLLqE0Q" name="service">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CTuXsXpFEeSTh5yDLLqE0Q"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CTuXsnpFEeSTh5yDLLqE0Q" value="*"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_A4nZQIIUEeSYnfSmtfib8g" name="discount">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A4nZQYIUEeSYnfSmtfib8g"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A4nZQoIUEeSYnfSmtfib8g" value="*"/>
         </ownedAttribute>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Association" xmi:id="_SEtEg3pCEeSTh5yDLLqE0Q" memberEnd="_SEtEhHpCEeSTh5yDLLqE0Q _SEtEgHpCEeSTh5yDLLqE0Q">
@@ -267,10 +243,6 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_1sGTQHvNEeSHatiNfZ-sGg" name="booking" type="_CWQjwHpEEeSTh5yDLLqE0Q" association="_1sGTQ3vNEeSHatiNfZ-sGg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1sGTQXvNEeSHatiNfZ-sGg"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1sGTQnvNEeSHatiNfZ-sGg" value="*"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ReQV0IIUEeSYnfSmtfib8g" name="discount">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ReQV0YIUEeSYnfSmtfib8g"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ReQV0oIUEeSYnfSmtfib8g" value="*"/>
         </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_bgMKkHvOEeSHatiNfZ-sGg" client="_E7nKgHpGEeSTh5yDLLqE0Q" supplier="_ZyNl0HvOEeSHatiNfZ-sGg" contract="_ZyNl0HvOEeSHatiNfZ-sGg"/>
       </nestedClassifier>
