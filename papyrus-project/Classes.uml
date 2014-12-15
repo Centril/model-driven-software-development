@@ -376,7 +376,7 @@
         </ownedEnd>
       </nestedClassifier>
     </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_YptNIHpDEeS2zv6zlhm8qQ" name="IHotel" isAbstract="true">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_YptNIHpDEeS2zv6zlhm8qQ" name="IHotel">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_os-VEHpGEeS2zv6zlhm8qQ" name="checkIn" visibility="public">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_YDKbcHpMEeS2zv6zlhm8qQ" name="booking" type="_qX9ogHpMEeS2zv6zlhm8qQ"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_mdKm4HpMEeS2zv6zlhm8qQ" name="numKeys">
@@ -542,7 +542,7 @@
       <supplier xmi:type="uml:Interface" href="model.uml#_4lxCgHcAEeS3Y6dvXnWwog"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Usage" xmi:id="_5HzcoH1jEeSIJZbJ_H4bYw" name="Usage1" client="_dA6awHo_EeSTh5yDLLqE0Q" supplier="_ZuF88HowEeS_Y-yub0PNVA"/>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_m-ancIIbEeSCXNIgmavKgQ" name="PaymentItem" isAbstract="true">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_m-ancIIbEeSCXNIgmavKgQ" name="PaymentItem">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_U9SH0IIcEeSCXNIgmavKgQ" name="getValue">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_qh7fkIIdEeSCXNIgmavKgQ" name="value" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
