@@ -132,22 +132,6 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_D0P70HowEeS_Y-yub0PNVA" name="removeDiscount">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_IWbGgHowEeS_Y-yub0PNVA" name="label">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_7xd-4Ho0EeSTh5yDLLqE0Q" name="addDiscount">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_DlPdMHo1EeSTh5yDLLqE0Q" name="label">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_F1Y64Ho1EeSTh5yDLLqE0Q" name="value">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_IC9lsHo1EeSTh5yDLLqE0Q" name="expirationDate">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
-        </ownedParameter>
-      </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_R_Rg4HvBEeSHatiNfZ-sGg" name="getId">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_VhuT8HvBEeSHatiNfZ-sGg" name="customerId" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -232,15 +216,6 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5We3QXpBEeSTh5yDLLqE0Q" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5We3QnpBEeSTh5yDLLqE0Q" value="1"/>
         </ownedAttribute>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_jTzfsHpAEeSTh5yDLLqE0Q" name="getProperty">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_mgwj4HpAEeSTh5yDLLqE0Q" name="key">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedParameter>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_rlPxcHpAEeSTh5yDLLqE0Q" name="property" direction="return">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedParameter>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_svORQHpAEeSTh5yDLLqE0Q" name="getPropertyKeys"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_whDkIHpAEeSTh5yDLLqE0Q" name="getPrice">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_57CyUHpAEeSTh5yDLLqE0Q" name="price" direction="return">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
@@ -521,11 +496,6 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_sn_PcHvCEeSHatiNfZ-sGg" name="getPrice">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_z5z3QHvCEeSHatiNfZ-sGg" name="price" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_whDLsHvCEeSHatiNfZ-sGg" name="getProperties">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_6P5PkHvCEeSHatiNfZ-sGg" name="properties" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EMap"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_7eDioHwAEeSHatiNfZ-sGg" name="getStartTime">
