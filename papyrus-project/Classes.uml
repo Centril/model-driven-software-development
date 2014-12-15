@@ -857,7 +857,7 @@
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_OwfVYIRAEeSQHM0Jx2XOGA" memberEnd="_OwfVZIRAEeSQHM0Jx2XOGA _OwfVYYRAEeSQHM0Jx2XOGA">
+    <packagedElement xmi:type="uml:Association" xmi:id="_OwfVYIRAEeSQHM0Jx2XOGA" name="has" memberEnd="_OwfVZIRAEeSQHM0Jx2XOGA _OwfVYYRAEeSQHM0Jx2XOGA">
       <ownedEnd xmi:type="uml:Property" xmi:id="_OwfVZIRAEeSQHM0Jx2XOGA" name="bill" type="_IEyH0IQ_EeSQHM0Jx2XOGA" association="_OwfVYIRAEeSQHM0Jx2XOGA">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OwfVZYRAEeSQHM0Jx2XOGA" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OwfVZoRAEeSQHM0Jx2XOGA" value="1"/>
