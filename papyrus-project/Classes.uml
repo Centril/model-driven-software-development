@@ -556,9 +556,6 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VAQQpno3EeSTh5yDLLqE0Q" value="1"/>
         </ownedEnd>
       </nestedClassifier>
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_yhzQsHo8EeSTh5yDLLqE0Q" name="Search">
-        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="__YczAHo8EeSTh5yDLLqE0Q" client="_yhzQsHo8EeSTh5yDLLqE0Q" supplier="_2IPy8Ho8EeSTh5yDLLqE0Q" contract="_2IPy8Ho8EeSTh5yDLLqE0Q"/>
-      </nestedClassifier>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_u9vzoHvHEeSHatiNfZ-sGg" name="Hotel">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_aDOsEHvIEeSHatiNfZ-sGg" name="booking" type="_CWQjwHpEEeSTh5yDLLqE0Q" association="_aDOsE3vIEeSHatiNfZ-sGg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aDOsEXvIEeSHatiNfZ-sGg"/>
@@ -577,6 +574,7 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m3G08nvNEeSHatiNfZ-sGg" value="1"/>
         </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_w6KdAHvHEeSHatiNfZ-sGg" client="_u9vzoHvHEeSHatiNfZ-sGg" supplier="_YptNIHpDEeS2zv6zlhm8qQ" contract="_YptNIHpDEeS2zv6zlhm8qQ"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_iMYzwIRIEeS-E_c58KLc5g" client="_u9vzoHvHEeSHatiNfZ-sGg" supplier="_2IPy8Ho8EeSTh5yDLLqE0Q" contract="_2IPy8Ho8EeSTh5yDLLqE0Q"/>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Association" xmi:id="_aDOsE3vIEeSHatiNfZ-sGg" memberEnd="_aDOsFHvIEeSHatiNfZ-sGg _aDOsEHvIEeSHatiNfZ-sGg">
         <ownedEnd xmi:type="uml:Property" xmi:id="_aDOsFHvIEeSHatiNfZ-sGg" name="hotel" type="_u9vzoHvHEeSHatiNfZ-sGg" association="_aDOsE3vIEeSHatiNfZ-sGg">
