@@ -477,10 +477,6 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_8ftVwIIHEeSUauS9r1lcVA" name="numberOfPersons">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_KFpI8HpSEeSTh5yDLLqE0Q" name="roomProperties">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sT0jsIIMEeSUauS9r1lcVA"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sT0jsYIMEeSUauS9r1lcVA" value="*"/>
-        </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_eQh2IHvMEeSHatiNfZ-sGg" name="searchResults" type="_G1hv0HvCEeSHatiNfZ-sGg" direction="return">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wxhY4IIeEeS38dEnsY2oZg"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wxhY4YIeEeS38dEnsY2oZg" value="*"/>
