@@ -195,13 +195,6 @@
     <packagedElement xmi:type="uml:Usage" xmi:id="_ii4DsH-_EeS595cEgG9Bew" name="Usage7" client="_dLNjIHcGEeS3Y6dvXnWwog">
       <supplier xmi:type="uml:Interface" href="Classes.uml#_2IPy8Ho8EeSTh5yDLLqE0Q"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_2ixq0IRYEeS_Fud_KU3BbA" name="OrderService">
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_7pWjEIRYEeS_Fud_KU3BbA" name="getAllOrders">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_D5aUwIRZEeS_Fud_KU3BbA" name="orders" direction="return">
-          <type xmi:type="uml:Class" href="Classes.uml#_E7nKgHpGEeSTh5yDLLqE0Q"/>
-        </ownedParameter>
-      </ownedOperation>
-    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_zj-_Eno_EeSTh5yDLLqE0Q">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zlBg4Ho_EeSTh5yDLLqE0Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>

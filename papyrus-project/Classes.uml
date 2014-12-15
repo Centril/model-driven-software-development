@@ -311,8 +311,7 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RBlhYYRYEeS_Fud_KU3BbA" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RBlhYoRYEeS_Fud_KU3BbA" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_6Vu_EIRYEeS_Fud_KU3BbA" name="orderService" association="_6Vu_E4RYEeS_Fud_KU3BbA">
-          <type xmi:type="uml:Class" href="model.uml#_2ixq0IRYEeS_Fud_KU3BbA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_6Vu_EIRYEeS_Fud_KU3BbA" name="orderService" type="_2ixq0IRYEeS_Fud_KU3BbA" association="_6Vu_E4RYEeS_Fud_KU3BbA">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6Vu_EYRYEeS_Fud_KU3BbA" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6Vu_EoRYEeS_Fud_KU3BbA" value="1"/>
         </ownedAttribute>
@@ -358,6 +357,11 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PfjG4IRYEeS_Fud_KU3BbA"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PfjG4YRYEeS_Fud_KU3BbA" value="*"/>
           </ownedParameter>
+        </ownedOperation>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_2ixq0IRYEeS_Fud_KU3BbA" name="OrderService">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_7pWjEIRYEeS_Fud_KU3BbA" name="getAllOrders">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_D5aUwIRZEeS_Fud_KU3BbA" name="orders" type="_E7nKgHpGEeSTh5yDLLqE0Q" direction="return"/>
         </ownedOperation>
       </nestedClassifier>
     </packagedElement>
