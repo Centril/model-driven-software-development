@@ -811,6 +811,37 @@
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_swvogIQ2EeSXhZNlyip4WA" name="OrderRequest">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_1GADQIQ2EeSXhZNlyip4WA" name="getCustomer">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_UtwUIIQ3EeSXhZNlyip4WA" type="_FzWa8HluEeS-dbwPGgzjtw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_FbfD8IQ3EeSXhZNlyip4WA" name="getBookingRequests">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Nw0-QIQ3EeSXhZNlyip4WA" type="_apbBUIQ3EeSXhZNlyip4WA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FEGz0IQ5EeSXhZNlyip4WA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FEGz0YQ5EeSXhZNlyip4WA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_apbBUIQ3EeSXhZNlyip4WA" name="BookingRequest">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_fuZ-IIQ3EeSXhZNlyip4WA" name="getBookingSuggestion">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_GdOYUIQ4EeSXhZNlyip4WA" type="_XDoWIHvCEeSHatiNfZ-sGg" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_dVBE4IQ3EeSXhZNlyip4WA" name="getContact">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kLrasIQ3EeSXhZNlyip4WA" type="_FzWa8HluEeS-dbwPGgzjtw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_euBfMIQ3EeSXhZNlyip4WA" name="getGuests">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_tck-UIQ3EeSXhZNlyip4WA" type="_FzWa8HluEeS-dbwPGgzjtw" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wKIwwIQ3EeSXhZNlyip4WA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wKIwwYQ3EeSXhZNlyip4WA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_-fK8oIQ3EeSXhZNlyip4WA" name="getServices">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_CCLJUIQ4EeSXhZNlyip4WA" type="_nUPHwHvLEeSHatiNfZ-sGg" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DFMFgIQ4EeSXhZNlyip4WA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DFMFgYQ4EeSXhZNlyip4WA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_yWHgwHyPEeSahu9FXjYTpw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yYNLcHyPEeSahu9FXjYTpw" source="http://www.eclipse.org/uml2/2.0.0/UML">
