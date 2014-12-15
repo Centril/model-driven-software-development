@@ -29,14 +29,17 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_aRorwHloEeS-dbwPGgzjtw" name="remove">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_wrPyEHloEeS-dbwPGgzjtw" name="person" type="_8hQzRXlnEeS-dbwPGgzjtw"/>
         </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_M6K64IRqEeSDgu4VwEIWQw" name="getPeople">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_QJbsMIRqEeSDgu4VwEIWQw" type="_FzWa8HluEeS-dbwPGgzjtw" direction="return"/>
+        </ownedOperation>
       </nestedClassifier>
-      <nestedClassifier xmi:type="uml:Association" xmi:id="_0WLLsHloEeS-dbwPGgzjtw" visibility="private" memberEnd="_0WLLsXloEeS-dbwPGgzjtw _0WG6QHloEeS-dbwPGgzjtw">
+      <nestedClassifier xmi:type="uml:Association" xmi:id="_0WLLsHloEeS-dbwPGgzjtw" memberEnd="_0WLLsXloEeS-dbwPGgzjtw _0WG6QHloEeS-dbwPGgzjtw">
         <ownedEnd xmi:type="uml:Property" xmi:id="_0WLLsXloEeS-dbwPGgzjtw" name="blacklist" type="_OCMTYHloEeS-dbwPGgzjtw" association="_0WLLsHloEeS-dbwPGgzjtw">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0WLLsnloEeS-dbwPGgzjtw"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0WLLs3loEeS-dbwPGgzjtw" value="1"/>
         </ownedEnd>
       </nestedClassifier>
-      <nestedClassifier xmi:type="uml:Association" xmi:id="_-58FYHloEeS-dbwPGgzjtw" visibility="private" memberEnd="_-58FYXloEeS-dbwPGgzjtw _-563QHloEeS-dbwPGgzjtw">
+      <nestedClassifier xmi:type="uml:Association" xmi:id="_-58FYHloEeS-dbwPGgzjtw" memberEnd="_-58FYXloEeS-dbwPGgzjtw _-563QHloEeS-dbwPGgzjtw">
         <ownedEnd xmi:type="uml:Property" xmi:id="_-58FYXloEeS-dbwPGgzjtw" name="person" type="_8hQzRXlnEeS-dbwPGgzjtw" association="_-58FYHloEeS-dbwPGgzjtw">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-58FYnloEeS-dbwPGgzjtw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-58FY3loEeS-dbwPGgzjtw" value="1"/>
@@ -53,13 +56,13 @@
         </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_bgiyAHowEeS_Y-yub0PNVA" client="_jEnngHlsEeS-dbwPGgzjtw" supplier="_ZuF88HowEeS_Y-yub0PNVA" contract="_ZuF88HowEeS_Y-yub0PNVA"/>
       </nestedClassifier>
-      <nestedClassifier xmi:type="uml:Association" xmi:id="_9z4C83ltEeS-dbwPGgzjtw" visibility="private" memberEnd="_9z4C9HltEeS-dbwPGgzjtw _9z4C8HltEeS-dbwPGgzjtw">
+      <nestedClassifier xmi:type="uml:Association" xmi:id="_9z4C83ltEeS-dbwPGgzjtw" memberEnd="_9z4C9HltEeS-dbwPGgzjtw _9z4C8HltEeS-dbwPGgzjtw">
         <ownedEnd xmi:type="uml:Property" xmi:id="_9z4C9HltEeS-dbwPGgzjtw" name="personRegistry" type="_jEnngHlsEeS-dbwPGgzjtw" association="_9z4C83ltEeS-dbwPGgzjtw">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9z4C9XltEeS-dbwPGgzjtw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9z4C9nltEeS-dbwPGgzjtw" value="1"/>
         </ownedEnd>
       </nestedClassifier>
-      <nestedClassifier xmi:type="uml:Association" xmi:id="_4gHqQ3oxEeS_Y-yub0PNVA" visibility="private" memberEnd="_4gHqRHoxEeS_Y-yub0PNVA _4gHqQHoxEeS_Y-yub0PNVA">
+      <nestedClassifier xmi:type="uml:Association" xmi:id="_4gHqQ3oxEeS_Y-yub0PNVA" memberEnd="_4gHqRHoxEeS_Y-yub0PNVA _4gHqQHoxEeS_Y-yub0PNVA">
         <ownedEnd xmi:type="uml:Property" xmi:id="_4gHqRHoxEeS_Y-yub0PNVA" name="personRegistry" type="_jEnngHlsEeS-dbwPGgzjtw" association="_4gHqQ3oxEeS_Y-yub0PNVA">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4gHqRXoxEeS_Y-yub0PNVA" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4gHqRnoxEeS_Y-yub0PNVA" value="1"/>
@@ -92,11 +95,6 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_1FKw8HluEeS-dbwPGgzjtw" name="setBirthDate"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_2VS8EHluEeS-dbwPGgzjtw" name="setFirstName"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_3gSvkHluEeS-dbwPGgzjtw" name="setLastName"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_4u3bgHluEeS-dbwPGgzjtw" name="setSSN"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_6D8YEHluEeS-dbwPGgzjtw" name="setRegi"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_-EP54HlwEeS-dbwPGgzjtw" name="getCreditCard">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_GIjHgHlxEeS-dbwPGgzjtw" name="creditCardInfo" type="_z_LuYHlwEeS-dbwPGgzjtw" direction="return">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JQyq0HlxEeS-dbwPGgzjtw"/>
@@ -125,6 +123,21 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_R_Rg4HvBEeSHatiNfZ-sGg" name="getId">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_VhuT8HvBEeSHatiNfZ-sGg" name="customerId" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_n4f_AIRpEeSDgu4VwEIWQw" name="setFirstName">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_s2ne0IRpEeSDgu4VwEIWQw" name="firstName" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_-J6LkIRpEeSDgu4VwEIWQw" name="setLastName">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_BZ1EMIRqEeSDgu4VwEIWQw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_EgJU4IRqEeSDgu4VwEIWQw" name="setSSN">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_IdYmgIRqEeSDgu4VwEIWQw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
@@ -344,7 +357,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_Q031gHpcEeSgf6-u89OUJA" name="getInvoice">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Q031gHpcEeSgf6-u89OUJA" name="getBill">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_bqhwcHpcEeSgf6-u89OUJA" name="booking" type="_qX9ogHpMEeS2zv6zlhm8qQ"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_qlLK0HpcEeSgf6-u89OUJA" name="invoice" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
