@@ -406,9 +406,11 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		// For all rooms with the same number of beds as people, add them to the results
 		for (int i = 0; i < roomsAccordingToNumBeds.get(numberOfPersons - 1).size(); i++) {
 			
+			// Fetch the room
+			Hotel_Room room = roomsAccordingToNumBeds.get(numberOfPersons - 1).get(i);
+			
 			// Create a suggestion with the room
-			Hotel_BookingSuggestion suggestion = new Hotel_BookingSuggestionImpl();
-			suggestion.setRoom(roomsAccordingToNumBeds.get(numberOfPersons - 1).get(i));
+			Hotel_BookingSuggestion suggestion = new Hotel_BookingSuggestionImpl(room, startTime, endTime);
 			
 			// Create a search result with the suggestion
 			Hotel_SearchResult searchResult = new Hotel_SearchResultImpl();
@@ -426,15 +428,15 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			for (int j = 0; j < roomsAccordingToNumBeds.get(bedsInRoomOne - 1).size()
 					&& j < roomsAccordingToNumBeds.get(bedsInRoomTwo - 1).size(); j++) {
 				
-				// Create suggestion with the first room
-				Hotel_BookingSuggestion suggestionOne = new Hotel_BookingSuggestionImpl();
-				suggestionOne.setRoom(roomsAccordingToNumBeds.get(bedsInRoomOne - 1).get(i));
+				// Fetch the rooms
+				Hotel_Room roomOne = roomsAccordingToNumBeds.get(bedsInRoomOne - 1).get(i);
+				Hotel_Room roomTwo = roomsAccordingToNumBeds.get(bedsInRoomTwo - 1).get(i);
 				
-				// Create suggestion with the second room
-				Hotel_BookingSuggestion suggestionTwo = new Hotel_BookingSuggestionImpl();
-				suggestionTwo.setRoom(roomsAccordingToNumBeds.get(bedsInRoomTwo - 1).get(i));
+				// Create suggestions with the rooms
+				Hotel_BookingSuggestion suggestionOne = new Hotel_BookingSuggestionImpl(roomOne, startTime, endTime);
+				Hotel_BookingSuggestion suggestionTwo = new Hotel_BookingSuggestionImpl(roomTwo, startTime, endTime);
 				
-				// Create a search result with the suggestion
+				// Create a search result with the suggestions
 				Hotel_SearchResult searchResult = new Hotel_SearchResultImpl();
 				searchResult.getBookingSuggestion().add(suggestionOne);
 				searchResult.getBookingSuggestion().add(suggestionTwo);
@@ -446,9 +448,12 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		
 		// Now just dump all the rooms containing more beds than number of people in the results...
 		for (int i = 0; i < roomsAccordingToNumBeds.get(roomsAccordingToNumBeds.size() - 1).size(); i++) {
+			
+			// Fetch the room
+			Hotel_Room room = roomsAccordingToNumBeds.get(roomsAccordingToNumBeds.size() - 1).get(i);
+			
 			// Create suggestion with the room
-			Hotel_BookingSuggestion suggestion = new Hotel_BookingSuggestionImpl();
-			suggestion.setRoom(roomsAccordingToNumBeds.get(roomsAccordingToNumBeds.size() - 1).get(i));
+			Hotel_BookingSuggestion suggestion = new Hotel_BookingSuggestionImpl(room, startTime, endTime);
 			
 			// Create a search result with the suggestion
 			Hotel_SearchResult searchResult = new Hotel_SearchResultImpl();
