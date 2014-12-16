@@ -34,21 +34,24 @@ public class Hotel_RoomServiceImpl extends MinimalEObjectImpl.Container implemen
 		rooms = new BasicEList<Hotel_Room>();
 		
 		Hotel_RoomImpl room = new Hotel_RoomImpl();
-		/*
-		room.setId(0);
-		room.setPrice(100.0);
-		room.setNumBeds(3);
-		*/
-		rooms.add(room);
+		
+		for (int i = 0; i < 100; i++) {
+			room.setId(i);
+			room.setPrice(100.0 * i + 100.0);
+			room.setNumBeds(i % 5 + 1);
+			rooms.add(room);
+		}
 	}
 			
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected Hotel_RoomServiceImpl() {
 		super();
+		
+		Hotel_RoomServiceImpl.init();
 	}
 
 	/**
@@ -64,23 +67,25 @@ public class Hotel_RoomServiceImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Hotel_Room> getAllRooms() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return rooms;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Hotel_Room getRoomById(int id) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (int i = 0; i < rooms.size(); i++) {
+			if (rooms.get(i).getId() == id) {
+				return rooms.get(i);
+			}
+		}
+		
+		return null;
 	}
 
 	/**
