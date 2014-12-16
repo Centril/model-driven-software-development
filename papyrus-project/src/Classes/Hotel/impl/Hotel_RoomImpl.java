@@ -28,6 +28,7 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	private int nbrOfBeds;
 	private double basePrice; //Standard price for one night
 	private String roomName;
+	private String roomInfo;
 	private boolean isOutOfService; //True is the room is out of service
 	
 	/**
