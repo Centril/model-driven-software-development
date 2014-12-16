@@ -39,4 +39,28 @@ public interface IRoom extends EObject {
 	 */
 	double getPrice();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model idRequired="true" idOrdered="false"
+	 * @generated
+	 */
+	void setId(int id);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model numBedsRequired="true" numBedsOrdered="false"
+	 * @generated
+	 */
+	void setNumBeds(int numBeds);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model priceRequired="true" priceOrdered="false"
+	 * @generated
+	 */
+	void setPrice(double price);
+
 } // IRoom
