@@ -100,6 +100,7 @@ public class Hotel_SearchResultImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public void addBookingSuggestion(Hotel_BookingSuggestion suggestion) {
 		this.bookingSuggestion.add(suggestion);
+		this.price += suggestion.getPrice();
 	}
 
 	/**
