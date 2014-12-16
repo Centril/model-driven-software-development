@@ -354,15 +354,12 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * @generated NOT
 	 */
 	public EList<ISearchResult> search(long startTime, long endTime, int numberOfPersons) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		//throw new UnsupportedOperationException();
 		
 		EList<Hotel_Occupancy> occupancies = getOccupancyService().getAllOccupancies();
 		EList<Hotel_Room> rooms = getRoomService().getAllRooms();
 		
 		EList<IRoom> availableRooms = new BasicEList<IRoom>();
-		/*
+		
 		// Loop through all rooms in the hotel
 		for (int i = 0; i < rooms.size(); i++) {
 			boolean available = true;
@@ -382,9 +379,9 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				availableRooms.add(rooms.get(i));
 			}
 		}
-		*/
+		
 		EList<ISearchResult> results = new BasicEList<ISearchResult>();
-		// Do magic to combine rooms according to the number of people
+		// TODO: Do magic to combine rooms according to the number of people
 		
 		return results;
 	}
