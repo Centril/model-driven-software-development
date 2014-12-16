@@ -2,17 +2,16 @@
  */
 package Classes.Hotel.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import Classes.Hotel.HotelPackage;
 import Classes.Hotel.Hotel_Room;
 import Classes.Hotel.Hotel_RoomService;
-
-import java.lang.reflect.InvocationTargetException;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +23,25 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class Hotel_RoomServiceImpl extends MinimalEObjectImpl.Container implements Hotel_RoomService {
+	
+	private static EList<Hotel_Room> rooms;
+	
+	private static void init() {
+		if (rooms != null) {
+			return;
+		}
+		
+		rooms = new BasicEList<Hotel_Room>();
+		
+		Hotel_RoomImpl room = new Hotel_RoomImpl();
+		/*
+		room.setId(0);
+		room.setPrice(100.0);
+		room.setNumBeds(3);
+		*/
+		rooms.add(room);
+	}
+			
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
