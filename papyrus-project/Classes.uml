@@ -570,6 +570,7 @@
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_JJX80IT5EeSRks3rouk-dg" name="Realization2" client="_dA6awHo_EeSTh5yDLLqE0Q" supplier="_Alz5MIRdEeS-E_c58KLc5g" contract="_Alz5MIRdEeS-E_c58KLc5g"/>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_yWHgwHyPEeSahu9FXjYTpw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yYNLcHyPEeSahu9FXjYTpw" source="http://www.eclipse.org/uml2/2.0.0/UML">

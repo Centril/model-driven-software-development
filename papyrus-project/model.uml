@@ -160,40 +160,63 @@
         <client xmi:type="uml:Component" href="Classes.uml#_8hQzQHlnEeS-dbwPGgzjtw"/>
       </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:Component" xmi:id="_F8--cHcFEeS3Y6dvXnWwog" name="Customer"/>
-    <packagedElement xmi:type="uml:Component" xmi:id="_COSpsHcGEeS3Y6dvXnWwog" name="Receptionist"/>
-    <packagedElement xmi:type="uml:Component" xmi:id="_FCZwEHcGEeS3Y6dvXnWwog" name="Privileged Staff"/>
-    <packagedElement xmi:type="uml:Component" xmi:id="_dLNjIHcGEeS3Y6dvXnWwog" name="Admin"/>
     <packagedElement xmi:type="uml:Package" href="Classes.uml#_fLCL8HyPEeSahu9FXjYTpw"/>
-    <packagedElement xmi:type="uml:Usage" xmi:id="_NC_YsH1kEeSIJZbJ_H4bYw" name="Usage0" client="_F8--cHcFEeS3Y6dvXnWwog">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_2IPy8Ho8EeSTh5yDLLqE0Q"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Usage" xmi:id="_N0YZYH1kEeSIJZbJ_H4bYw" name="Usage1" client="_F8--cHcFEeS3Y6dvXnWwog">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_YptNIHpDEeS2zv6zlhm8qQ"/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Package" href="OrderingDiagram.uml#_cxhC4H1rEeSezLtI9Ootng"/>
     <packagedElement xmi:type="uml:Package" href="SearchDiagram.uml#_fHv6cH1rEeSezLtI9Ootng"/>
     <packagedElement xmi:type="uml:Package" href="CheckInDiagram.uml#_gPHLIH1rEeSezLtI9Ootng"/>
     <packagedElement xmi:type="uml:Package" href="CheckOutDiagram.uml#_g9wZ0H1rEeSezLtI9Ootng"/>
     <packagedElement xmi:type="uml:Package" href="HandlePaymentDiagram.uml#_hk5SUH1rEeSezLtI9Ootng"/>
     <packagedElement xmi:type="uml:Package" href="RemoveBookingDiagram.uml#_iNSvEH1rEeSezLtI9Ootng"/>
-    <packagedElement xmi:type="uml:Usage" xmi:id="_d1ix4H-_EeS595cEgG9Bew" name="Usage2" client="_COSpsHcGEeS3Y6dvXnWwog">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_YptNIHpDEeS2zv6zlhm8qQ"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Usage" xmi:id="_eV2poH-_EeS595cEgG9Bew" name="Usage3" client="_FCZwEHcGEeS3Y6dvXnWwog">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_YptNIHpDEeS2zv6zlhm8qQ"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Usage" xmi:id="_e6scEH-_EeS595cEgG9Bew" name="Usage4" client="_dLNjIHcGEeS3Y6dvXnWwog">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_YptNIHpDEeS2zv6zlhm8qQ"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Usage" xmi:id="_fhsxsH-_EeS595cEgG9Bew" name="Usage5" client="_COSpsHcGEeS3Y6dvXnWwog">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_2IPy8Ho8EeSTh5yDLLqE0Q"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Usage" xmi:id="_hu_vsH-_EeS595cEgG9Bew" name="Usage6" client="_FCZwEHcGEeS3Y6dvXnWwog">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_2IPy8Ho8EeSTh5yDLLqE0Q"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Usage" xmi:id="_ii4DsH-_EeS595cEgG9Bew" name="Usage7" client="_dLNjIHcGEeS3Y6dvXnWwog">
-      <supplier xmi:type="uml:Interface" href="Classes.uml#_2IPy8Ho8EeSTh5yDLLqE0Q"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_et9foIT5EeSRks3rouk-dg" name="ActorComponents">
+      <packagedElement xmi:type="uml:Component" xmi:id="_F8--cHcFEeS3Y6dvXnWwog" name="Customer"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_COSpsHcGEeS3Y6dvXnWwog" name="Receptionist"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_FCZwEHcGEeS3Y6dvXnWwog" name="Privileged Staff"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_dLNjIHcGEeS3Y6dvXnWwog" name="Admin"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_NC_YsH1kEeSIJZbJ_H4bYw" name="Usage0" client="_F8--cHcFEeS3Y6dvXnWwog">
+        <supplier xmi:type="uml:Interface" href="Classes.uml#_2IPy8Ho8EeSTh5yDLLqE0Q"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_d1ix4H-_EeS595cEgG9Bew" name="Usage2" client="_COSpsHcGEeS3Y6dvXnWwog">
+        <supplier xmi:type="uml:Interface" href="Classes.uml#_YptNIHpDEeS2zv6zlhm8qQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_eV2poH-_EeS595cEgG9Bew" name="Usage3" client="_FCZwEHcGEeS3Y6dvXnWwog">
+        <supplier xmi:type="uml:Interface" href="Classes.uml#_YptNIHpDEeS2zv6zlhm8qQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_e6scEH-_EeS595cEgG9Bew" name="Usage4" client="_dLNjIHcGEeS3Y6dvXnWwog">
+        <supplier xmi:type="uml:Interface" href="Classes.uml#_YptNIHpDEeS2zv6zlhm8qQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_fhsxsH-_EeS595cEgG9Bew" name="Usage5" client="_COSpsHcGEeS3Y6dvXnWwog">
+        <supplier xmi:type="uml:Interface" href="Classes.uml#_2IPy8Ho8EeSTh5yDLLqE0Q"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_hu_vsH-_EeS595cEgG9Bew" name="Usage6" client="_FCZwEHcGEeS3Y6dvXnWwog">
+        <supplier xmi:type="uml:Interface" href="Classes.uml#_2IPy8Ho8EeSTh5yDLLqE0Q"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ii4DsH-_EeS595cEgG9Bew" name="Usage7" client="_dLNjIHcGEeS3Y6dvXnWwog">
+        <supplier xmi:type="uml:Interface" href="Classes.uml#_2IPy8Ho8EeSTh5yDLLqE0Q"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_AwZnEIT2EeSRks3rouk-dg" name="Usage1" client="_F8--cHcFEeS3Y6dvXnWwog">
+        <supplier xmi:type="uml:Interface" href="Classes.uml#_ZuF88HowEeS_Y-yub0PNVA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_B_fQYIT2EeSRks3rouk-dg" name="Usage8" client="_COSpsHcGEeS3Y6dvXnWwog">
+        <supplier xmi:type="uml:Interface" href="Classes.uml#_ZuF88HowEeS_Y-yub0PNVA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_Ci3qQIT2EeSRks3rouk-dg" name="Usage9" client="_FCZwEHcGEeS3Y6dvXnWwog">
+        <supplier xmi:type="uml:Interface" href="Classes.uml#_ZuF88HowEeS_Y-yub0PNVA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_DxD7sIT2EeSRks3rouk-dg" name="Usage10" client="_dLNjIHcGEeS3Y6dvXnWwog">
+        <supplier xmi:type="uml:Interface" href="Classes.uml#_ZuF88HowEeS_Y-yub0PNVA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_EovKkIT2EeSRks3rouk-dg" name="Usage101" client="_F8--cHcFEeS3Y6dvXnWwog">
+        <supplier xmi:type="uml:Interface" href="Classes.uml#_Alz5MIRdEeS-E_c58KLc5g"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_FGUecIT2EeSRks3rouk-dg" name="Usage1011" client="_COSpsHcGEeS3Y6dvXnWwog">
+        <supplier xmi:type="uml:Interface" href="Classes.uml#_Alz5MIRdEeS-E_c58KLc5g"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_Faia8IT2EeSRks3rouk-dg" name="Usage10111" client="_FCZwEHcGEeS3Y6dvXnWwog">
+        <supplier xmi:type="uml:Interface" href="Classes.uml#_Alz5MIRdEeS-E_c58KLc5g"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_GAXr4IT2EeSRks3rouk-dg" name="Usage101111" client="_dLNjIHcGEeS3Y6dvXnWwog">
+        <supplier xmi:type="uml:Interface" href="Classes.uml#_Alz5MIRdEeS-E_c58KLc5g"/>
+      </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_zj-_Eno_EeSTh5yDLLqE0Q">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zlBg4Ho_EeSTh5yDLLqE0Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
