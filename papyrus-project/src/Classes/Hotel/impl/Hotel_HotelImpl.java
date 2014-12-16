@@ -2,36 +2,34 @@
  */
 package Classes.Hotel.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import Classes.Hotel.HotelPackage;
 import Classes.Hotel.Hotel_Hotel;
+import Classes.Hotel.Hotel_Occupancy;
 import Classes.Hotel.Hotel_OccupancyService;
 import Classes.Hotel.Hotel_Order;
 import Classes.Hotel.Hotel_OrderService;
+import Classes.Hotel.Hotel_Room;
 import Classes.Hotel.Hotel_RoomService;
 import Classes.Hotel.IBooking;
 import Classes.Hotel.IOrder;
 import Classes.Hotel.IOrdering;
+import Classes.Hotel.IRoom;
 import Classes.Hotel.ISearch;
 import Classes.Hotel.ISearchResult;
 import Classes.Hotel.OrderRequest;
-
 import Classes.PersonRegistry.IPersonRegistry;
-
-import java.lang.reflect.InvocationTargetException;
-
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -353,12 +351,42 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<ISearchResult> search(long startTime, long endTime, int numberOfPersons) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
+		
+		EList<Hotel_Occupancy> occupancies = getOccupancyService().getAllOccupancies();
+		EList<Hotel_Room> rooms = getRoomService().getAllRooms();
+		
+		EList<IRoom> availableRooms = new BasicEList<IRoom>();
+		/*
+		// Loop through all rooms in the hotel
+		for (int i = 0; i < rooms.size(); i++) {
+			boolean available = true;
+			
+			// Loop through all occupancies
+			for (int j = 0; j < occupancies.size(); j++) {
+				
+				// If same room and time intervals overlap the room is not available
+				if (occupancies.get(j).getRoom().getId() == rooms.get(i).getId()
+						&& !(endTime < occupancies.get(j).getStartTime()
+								|| startTime > occupancies.get(j).getEndTime())) {
+					available = false;
+				}
+			}
+			
+			if (available) {
+				availableRooms.add(rooms.get(i));
+			}
+		}
+		*/
+		EList<ISearchResult> results = new BasicEList<ISearchResult>();
+		// Do magic to combine rooms according to the number of people
+		
+		return results;
 	}
 
 	/**
