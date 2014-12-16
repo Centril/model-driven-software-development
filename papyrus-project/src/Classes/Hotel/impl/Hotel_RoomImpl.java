@@ -29,7 +29,7 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	private double basePrice; //Standard price for one night
 	private String roomName;
 	private String roomInfo;
-	private boolean isOutOfService; //True is the room is out of service
+	private boolean OutOfOrder; //True is the room is out of service
 	
 	/**
 	 * Creates a room 
@@ -40,7 +40,7 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	protected Hotel_RoomImpl() {
 		this.nbrOfBeds = 1;
 		this.basePrice = 100;
-		this.isOutOfService = false;
+		this.OutOfOrder = false;
 		
 		this.roomInfo = "";
 	
@@ -57,7 +57,7 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 		this.nbrOfBeds = nbrOfBeds;
 		this.basePrice = basePrice;
 		this.roomId = roomId;
-		this.isOutOfService = false;
+		this.OutOfOrder = false;
 		
 		if(roomInfo == null)
 			this.roomInfo = "";
@@ -140,47 +140,43 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Returns an informative text about the room.
+	 * Might be empty.
+	 * @generated NOT
 	 */
 	public String getRoomInfo() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return roomInfo;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Set the room to be out of order of not.
+	 * @param outOfOrder, True is the room is out of order, 
+	 * false otherwise.
+	 * @generated NOT
 	 */
 	public void setIsOutOfOrder(boolean outOfOrder) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.OutOfOrder = outOfOrder;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Methods sets the information of the room 
+	 * given a string.
+	 * @param info, the information of the room. 
+	 * @generated NOT
 	 */
 	public void setRoomInfo(String info) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (info == null)
+			this.roomInfo = "";
+		else
+			this.roomInfo = info;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Returns weather or not the room is out of order.
+	 * @generated NOT
 	 */
 	public boolean isOutOfOrder() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return OutOfOrder;
 	}
 
 	/**
