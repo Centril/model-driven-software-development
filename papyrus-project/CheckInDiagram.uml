@@ -6,8 +6,7 @@
 </body>
     </ownedComment>
     <ownedComment xmi:type="uml:Comment" xmi:id="_m9N3kHpaEeSJULlkSE75Zg">
-      <body>return bookings&#xD;
-</body>
+      <body>One booking from list is selected</body>
     </ownedComment>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_vusMkHlPEeSA5MODJ_COwQ" name="r">
       <type xmi:type="uml:Component" href="model.uml#_COSpsHcGEeS3Y6dvXnWwog"/>
@@ -15,19 +14,18 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_M-KMAHpDEeS2zv6zlhm8qQ" name="h">
       <type xmi:type="uml:Interface" href="Classes.uml#_YptNIHpDEeS2zv6zlhm8qQ"/>
     </ownedAttribute>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_6gKyIHlPEeSA5MODJ_COwQ" name="Lifeline" represents="_vusMkHlPEeSA5MODJ_COwQ" coveredBy="_d1zpIHpEEeS2zv6zlhm8qQ _srVoEHpGEeS2zv6zlhm8qQ"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_EjTDEHpEEeS2zv6zlhm8qQ" name="Lifeline0" represents="_M-KMAHpDEeS2zv6zlhm8qQ" coveredBy="_d1zpIXpEEeS2zv6zlhm8qQ _srVoEXpGEeS2zv6zlhm8qQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_d1zpIHpEEeS2zv6zlhm8qQ" name="startCheckIn_MessageSend" covered="_6gKyIHlPEeSA5MODJ_COwQ" message="_d1qfMHpEEeS2zv6zlhm8qQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_d1zpIXpEEeS2zv6zlhm8qQ" name="startCheckIn_MessageRecv" covered="_EjTDEHpEEeS2zv6zlhm8qQ" message="_d1qfMHpEEeS2zv6zlhm8qQ"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_6gKyIHlPEeSA5MODJ_COwQ" name="Lifeline" represents="_vusMkHlPEeSA5MODJ_COwQ" coveredBy="_srVoEHpGEeS2zv6zlhm8qQ _G7SVAYVDEeS8BtwCIX_QHA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_EjTDEHpEEeS2zv6zlhm8qQ" name="Lifeline0" represents="_M-KMAHpDEeS2zv6zlhm8qQ" coveredBy="_srVoEXpGEeS2zv6zlhm8qQ _G7SVAoVDEeS8BtwCIX_QHA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_G7SVAYVDEeS8BtwCIX_QHA" name="getBookings_MessageSend" covered="_6gKyIHlPEeSA5MODJ_COwQ" message="_G7SVAIVDEeS8BtwCIX_QHA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_G7SVAoVDEeS8BtwCIX_QHA" name="getBookings_MessageRecv" covered="_EjTDEHpEEeS2zv6zlhm8qQ" message="_G7SVAIVDEeS8BtwCIX_QHA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_srVoEHpGEeS2zv6zlhm8qQ" name="checkIn_MessageSend" covered="_6gKyIHlPEeSA5MODJ_COwQ" message="_srTL0HpGEeS2zv6zlhm8qQ"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_srVoEXpGEeS2zv6zlhm8qQ" name="checkIn_MessageRecv" covered="_EjTDEHpEEeS2zv6zlhm8qQ" message="_srTL0HpGEeS2zv6zlhm8qQ"/>
-    <formalGate xmi:type="uml:Gate" xmi:id="_aupo8HpaEeSJULlkSE75Zg" name="gate0" message="_av_swHpaEeSJULlkSE75Zg"/>
-    <formalGate xmi:type="uml:Gate" xmi:id="_avsx0HpaEeSJULlkSE75Zg" name="gate1" message="_av_swHpaEeSJULlkSE75Zg"/>
-    <message xmi:type="uml:Message" xmi:id="_d1qfMHpEEeS2zv6zlhm8qQ" name="startCheckIn_Message" messageSort="asynchCall" receiveEvent="_d1zpIXpEEeS2zv6zlhm8qQ" sendEvent="_d1zpIHpEEeS2zv6zlhm8qQ"/>
     <message xmi:type="uml:Message" xmi:id="_srTL0HpGEeS2zv6zlhm8qQ" name="checkIn_Message" messageSort="asynchCall" receiveEvent="_srVoEXpGEeS2zv6zlhm8qQ" sendEvent="_srVoEHpGEeS2zv6zlhm8qQ">
       <signature xmi:type="uml:Operation" href="Classes.uml#_os-VEHpGEeS2zv6zlhm8qQ"/>
     </message>
-    <message xmi:type="uml:Message" xmi:id="_av_swHpaEeSJULlkSE75Zg" name="Message" messageSort="asynchCall" receiveEvent="_aupo8HpaEeSJULlkSE75Zg" sendEvent="_avsx0HpaEeSJULlkSE75Zg"/>
+    <message xmi:type="uml:Message" xmi:id="_G7SVAIVDEeS8BtwCIX_QHA" name="getBookings_Message" messageSort="asynchCall" receiveEvent="_G7SVAoVDEeS8BtwCIX_QHA" sendEvent="_G7SVAYVDEeS8BtwCIX_QHA">
+      <signature xmi:type="uml:Operation" href="Classes.uml#_tl3UoHpcEeSgf6-u89OUJA"/>
+    </message>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="__CXc8H1rEeSezLtI9Ootng">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__DWUYH1rEeSezLtI9Ootng" source="http://www.eclipse.org/uml2/2.0.0/UML">
