@@ -304,7 +304,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIRoom__GetId__int() {
+	public EOperation getIRoom__GetId() {
 		return iRoomEClass.getEOperations().get(0);
 	}
 
@@ -360,6 +360,24 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 */
 	public EOperation getHotel_Occupancy__RemoveKeys__int() {
 		return hotel_OccupancyEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getHotel_Occupancy__GetStartTime() {
+		return hotel_OccupancyEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getHotel_Occupancy__GetEndTime() {
+		return hotel_OccupancyEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -935,7 +953,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		hotel_RoomEClass = createEClass(HOTEL_ROOM);
 
 		iRoomEClass = createEClass(IROOM);
-		createEOperation(iRoomEClass, IROOM___GET_ID__INT);
+		createEOperation(iRoomEClass, IROOM___GET_ID);
 		createEOperation(iRoomEClass, IROOM___GET_NUM_BEDS);
 		createEOperation(iRoomEClass, IROOM___GET_PRICE);
 
@@ -943,6 +961,8 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		createEReference(hotel_OccupancyEClass, HOTEL_OCCUPANCY__ROOM);
 		createEOperation(hotel_OccupancyEClass, HOTEL_OCCUPANCY___ADD_KEYS__INT);
 		createEOperation(hotel_OccupancyEClass, HOTEL_OCCUPANCY___REMOVE_KEYS__INT);
+		createEOperation(hotel_OccupancyEClass, HOTEL_OCCUPANCY___GET_START_TIME);
+		createEOperation(hotel_OccupancyEClass, HOTEL_OCCUPANCY___GET_END_TIME);
 
 		hotel_StayEClass = createEClass(HOTEL_STAY);
 		createEReference(hotel_StayEClass, HOTEL_STAY__OCCUPANCY);
@@ -1070,8 +1090,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 
 		initEClass(iRoomEClass, IRoom.class, "IRoom", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getIRoom__GetId__int(), null, "getId", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "id", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getIRoom__GetId(), ecorePackage.getEInt(), "getId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getIRoom__GetNumBeds(), ecorePackage.getEInt(), "getNumBeds", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -1080,11 +1099,15 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		initEClass(hotel_OccupancyEClass, Hotel_Occupancy.class, "Hotel_Occupancy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHotel_Occupancy_Room(), this.getHotel_Room(), null, "room", null, 1, 1, Hotel_Occupancy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		op = initEOperation(getHotel_Occupancy__AddKeys__int(), null, "addKeys", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		EOperation op = initEOperation(getHotel_Occupancy__AddKeys__int(), null, "addKeys", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "number", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getHotel_Occupancy__RemoveKeys__int(), null, "removeKeys", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "number", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getHotel_Occupancy__GetStartTime(), ecorePackage.getELong(), "getStartTime", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getHotel_Occupancy__GetEndTime(), ecorePackage.getELong(), "getEndTime", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(hotel_StayEClass, Hotel_Stay.class, "Hotel_Stay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHotel_Stay_Occupancy(), this.getHotel_Occupancy(), null, "occupancy", null, 1, -1, Hotel_Stay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

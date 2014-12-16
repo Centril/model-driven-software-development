@@ -47,7 +47,7 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void getId(int id) {
+	public int getId() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -83,9 +83,8 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HotelPackage.HOTEL_ROOM___GET_ID__INT:
-				getId((Integer)arguments.get(0));
-				return null;
+			case HotelPackage.HOTEL_ROOM___GET_ID:
+				return getId();
 			case HotelPackage.HOTEL_ROOM___GET_NUM_BEDS:
 				return getNumBeds();
 			case HotelPackage.HOTEL_ROOM___GET_PRICE:

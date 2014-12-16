@@ -126,6 +126,28 @@ public class Hotel_OccupancyImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public long getStartTime() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public long getEndTime() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -194,6 +216,10 @@ public class Hotel_OccupancyImpl extends MinimalEObjectImpl.Container implements
 			case HotelPackage.HOTEL_OCCUPANCY___REMOVE_KEYS__INT:
 				removeKeys((Integer)arguments.get(0));
 				return null;
+			case HotelPackage.HOTEL_OCCUPANCY___GET_START_TIME:
+				return getStartTime();
+			case HotelPackage.HOTEL_OCCUPANCY___GET_END_TIME:
+				return getEndTime();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

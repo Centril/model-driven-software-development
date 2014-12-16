@@ -18,10 +18,10 @@ public interface IRoom extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model idRequired="true" idOrdered="false"
+	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
-	void getId(int id);
+	int getId();
 
 	/**
 	 * <!-- begin-user-doc -->

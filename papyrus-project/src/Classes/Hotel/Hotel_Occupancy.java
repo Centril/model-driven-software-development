@@ -63,4 +63,20 @@ public interface Hotel_Occupancy extends EObject {
 	 */
 	void removeKeys(int number);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	long getStartTime();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	long getEndTime();
+
 } // Hotel_Occupancy
