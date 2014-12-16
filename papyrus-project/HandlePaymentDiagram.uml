@@ -4,13 +4,13 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_i7Q9YHlPEeSA5MODJ_COwQ" name="c">
       <type xmi:type="uml:Component" href="model.uml#_F8--cHcFEeS3Y6dvXnWwog"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_C6pBMHpaEeSgf6-u89OUJA" name="h">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_C6pBMHpaEeSgf6-u89OUJA" name="fd">
       <type xmi:type="uml:Interface" href="Classes.uml#_YptNIHpDEeS2zv6zlhm8qQ"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_Nf0QIHpaEeSgf6-u89OUJA" name="p">
       <type xmi:type="uml:Interface" href="Classes.uml#_ZuF88HowEeS_Y-yub0PNVA"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_RpZ7sHpaEeSgf6-u89OUJA" name="b">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_RpZ7sHpaEeSgf6-u89OUJA" name="cp">
       <type xmi:type="uml:Interface" href="model.uml#_4lxCgHcAEeS3Y6dvXnWwog"/>
     </ownedAttribute>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_EXYu4HlQEeSA5MODJ_COwQ" name="Lifeline" represents="_i7Q9YHlPEeSA5MODJ_COwQ" coveredBy="_49y2MXpcEeSgf6-u89OUJA _6-7ngXpcEeSgf6-u89OUJA _eZ3PEHpdEeSgf6-u89OUJA"/>

@@ -14,20 +14,21 @@
       <type xmi:type="uml:Component" href="model.uml#_COSpsHcGEeS3Y6dvXnWwog"/>
     </ownedAttribute>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_BsoY0HlQEeSA5MODJ_COwQ" name="Lifeline" represents="_z51XUHlPEeSA5MODJ_COwQ"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_0wgdwHpZEeSgf6-u89OUJA" name="Lifeline0"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_BsoY0HlQEeSA5MODJ_COwQ" name="Lifeline" represents="_z51XUHlPEeSA5MODJ_COwQ" coveredBy="_oSiZ0HpcEeSJULlkSE75Zg _Ie828XpdEeSJULlkSE75Zg _TIhdsXpdEeSJULlkSE75Zg"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_bo4nIHpbEeSJULlkSE75Zg" name="h:" coveredBy="_oSiZ0XpcEeSJULlkSE75Zg _IfGn8HpdEeSJULlkSE75Zg _TIhdsnpdEeSJULlkSE75Zg">
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_BsoY0HlQEeSA5MODJ_COwQ" name="Lifeline" represents="_z51XUHlPEeSA5MODJ_COwQ" coveredBy="_Ie828XpdEeSJULlkSE75Zg _TIhdsXpdEeSJULlkSE75Zg _9BKzQIVYEeS8BtwCIX_QHA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_bo4nIHpbEeSJULlkSE75Zg" name="h:" coveredBy="_IfGn8HpdEeSJULlkSE75Zg _TIhdsnpdEeSJULlkSE75Zg _9BLaUIVYEeS8BtwCIX_QHA">
       <represents xmi:type="uml:Property" href="CheckInDiagram.uml#_M-KMAHpDEeS2zv6zlhm8qQ"/>
     </lifeline>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_oSiZ0HpcEeSJULlkSE75Zg" name="startCheckOut_MessageSend" covered="_BsoY0HlQEeSA5MODJ_COwQ" message="_oSYo0HpcEeSJULlkSE75Zg"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_oSiZ0XpcEeSJULlkSE75Zg" name="startCheckOut_MessageRecv" covered="_bo4nIHpbEeSJULlkSE75Zg" message="_oSYo0HpcEeSJULlkSE75Zg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9BKzQIVYEeS8BtwCIX_QHA" name="checkOut_Message0Send" covered="_BsoY0HlQEeSA5MODJ_COwQ" message="_9BKMMIVYEeS8BtwCIX_QHA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9BLaUIVYEeS8BtwCIX_QHA" name="checkOut_Message0Recv" covered="_bo4nIHpbEeSJULlkSE75Zg" message="_9BKMMIVYEeS8BtwCIX_QHA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Ie828XpdEeSJULlkSE75Zg" name="returnKeys_MessageSend" covered="_BsoY0HlQEeSA5MODJ_COwQ" message="_Ie828HpdEeSJULlkSE75Zg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_IfGn8HpdEeSJULlkSE75Zg" name="returnKeys_MessageRecv" covered="_bo4nIHpbEeSJULlkSE75Zg" message="_Ie828HpdEeSJULlkSE75Zg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_TIhdsXpdEeSJULlkSE75Zg" name="checkOut_MessageSend" covered="_BsoY0HlQEeSA5MODJ_COwQ" message="_TIhdsHpdEeSJULlkSE75Zg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_TIhdsnpdEeSJULlkSE75Zg" name="checkOut_MessageRecv" covered="_bo4nIHpbEeSJULlkSE75Zg" message="_TIhdsHpdEeSJULlkSE75Zg"/>
-    <message xmi:type="uml:Message" xmi:id="_oSYo0HpcEeSJULlkSE75Zg" name="startCheckOut_Message" messageSort="asynchCall" receiveEvent="_oSiZ0XpcEeSJULlkSE75Zg" sendEvent="_oSiZ0HpcEeSJULlkSE75Zg"/>
     <message xmi:type="uml:Message" xmi:id="_Ie828HpdEeSJULlkSE75Zg" name="returnKeys_Message" messageSort="asynchCall" receiveEvent="_IfGn8HpdEeSJULlkSE75Zg" sendEvent="_Ie828XpdEeSJULlkSE75Zg"/>
     <message xmi:type="uml:Message" xmi:id="_TIhdsHpdEeSJULlkSE75Zg" name="checkOut_Message" messageSort="asynchCall" receiveEvent="_TIhdsnpdEeSJULlkSE75Zg" sendEvent="_TIhdsXpdEeSJULlkSE75Zg">
+      <signature xmi:type="uml:Operation" href="Classes.uml#_THeU0HpdEeSJULlkSE75Zg"/>
+    </message>
+    <message xmi:type="uml:Message" xmi:id="_9BKMMIVYEeS8BtwCIX_QHA" name="checkOut_Message0" messageSort="asynchCall" receiveEvent="_9BLaUIVYEeS8BtwCIX_QHA" sendEvent="_9BKzQIVYEeS8BtwCIX_QHA">
       <signature xmi:type="uml:Operation" href="Classes.uml#_THeU0HpdEeSJULlkSE75Zg"/>
     </message>
   </packagedElement>

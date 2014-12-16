@@ -11,7 +11,7 @@
       <children xmi:type="notation:Shape" xmi:id="_KhEAAXpaEeSgf6-u89OUJA" type="3001">
         <children xmi:type="notation:DecorationNode" xmi:id="_KhEAA3paEeSgf6-u89OUJA" type="5002"/>
         <element xmi:type="uml:Lifeline" href="HandlePaymentDiagram.uml#_KhEAAHpaEeSgf6-u89OUJA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KhEAAnpaEeSgf6-u89OUJA" x="293" y="10" width="75"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KhEAAnpaEeSgf6-u89OUJA" x="293" y="10" width="103"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_XLFbkXpaEeSgf6-u89OUJA" type="3001">
         <children xmi:type="notation:DecorationNode" xmi:id="_XLFbk3paEeSgf6-u89OUJA" type="5002"/>
@@ -21,12 +21,12 @@
       <children xmi:type="notation:Shape" xmi:id="_aXjXkHpaEeSgf6-u89OUJA" type="3001">
         <children xmi:type="notation:DecorationNode" xmi:id="_aXjXknpaEeSgf6-u89OUJA" type="5002"/>
         <element xmi:type="uml:Lifeline" href="HandlePaymentDiagram.uml#_aXZmkHpaEeSgf6-u89OUJA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aXjXkXpaEeSgf6-u89OUJA" x="728" y="10" width="141"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aXjXkXpaEeSgf6-u89OUJA" x="728" y="10" width="147"/>
       </children>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9_LsJHlOEeSA5MODJ_COwQ"/>
     </children>
     <element xmi:type="uml:Interaction" href="HandlePaymentDiagram.uml#_9U6AEHlOEeSA5MODJ_COwQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9_LsJXlOEeSA5MODJ_COwQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9_LsJXlOEeSA5MODJ_COwQ" width="962" height="321"/>
   </children>
   <styles xmi:type="notation:StringValueStyle" xmi:id="_9_LsJnlOEeSA5MODJ_COwQ" name="diagram_compatibility_version" stringValue="1.0.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_9_LsJ3lOEeSA5MODJ_COwQ"/>
