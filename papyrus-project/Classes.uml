@@ -225,6 +225,16 @@
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
           </ownedParameter>
         </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_5Yz3MIUxEeSmeud0-QRf8w" name="setStartTime">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_74RjQIUxEeSmeud0-QRf8w" name="startTime">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_8c1B0IUxEeSmeud0-QRf8w" name="setEndTime">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-LyeAIUxEeSmeud0-QRf8w" name="endTime">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedParameter>
+        </ownedOperation>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_r-yvUHo_EeSTh5yDLLqE0Q" name="Stay">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_mLfzoHpCEeSTh5yDLLqE0Q" name="occupancy" type="_oSNI0Ho_EeSTh5yDLLqE0Q" association="_mLfzo3pCEeSTh5yDLLqE0Q">
@@ -576,6 +586,21 @@
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_whDkIHpAEeSTh5yDLLqE0Q" name="getPrice">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_57CyUHpAEeSTh5yDLLqE0Q" name="price" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_mlOcYIUxEeSmeud0-QRf8w" name="setId">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_rIQisIUxEeSmeud0-QRf8w" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_rwj40IUxEeSmeud0-QRf8w" name="setNumBeds">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_udy7IIUxEeSmeud0-QRf8w" name="numBeds">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_vAXcsIUxEeSmeud0-QRf8w" name="setPrice">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_yGNMQIUxEeSmeud0-QRf8w" name="price">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
         </ownedParameter>
       </ownedOperation>

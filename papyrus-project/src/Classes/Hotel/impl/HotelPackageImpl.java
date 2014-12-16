@@ -331,6 +331,33 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIRoom__SetId__int() {
+		return iRoomEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIRoom__SetNumBeds__int() {
+		return iRoomEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIRoom__SetPrice__double() {
+		return iRoomEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getHotel_Occupancy() {
 		return hotel_OccupancyEClass;
 	}
@@ -378,6 +405,24 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 */
 	public EOperation getHotel_Occupancy__GetEndTime() {
 		return hotel_OccupancyEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getHotel_Occupancy__SetStartTime__long() {
+		return hotel_OccupancyEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getHotel_Occupancy__SetEndTime__long() {
+		return hotel_OccupancyEClass.getEOperations().get(5);
 	}
 
 	/**
@@ -956,6 +1001,9 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		createEOperation(iRoomEClass, IROOM___GET_ID);
 		createEOperation(iRoomEClass, IROOM___GET_NUM_BEDS);
 		createEOperation(iRoomEClass, IROOM___GET_PRICE);
+		createEOperation(iRoomEClass, IROOM___SET_ID__INT);
+		createEOperation(iRoomEClass, IROOM___SET_NUM_BEDS__INT);
+		createEOperation(iRoomEClass, IROOM___SET_PRICE__DOUBLE);
 
 		hotel_OccupancyEClass = createEClass(HOTEL_OCCUPANCY);
 		createEReference(hotel_OccupancyEClass, HOTEL_OCCUPANCY__ROOM);
@@ -963,6 +1011,8 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		createEOperation(hotel_OccupancyEClass, HOTEL_OCCUPANCY___REMOVE_KEYS__INT);
 		createEOperation(hotel_OccupancyEClass, HOTEL_OCCUPANCY___GET_START_TIME);
 		createEOperation(hotel_OccupancyEClass, HOTEL_OCCUPANCY___GET_END_TIME);
+		createEOperation(hotel_OccupancyEClass, HOTEL_OCCUPANCY___SET_START_TIME__LONG);
+		createEOperation(hotel_OccupancyEClass, HOTEL_OCCUPANCY___SET_END_TIME__LONG);
 
 		hotel_StayEClass = createEClass(HOTEL_STAY);
 		createEReference(hotel_StayEClass, HOTEL_STAY__OCCUPANCY);
@@ -1096,10 +1146,19 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 
 		initEOperation(getIRoom__GetPrice(), ecorePackage.getEDouble(), "getPrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		EOperation op = initEOperation(getIRoom__SetId__int(), null, "setId", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "id", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIRoom__SetNumBeds__int(), null, "setNumBeds", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "numBeds", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIRoom__SetPrice__double(), null, "setPrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "price", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(hotel_OccupancyEClass, Hotel_Occupancy.class, "Hotel_Occupancy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHotel_Occupancy_Room(), this.getHotel_Room(), null, "room", null, 1, 1, Hotel_Occupancy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		EOperation op = initEOperation(getHotel_Occupancy__AddKeys__int(), null, "addKeys", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getHotel_Occupancy__AddKeys__int(), null, "addKeys", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "number", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getHotel_Occupancy__RemoveKeys__int(), null, "removeKeys", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1108,6 +1167,12 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		initEOperation(getHotel_Occupancy__GetStartTime(), ecorePackage.getELong(), "getStartTime", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getHotel_Occupancy__GetEndTime(), ecorePackage.getELong(), "getEndTime", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getHotel_Occupancy__SetStartTime__long(), null, "setStartTime", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getELong(), "startTime", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getHotel_Occupancy__SetEndTime__long(), null, "setEndTime", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getELong(), "endTime", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(hotel_StayEClass, Hotel_Stay.class, "Hotel_Stay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHotel_Stay_Occupancy(), this.getHotel_Occupancy(), null, "occupancy", null, 1, -1, Hotel_Stay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

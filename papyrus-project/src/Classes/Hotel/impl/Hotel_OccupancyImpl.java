@@ -148,6 +148,28 @@ public class Hotel_OccupancyImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void setStartTime(long startTime) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEndTime(long endTime) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -220,6 +242,12 @@ public class Hotel_OccupancyImpl extends MinimalEObjectImpl.Container implements
 				return getStartTime();
 			case HotelPackage.HOTEL_OCCUPANCY___GET_END_TIME:
 				return getEndTime();
+			case HotelPackage.HOTEL_OCCUPANCY___SET_START_TIME__LONG:
+				setStartTime((Long)arguments.get(0));
+				return null;
+			case HotelPackage.HOTEL_OCCUPANCY___SET_END_TIME__LONG:
+				setEndTime((Long)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
