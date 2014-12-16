@@ -4,8 +4,11 @@
     <ownedComment xmi:type="uml:Comment" xmi:id="_SwI7wIVGEeS8BtwCIX_QHA">
       <body>OrderRequest is implemented by the one calling the system operation. It has accessor methods for all the information that's required, such as customer, contact and guests.</body>
     </ownedComment>
-    <ownedComment xmi:type="uml:Comment" xmi:id="_hcoMEIVLEeS8BtwCIX_QHA">
-      <body></body>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_YsD_QIVUEeS8BtwCIX_QHA" annotatedElement="_kS5ggIVJEeS8BtwCIX_QHA">
+      <body>Realistically there should also be a way to reuse an existing person in registry</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_O6dF0IVVEeS8BtwCIX_QHA">
+      <body>More calls, especially for customer</body>
     </ownedComment>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_9HRhoHkrEeSSzsyH_2a38g" name="c">
       <type xmi:type="uml:Component" href="model.uml#_F8--cHcFEeS3Y6dvXnWwog"/>
@@ -22,11 +25,13 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_co4lsIVKEeS8BtwCIX_QHA" name="p">
       <type xmi:type="uml:Interface" href="Classes.uml#_FzWa8HluEeS-dbwPGgzjtw"/>
     </ownedAttribute>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_VNYbcHkrEeSSzsyH_2a38g" name="Lifeline" represents="_9HRhoHkrEeSSzsyH_2a38g" coveredBy="_CKx4AH1vEeSezLtI9Ootng _CKyfEH1vEeSezLtI9Ootng _F4FrQYVGEeS8BtwCIX_QHA _rhyJEIVJEeS8BtwCIX_QHA _rhywIIVJEeS8BtwCIX_QHA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_VNYbcHkrEeSSzsyH_2a38g" name="Lifeline" represents="_9HRhoHkrEeSSzsyH_2a38g" coveredBy="_CKx4AH1vEeSezLtI9Ootng _CKyfEH1vEeSezLtI9Ootng _F4FrQYVGEeS8BtwCIX_QHA _rhyJEIVJEeS8BtwCIX_QHA _rhywIIVJEeS8BtwCIX_QHA _4dMOkYVUEeS8BtwCIX_QHA"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_NPSHAHksEeSSzsyH_2a38g" name="Lifeline0" represents="_XYekkHksEeSSzsyH_2a38g" coveredBy="_izSPQoVGEeS8BtwCIX_QHA"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_19R0YIVFEeS8BtwCIX_QHA" name="Lifeline1" represents="_rc17gIVFEeS8BtwCIX_QHA" coveredBy="_F4FrQoVGEeS8BtwCIX_QHA _izSPQYVGEeS8BtwCIX_QHA"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_xAJEoIVIEeS8BtwCIX_QHA" name="Lifeline2" represents="_qJ3wYIVIEeS8BtwCIX_QHA" coveredBy="_rhyJEIVJEeS8BtwCIX_QHA _rhywIIVJEeS8BtwCIX_QHA _d7b9QIVLEeS8BtwCIX_QHA _f3VCMIVLEeS8BtwCIX_QHA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_xAJEoIVIEeS8BtwCIX_QHA" name="Lifeline2" represents="_qJ3wYIVIEeS8BtwCIX_QHA" coveredBy="_rhyJEIVJEeS8BtwCIX_QHA _rhywIIVJEeS8BtwCIX_QHA _d7b9QIVLEeS8BtwCIX_QHA _f3VCMIVLEeS8BtwCIX_QHA _4dMOkoVUEeS8BtwCIX_QHA"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_aEFGoIVKEeS8BtwCIX_QHA" name="Lifeline3" represents="_co4lsIVKEeS8BtwCIX_QHA" coveredBy="_rhyJEIVJEeS8BtwCIX_QHA _rhywIIVJEeS8BtwCIX_QHA _d7ckUIVLEeS8BtwCIX_QHA _f3VCMYVLEeS8BtwCIX_QHA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_F4FrQoVGEeS8BtwCIX_QHA" name="placeOrder_MessageRecv" covered="_19R0YIVFEeS8BtwCIX_QHA" message="_F4FrQIVGEeS8BtwCIX_QHA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_4dMOkoVUEeS8BtwCIX_QHA" name="createPerson_Message0Recv" covered="_xAJEoIVIEeS8BtwCIX_QHA"/>
     <fragment xmi:type="uml:CombinedFragment" xmi:id="_CKx4AH1vEeSezLtI9Ootng" name="CombinedFragment" covered="_VNYbcHkrEeSSzsyH_2a38g">
       <operand xmi:type="uml:InteractionOperand" xmi:id="_CKyfEH1vEeSezLtI9Ootng" name="InteractionOperand" covered="_VNYbcHkrEeSSzsyH_2a38g">
         <guard xmi:type="uml:InteractionConstraint" xmi:id="_CKyfEX1vEeSezLtI9Ootng">
@@ -45,14 +50,14 @@
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_f3VCMIVLEeS8BtwCIX_QHA" name="setLastName_MessageSend" covered="_xAJEoIVIEeS8BtwCIX_QHA" message="_f3UbIIVLEeS8BtwCIX_QHA"/>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_f3VCMYVLEeS8BtwCIX_QHA" name="setLastName_MessageRecv" covered="_aEFGoIVKEeS8BtwCIX_QHA" message="_f3UbIIVLEeS8BtwCIX_QHA"/>
         <guard xmi:type="uml:InteractionConstraint" xmi:id="_rhzXMIVJEeS8BtwCIX_QHA">
-          <specification xmi:type="uml:LiteralString" xmi:id="_rhz-QIVJEeS8BtwCIX_QHA" value="For each guest"/>
+          <specification xmi:type="uml:LiteralString" xmi:id="_rhz-QIVJEeS8BtwCIX_QHA" value="For each customer, contact and guest"/>
         </guard>
       </operand>
     </fragment>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_F4FrQYVGEeS8BtwCIX_QHA" name="placeOrder_MessageSend" covered="_VNYbcHkrEeSSzsyH_2a38g" message="_F4FrQIVGEeS8BtwCIX_QHA"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_F4FrQoVGEeS8BtwCIX_QHA" name="placeOrder_MessageRecv" covered="_19R0YIVFEeS8BtwCIX_QHA" message="_F4FrQIVGEeS8BtwCIX_QHA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_izSPQYVGEeS8BtwCIX_QHA" name="isCreditCardValid_MessageSend" covered="_19R0YIVFEeS8BtwCIX_QHA" message="_izSPQIVGEeS8BtwCIX_QHA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_izSPQoVGEeS8BtwCIX_QHA" name="isCreditCardValid_MessageRecv" covered="_NPSHAHksEeSSzsyH_2a38g" message="_izSPQIVGEeS8BtwCIX_QHA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_4dMOkYVUEeS8BtwCIX_QHA" name="createPerson_Message0Send" covered="_VNYbcHkrEeSSzsyH_2a38g"/>
     <message xmi:type="uml:Message" xmi:id="_F4FrQIVGEeS8BtwCIX_QHA" name="placeOrder_Message" messageSort="asynchCall" receiveEvent="_F4FrQoVGEeS8BtwCIX_QHA" sendEvent="_F4FrQYVGEeS8BtwCIX_QHA">
       <signature xmi:type="uml:Operation" href="Classes.uml#_juaS8Hv_EeSHatiNfZ-sGg"/>
     </message>
