@@ -207,13 +207,6 @@
     <packagedElement xmi:type="uml:Component" xmi:id="_dA6awHo_EeSTh5yDLLqE0Q" name="Hotel">
       <nestedClassifier xmi:type="uml:Class" xmi:id="_gz3vAHo_EeSTh5yDLLqE0Q" name="Room">
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_O4GCIIRUEeS_Fud_KU3BbA" client="_gz3vAHo_EeSTh5yDLLqE0Q" supplier="_GcRsYIRUEeS_Fud_KU3BbA" contract="_GcRsYIRUEeS_Fud_KU3BbA"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_rtm-kIVJEeS_kf0GKjdMhw" name="getId">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_rtuTUIVJEeS_kf0GKjdMhw" name="id" direction="return">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rtwIgIVJEeS_kf0GKjdMhw" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rtxWoIVJEeS_kf0GKjdMhw" value="1"/>
-          </ownedParameter>
-        </ownedOperation>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_oSNI0Ho_EeSTh5yDLLqE0Q" name="Occupancy">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_SEtEgHpCEeSTh5yDLLqE0Q" name="room" type="_gz3vAHo_EeSTh5yDLLqE0Q" association="_SEtEg3pCEeSTh5yDLLqE0Q">
@@ -662,7 +655,7 @@
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_3U2ugIVJEeS_kf0GKjdMhw" name="setIsOutOfOrder">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_9e6dAIVJEeS_kf0GKjdMhw">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_9e6dAIVJEeS_kf0GKjdMhw" name="outOfOrder">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
       </ownedOperation>
@@ -671,7 +664,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_HEkIoIVKEeS_kf0GKjdMhw" name="IsOutOfOrder">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_HEkIoIVKEeS_kf0GKjdMhw" name="isOutOfOrder">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_MGoUUIVKEeS_kf0GKjdMhw" name="value" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
