@@ -2,16 +2,19 @@
  */
 package Classes.Hotel.impl;
 
-import Classes.Hotel.HotelPackage;
-import Classes.Hotel.Hotel_BookingSuggestion;
-import Classes.Hotel.Hotel_SearchResult;
-import Classes.Hotel.IBookingSuggestion;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import Classes.Hotel.HotelPackage;
+import Classes.Hotel.Hotel_BookingSuggestion;
+import Classes.Hotel.Hotel_SearchResult;
+import Classes.Hotel.IBookingSuggestion;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,10 +45,12 @@ public class Hotel_SearchResultImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected Hotel_SearchResultImpl() {
 		super();
+		
+		bookingSuggestion = new BasicEList<Hotel_BookingSuggestion>();
 	}
 
 	/**
@@ -73,12 +78,10 @@ public class Hotel_SearchResultImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<IBookingSuggestion> getBookingSuggestions() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return new BasicEList<IBookingSuggestion>(bookingSuggestion);
 	}
 
 	/**
@@ -93,12 +96,10 @@ public class Hotel_SearchResultImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addBookingSuggestion(Hotel_BookingSuggestion suggestion) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.bookingSuggestion.add(suggestion);
 	}
 
 	/**

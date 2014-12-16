@@ -107,6 +107,9 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 */
 	protected Hotel_HotelImpl() {
 		super();
+
+		roomService = new Hotel_RoomServiceImpl();
+		occupancyService = new Hotel_OccupancyServiceImpl();
 	}
 
 	/**
@@ -365,7 +368,6 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			
 			// Loop through all occupancies
 			for (int j = 0; j < occupancies.size(); j++) {
-				
 				// If same room and time intervals overlap the room is not available
 				if (occupancies.get(j).getRoom().getId() == rooms.get(i).getId()
 						&& !(endTime < occupancies.get(j).getStartTime()

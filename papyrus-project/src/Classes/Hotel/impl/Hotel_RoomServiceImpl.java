@@ -24,18 +24,17 @@ import Classes.Hotel.Hotel_RoomService;
  */
 public class Hotel_RoomServiceImpl extends MinimalEObjectImpl.Container implements Hotel_RoomService {
 	
-	private static EList<Hotel_Room> rooms;
+	private EList<Hotel_Room> rooms;
 	
-	private static void init() {
+	private void init() {
 		if (rooms != null) {
 			return;
 		}
 		
 		rooms = new BasicEList<Hotel_Room>();
 		
-		Hotel_RoomImpl room = new Hotel_RoomImpl();
-		
 		for (int i = 0; i < 100; i++) {
+			Hotel_RoomImpl room = new Hotel_RoomImpl();
 			room.setId(i);
 			room.setPrice(100.0 * i + 100.0);
 			room.setNumBeds(i % 5 + 1);
@@ -51,7 +50,7 @@ public class Hotel_RoomServiceImpl extends MinimalEObjectImpl.Container implemen
 	protected Hotel_RoomServiceImpl() {
 		super();
 		
-		Hotel_RoomServiceImpl.init();
+		init();
 	}
 
 	/**
