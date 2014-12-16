@@ -23,13 +23,36 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hotel_Room {
+	
+	private int roomId; //Unique for every room.
+	private int nbrOfBeds;
+	private double basePrice; //Standard price for one night
+	private static int IDCounter = 0; 
+	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Creates a room with a unique ID.
+	 * @generated NOT
 	 */
 	protected Hotel_RoomImpl() {
-		super();
+		this.nbrOfBeds = 1;
+		this.basePrice = 100;
+		IDCounter += 1;
+		roomId = IDCounter;
+		
+	}
+	
+	/**
+	 * Creates a room with a unique ID 
+	 * given the number of beds and 
+	 * the price of the room for one night.
+	 * @param nbrOfBeds, number of beds in the room.
+	 * @param basePrice, the price of the room for one night. 
+	 */
+	protected Hotel_RoomImpl(int nbrOfBeds, int basePrice) {
+		this.nbrOfBeds = nbrOfBeds;
+		this.basePrice = basePrice;
+		IDCounter += 1;
+		roomId = IDCounter;
 	}
 
 	/**
@@ -43,36 +66,27 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Method returns the unique ID of the room.
+	 * @generated NOT
 	 */
 	public int getId() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return roomId;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Method returns the number of beds in the room.
+	 * @generated NOT
 	 */
 	public int getNumBeds() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return nbrOfBeds;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Method returns the price of the room for one night.
+	 * @generated NOT
 	 */
 	public double getPrice() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return basePrice;
 	}
 
 	/**
