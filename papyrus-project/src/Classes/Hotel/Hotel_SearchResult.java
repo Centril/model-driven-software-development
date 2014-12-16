@@ -43,6 +43,6 @@ public interface Hotel_SearchResult extends ISearchResult {
 	 * @model suggestionRequired="true" suggestionOrdered="false"
 	 * @generated
 	 */
-	void addBookingSuggestion(IBookingSuggestion suggestion);
+	void addBookingSuggestion(Hotel_BookingSuggestion suggestion);
 
 } // Hotel_SearchResult

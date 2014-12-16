@@ -6,11 +6,8 @@ import Classes.Hotel.HotelPackage;
 import Classes.Hotel.Hotel_BookingSuggestion;
 import Classes.Hotel.Hotel_SearchResult;
 import Classes.Hotel.IBookingSuggestion;
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
-
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -79,11 +76,9 @@ public class Hotel_SearchResultImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public EList<IBookingSuggestion> getBookingSuggestions() {
-		EList<IBookingSuggestion> list = new BasicEList<>();
-		for (Hotel_BookingSuggestion bs : bookingSuggestion) {
-			list.add(bs);
-		}
-		return list;
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -100,7 +95,7 @@ public class Hotel_SearchResultImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addBookingSuggestion(IBookingSuggestion suggestion) {
+	public void addBookingSuggestion(Hotel_BookingSuggestion suggestion) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -178,8 +173,8 @@ public class Hotel_SearchResultImpl extends MinimalEObjectImpl.Container impleme
 				return getBookingSuggestions();
 			case HotelPackage.HOTEL_SEARCH_RESULT___GET_PRICE:
 				return getPrice();
-			case HotelPackage.HOTEL_SEARCH_RESULT___ADD_BOOKING_SUGGESTION__IBOOKINGSUGGESTION:
-				addBookingSuggestion((IBookingSuggestion)arguments.get(0));
+			case HotelPackage.HOTEL_SEARCH_RESULT___ADD_BOOKING_SUGGESTION__HOTEL_BOOKINGSUGGESTION:
+				addBookingSuggestion((Hotel_BookingSuggestion)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

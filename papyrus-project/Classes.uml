@@ -306,7 +306,7 @@
         </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_IgpN0HvCEeSHatiNfZ-sGg" client="_kAgZMHo2EeSTh5yDLLqE0Q" supplier="_G1hv0HvCEeSHatiNfZ-sGg" contract="_G1hv0HvCEeSHatiNfZ-sGg"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_9Bxy4IU6EeSoZcsipNKdAg" name="addBookingSuggestion">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_CZ5uIIU7EeSoZcsipNKdAg" name="suggestion" type="_XDoWIHvCEeSHatiNfZ-sGg"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_CZ5uIIU7EeSoZcsipNKdAg" name="suggestion" type="_9NVDcHo1EeSTh5yDLLqE0Q"/>
         </ownedOperation>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Association" xmi:id="_VAQQo3o3EeSTh5yDLLqE0Q" memberEnd="_VAQQpHo3EeSTh5yDLLqE0Q _VAQQoHo3EeSTh5yDLLqE0Q">

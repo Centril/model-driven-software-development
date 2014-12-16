@@ -940,7 +940,7 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_SEARCH_RESULT___ADD_BOOKING_SUGGESTION__IBOOKINGSUGGESTION = ISEARCH_RESULT_OPERATION_COUNT + 0;
+	int HOTEL_SEARCH_RESULT___ADD_BOOKING_SUGGESTION__HOTEL_BOOKINGSUGGESTION = ISEARCH_RESULT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Hotel Search Result</em>' class.
@@ -1951,14 +1951,14 @@ public interface HotelPackage extends EPackage {
 	EReference getHotel_SearchResult_BookingSuggestion();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.Hotel.Hotel_SearchResult#addBookingSuggestion(Classes.Hotel.IBookingSuggestion) <em>Add Booking Suggestion</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.Hotel.Hotel_SearchResult#addBookingSuggestion(Classes.Hotel.Hotel_BookingSuggestion) <em>Add Booking Suggestion</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Add Booking Suggestion</em>' operation.
-	 * @see Classes.Hotel.Hotel_SearchResult#addBookingSuggestion(Classes.Hotel.IBookingSuggestion)
+	 * @see Classes.Hotel.Hotel_SearchResult#addBookingSuggestion(Classes.Hotel.Hotel_BookingSuggestion)
 	 * @generated
 	 */
-	EOperation getHotel_SearchResult__AddBookingSuggestion__IBookingSuggestion();
+	EOperation getHotel_SearchResult__AddBookingSuggestion__Hotel_BookingSuggestion();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.ISearchResult <em>ISearch Result</em>}'.
@@ -2737,7 +2737,7 @@ public interface HotelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation HOTEL_SEARCH_RESULT___ADD_BOOKING_SUGGESTION__IBOOKINGSUGGESTION = eINSTANCE.getHotel_SearchResult__AddBookingSuggestion__IBookingSuggestion();
+		EOperation HOTEL_SEARCH_RESULT___ADD_BOOKING_SUGGESTION__HOTEL_BOOKINGSUGGESTION = eINSTANCE.getHotel_SearchResult__AddBookingSuggestion__Hotel_BookingSuggestion();
 
 		/**
 		 * The meta object literal for the '{@link Classes.Hotel.ISearchResult <em>ISearch Result</em>}' class.

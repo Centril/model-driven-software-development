@@ -691,7 +691,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getHotel_SearchResult__AddBookingSuggestion__IBookingSuggestion() {
+	public EOperation getHotel_SearchResult__AddBookingSuggestion__Hotel_BookingSuggestion() {
 		return hotel_SearchResultEClass.getEOperations().get(0);
 	}
 
@@ -1095,7 +1095,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 
 		hotel_SearchResultEClass = createEClass(HOTEL_SEARCH_RESULT);
 		createEReference(hotel_SearchResultEClass, HOTEL_SEARCH_RESULT__BOOKING_SUGGESTION);
-		createEOperation(hotel_SearchResultEClass, HOTEL_SEARCH_RESULT___ADD_BOOKING_SUGGESTION__IBOOKINGSUGGESTION);
+		createEOperation(hotel_SearchResultEClass, HOTEL_SEARCH_RESULT___ADD_BOOKING_SUGGESTION__HOTEL_BOOKINGSUGGESTION);
 
 		iSearchResultEClass = createEClass(ISEARCH_RESULT);
 		createEOperation(iSearchResultEClass, ISEARCH_RESULT___GET_BOOKING_SUGGESTIONS);
@@ -1278,8 +1278,8 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		initEClass(hotel_SearchResultEClass, Hotel_SearchResult.class, "Hotel_SearchResult", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHotel_SearchResult_BookingSuggestion(), this.getHotel_BookingSuggestion(), null, "bookingSuggestion", null, 1, -1, Hotel_SearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		op = initEOperation(getHotel_SearchResult__AddBookingSuggestion__IBookingSuggestion(), null, "addBookingSuggestion", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getIBookingSuggestion(), "suggestion", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getHotel_SearchResult__AddBookingSuggestion__Hotel_BookingSuggestion(), null, "addBookingSuggestion", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getHotel_BookingSuggestion(), "suggestion", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(iSearchResultEClass, ISearchResult.class, "ISearchResult", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
