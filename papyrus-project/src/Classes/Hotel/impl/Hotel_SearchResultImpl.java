@@ -8,15 +8,12 @@ import Classes.Hotel.Hotel_SearchResult;
 import Classes.Hotel.IBookingSuggestion;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -43,6 +40,8 @@ public class Hotel_SearchResultImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	protected EList<Hotel_BookingSuggestion> bookingSuggestion;
 
+	private double price = 0;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,7 +64,7 @@ public class Hotel_SearchResultImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Hotel_BookingSuggestion> getBookingSuggestion() {
 		if (bookingSuggestion == null) {
@@ -80,20 +79,20 @@ public class Hotel_SearchResultImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public EList<IBookingSuggestion> getBookingSuggestions() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<IBookingSuggestion> list = new BasicEList<>();
+		for (Hotel_BookingSuggestion bs : bookingSuggestion) {
+			list.add(bs);
+		}
+		return list;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public double getPrice() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return price;
 	}
 
 	/**
