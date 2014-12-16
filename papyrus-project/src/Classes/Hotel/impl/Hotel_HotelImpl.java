@@ -401,8 +401,6 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			}
 		}
 		
-		// TODO: Do magic to combine rooms according to the number of people
-		
 		EList<ISearchResult> results = new BasicEList<ISearchResult>();
 
 		// For all rooms with the same number of beds as people, add them to the results
