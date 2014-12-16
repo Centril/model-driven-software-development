@@ -430,6 +430,9 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_mdKm4HpMEeS2zv6zlhm8qQ" name="numKeys">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_P5jW4IVLEeS_kf0GKjdMhw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_Q031gHpcEeSgf6-u89OUJA" name="getBill">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_bqhwcHpcEeSgf6-u89OUJA" name="booking" type="_qX9ogHpMEeS2zv6zlhm8qQ"/>
@@ -445,11 +448,17 @@
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_HrziwHpdEeSgf6-u89OUJA" name="pay">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_bZWrcHpdEeSgf6-u89OUJA" name="booking" type="_qX9ogHpMEeS2zv6zlhm8qQ"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ULshgIVLEeS_kf0GKjdMhw" name="param" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_THeU0HpdEeSJULlkSE75Zg" name="checkOut">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_63sSkHvGEeSHatiNfZ-sGg" name="booking" type="_qX9ogHpMEeS2zv6zlhm8qQ"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="__XF8cHvOEeSHatiNfZ-sGg" name="numKeys">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Xk7HIIVLEeS_kf0GKjdMhw" name="param" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="__PxB4HvNEeSHatiNfZ-sGg" name="getOrders" visibility="public">
@@ -462,6 +471,9 @@
     <packagedElement xmi:type="uml:Interface" xmi:id="_Alz5MIRdEeS-E_c58KLc5g" name="IOrdering">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_juaS8Hv_EeSHatiNfZ-sGg" name="placeOrder">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_JptYEIRcEeS-E_c58KLc5g" name="orderRequest" type="_swvogIQ2EeSXhZNlyip4WA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="__Y7dMIVKEeS_kf0GKjdMhw" name="param" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_qX9ogHpMEeS2zv6zlhm8qQ" name="IBooking">
