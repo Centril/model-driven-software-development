@@ -28,6 +28,7 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	private int nbrOfBeds;
 	private double basePrice; //Standard price for one night
 	private String roomName;
+	private boolean isOutOfService; //True is the room is out of service
 	
 	/**
 	 * Creates a room 
@@ -38,6 +39,7 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	protected Hotel_RoomImpl() {
 		this.nbrOfBeds = 1;
 		this.basePrice = 100;
+		this.isOutOfService = false;
 	}
 	
 	/**
@@ -51,6 +53,7 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 		this.nbrOfBeds = nbrOfBeds;
 		this.basePrice = basePrice;
 		this.roomId = roomId;
+		this.isOutOfService = false;
 	}
 
 	/**
