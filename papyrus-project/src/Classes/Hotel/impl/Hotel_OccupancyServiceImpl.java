@@ -42,21 +42,18 @@ public class Hotel_OccupancyServiceImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected Hotel_RoomService roomService;
-	private static EList<Hotel_Occupancy> occupancies;
+	private EList<Hotel_Occupancy> occupancies;
 	
-	private static void init() {
+	private void init() {
 		if (occupancies != null) {
 			return;
 		}
-		
-		Hotel_RoomServiceImpl roomService = new Hotel_RoomServiceImpl();
 		
 		occupancies = new BasicEList<Hotel_Occupancy>();
 	
 		Hotel_Occupancy occupancy = new Hotel_OccupancyImpl();
 		
 		Hotel_Room room = roomService.getRoomById(0);
-		
 		occupancy.setRoom(room);
 		occupancy.setStartTime(0);
 		occupancy.setEndTime(1);
@@ -71,6 +68,8 @@ public class Hotel_OccupancyServiceImpl extends MinimalEObjectImpl.Container imp
 	 */
 	protected Hotel_OccupancyServiceImpl() {
 		super();
+		
+		roomService = new Hotel_RoomServiceImpl();
 		
 		init();
 	}
