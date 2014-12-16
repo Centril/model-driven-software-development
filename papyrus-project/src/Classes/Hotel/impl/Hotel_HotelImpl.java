@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import Classes.Hotel.HotelPackage;
+import Classes.Hotel.Hotel_BookingSuggestion;
 import Classes.Hotel.Hotel_Hotel;
 import Classes.Hotel.Hotel_Occupancy;
 import Classes.Hotel.Hotel_OccupancyService;
@@ -22,10 +23,10 @@ import Classes.Hotel.Hotel_Order;
 import Classes.Hotel.Hotel_OrderService;
 import Classes.Hotel.Hotel_Room;
 import Classes.Hotel.Hotel_RoomService;
+import Classes.Hotel.Hotel_SearchResult;
 import Classes.Hotel.IBooking;
 import Classes.Hotel.IOrder;
 import Classes.Hotel.IOrdering;
-import Classes.Hotel.IRoom;
 import Classes.Hotel.ISearch;
 import Classes.Hotel.ISearchResult;
 import Classes.Hotel.OrderRequest;
@@ -358,7 +359,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		EList<Hotel_Occupancy> occupancies = getOccupancyService().getAllOccupancies();
 		EList<Hotel_Room> rooms = getRoomService().getAllRooms();
 		
-		EList<IRoom> availableRooms = new BasicEList<IRoom>();
+		EList<Hotel_Room> availableRooms = new BasicEList<>();
 		
 		// Loop through all rooms in the hotel
 		for (int i = 0; i < rooms.size(); i++) {
@@ -380,8 +381,86 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			}
 		}
 		
-		EList<ISearchResult> results = new BasicEList<ISearchResult>();
+		// Create a list (containing lists of rooms) where the index indicates the number of beds (minus one) in the rooms
+		EList<EList<Hotel_Room>> roomsAccordingToNumBeds = new BasicEList<>();
+		for (int i = 0; i < numberOfPersons; i++) {
+			roomsAccordingToNumBeds.add(new BasicEList<Hotel_Room>());
+		}
+		
+		// Also add a list containing all the rooms larger than necessary
+		roomsAccordingToNumBeds.add(new BasicEList<Hotel_Room>());
+		
+		// Fill the new lists with appropriate rooms
+		for (int i = 0; i < availableRooms.size(); i++) {
+			int numBeds = availableRooms.get(i).getNumBeds();
+			
+			// If the room has the same or less beds, put it in the appropriate list
+			if (numBeds <= numberOfPersons) {
+				roomsAccordingToNumBeds.get(numBeds - 1).add(availableRooms.get(i));
+			}
+			else { // If the room has more beds than the number of people, put it in the last list
+				roomsAccordingToNumBeds.get(roomsAccordingToNumBeds.size() - 1).add(availableRooms.get(i));
+			}
+		}
+		
 		// TODO: Do magic to combine rooms according to the number of people
+		
+		EList<ISearchResult> results = new BasicEList<ISearchResult>();
+
+		// For all rooms with the same number of beds as people, add them to the results
+		for (int i = 0; i < roomsAccordingToNumBeds.get(numberOfPersons - 1).size(); i++) {
+			
+			// Create a suggestion with the room
+			Hotel_BookingSuggestion suggestion = new Hotel_BookingSuggestionImpl();
+			suggestion.setRoom(roomsAccordingToNumBeds.get(numberOfPersons - 1).get(i));
+			
+			// Create a search result with the suggestion
+			Hotel_SearchResult searchResult = new Hotel_SearchResultImpl();
+			searchResult.getBookingSuggestion().add(suggestion);
+			
+			// Add the result to the list of all results
+			results.add(searchResult);
+		}
+		
+		// For 2 rooms with the same number of beds as people, add them to the results
+		for (int i = 0; i < numberOfPersons / 2; i++) {
+			int bedsInRoomOne = numberOfPersons / 2;
+			int bedsInRoomTwo = numberOfPersons - bedsInRoomOne;
+			
+			for (int j = 0; j < roomsAccordingToNumBeds.get(bedsInRoomOne - 1).size()
+					&& j < roomsAccordingToNumBeds.get(bedsInRoomTwo - 1).size(); j++) {
+				
+				// Create suggestion with the first room
+				Hotel_BookingSuggestion suggestionOne = new Hotel_BookingSuggestionImpl();
+				suggestionOne.setRoom(roomsAccordingToNumBeds.get(bedsInRoomOne - 1).get(i));
+				
+				// Create suggestion with the second room
+				Hotel_BookingSuggestion suggestionTwo = new Hotel_BookingSuggestionImpl();
+				suggestionTwo.setRoom(roomsAccordingToNumBeds.get(bedsInRoomTwo - 1).get(i));
+				
+				// Create a search result with the suggestion
+				Hotel_SearchResult searchResult = new Hotel_SearchResultImpl();
+				searchResult.getBookingSuggestion().add(suggestionOne);
+				searchResult.getBookingSuggestion().add(suggestionTwo);
+				
+				// Add the result to the list of all results
+				results.add(searchResult);
+			}
+		}
+		
+		// Now just dump all the rooms containing more beds than number of people in the results...
+		for (int i = 0; i < roomsAccordingToNumBeds.get(roomsAccordingToNumBeds.size() - 1).size(); i++) {
+			// Create suggestion with the room
+			Hotel_BookingSuggestion suggestion = new Hotel_BookingSuggestionImpl();
+			suggestion.setRoom(roomsAccordingToNumBeds.get(roomsAccordingToNumBeds.size() - 1).get(i));
+			
+			// Create a search result with the suggestion
+			Hotel_SearchResult searchResult = new Hotel_SearchResultImpl();
+			searchResult.getBookingSuggestion().add(suggestion);
+			
+			// Add the result to the list of all results
+			results.add(searchResult);
+		}
 		
 		return results;
 	}
