@@ -42,6 +42,9 @@ public class Hotel_BookingSuggestionImpl extends MinimalEObjectImpl.Container im
 	 */
 	protected Hotel_Room room;
 
+	private long startTime;
+	private long endTime;
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,6 +54,14 @@ public class Hotel_BookingSuggestionImpl extends MinimalEObjectImpl.Container im
 		super();
 	}
 
+	protected Hotel_BookingSuggestionImpl(Hotel_Room room, long startTime, long endTime) {
+		this();
+		
+		this.room = room;
+		this.startTime = startTime;
+		this.endTime = endTime;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -102,12 +113,10 @@ public class Hotel_BookingSuggestionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public double getPrice() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return room.getPrice();
 	}
 
 	/**
@@ -116,9 +125,7 @@ public class Hotel_BookingSuggestionImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	public long getStartTime() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return startTime;
 	}
 
 	/**
@@ -127,9 +134,7 @@ public class Hotel_BookingSuggestionImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	public long getEndTime() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return endTime;
 	}
 
 	/**
