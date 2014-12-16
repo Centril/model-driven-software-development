@@ -350,6 +350,25 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		throw new UnsupportedOperationException();
 	}
 
+	private boolean isRoomAvailable(IRoom room, long startTime, long endTime) {
+		if (startTime > endTime) {
+			throw new RuntimeException("Heeey, don't be a stupid.");
+		}
+		
+		EList<Hotel_Occupancy> occupancies = getOccupancyService().getAllOccupancies();
+		
+		for (Hotel_Occupancy occupancy : occupancies) {
+			if (room.getId() == occupancy.getRoom().getId()) {
+				// Basic 1-dimensional box collision detection
+				if (endTime <= occupancy.getStartTime() && startTime >= occupancy.getEndTime()) {
+					return false;
+				}
+			}
+		}
+		
+		return true;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -363,7 +382,12 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		EList<Hotel_Room> availableRooms = new BasicEList<>();
 		
 		// Loop through all rooms in the hotel
-		for (int i = 0; i < rooms.size(); i++) {
+		for (Hotel_Room room : rooms) {
+			if (isRoomAvailable(room, startTime, endTime)) {
+				availableRooms.add(room);
+			}
+		}
+		/*for (int i = 0; i < rooms.size(); i++) {
 			boolean available = true;
 			
 			// Loop through all occupancies
@@ -379,7 +403,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			if (available) {
 				availableRooms.add(rooms.get(i));
 			}
-		}
+		}*/
 		
 		// Create a list (containing lists of rooms) where the index indicates the number of beds (minus one) in the rooms
 		EList<EList<Hotel_Room>> roomsAccordingToNumBeds = new BasicEList<>();
