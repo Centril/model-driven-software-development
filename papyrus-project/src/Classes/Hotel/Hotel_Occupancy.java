@@ -79,4 +79,20 @@ public interface Hotel_Occupancy extends EObject {
 	 */
 	long getEndTime();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model startTimeRequired="true" startTimeOrdered="false"
+	 * @generated
+	 */
+	void setStartTime(long startTime);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model endTimeRequired="true" endTimeOrdered="false"
+	 * @generated
+	 */
+	void setEndTime(long endTime);
+
 } // Hotel_Occupancy

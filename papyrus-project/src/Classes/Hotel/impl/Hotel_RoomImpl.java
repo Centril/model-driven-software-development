@@ -94,6 +94,39 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void setId(int id) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNumBeds(int numBeds) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPrice(double price) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
@@ -103,6 +136,15 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 				return getNumBeds();
 			case HotelPackage.HOTEL_ROOM___GET_PRICE:
 				return getPrice();
+			case HotelPackage.HOTEL_ROOM___SET_ID__INT:
+				setId((Integer)arguments.get(0));
+				return null;
+			case HotelPackage.HOTEL_ROOM___SET_NUM_BEDS__INT:
+				setNumBeds((Integer)arguments.get(0));
+				return null;
+			case HotelPackage.HOTEL_ROOM___SET_PRICE__DOUBLE:
+				setPrice((Double)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

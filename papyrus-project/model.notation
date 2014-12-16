@@ -388,6 +388,14 @@
           <element xmi:type="uml:Operation" href="Classes.uml#_EDdu8IUlEeSmeud0-QRf8w"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_EDdu8oUlEeSmeud0-QRf8w"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_5Y2TcIUxEeSmeud0-QRf8w" type="3013">
+          <element xmi:type="uml:Operation" href="Classes.uml#_5Yz3MIUxEeSmeud0-QRf8w"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_5Y2TcYUxEeSmeud0-QRf8w"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_8c2P8IUxEeSmeud0-QRf8w" type="3013">
+          <element xmi:type="uml:Operation" href="Classes.uml#_8c1B0IUxEeSmeud0-QRf8w"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_8c2P8YUxEeSmeud0-QRf8w"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_oSNI2no_EeSTh5yDLLqE0Q"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_oSNI23o_EeSTh5yDLLqE0Q"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_oSNI3Ho_EeSTh5yDLLqE0Q"/>
@@ -775,6 +783,18 @@
         <children xmi:type="notation:Shape" xmi:id="_whDkIXpAEeSTh5yDLLqE0Q" type="3013">
           <element xmi:type="uml:Operation" href="Classes.uml#_whDkIHpAEeSTh5yDLLqE0Q"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_whDkInpAEeSTh5yDLLqE0Q"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_ml5KwIUxEeSmeud0-QRf8w" type="3007">
+          <element xmi:type="uml:Operation" href="Classes.uml#_mlOcYIUxEeSmeud0-QRf8w"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_ml5KwYUxEeSmeud0-QRf8w"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_rwmVEIUxEeSmeud0-QRf8w" type="3007">
+          <element xmi:type="uml:Operation" href="Classes.uml#_rwj40IUxEeSmeud0-QRf8w"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_rwmVEYUxEeSmeud0-QRf8w"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_vAagAIUxEeSmeud0-QRf8w" type="3007">
+          <element xmi:type="uml:Operation" href="Classes.uml#_vAXcsIUxEeSmeud0-QRf8w"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_vAagAYUxEeSmeud0-QRf8w"/>
         </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_Kn9CqYRUEeS_Fud_KU3BbA"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_Kn9CqoRUEeS_Fud_KU3BbA"/>
