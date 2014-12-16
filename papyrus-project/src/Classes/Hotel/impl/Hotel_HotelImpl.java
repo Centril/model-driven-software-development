@@ -300,7 +300,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * @generated NOT
 	 */
 	public double getBill(IBooking booking) {
-		return booking.getPrice();
+		return booking.getPrice(); //A bill should include customer and price objects. But double...
 	}
 
 	/**
