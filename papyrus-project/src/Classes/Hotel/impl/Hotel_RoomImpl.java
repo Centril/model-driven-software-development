@@ -144,6 +144,50 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getRoomInfo() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsOutOfOrder(boolean outOfOrder) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRoomInfo(String info) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isOutOfOrder() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
@@ -167,6 +211,16 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 			case HotelPackage.HOTEL_ROOM___SET_NAME__STRING:
 				setName((String)arguments.get(0));
 				return null;
+			case HotelPackage.HOTEL_ROOM___GET_ROOM_INFO:
+				return getRoomInfo();
+			case HotelPackage.HOTEL_ROOM___SET_IS_OUT_OF_ORDER__BOOLEAN:
+				setIsOutOfOrder((Boolean)arguments.get(0));
+				return null;
+			case HotelPackage.HOTEL_ROOM___SET_ROOM_INFO__STRING:
+				setRoomInfo((String)arguments.get(0));
+				return null;
+			case HotelPackage.HOTEL_ROOM___IS_OUT_OF_ORDER:
+				return isOutOfOrder();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

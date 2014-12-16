@@ -20,10 +20,10 @@ public interface IFrontDesk extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model bookingRequired="true" bookingOrdered="false" numKeysRequired="true" numKeysOrdered="false"
+	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false" numKeysRequired="true" numKeysOrdered="false"
 	 * @generated
 	 */
-	void checkIn(IBooking booking, int numKeys);
+	boolean checkIn(IBooking booking, int numKeys);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -44,18 +44,18 @@ public interface IFrontDesk extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model bookingRequired="true" bookingOrdered="false"
+	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */
-	void pay(IBooking booking);
+	boolean pay(IBooking booking);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model bookingRequired="true" bookingOrdered="false" numKeysRequired="true" numKeysOrdered="false"
+	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false" numKeysRequired="true" numKeysOrdered="false"
 	 * @generated
 	 */
-	void checkOut(IBooking booking, int numKeys);
+	boolean checkOut(IBooking booking, int numKeys);
 
 	/**
 	 * <!-- begin-user-doc -->

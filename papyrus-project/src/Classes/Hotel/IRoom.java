@@ -79,4 +79,36 @@ public interface IRoom extends EObject {
 	 */
 	void setName(String name);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getRoomInfo();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model outOfOrderRequired="true" outOfOrderOrdered="false"
+	 * @generated
+	 */
+	void setIsOutOfOrder(boolean outOfOrder);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model infoDataType="org.eclipse.uml2.types.String" infoRequired="true" infoOrdered="false"
+	 * @generated
+	 */
+	void setRoomInfo(String info);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isOutOfOrder();
+
 } // IRoom
