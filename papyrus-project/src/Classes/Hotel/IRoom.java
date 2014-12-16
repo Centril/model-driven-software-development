@@ -63,4 +63,20 @@ public interface IRoom extends EObject {
 	 */
 	void setPrice(double price);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model nameDataType="org.eclipse.uml2.types.String" nameRequired="true" nameOrdered="false"
+	 * @generated
+	 */
+	void setName(String name);
+
 } // IRoom

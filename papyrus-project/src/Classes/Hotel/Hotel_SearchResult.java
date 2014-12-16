@@ -37,4 +37,12 @@ public interface Hotel_SearchResult extends ISearchResult {
 	 */
 	EList<Hotel_BookingSuggestion> getBookingSuggestion();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model suggestionRequired="true" suggestionOrdered="false"
+	 * @generated
+	 */
+	void addBookingSuggestion(IBookingSuggestion suggestion);
+
 } // Hotel_SearchResult

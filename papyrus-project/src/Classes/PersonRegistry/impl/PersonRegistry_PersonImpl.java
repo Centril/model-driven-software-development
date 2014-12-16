@@ -193,7 +193,7 @@ public class PersonRegistry_PersonImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createCreditCard(String number, String ccv, int month, int year, String cardHolder) {
+	public void createCreditCard(String number, String ccv, int month, int year, String firstName, String lastName) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -215,7 +215,7 @@ public class PersonRegistry_PersonImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String setFirstName() {
+	public void setFirstName(String firstName) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -226,7 +226,7 @@ public class PersonRegistry_PersonImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String setLastName() {
+	public void setLastName(String lastName) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -237,7 +237,7 @@ public class PersonRegistry_PersonImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String setSSN() {
+	public void setSSN(String ssn) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -328,17 +328,20 @@ public class PersonRegistry_PersonImpl extends MinimalEObjectImpl.Container impl
 			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___REMOVE_CREDIT_CARD:
 				removeCreditCard();
 				return null;
-			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___CREATE_CREDIT_CARD__STRING_STRING_INT_INT_STRING:
-				createCreditCard((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (String)arguments.get(4));
+			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___CREATE_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING:
+				createCreditCard((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5));
 				return null;
 			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___GET_ID:
 				return getId();
-			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___SET_FIRST_NAME:
-				return setFirstName();
-			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___SET_LAST_NAME:
-				return setLastName();
-			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___SET_SSN:
-				return setSSN();
+			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___SET_FIRST_NAME__STRING:
+				setFirstName((String)arguments.get(0));
+				return null;
+			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___SET_LAST_NAME__STRING:
+				setLastName((String)arguments.get(0));
+				return null;
+			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___SET_SSN__STRING:
+				setSSN((String)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -2,6 +2,7 @@
  */
 package Classes.Hotel;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -18,10 +19,10 @@ public interface ISearchResult extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
+	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	IBookingSuggestion getBookingSuggestions();
+	EList<IBookingSuggestion> getBookingSuggestions();
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -164,6 +164,17 @@ public class Hotel_OccupancyImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getNumKeys() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -242,6 +253,8 @@ public class Hotel_OccupancyImpl extends MinimalEObjectImpl.Container implements
 			case HotelPackage.HOTEL_OCCUPANCY___SET_END_TIME__LONG:
 				setEndTime((Long)arguments.get(0));
 				return null;
+			case HotelPackage.HOTEL_OCCUPANCY___GET_NUM_KEYS:
+				return getNumKeys();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

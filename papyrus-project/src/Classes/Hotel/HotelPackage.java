@@ -158,13 +158,31 @@ public interface HotelPackage extends EPackage {
 	int IROOM___SET_PRICE__DOUBLE = 5;
 
 	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM___GET_NAME = 6;
+
+	/**
+	 * The operation id for the '<em>Set Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM___SET_NAME__STRING = 7;
+
+	/**
 	 * The number of operations of the '<em>IRoom</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_OPERATION_COUNT = 6;
+	int IROOM_OPERATION_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.impl.Hotel_RoomImpl <em>Hotel Room</em>}' class.
@@ -238,6 +256,24 @@ public interface HotelPackage extends EPackage {
 	 * @ordered
 	 */
 	int HOTEL_ROOM___SET_PRICE__DOUBLE = IROOM___SET_PRICE__DOUBLE;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_ROOM___GET_NAME = IROOM___GET_NAME;
+
+	/**
+	 * The operation id for the '<em>Set Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_ROOM___SET_NAME__STRING = IROOM___SET_NAME__STRING;
 
 	/**
 	 * The number of operations of the '<em>Hotel Room</em>' class.
@@ -331,13 +367,22 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_OCCUPANCY___SET_END_TIME__LONG = 5;
 
 	/**
+	 * The operation id for the '<em>Get Num Keys</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_OCCUPANCY___GET_NUM_KEYS = 6;
+
+	/**
 	 * The number of operations of the '<em>Hotel Occupancy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_OCCUPANCY_OPERATION_COUNT = 6;
+	int HOTEL_OCCUPANCY_OPERATION_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.impl.Hotel_StayImpl <em>Hotel Stay</em>}' class.
@@ -889,13 +934,22 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_SEARCH_RESULT___GET_PRICE = ISEARCH_RESULT___GET_PRICE;
 
 	/**
+	 * The operation id for the '<em>Add Booking Suggestion</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_SEARCH_RESULT___ADD_BOOKING_SUGGESTION__IBOOKINGSUGGESTION = ISEARCH_RESULT_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Hotel Search Result</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_SEARCH_RESULT_OPERATION_COUNT = ISEARCH_RESULT_OPERATION_COUNT + 0;
+	int HOTEL_SEARCH_RESULT_OPERATION_COUNT = ISEARCH_RESULT_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.IFrontDesk <em>IFront Desk</em>}' class.
@@ -1181,13 +1235,22 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_OCCUPANCY_SERVICE = 15;
 
 	/**
+	 * The feature id for the '<em><b>Room Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_OCCUPANCY_SERVICE__ROOM_SERVICE = 0;
+
+	/**
 	 * The number of structural features of the '<em>Hotel Occupancy Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_OCCUPANCY_SERVICE_FEATURE_COUNT = 0;
+	int HOTEL_OCCUPANCY_SERVICE_FEATURE_COUNT = 1;
 
 	/**
 	 * The operation id for the '<em>Get All Occupancies</em>' operation.
@@ -1511,6 +1574,26 @@ public interface HotelPackage extends EPackage {
 	EOperation getIRoom__SetPrice__double();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IRoom#getName() <em>Get Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Name</em>' operation.
+	 * @see Classes.Hotel.IRoom#getName()
+	 * @generated
+	 */
+	EOperation getIRoom__GetName();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IRoom#setName(java.lang.String) <em>Set Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Name</em>' operation.
+	 * @see Classes.Hotel.IRoom#setName(java.lang.String)
+	 * @generated
+	 */
+	EOperation getIRoom__SetName__String();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.Hotel_Occupancy <em>Hotel Occupancy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1590,6 +1673,16 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getHotel_Occupancy__SetEndTime__long();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.Hotel_Occupancy#getNumKeys() <em>Get Num Keys</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Num Keys</em>' operation.
+	 * @see Classes.Hotel.Hotel_Occupancy#getNumKeys()
+	 * @generated
+	 */
+	EOperation getHotel_Occupancy__GetNumKeys();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.Hotel_Stay <em>Hotel Stay</em>}'.
@@ -1858,6 +1951,16 @@ public interface HotelPackage extends EPackage {
 	EReference getHotel_SearchResult_BookingSuggestion();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.Hotel_SearchResult#addBookingSuggestion(Classes.Hotel.IBookingSuggestion) <em>Add Booking Suggestion</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Booking Suggestion</em>' operation.
+	 * @see Classes.Hotel.Hotel_SearchResult#addBookingSuggestion(Classes.Hotel.IBookingSuggestion)
+	 * @generated
+	 */
+	EOperation getHotel_SearchResult__AddBookingSuggestion__IBookingSuggestion();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.ISearchResult <em>ISearch Result</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1991,6 +2094,17 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getHotel_OccupancyService();
+
+	/**
+	 * Returns the meta object for the reference '{@link Classes.Hotel.Hotel_OccupancyService#getRoomService <em>Room Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Room Service</em>'.
+	 * @see Classes.Hotel.Hotel_OccupancyService#getRoomService()
+	 * @see #getHotel_OccupancyService()
+	 * @generated
+	 */
+	EReference getHotel_OccupancyService_RoomService();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.Hotel.Hotel_OccupancyService#getAllOccupancies() <em>Get All Occupancies</em>}' operation.
@@ -2304,6 +2418,22 @@ public interface HotelPackage extends EPackage {
 		EOperation IROOM___SET_PRICE__DOUBLE = eINSTANCE.getIRoom__SetPrice__double();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM___GET_NAME = eINSTANCE.getIRoom__GetName();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM___SET_NAME__STRING = eINSTANCE.getIRoom__SetName__String();
+
+		/**
 		 * The meta object literal for the '{@link Classes.Hotel.impl.Hotel_OccupancyImpl <em>Hotel Occupancy</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2368,6 +2498,14 @@ public interface HotelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation HOTEL_OCCUPANCY___SET_END_TIME__LONG = eINSTANCE.getHotel_Occupancy__SetEndTime__long();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Num Keys</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation HOTEL_OCCUPANCY___GET_NUM_KEYS = eINSTANCE.getHotel_Occupancy__GetNumKeys();
 
 		/**
 		 * The meta object literal for the '{@link Classes.Hotel.impl.Hotel_StayImpl <em>Hotel Stay</em>}' class.
@@ -2594,6 +2732,14 @@ public interface HotelPackage extends EPackage {
 		EReference HOTEL_SEARCH_RESULT__BOOKING_SUGGESTION = eINSTANCE.getHotel_SearchResult_BookingSuggestion();
 
 		/**
+		 * The meta object literal for the '<em><b>Add Booking Suggestion</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation HOTEL_SEARCH_RESULT___ADD_BOOKING_SUGGESTION__IBOOKINGSUGGESTION = eINSTANCE.getHotel_SearchResult__AddBookingSuggestion__IBookingSuggestion();
+
+		/**
 		 * The meta object literal for the '{@link Classes.Hotel.ISearchResult <em>ISearch Result</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2704,6 +2850,14 @@ public interface HotelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass HOTEL_OCCUPANCY_SERVICE = eINSTANCE.getHotel_OccupancyService();
+
+		/**
+		 * The meta object literal for the '<em><b>Room Service</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HOTEL_OCCUPANCY_SERVICE__ROOM_SERVICE = eINSTANCE.getHotel_OccupancyService_RoomService();
 
 		/**
 		 * The meta object literal for the '<em><b>Get All Occupancies</b></em>' operation.

@@ -95,4 +95,12 @@ public interface Hotel_Occupancy extends EObject {
 	 */
 	void setEndTime(long endTime);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	int getNumKeys();
+
 } // Hotel_Occupancy

@@ -140,13 +140,22 @@ public interface PersonRegistryPackage extends EPackage {
 	int ICREDIT_CARD_INFO___GET_NUMBER = 3;
 
 	/**
-	 * The operation id for the '<em>Get Card Holder</em>' operation.
+	 * The operation id for the '<em>Get First Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ICREDIT_CARD_INFO___GET_CARD_HOLDER = 4;
+	int ICREDIT_CARD_INFO___GET_FIRST_NAME = 4;
+
+	/**
+	 * The operation id for the '<em>Get Last Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ICREDIT_CARD_INFO___GET_LAST_NAME = 5;
 
 	/**
 	 * The number of operations of the '<em>ICredit Card Info</em>' class.
@@ -155,7 +164,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICREDIT_CARD_INFO_OPERATION_COUNT = 5;
+	int ICREDIT_CARD_INFO_OPERATION_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link Classes.PersonRegistry.impl.PersonRegistry_CreditCardInfoImpl <em>Person Registry Credit Card Info</em>}' class.
@@ -213,13 +222,22 @@ public interface PersonRegistryPackage extends EPackage {
 	int PERSON_REGISTRY_CREDIT_CARD_INFO___GET_NUMBER = ICREDIT_CARD_INFO___GET_NUMBER;
 
 	/**
-	 * The operation id for the '<em>Get Card Holder</em>' operation.
+	 * The operation id for the '<em>Get First Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_REGISTRY_CREDIT_CARD_INFO___GET_CARD_HOLDER = ICREDIT_CARD_INFO___GET_CARD_HOLDER;
+	int PERSON_REGISTRY_CREDIT_CARD_INFO___GET_FIRST_NAME = ICREDIT_CARD_INFO___GET_FIRST_NAME;
+
+	/**
+	 * The operation id for the '<em>Get Last Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_REGISTRY_CREDIT_CARD_INFO___GET_LAST_NAME = ICREDIT_CARD_INFO___GET_LAST_NAME;
 
 	/**
 	 * The number of operations of the '<em>Person Registry Credit Card Info</em>' class.
@@ -328,7 +346,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON___CREATE_CREDIT_CARD__STRING_STRING_INT_INT_STRING = 8;
+	int IPERSON___CREATE_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING = 8;
 
 	/**
 	 * The operation id for the '<em>Get Id</em>' operation.
@@ -346,7 +364,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON___SET_FIRST_NAME = 10;
+	int IPERSON___SET_FIRST_NAME__STRING = 10;
 
 	/**
 	 * The operation id for the '<em>Set Last Name</em>' operation.
@@ -355,7 +373,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON___SET_LAST_NAME = 11;
+	int IPERSON___SET_LAST_NAME__STRING = 11;
 
 	/**
 	 * The operation id for the '<em>Set SSN</em>' operation.
@@ -364,7 +382,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON___SET_SSN = 12;
+	int IPERSON___SET_SSN__STRING = 12;
 
 	/**
 	 * The number of operations of the '<em>IPerson</em>' class.
@@ -482,7 +500,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_REGISTRY_PERSON___CREATE_CREDIT_CARD__STRING_STRING_INT_INT_STRING = IPERSON___CREATE_CREDIT_CARD__STRING_STRING_INT_INT_STRING;
+	int PERSON_REGISTRY_PERSON___CREATE_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING = IPERSON___CREATE_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING;
 
 	/**
 	 * The operation id for the '<em>Get Id</em>' operation.
@@ -500,7 +518,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_REGISTRY_PERSON___SET_FIRST_NAME = IPERSON___SET_FIRST_NAME;
+	int PERSON_REGISTRY_PERSON___SET_FIRST_NAME__STRING = IPERSON___SET_FIRST_NAME__STRING;
 
 	/**
 	 * The operation id for the '<em>Set Last Name</em>' operation.
@@ -509,7 +527,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_REGISTRY_PERSON___SET_LAST_NAME = IPERSON___SET_LAST_NAME;
+	int PERSON_REGISTRY_PERSON___SET_LAST_NAME__STRING = IPERSON___SET_LAST_NAME__STRING;
 
 	/**
 	 * The operation id for the '<em>Set SSN</em>' operation.
@@ -518,7 +536,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_REGISTRY_PERSON___SET_SSN = IPERSON___SET_SSN;
+	int PERSON_REGISTRY_PERSON___SET_SSN__STRING = IPERSON___SET_SSN__STRING;
 
 	/**
 	 * The number of operations of the '<em>Person Registry Person</em>' class.
@@ -838,14 +856,24 @@ public interface PersonRegistryPackage extends EPackage {
 	EOperation getICreditCardInfo__GetNumber();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.PersonRegistry.ICreditCardInfo#getCardHolder() <em>Get Card Holder</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.ICreditCardInfo#getFirstName() <em>Get First Name</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Card Holder</em>' operation.
-	 * @see Classes.PersonRegistry.ICreditCardInfo#getCardHolder()
+	 * @return the meta object for the '<em>Get First Name</em>' operation.
+	 * @see Classes.PersonRegistry.ICreditCardInfo#getFirstName()
 	 * @generated
 	 */
-	EOperation getICreditCardInfo__GetCardHolder();
+	EOperation getICreditCardInfo__GetFirstName();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.ICreditCardInfo#getLastName() <em>Get Last Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Last Name</em>' operation.
+	 * @see Classes.PersonRegistry.ICreditCardInfo#getLastName()
+	 * @generated
+	 */
+	EOperation getICreditCardInfo__GetLastName();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.PersonRegistry.PersonRegistry_Person <em>Person Registry Person</em>}'.
@@ -959,14 +987,14 @@ public interface PersonRegistryPackage extends EPackage {
 	EOperation getIPerson__RemoveCreditCard();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPerson#createCreditCard(java.lang.String, java.lang.String, int, int, java.lang.String) <em>Create Credit Card</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPerson#createCreditCard(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String) <em>Create Credit Card</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create Credit Card</em>' operation.
-	 * @see Classes.PersonRegistry.IPerson#createCreditCard(java.lang.String, java.lang.String, int, int, java.lang.String)
+	 * @see Classes.PersonRegistry.IPerson#createCreditCard(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String)
 	 * @generated
 	 */
-	EOperation getIPerson__CreateCreditCard__String_String_int_int_String();
+	EOperation getIPerson__CreateCreditCard__String_String_int_int_String_String();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPerson#getId() <em>Get Id</em>}' operation.
@@ -979,34 +1007,34 @@ public interface PersonRegistryPackage extends EPackage {
 	EOperation getIPerson__GetId();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPerson#setFirstName() <em>Set First Name</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPerson#setFirstName(java.lang.String) <em>Set First Name</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Set First Name</em>' operation.
-	 * @see Classes.PersonRegistry.IPerson#setFirstName()
+	 * @see Classes.PersonRegistry.IPerson#setFirstName(java.lang.String)
 	 * @generated
 	 */
-	EOperation getIPerson__SetFirstName();
+	EOperation getIPerson__SetFirstName__String();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPerson#setLastName() <em>Set Last Name</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPerson#setLastName(java.lang.String) <em>Set Last Name</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Set Last Name</em>' operation.
-	 * @see Classes.PersonRegistry.IPerson#setLastName()
+	 * @see Classes.PersonRegistry.IPerson#setLastName(java.lang.String)
 	 * @generated
 	 */
-	EOperation getIPerson__SetLastName();
+	EOperation getIPerson__SetLastName__String();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPerson#setSSN() <em>Set SSN</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPerson#setSSN(java.lang.String) <em>Set SSN</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Set SSN</em>' operation.
-	 * @see Classes.PersonRegistry.IPerson#setSSN()
+	 * @see Classes.PersonRegistry.IPerson#setSSN(java.lang.String)
 	 * @generated
 	 */
-	EOperation getIPerson__SetSSN();
+	EOperation getIPerson__SetSSN__String();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.PersonRegistry.PersonRegistry_Blacklist <em>Person Registry Blacklist</em>}'.
@@ -1247,12 +1275,20 @@ public interface PersonRegistryPackage extends EPackage {
 		EOperation ICREDIT_CARD_INFO___GET_NUMBER = eINSTANCE.getICreditCardInfo__GetNumber();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Card Holder</b></em>' operation.
+		 * The meta object literal for the '<em><b>Get First Name</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ICREDIT_CARD_INFO___GET_CARD_HOLDER = eINSTANCE.getICreditCardInfo__GetCardHolder();
+		EOperation ICREDIT_CARD_INFO___GET_FIRST_NAME = eINSTANCE.getICreditCardInfo__GetFirstName();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Last Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ICREDIT_CARD_INFO___GET_LAST_NAME = eINSTANCE.getICreditCardInfo__GetLastName();
 
 		/**
 		 * The meta object literal for the '{@link Classes.PersonRegistry.impl.PersonRegistry_PersonImpl <em>Person Registry Person</em>}' class.
@@ -1352,7 +1388,7 @@ public interface PersonRegistryPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IPERSON___CREATE_CREDIT_CARD__STRING_STRING_INT_INT_STRING = eINSTANCE.getIPerson__CreateCreditCard__String_String_int_int_String();
+		EOperation IPERSON___CREATE_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING = eINSTANCE.getIPerson__CreateCreditCard__String_String_int_int_String_String();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Id</b></em>' operation.
@@ -1368,7 +1404,7 @@ public interface PersonRegistryPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IPERSON___SET_FIRST_NAME = eINSTANCE.getIPerson__SetFirstName();
+		EOperation IPERSON___SET_FIRST_NAME__STRING = eINSTANCE.getIPerson__SetFirstName__String();
 
 		/**
 		 * The meta object literal for the '<em><b>Set Last Name</b></em>' operation.
@@ -1376,7 +1412,7 @@ public interface PersonRegistryPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IPERSON___SET_LAST_NAME = eINSTANCE.getIPerson__SetLastName();
+		EOperation IPERSON___SET_LAST_NAME__STRING = eINSTANCE.getIPerson__SetLastName__String();
 
 		/**
 		 * The meta object literal for the '<em><b>Set SSN</b></em>' operation.
@@ -1384,7 +1420,7 @@ public interface PersonRegistryPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IPERSON___SET_SSN = eINSTANCE.getIPerson__SetSSN();
+		EOperation IPERSON___SET_SSN__STRING = eINSTANCE.getIPerson__SetSSN__String();
 
 		/**
 		 * The meta object literal for the '{@link Classes.PersonRegistry.impl.PersonRegistry_BlacklistImpl <em>Person Registry Blacklist</em>}' class.

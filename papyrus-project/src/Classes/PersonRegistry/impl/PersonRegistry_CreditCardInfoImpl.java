@@ -91,7 +91,18 @@ public class PersonRegistry_CreditCardInfoImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getCardHolder() {
+	public String getFirstName() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLastName() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -113,8 +124,10 @@ public class PersonRegistry_CreditCardInfoImpl extends MinimalEObjectImpl.Contai
 				return getYear();
 			case PersonRegistryPackage.PERSON_REGISTRY_CREDIT_CARD_INFO___GET_NUMBER:
 				return getNumber();
-			case PersonRegistryPackage.PERSON_REGISTRY_CREDIT_CARD_INFO___GET_CARD_HOLDER:
-				return getCardHolder();
+			case PersonRegistryPackage.PERSON_REGISTRY_CREDIT_CARD_INFO___GET_FIRST_NAME:
+				return getFirstName();
+			case PersonRegistryPackage.PERSON_REGISTRY_CREDIT_CARD_INFO___GET_LAST_NAME:
+				return getLastName();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

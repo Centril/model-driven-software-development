@@ -82,10 +82,10 @@ public interface IPerson extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model numberDataType="org.eclipse.uml2.types.String" numberRequired="true" numberOrdered="false" ccvDataType="org.eclipse.uml2.types.String" ccvRequired="true" ccvOrdered="false" monthRequired="true" monthOrdered="false" yearRequired="true" yearOrdered="false" cardHolderDataType="org.eclipse.uml2.types.String" cardHolderRequired="true" cardHolderOrdered="false"
+	 * @model numberDataType="org.eclipse.uml2.types.String" numberRequired="true" numberOrdered="false" ccvDataType="org.eclipse.uml2.types.String" ccvRequired="true" ccvOrdered="false" monthRequired="true" monthOrdered="false" yearRequired="true" yearOrdered="false" firstNameDataType="org.eclipse.uml2.types.String" firstNameRequired="true" firstNameOrdered="false" lastNameDataType="org.eclipse.uml2.types.String" lastNameRequired="true" lastNameOrdered="false"
 	 * @generated
 	 */
-	void createCreditCard(String number, String ccv, int month, int year, String cardHolder);
+	void createCreditCard(String number, String ccv, int month, int year, String firstName, String lastName);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,25 +98,25 @@ public interface IPerson extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model firstNameDataType="org.eclipse.uml2.types.String" firstNameRequired="true" firstNameOrdered="false"
 	 * @generated
 	 */
-	String setFirstName();
+	void setFirstName(String firstName);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model lastNameDataType="org.eclipse.uml2.types.String" lastNameRequired="true" lastNameOrdered="false"
 	 * @generated
 	 */
-	String setLastName();
+	void setLastName(String lastName);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model ssnDataType="org.eclipse.uml2.types.String" ssnRequired="true" ssnOrdered="false"
 	 * @generated
 	 */
-	String setSSN();
+	void setSSN(String ssn);
 
 } // IPerson

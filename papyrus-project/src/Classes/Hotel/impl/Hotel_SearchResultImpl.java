@@ -79,7 +79,7 @@ public class Hotel_SearchResultImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IBookingSuggestion getBookingSuggestions() {
+	public EList<IBookingSuggestion> getBookingSuggestions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -91,6 +91,17 @@ public class Hotel_SearchResultImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public double getPrice() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addBookingSuggestion(IBookingSuggestion suggestion) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -168,6 +179,9 @@ public class Hotel_SearchResultImpl extends MinimalEObjectImpl.Container impleme
 				return getBookingSuggestions();
 			case HotelPackage.HOTEL_SEARCH_RESULT___GET_PRICE:
 				return getPrice();
+			case HotelPackage.HOTEL_SEARCH_RESULT___ADD_BOOKING_SUGGESTION__IBOOKINGSUGGESTION:
+				addBookingSuggestion((IBookingSuggestion)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

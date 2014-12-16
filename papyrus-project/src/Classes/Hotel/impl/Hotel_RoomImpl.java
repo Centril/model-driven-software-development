@@ -127,6 +127,28 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String name) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
@@ -144,6 +166,11 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 				return null;
 			case HotelPackage.HOTEL_ROOM___SET_PRICE__DOUBLE:
 				setPrice((Double)arguments.get(0));
+				return null;
+			case HotelPackage.HOTEL_ROOM___GET_NAME:
+				return getName();
+			case HotelPackage.HOTEL_ROOM___SET_NAME__STRING:
+				setName((String)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
