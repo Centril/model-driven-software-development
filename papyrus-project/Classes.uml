@@ -215,6 +215,16 @@
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
         </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="__Df1AIUkEeSmeud0-QRf8w" name="getStartTime">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_DwZB8IUlEeSmeud0-QRf8w" name="startTime" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_EDdu8IUlEeSmeud0-QRf8w" name="getEndTime">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_GIHHQIUlEeSmeud0-QRf8w" name="endTime" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedParameter>
+        </ownedOperation>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_r-yvUHo_EeSTh5yDLLqE0Q" name="Stay">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_mLfzoHpCEeSTh5yDLLqE0Q" name="occupancy" type="_oSNI0Ho_EeSTh5yDLLqE0Q" association="_mLfzo3pCEeSTh5yDLLqE0Q">
@@ -555,7 +565,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_GcRsYIRUEeS_Fud_KU3BbA" name="IRoom">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_uvrUMIRTEeS_Fud_KU3BbA" name="getId">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_1QJXkIRTEeS_Fud_KU3BbA" name="id">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_1QJXkIRTEeS_Fud_KU3BbA" name="id" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
       </ownedOperation>

@@ -380,6 +380,14 @@
           <element xmi:type="uml:Operation" href="Classes.uml#_YIucUHvKEeSHatiNfZ-sGg"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_YI4NUXvKEeSHatiNfZ-sGg"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="__E140IUkEeSmeud0-QRf8w" type="3013">
+          <element xmi:type="uml:Operation" href="Classes.uml#__Df1AIUkEeSmeud0-QRf8w"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="__E140YUkEeSmeud0-QRf8w"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_EDdu8YUlEeSmeud0-QRf8w" type="3013">
+          <element xmi:type="uml:Operation" href="Classes.uml#_EDdu8IUlEeSmeud0-QRf8w"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_EDdu8oUlEeSmeud0-QRf8w"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_oSNI2no_EeSTh5yDLLqE0Q"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_oSNI23o_EeSTh5yDLLqE0Q"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_oSNI3Ho_EeSTh5yDLLqE0Q"/>
