@@ -116,7 +116,10 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_HDkd9Hl0EeS-dbwPGgzjtw" name="year">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OhNtcHozEeS_Y-yub0PNVA" name="cardHolder">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_W3UNgIU7EeSoZcsipNKdAg" name="firstName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_YbD4MIU7EeSoZcsipNKdAg" name="lastName">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
@@ -126,17 +129,17 @@
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_n4f_AIRpEeSDgu4VwEIWQw" name="setFirstName">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_s2ne0IRpEeSDgu4VwEIWQw" name="firstName" direction="return">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_s2ne0IRpEeSDgu4VwEIWQw" name="firstName">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_-J6LkIRpEeSDgu4VwEIWQw" name="setLastName">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_BZ1EMIRqEeSDgu4VwEIWQw" direction="return">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_BZ1EMIRqEeSDgu4VwEIWQw" name="lastName">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_EgJU4IRqEeSDgu4VwEIWQw" name="setSSN">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_IdYmgIRqEeSDgu4VwEIWQw" direction="return">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_IdYmgIRqEeSDgu4VwEIWQw" name="ssn">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
@@ -162,8 +165,13 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_vWqV8HoyEeS_Y-yub0PNVA" name="getCardHolder">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_zdN7oHoyEeS_Y-yub0PNVA" name="cardHolder" direction="return">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_P5W84IU7EeSoZcsipNKdAg" name="getFirstName">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_R2KAwIU7EeSoZcsipNKdAg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_SZL1UIU7EeSoZcsipNKdAg" name="getLastName">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_UHhmcIU7EeSoZcsipNKdAg" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
