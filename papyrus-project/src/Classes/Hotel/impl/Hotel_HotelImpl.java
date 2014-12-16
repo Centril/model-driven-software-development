@@ -3,7 +3,12 @@
 package Classes.Hotel.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
+
+import javax.management.RuntimeErrorException;
+import javax.xml.soap.SOAPException;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
@@ -14,6 +19,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires;
+import Classes.Hotel.BookingRequest;
 import Classes.Hotel.HotelPackage;
 import Classes.Hotel.Hotel_BookingSuggestion;
 import Classes.Hotel.Hotel_Hotel;
@@ -25,11 +32,15 @@ import Classes.Hotel.Hotel_Room;
 import Classes.Hotel.Hotel_RoomService;
 import Classes.Hotel.Hotel_SearchResult;
 import Classes.Hotel.IBooking;
+import Classes.Hotel.IBookingSuggestion;
 import Classes.Hotel.IOrder;
 import Classes.Hotel.IOrdering;
+import Classes.Hotel.IRoom;
 import Classes.Hotel.ISearch;
 import Classes.Hotel.ISearchResult;
 import Classes.Hotel.OrderRequest;
+import Classes.PersonRegistry.ICreditCardInfo;
+import Classes.PersonRegistry.IPerson;
 import Classes.PersonRegistry.IPersonRegistry;
 
 /**
@@ -492,15 +503,95 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		return results;
 	}
 
+	private IPerson findPerson(int id) {
+		Collection<IPerson> people = basicGetPersonRegistry().getPeople();
+		for (IPerson person : people) {
+			if (id == person.getId()) {
+				return person;
+			}
+		}
+		return null;
+	}
+	
+	private boolean personIsYoungerThan15(IPerson person) {
+		Calendar calendar = Calendar.getInstance();
+		calendar.add(Calendar.YEAR, -15);
+		Date fifteenYearsAgo = calendar.getTime();
+		
+		Date personBirthDate = new Date(person.getBirthDate());
+		return fifteenYearsAgo.before(personBirthDate);
+	}
+	
+	private boolean hasValidPaymentInfo(IPerson person) {
+		try {
+			CustomerRequires instance = CustomerRequires.instance();
+			ICreditCardInfo card = person.getCreditCard();
+			return instance.isCreditCardValid(card.getNumber(), card.getCCV(), card.getMonth(), card.getYear(), card.getFirstName(), card.getLastName());
+		} catch (SOAPException e) {
+			throw new RuntimeException("Couldn't establish SOAP.");
+		}
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean placeOrder(OrderRequest orderRequest) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		
+		// Check if person info is correct
+		IPerson customer = findPerson(orderRequest.getCustomer());
+		if (customer == null) {
+			throw new RuntimeException("Customer does not exist.");
+		}
+		if (personIsYoungerThan15(customer)) {
+			throw new RuntimeException("Customer is younger than 15.");
+		}
+		if (!hasValidPaymentInfo(customer)) {
+			throw new RuntimeException("Customer doesn't have valid payment info.");
+		}
+		if (basicGetPersonRegistry().isBlacklisted(customer)) {
+			throw new RuntimeException("Customer is blacklisted.");
+		}
+		
+		for (BookingRequest bookingReq : orderRequest.getBookingRequests()) {
+			IPerson contact = findPerson(bookingReq.getContact());
+			if (contact == null) {
+				throw new RuntimeException("Contact does not exist");
+			}
+			if (basicGetPersonRegistry().isBlacklisted(contact)) {
+				throw new RuntimeException("Contact is blacklisted.");
+			}
+			
+			for (int guestId : bookingReq.getGuests()) {
+				IPerson guest = findPerson(guestId);
+				if (guest == null) {
+					throw new RuntimeException("Guest does not exist.");
+				}
+				if (basicGetPersonRegistry().isBlacklisted(guest)) {
+					throw new RuntimeException("Guest is blacklisted");
+				}
+			}
+		}
+		
+		// Check if room info is correct and place order if that's the case
+		synchronized (this) {
+			
+			// Check if requested rooms are available during the requested intervals
+			for (BookingRequest bookingReq : orderRequest.getBookingRequests()) {
+				IBookingSuggestion bs = bookingReq.getBookingSuggestion();
+				if (bs.getStartTime() >= bs.getEndTime()) {
+					throw new RuntimeException("Don't be a stupid, no negative intervals.");
+				}
+				if (!isRoomAvailable(bs.getRoom(), bs.getStartTime(), bs.getEndTime())) {
+					throw new RuntimeException("One of the rooms is not available for booking at specified time");
+				}
+			}
+			
+			// TODO: I'm a stupid. How to register booking in system? =(
+		}
+		
+		return false;
 	}
 
 	/**
