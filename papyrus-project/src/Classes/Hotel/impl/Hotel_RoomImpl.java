@@ -27,32 +27,30 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	private int roomId; //Unique for every room.
 	private int nbrOfBeds;
 	private double basePrice; //Standard price for one night
-	private static int IDCounter = 0; 
+	private String roomName;
 	
 	/**
-	 * Creates a room with a unique ID.
+	 * Creates a room 
+	 * Doesn't get a unique ID.
+	 * Will have default values for number of beds and price.
 	 * @generated NOT
 	 */
 	protected Hotel_RoomImpl() {
 		this.nbrOfBeds = 1;
 		this.basePrice = 100;
-		IDCounter += 1;
-		roomId = IDCounter;
-		
 	}
 	
 	/**
-	 * Creates a room with a unique ID 
-	 * given the number of beds and 
+	 * Creates given a unique id, the number of beds and 
 	 * the price of the room for one night.
 	 * @param nbrOfBeds, number of beds in the room.
 	 * @param basePrice, the price of the room for one night. 
+	 * @param roomId, Id of the room.
 	 */
-	protected Hotel_RoomImpl(int nbrOfBeds, int basePrice) {
+	protected Hotel_RoomImpl(int nbrOfBeds, int basePrice, int roomId) {
 		this.nbrOfBeds = nbrOfBeds;
 		this.basePrice = basePrice;
-		IDCounter += 1;
-		roomId = IDCounter;
+		this.roomId = roomId;
 	}
 
 	/**
@@ -90,58 +88,43 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Sets the unique id of the room.
+	 * @generated NOT
 	 */
 	public void setId(int id) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.roomId = id;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Method for setting the number of beds of the room.
+	 * @generated NOT
 	 */
 	public void setNumBeds(int numBeds) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.nbrOfBeds = numBeds;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Method for setting the price of the room for one night.
+	 * @generated NOT
 	 */
 	public void setPrice(double price) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.basePrice = price;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Returns the name of the room.
+	 * @generated NOT
 	 */
 	public String getName() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return roomName;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Method for setting the name of the room.
+	 * @generated NOT
 	 */
 	public void setName(String name) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.roomName = name;
 	}
 
 	/**
