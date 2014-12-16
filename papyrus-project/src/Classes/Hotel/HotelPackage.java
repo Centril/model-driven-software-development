@@ -176,13 +176,49 @@ public interface HotelPackage extends EPackage {
 	int IROOM___SET_NAME__STRING = 7;
 
 	/**
+	 * The operation id for the '<em>Get Room Info</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM___GET_ROOM_INFO = 8;
+
+	/**
+	 * The operation id for the '<em>Set Is Out Of Order</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM___SET_IS_OUT_OF_ORDER__BOOLEAN = 9;
+
+	/**
+	 * The operation id for the '<em>Set Room Info</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM___SET_ROOM_INFO__STRING = 10;
+
+	/**
+	 * The operation id for the '<em>Is Out Of Order</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM___IS_OUT_OF_ORDER = 11;
+
+	/**
 	 * The number of operations of the '<em>IRoom</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_OPERATION_COUNT = 8;
+	int IROOM_OPERATION_COUNT = 12;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.impl.Hotel_RoomImpl <em>Hotel Room</em>}' class.
@@ -274,6 +310,42 @@ public interface HotelPackage extends EPackage {
 	 * @ordered
 	 */
 	int HOTEL_ROOM___SET_NAME__STRING = IROOM___SET_NAME__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Room Info</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_ROOM___GET_ROOM_INFO = IROOM___GET_ROOM_INFO;
+
+	/**
+	 * The operation id for the '<em>Set Is Out Of Order</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_ROOM___SET_IS_OUT_OF_ORDER__BOOLEAN = IROOM___SET_IS_OUT_OF_ORDER__BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>Set Room Info</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_ROOM___SET_ROOM_INFO__STRING = IROOM___SET_ROOM_INFO__STRING;
+
+	/**
+	 * The operation id for the '<em>Is Out Of Order</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_ROOM___IS_OUT_OF_ORDER = IROOM___IS_OUT_OF_ORDER;
 
 	/**
 	 * The number of operations of the '<em>Hotel Room</em>' class.
@@ -1594,6 +1666,46 @@ public interface HotelPackage extends EPackage {
 	EOperation getIRoom__SetName__String();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IRoom#getRoomInfo() <em>Get Room Info</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Room Info</em>' operation.
+	 * @see Classes.Hotel.IRoom#getRoomInfo()
+	 * @generated
+	 */
+	EOperation getIRoom__GetRoomInfo();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IRoom#setIsOutOfOrder(boolean) <em>Set Is Out Of Order</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Is Out Of Order</em>' operation.
+	 * @see Classes.Hotel.IRoom#setIsOutOfOrder(boolean)
+	 * @generated
+	 */
+	EOperation getIRoom__SetIsOutOfOrder__boolean();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IRoom#setRoomInfo(java.lang.String) <em>Set Room Info</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Room Info</em>' operation.
+	 * @see Classes.Hotel.IRoom#setRoomInfo(java.lang.String)
+	 * @generated
+	 */
+	EOperation getIRoom__SetRoomInfo__String();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IRoom#isOutOfOrder() <em>Is Out Of Order</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Out Of Order</em>' operation.
+	 * @see Classes.Hotel.IRoom#isOutOfOrder()
+	 * @generated
+	 */
+	EOperation getIRoom__IsOutOfOrder();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.Hotel_Occupancy <em>Hotel Occupancy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2432,6 +2544,38 @@ public interface HotelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IROOM___SET_NAME__STRING = eINSTANCE.getIRoom__SetName__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Room Info</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM___GET_ROOM_INFO = eINSTANCE.getIRoom__GetRoomInfo();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Is Out Of Order</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM___SET_IS_OUT_OF_ORDER__BOOLEAN = eINSTANCE.getIRoom__SetIsOutOfOrder__boolean();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Room Info</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM___SET_ROOM_INFO__STRING = eINSTANCE.getIRoom__SetRoomInfo__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Out Of Order</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM___IS_OUT_OF_ORDER = eINSTANCE.getIRoom__IsOutOfOrder();
 
 		/**
 		 * The meta object literal for the '{@link Classes.Hotel.impl.Hotel_OccupancyImpl <em>Hotel Occupancy</em>}' class.

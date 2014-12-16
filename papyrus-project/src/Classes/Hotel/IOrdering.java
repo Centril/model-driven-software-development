@@ -18,9 +18,9 @@ public interface IOrdering extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model orderRequestRequired="true" orderRequestOrdered="false"
+	 * @model required="true" ordered="false" orderRequestRequired="true" orderRequestOrdered="false"
 	 * @generated
 	 */
-	void placeOrder(OrderRequest orderRequest);
+	boolean placeOrder(OrderRequest orderRequest);
 
 } // IOrdering

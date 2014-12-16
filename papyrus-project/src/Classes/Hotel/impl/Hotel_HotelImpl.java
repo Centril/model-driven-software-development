@@ -103,7 +103,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected Hotel_HotelImpl() {
 		super();
@@ -291,7 +291,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void checkIn(IBooking booking, int numKeys) {
+	public boolean checkIn(IBooking booking, int numKeys) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -303,7 +303,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * @generated NOT
 	 */
 	public double getBill(IBooking booking) {
-		return booking.getPrice();
+		return booking.getPrice(); //A bill should include customer and price objects. But double...
 	}
 
 	/**
@@ -322,7 +322,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void pay(IBooking booking) {
+	public boolean pay(IBooking booking) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -333,7 +333,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void checkOut(IBooking booking, int numKeys) {
+	public boolean checkOut(IBooking booking, int numKeys) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -497,7 +497,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void placeOrder(OrderRequest orderRequest) {
+	public boolean placeOrder(OrderRequest orderRequest) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -638,25 +638,21 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case HotelPackage.HOTEL_HOTEL___CHECK_IN__IBOOKING_INT:
-				checkIn((IBooking)arguments.get(0), (Integer)arguments.get(1));
-				return null;
+				return checkIn((IBooking)arguments.get(0), (Integer)arguments.get(1));
 			case HotelPackage.HOTEL_HOTEL___GET_BILL__IBOOKING:
 				return getBill((IBooking)arguments.get(0));
 			case HotelPackage.HOTEL_HOTEL___GET_BOOKINGS:
 				return getBookings();
 			case HotelPackage.HOTEL_HOTEL___PAY__IBOOKING:
-				pay((IBooking)arguments.get(0));
-				return null;
+				return pay((IBooking)arguments.get(0));
 			case HotelPackage.HOTEL_HOTEL___CHECK_OUT__IBOOKING_INT:
-				checkOut((IBooking)arguments.get(0), (Integer)arguments.get(1));
-				return null;
+				return checkOut((IBooking)arguments.get(0), (Integer)arguments.get(1));
 			case HotelPackage.HOTEL_HOTEL___GET_ORDERS:
 				return getOrders();
 			case HotelPackage.HOTEL_HOTEL___SEARCH__LONG_LONG_INT:
 				return search((Long)arguments.get(0), (Long)arguments.get(1), (Integer)arguments.get(2));
 			case HotelPackage.HOTEL_HOTEL___PLACE_ORDER__ORDERREQUEST:
-				placeOrder((OrderRequest)arguments.get(0));
-				return null;
+				return placeOrder((OrderRequest)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

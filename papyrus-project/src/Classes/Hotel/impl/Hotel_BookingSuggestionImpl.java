@@ -125,7 +125,9 @@ public class Hotel_BookingSuggestionImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	public long getStartTime() {
-		return startTime;
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -134,7 +136,9 @@ public class Hotel_BookingSuggestionImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	public long getEndTime() {
-		return endTime;
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

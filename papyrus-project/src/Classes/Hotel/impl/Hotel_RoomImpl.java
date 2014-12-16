@@ -28,6 +28,7 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	private int nbrOfBeds;
 	private double basePrice; //Standard price for one night
 	private String roomName;
+	private String roomInfo;
 	private boolean isOutOfService; //True is the room is out of service
 	
 	/**
@@ -40,6 +41,9 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 		this.nbrOfBeds = 1;
 		this.basePrice = 100;
 		this.isOutOfService = false;
+		
+		this.roomInfo = "";
+	
 	}
 	
 	/**
@@ -49,11 +53,16 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	 * @param basePrice, the price of the room for one night. 
 	 * @param roomId, Id of the room.
 	 */
-	protected Hotel_RoomImpl(int nbrOfBeds, int basePrice, int roomId) {
+	protected Hotel_RoomImpl(int nbrOfBeds, int basePrice, int roomId, String roomInfo) {
 		this.nbrOfBeds = nbrOfBeds;
 		this.basePrice = basePrice;
 		this.roomId = roomId;
 		this.isOutOfService = false;
+		
+		if(roomInfo == null)
+			this.roomInfo = "";
+		else
+		this.roomInfo = roomInfo;
 	}
 
 	/**
@@ -135,6 +144,50 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getRoomInfo() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsOutOfOrder(boolean outOfOrder) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRoomInfo(String info) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isOutOfOrder() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
@@ -158,6 +211,16 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 			case HotelPackage.HOTEL_ROOM___SET_NAME__STRING:
 				setName((String)arguments.get(0));
 				return null;
+			case HotelPackage.HOTEL_ROOM___GET_ROOM_INFO:
+				return getRoomInfo();
+			case HotelPackage.HOTEL_ROOM___SET_IS_OUT_OF_ORDER__BOOLEAN:
+				setIsOutOfOrder((Boolean)arguments.get(0));
+				return null;
+			case HotelPackage.HOTEL_ROOM___SET_ROOM_INFO__STRING:
+				setRoomInfo((String)arguments.get(0));
+				return null;
+			case HotelPackage.HOTEL_ROOM___IS_OUT_OF_ORDER:
+				return isOutOfOrder();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
