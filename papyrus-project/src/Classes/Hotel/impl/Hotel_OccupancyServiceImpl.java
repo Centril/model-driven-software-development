@@ -2,17 +2,17 @@
  */
 package Classes.Hotel.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import Classes.Hotel.HotelPackage;
 import Classes.Hotel.Hotel_Occupancy;
 import Classes.Hotel.Hotel_OccupancyService;
-
-import java.lang.reflect.InvocationTargetException;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import Classes.Hotel.Hotel_Room;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,13 +24,38 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class Hotel_OccupancyServiceImpl extends MinimalEObjectImpl.Container implements Hotel_OccupancyService {
+	
+	private static EList<Hotel_Occupancy> occupancies;
+	
+	private static void init() {
+		if (occupancies != null) {
+			return;
+		}
+		
+		Hotel_RoomServiceImpl roomService = new Hotel_RoomServiceImpl();
+		
+		occupancies = new BasicEList<Hotel_Occupancy>();
+	
+		Hotel_Occupancy occupancy = new Hotel_OccupancyImpl();
+		
+		Hotel_Room room = roomService.getRoomById(0);
+		
+		occupancy.setRoom(room);
+		occupancy.setStartTime(0);
+		occupancy.setEndTime(1);
+		
+		occupancies.add(occupancy);
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected Hotel_OccupancyServiceImpl() {
 		super();
+		
+		init();
 	}
 
 	/**
@@ -46,12 +71,10 @@ public class Hotel_OccupancyServiceImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Hotel_Occupancy> getAllOccupancies() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return new BasicEList<Hotel_Occupancy>(occupancies);
 	}
 
 	/**
