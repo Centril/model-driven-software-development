@@ -386,6 +386,10 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 */
 	public EList<ISearchResult> search(long startTime, long endTime, int numberOfPersons) {
 		
+		if (numberOfPersons < 1) {
+			throw new IllegalArgumentException("numberOfPersons is 0 or less.");
+		}
+		
 		EList<Hotel_Room> rooms = getRoomService().getAllRooms();
 		
 		EList<Hotel_Room> availableRooms = new BasicEList<>();
