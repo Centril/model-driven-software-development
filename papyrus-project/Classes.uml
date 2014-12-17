@@ -377,11 +377,11 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VLpJEYXvEeSgO4VnRKF4fQ"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VLpJEoXvEeSgO4VnRKF4fQ" value="*"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_XKmJEIXvEeSgO4VnRKF4fQ" name="room" type="_gz3vAHo_EeSTh5yDLLqE0Q" association="_XKmJE4XvEeSgO4VnRKF4fQ">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_XKmJEIXvEeSgO4VnRKF4fQ" name="rooms" type="_gz3vAHo_EeSTh5yDLLqE0Q" association="_XKmJE4XvEeSgO4VnRKF4fQ">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XKmJEYXvEeSgO4VnRKF4fQ"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XKmJEoXvEeSgO4VnRKF4fQ" value="*"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_jqL2QIXvEeSgO4VnRKF4fQ" name="occupancy" type="_oSNI0Ho_EeSTh5yDLLqE0Q" association="_jqVAMIXvEeSgO4VnRKF4fQ">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_jqL2QIXvEeSgO4VnRKF4fQ" name="occupancies" type="_oSNI0Ho_EeSTh5yDLLqE0Q" association="_jqVAMIXvEeSgO4VnRKF4fQ">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jqL2QYXvEeSgO4VnRKF4fQ"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jqL2QoXvEeSgO4VnRKF4fQ" value="*"/>
         </ownedAttribute>
@@ -649,7 +649,7 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YoCz84XuEeSgO4VnRKF4fQ" value="*"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_dKtt4IXuEeSgO4VnRKF4fQ" name="getAllRooms">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_dKtt4IXuEeSgO4VnRKF4fQ" name="getRooms">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_dKtt4YXuEeSgO4VnRKF4fQ" type="_gz3vAHo_EeSTh5yDLLqE0Q" direction="return">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dKtt4oXuEeSgO4VnRKF4fQ"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dKtt44XuEeSgO4VnRKF4fQ" value="*"/>
@@ -661,7 +661,7 @@
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_dqOUYoXuEeSgO4VnRKF4fQ" name="room" type="_gz3vAHo_EeSTh5yDLLqE0Q" direction="return"/>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="__mzHkIXuEeSgO4VnRKF4fQ" name="getAllOrders">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="__mzHkIXuEeSgO4VnRKF4fQ" name="getOrders">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="__mzHkYXuEeSgO4VnRKF4fQ" name="orders" type="_E7nKgHpGEeSTh5yDLLqE0Q" direction="return">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ihmAEIX7EeSgO4VnRKF4fQ"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ihmAEYX7EeSgO4VnRKF4fQ" value="*"/>
