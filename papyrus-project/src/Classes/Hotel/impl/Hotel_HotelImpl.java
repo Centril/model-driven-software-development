@@ -353,12 +353,14 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<IOrder> getOrders() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<IOrder> list = new BasicEList<IOrder>();
+		for (Hotel_Order o : order) {
+			list.add(o);
+		}
+		return list;
 	}
 
 	private boolean isRoomAvailable(IRoom room, long startTime, long endTime) {
