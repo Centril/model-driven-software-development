@@ -178,7 +178,9 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_ZuF88HowEeS_Y-yub0PNVA" name="IPersonRegistry">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_ihUGEHowEeS_Y-yub0PNVA" name="isBlacklisted">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ihUGEXowEeS_Y-yub0PNVA" name="person" type="_FzWa8HluEeS-dbwPGgzjtw"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ihUGEXowEeS_Y-yub0PNVA" name="personID">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_ihUGEnowEeS_Y-yub0PNVA" name="isBlacklisted" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
@@ -187,6 +189,7 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_ihUGFHowEeS_Y-yub0PNVA" name="birthDate">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
         </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_66lukIXXEeSJdqLpcn16zw" type="_FzWa8HluEeS-dbwPGgzjtw" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_ihUGGHowEeS_Y-yub0PNVA" name="getPeople">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_ihUGGnowEeS_Y-yub0PNVA" name="person" type="_FzWa8HluEeS-dbwPGgzjtw" direction="return">
@@ -195,10 +198,32 @@
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_ihUGG3owEeS_Y-yub0PNVA" name="addToBlacklist">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ihUGHHowEeS_Y-yub0PNVA" name="person" type="_FzWa8HluEeS-dbwPGgzjtw"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ihUGHHowEeS_Y-yub0PNVA" name="personID">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_UkhEMIXaEeSJdqLpcn16zw" name="wasAdded" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_ihUGHXowEeS_Y-yub0PNVA" name="removeFromBlacklist">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ihUGHnowEeS_Y-yub0PNVA" name="person" type="_FzWa8HluEeS-dbwPGgzjtw"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ihUGHnowEeS_Y-yub0PNVA" name="personID">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_NGSYEIXaEeSJdqLpcn16zw" name="wasRemoved" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_M4h60IXYEeSJdqLpcn16zw" name="getPersonByID">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Z4ULAIXYEeSJdqLpcn16zw" name="personID">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_b_suQIXYEeSJdqLpcn16zw" type="_FzWa8HluEeS-dbwPGgzjtw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cNZWkIXZEeSJdqLpcn16zw" name="getPersonBySSN">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_2VgH4IXZEeSJdqLpcn16zw" name="ssn">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_G6wC4IXaEeSJdqLpcn16zw" type="_FzWa8HluEeS-dbwPGgzjtw" direction="return"/>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_yIT68H1jEeSIJZbJ_H4bYw" name="Realization0" client="_8hQzQHlnEeS-dbwPGgzjtw" supplier="_ZuF88HowEeS_Y-yub0PNVA" contract="_ZuF88HowEeS_Y-yub0PNVA"/>
