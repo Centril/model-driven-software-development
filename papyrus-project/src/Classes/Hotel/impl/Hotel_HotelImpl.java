@@ -358,6 +358,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	public EList<IOrder> getOrders() {
 		EList<IOrder> list = new BasicEList<IOrder>();
 		for (Hotel_Order o : order) {
+			// TODO: Perhaps return "anemic" version
 			list.add(o);
 		}
 		return list;
