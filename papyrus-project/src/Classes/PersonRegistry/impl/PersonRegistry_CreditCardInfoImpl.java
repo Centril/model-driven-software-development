@@ -8,9 +8,7 @@ import Classes.PersonRegistry.PersonRegistry_CreditCardInfo;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
@@ -23,14 +21,32 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class PersonRegistry_CreditCardInfoImpl extends MinimalEObjectImpl.Container implements PersonRegistry_CreditCardInfo {
+
+	private String ccNumber;
+	private String ccv;
+	private int month;
+	private int year;
+	private String firstName;
+	private String lastName;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected PersonRegistry_CreditCardInfoImpl() {
 		super();
+		throw new UnsupportedOperationException("Empty constructor not supported");
 	}
+
+	protected PersonRegistry_CreditCardInfoImpl(String ccNumber, String ccv, int month, int year, String firstName, String lastName) {
+		this.ccNumber = ccNumber;
+		this.ccv = ccv;
+		this.month = month;
+		this.year = year;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}	
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,34 +61,28 @@ public class PersonRegistry_CreditCardInfoImpl extends MinimalEObjectImpl.Contai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getCCV() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return ccv;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int getMonth() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return month;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int getYear() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return year;
 	}
 
 	/**
