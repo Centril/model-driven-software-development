@@ -68,7 +68,7 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 		
 		rooms = new BasicEList<Hotel_Room>();
 		for (int i = 0; i < 100; i++) {
-			addRoom(new Hotel_RoomImpl(i % 5 + 1, 100.0 * i + 100, i));
+			addRoom(new Hotel_RoomImpl(i % 5 + 1, 100.0 * i + 100, i, ""));
 		}
 		
 		occupancies = new BasicEList<Hotel_Occupancy>();
