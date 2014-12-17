@@ -6,10 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
-
-import javax.management.RuntimeErrorException;
 import javax.xml.soap.SOAPException;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -18,7 +15,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires;
 import Classes.Hotel.BookingRequest;
 import Classes.Hotel.HotelPackage;
@@ -553,7 +549,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		if (!hasValidPaymentInfo(customer)) {
 			throw new RuntimeException("Customer doesn't have valid payment info.");
 		}
-		if (basicGetPersonRegistry().isBlacklisted(customer)) {
+		if (basicGetPersonRegistry().isBlacklisted(customer.getId())) {
 			throw new RuntimeException("Customer is blacklisted.");
 		}
 		
@@ -562,7 +558,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			if (contact == null) {
 				throw new RuntimeException("Contact does not exist");
 			}
-			if (basicGetPersonRegistry().isBlacklisted(contact)) {
+			if (basicGetPersonRegistry().isBlacklisted(contact.getId())) {
 				throw new RuntimeException("Contact is blacklisted.");
 			}
 			
@@ -571,7 +567,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				if (guest == null) {
 					throw new RuntimeException("Guest does not exist.");
 				}
-				if (basicGetPersonRegistry().isBlacklisted(guest)) {
+				if (basicGetPersonRegistry().isBlacklisted(guest.getId())) {
 					throw new RuntimeException("Guest is blacklisted");
 				}
 			}

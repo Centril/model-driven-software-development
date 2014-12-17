@@ -480,7 +480,7 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIPersonRegistry__IsBlacklisted__IPerson() {
+	public EOperation getIPersonRegistry__IsBlacklisted__int() {
 		return iPersonRegistryEClass.getEOperations().get(0);
 	}
 
@@ -507,7 +507,7 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIPersonRegistry__AddToBlacklist__IPerson() {
+	public EOperation getIPersonRegistry__AddToBlacklist__int() {
 		return iPersonRegistryEClass.getEOperations().get(3);
 	}
 
@@ -516,8 +516,26 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIPersonRegistry__RemoveFromBlacklist__IPerson() {
+	public EOperation getIPersonRegistry__RemoveFromBlacklist__int() {
 		return iPersonRegistryEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIPersonRegistry__GetPersonByID__int() {
+		return iPersonRegistryEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIPersonRegistry__GetPersonBySSN__String() {
+		return iPersonRegistryEClass.getEOperations().get(6);
 	}
 
 	/**
@@ -590,11 +608,13 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 		createEReference(personRegistry_PersonRegistryEClass, PERSON_REGISTRY_PERSON_REGISTRY__BLACKLIST);
 
 		iPersonRegistryEClass = createEClass(IPERSON_REGISTRY);
-		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___IS_BLACKLISTED__IPERSON);
+		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___IS_BLACKLISTED__INT);
 		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___CREATE_PERSON__LONG);
 		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___GET_PEOPLE);
-		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___ADD_TO_BLACKLIST__IPERSON);
-		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___REMOVE_FROM_BLACKLIST__IPERSON);
+		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___ADD_TO_BLACKLIST__INT);
+		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___REMOVE_FROM_BLACKLIST__INT);
+		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___GET_PERSON_BY_ID__INT);
+		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___GET_PERSON_BY_SSN__STRING);
 	}
 
 	/**
@@ -711,19 +731,25 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 
 		initEClass(iPersonRegistryEClass, IPersonRegistry.class, "IPersonRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getIPersonRegistry__IsBlacklisted__IPerson(), ecorePackage.getEBoolean(), "isBlacklisted", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getIPerson(), "person", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIPersonRegistry__IsBlacklisted__int(), ecorePackage.getEBoolean(), "isBlacklisted", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "personID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIPersonRegistry__CreatePerson__long(), null, "createPerson", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIPersonRegistry__CreatePerson__long(), this.getIPerson(), "createPerson", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getELong(), "birthDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getIPersonRegistry__GetPeople(), this.getIPerson(), "getPeople", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIPersonRegistry__AddToBlacklist__IPerson(), null, "addToBlacklist", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getIPerson(), "person", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIPersonRegistry__AddToBlacklist__int(), ecorePackage.getEBoolean(), "addToBlacklist", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "personID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIPersonRegistry__RemoveFromBlacklist__IPerson(), null, "removeFromBlacklist", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getIPerson(), "person", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIPersonRegistry__RemoveFromBlacklist__int(), ecorePackage.getEBoolean(), "removeFromBlacklist", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "personID", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIPersonRegistry__GetPersonByID__int(), this.getIPerson(), "getPersonByID", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "personID", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIPersonRegistry__GetPersonBySSN__String(), this.getIPerson(), "getPersonBySSN", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "ssn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

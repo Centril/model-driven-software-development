@@ -20,18 +20,18 @@ public interface IPersonRegistry extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" personRequired="true" personOrdered="false"
+	 * @model required="true" ordered="false" personIDRequired="true" personIDOrdered="false"
 	 * @generated
 	 */
-	boolean isBlacklisted(IPerson person);
+	boolean isBlacklisted(int personID);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model birthDateRequired="true" birthDateOrdered="false"
+	 * @model required="true" ordered="false" birthDateRequired="true" birthDateOrdered="false"
 	 * @generated
 	 */
-	void createPerson(long birthDate);
+	IPerson createPerson(long birthDate);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -44,17 +44,33 @@ public interface IPersonRegistry extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model personRequired="true" personOrdered="false"
+	 * @model required="true" ordered="false" personIDRequired="true" personIDOrdered="false"
 	 * @generated
 	 */
-	void addToBlacklist(IPerson person);
+	boolean addToBlacklist(int personID);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model personRequired="true" personOrdered="false"
+	 * @model required="true" ordered="false" personIDRequired="true" personIDOrdered="false"
 	 * @generated
 	 */
-	void removeFromBlacklist(IPerson person);
+	boolean removeFromBlacklist(int personID);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" personIDRequired="true" personIDOrdered="false"
+	 * @generated
+	 */
+	IPerson getPersonByID(int personID);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" ssnDataType="org.eclipse.uml2.types.String" ssnRequired="true" ssnOrdered="false"
+	 * @generated
+	 */
+	IPerson getPersonBySSN(String ssn);
 
 } // IPersonRegistry

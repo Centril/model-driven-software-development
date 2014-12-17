@@ -129,7 +129,7 @@ public class PersonRegistry_PersonRegistryImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isBlacklisted(IPerson person) {
+	public boolean isBlacklisted(int personID) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -140,7 +140,7 @@ public class PersonRegistry_PersonRegistryImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createPerson(long birthDate) {
+	public IPerson createPerson(long birthDate) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -164,7 +164,7 @@ public class PersonRegistry_PersonRegistryImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addToBlacklist(IPerson person) {
+	public boolean addToBlacklist(int personID) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -175,7 +175,29 @@ public class PersonRegistry_PersonRegistryImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void removeFromBlacklist(IPerson person) {
+	public boolean removeFromBlacklist(int personID) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IPerson getPersonByID(int personID) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IPerson getPersonBySSN(String ssn) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -260,19 +282,20 @@ public class PersonRegistry_PersonRegistryImpl extends MinimalEObjectImpl.Contai
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case PersonRegistryPackage.PERSON_REGISTRY_PERSON_REGISTRY___IS_BLACKLISTED__IPERSON:
-				return isBlacklisted((IPerson)arguments.get(0));
+			case PersonRegistryPackage.PERSON_REGISTRY_PERSON_REGISTRY___IS_BLACKLISTED__INT:
+				return isBlacklisted((Integer)arguments.get(0));
 			case PersonRegistryPackage.PERSON_REGISTRY_PERSON_REGISTRY___CREATE_PERSON__LONG:
-				createPerson((Long)arguments.get(0));
-				return null;
+				return createPerson((Long)arguments.get(0));
 			case PersonRegistryPackage.PERSON_REGISTRY_PERSON_REGISTRY___GET_PEOPLE:
 				return getPeople();
-			case PersonRegistryPackage.PERSON_REGISTRY_PERSON_REGISTRY___ADD_TO_BLACKLIST__IPERSON:
-				addToBlacklist((IPerson)arguments.get(0));
-				return null;
-			case PersonRegistryPackage.PERSON_REGISTRY_PERSON_REGISTRY___REMOVE_FROM_BLACKLIST__IPERSON:
-				removeFromBlacklist((IPerson)arguments.get(0));
-				return null;
+			case PersonRegistryPackage.PERSON_REGISTRY_PERSON_REGISTRY___ADD_TO_BLACKLIST__INT:
+				return addToBlacklist((Integer)arguments.get(0));
+			case PersonRegistryPackage.PERSON_REGISTRY_PERSON_REGISTRY___REMOVE_FROM_BLACKLIST__INT:
+				return removeFromBlacklist((Integer)arguments.get(0));
+			case PersonRegistryPackage.PERSON_REGISTRY_PERSON_REGISTRY___GET_PERSON_BY_ID__INT:
+				return getPersonByID((Integer)arguments.get(0));
+			case PersonRegistryPackage.PERSON_REGISTRY_PERSON_REGISTRY___GET_PERSON_BY_SSN__STRING:
+				return getPersonBySSN((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

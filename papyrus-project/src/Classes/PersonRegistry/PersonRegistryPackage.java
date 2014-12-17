@@ -646,7 +646,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON_REGISTRY___IS_BLACKLISTED__IPERSON = 0;
+	int IPERSON_REGISTRY___IS_BLACKLISTED__INT = 0;
 
 	/**
 	 * The operation id for the '<em>Create Person</em>' operation.
@@ -673,7 +673,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON_REGISTRY___ADD_TO_BLACKLIST__IPERSON = 3;
+	int IPERSON_REGISTRY___ADD_TO_BLACKLIST__INT = 3;
 
 	/**
 	 * The operation id for the '<em>Remove From Blacklist</em>' operation.
@@ -682,7 +682,25 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON_REGISTRY___REMOVE_FROM_BLACKLIST__IPERSON = 4;
+	int IPERSON_REGISTRY___REMOVE_FROM_BLACKLIST__INT = 4;
+
+	/**
+	 * The operation id for the '<em>Get Person By ID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON_REGISTRY___GET_PERSON_BY_ID__INT = 5;
+
+	/**
+	 * The operation id for the '<em>Get Person By SSN</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON_REGISTRY___GET_PERSON_BY_SSN__STRING = 6;
 
 	/**
 	 * The number of operations of the '<em>IPerson Registry</em>' class.
@@ -691,7 +709,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON_REGISTRY_OPERATION_COUNT = 5;
+	int IPERSON_REGISTRY_OPERATION_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link Classes.PersonRegistry.impl.PersonRegistry_PersonRegistryImpl <em>Person Registry Person Registry</em>}' class.
@@ -737,7 +755,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_REGISTRY_PERSON_REGISTRY___IS_BLACKLISTED__IPERSON = IPERSON_REGISTRY___IS_BLACKLISTED__IPERSON;
+	int PERSON_REGISTRY_PERSON_REGISTRY___IS_BLACKLISTED__INT = IPERSON_REGISTRY___IS_BLACKLISTED__INT;
 
 	/**
 	 * The operation id for the '<em>Create Person</em>' operation.
@@ -764,7 +782,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_REGISTRY_PERSON_REGISTRY___ADD_TO_BLACKLIST__IPERSON = IPERSON_REGISTRY___ADD_TO_BLACKLIST__IPERSON;
+	int PERSON_REGISTRY_PERSON_REGISTRY___ADD_TO_BLACKLIST__INT = IPERSON_REGISTRY___ADD_TO_BLACKLIST__INT;
 
 	/**
 	 * The operation id for the '<em>Remove From Blacklist</em>' operation.
@@ -773,7 +791,25 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_REGISTRY_PERSON_REGISTRY___REMOVE_FROM_BLACKLIST__IPERSON = IPERSON_REGISTRY___REMOVE_FROM_BLACKLIST__IPERSON;
+	int PERSON_REGISTRY_PERSON_REGISTRY___REMOVE_FROM_BLACKLIST__INT = IPERSON_REGISTRY___REMOVE_FROM_BLACKLIST__INT;
+
+	/**
+	 * The operation id for the '<em>Get Person By ID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_REGISTRY_PERSON_REGISTRY___GET_PERSON_BY_ID__INT = IPERSON_REGISTRY___GET_PERSON_BY_ID__INT;
+
+	/**
+	 * The operation id for the '<em>Get Person By SSN</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_REGISTRY_PERSON_REGISTRY___GET_PERSON_BY_SSN__STRING = IPERSON_REGISTRY___GET_PERSON_BY_SSN__STRING;
 
 	/**
 	 * The number of operations of the '<em>Person Registry Person Registry</em>' class.
@@ -1140,14 +1176,14 @@ public interface PersonRegistryPackage extends EPackage {
 	EClass getIPersonRegistry();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPersonRegistry#isBlacklisted(Classes.PersonRegistry.IPerson) <em>Is Blacklisted</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPersonRegistry#isBlacklisted(int) <em>Is Blacklisted</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Is Blacklisted</em>' operation.
-	 * @see Classes.PersonRegistry.IPersonRegistry#isBlacklisted(Classes.PersonRegistry.IPerson)
+	 * @see Classes.PersonRegistry.IPersonRegistry#isBlacklisted(int)
 	 * @generated
 	 */
-	EOperation getIPersonRegistry__IsBlacklisted__IPerson();
+	EOperation getIPersonRegistry__IsBlacklisted__int();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPersonRegistry#createPerson(long) <em>Create Person</em>}' operation.
@@ -1170,24 +1206,44 @@ public interface PersonRegistryPackage extends EPackage {
 	EOperation getIPersonRegistry__GetPeople();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPersonRegistry#addToBlacklist(Classes.PersonRegistry.IPerson) <em>Add To Blacklist</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPersonRegistry#addToBlacklist(int) <em>Add To Blacklist</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Add To Blacklist</em>' operation.
-	 * @see Classes.PersonRegistry.IPersonRegistry#addToBlacklist(Classes.PersonRegistry.IPerson)
+	 * @see Classes.PersonRegistry.IPersonRegistry#addToBlacklist(int)
 	 * @generated
 	 */
-	EOperation getIPersonRegistry__AddToBlacklist__IPerson();
+	EOperation getIPersonRegistry__AddToBlacklist__int();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPersonRegistry#removeFromBlacklist(Classes.PersonRegistry.IPerson) <em>Remove From Blacklist</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPersonRegistry#removeFromBlacklist(int) <em>Remove From Blacklist</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Remove From Blacklist</em>' operation.
-	 * @see Classes.PersonRegistry.IPersonRegistry#removeFromBlacklist(Classes.PersonRegistry.IPerson)
+	 * @see Classes.PersonRegistry.IPersonRegistry#removeFromBlacklist(int)
 	 * @generated
 	 */
-	EOperation getIPersonRegistry__RemoveFromBlacklist__IPerson();
+	EOperation getIPersonRegistry__RemoveFromBlacklist__int();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPersonRegistry#getPersonByID(int) <em>Get Person By ID</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Person By ID</em>' operation.
+	 * @see Classes.PersonRegistry.IPersonRegistry#getPersonByID(int)
+	 * @generated
+	 */
+	EOperation getIPersonRegistry__GetPersonByID__int();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPersonRegistry#getPersonBySSN(java.lang.String) <em>Get Person By SSN</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Person By SSN</em>' operation.
+	 * @see Classes.PersonRegistry.IPersonRegistry#getPersonBySSN(java.lang.String)
+	 * @generated
+	 */
+	EOperation getIPersonRegistry__GetPersonBySSN__String();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1514,7 +1570,7 @@ public interface PersonRegistryPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IPERSON_REGISTRY___IS_BLACKLISTED__IPERSON = eINSTANCE.getIPersonRegistry__IsBlacklisted__IPerson();
+		EOperation IPERSON_REGISTRY___IS_BLACKLISTED__INT = eINSTANCE.getIPersonRegistry__IsBlacklisted__int();
 
 		/**
 		 * The meta object literal for the '<em><b>Create Person</b></em>' operation.
@@ -1538,7 +1594,7 @@ public interface PersonRegistryPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IPERSON_REGISTRY___ADD_TO_BLACKLIST__IPERSON = eINSTANCE.getIPersonRegistry__AddToBlacklist__IPerson();
+		EOperation IPERSON_REGISTRY___ADD_TO_BLACKLIST__INT = eINSTANCE.getIPersonRegistry__AddToBlacklist__int();
 
 		/**
 		 * The meta object literal for the '<em><b>Remove From Blacklist</b></em>' operation.
@@ -1546,7 +1602,23 @@ public interface PersonRegistryPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IPERSON_REGISTRY___REMOVE_FROM_BLACKLIST__IPERSON = eINSTANCE.getIPersonRegistry__RemoveFromBlacklist__IPerson();
+		EOperation IPERSON_REGISTRY___REMOVE_FROM_BLACKLIST__INT = eINSTANCE.getIPersonRegistry__RemoveFromBlacklist__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Person By ID</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IPERSON_REGISTRY___GET_PERSON_BY_ID__INT = eINSTANCE.getIPersonRegistry__GetPersonByID__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Person By SSN</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IPERSON_REGISTRY___GET_PERSON_BY_SSN__STRING = eINSTANCE.getIPersonRegistry__GetPersonBySSN__String();
 
 	}
 
