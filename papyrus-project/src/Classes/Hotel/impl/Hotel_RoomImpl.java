@@ -8,9 +8,7 @@ import Classes.Hotel.Hotel_Room;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
@@ -32,17 +30,13 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	private boolean OutOfOrder; //True is the room is out of service
 	
 	/**
-	 * Creates a room 
-	 * Doesn't get a unique ID.
-	 * Will have default values for number of beds and price.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	protected Hotel_RoomImpl() {
-		this.nbrOfBeds = 1;
-		this.basePrice = 100;
-		this.OutOfOrder = false;
-		
-		this.roomInfo = "";
+		super();
+		throw new UnsupportedOperationException("Can't create room without parameters");
 	
 	}
 	
@@ -53,7 +47,7 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 	 * @param basePrice, the price of the room for one night. 
 	 * @param roomId, Id of the room.
 	 */
-	protected Hotel_RoomImpl(int nbrOfBeds, int basePrice, int roomId, String roomInfo) {
+	protected Hotel_RoomImpl(int nbrOfBeds, double basePrice, int roomId, String roomInfo) {
 		this.nbrOfBeds = nbrOfBeds;
 		this.basePrice = basePrice;
 		this.roomId = roomId;
