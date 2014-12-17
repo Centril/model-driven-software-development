@@ -374,16 +374,16 @@
       </nestedClassifier>
       <packagedElement xmi:type="uml:Class" xmi:id="_22PQ4IXuEeSgO4VnRKF4fQ" name="DummyPersistenceService">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_VLpJEIXvEeSgO4VnRKF4fQ" name="order" type="_E7nKgHpGEeSTh5yDLLqE0Q" association="_VLpJE4XvEeSgO4VnRKF4fQ">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VLpJEYXvEeSgO4VnRKF4fQ" value="1"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VLpJEoXvEeSgO4VnRKF4fQ" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VLpJEYXvEeSgO4VnRKF4fQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VLpJEoXvEeSgO4VnRKF4fQ" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_XKmJEIXvEeSgO4VnRKF4fQ" name="room" type="_gz3vAHo_EeSTh5yDLLqE0Q" association="_XKmJE4XvEeSgO4VnRKF4fQ">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XKmJEYXvEeSgO4VnRKF4fQ" value="1"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XKmJEoXvEeSgO4VnRKF4fQ" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XKmJEYXvEeSgO4VnRKF4fQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XKmJEoXvEeSgO4VnRKF4fQ" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_jqL2QIXvEeSgO4VnRKF4fQ" name="occupancy" type="_oSNI0Ho_EeSTh5yDLLqE0Q" association="_jqVAMIXvEeSgO4VnRKF4fQ">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jqL2QYXvEeSgO4VnRKF4fQ" value="1"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jqL2QoXvEeSgO4VnRKF4fQ" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jqL2QYXvEeSgO4VnRKF4fQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jqL2QoXvEeSgO4VnRKF4fQ" value="*"/>
         </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_GkFp0IXvEeSgO4VnRKF4fQ" client="_22PQ4IXuEeSgO4VnRKF4fQ" supplier="_UFbkYIXuEeSgO4VnRKF4fQ" contract="_UFbkYIXuEeSgO4VnRKF4fQ"/>
       </packagedElement>
@@ -687,7 +687,6 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_XKmJE4XvEeSgO4VnRKF4fQ" memberEnd="_XKmJFIXvEeSgO4VnRKF4fQ _XKmJEIXvEeSgO4VnRKF4fQ">
-      <name xsi:nil="true"/>
       <ownedEnd xmi:type="uml:Property" xmi:id="_XKmJFIXvEeSgO4VnRKF4fQ" name="dps" type="_22PQ4IXuEeSgO4VnRKF4fQ" association="_XKmJE4XvEeSgO4VnRKF4fQ">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XKmJFYXvEeSgO4VnRKF4fQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XKmJFoXvEeSgO4VnRKF4fQ" value="1"/>
@@ -705,6 +704,8 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nI635oX4EeSgO4VnRKF4fQ" value="1"/>
       </ownedEnd>
     </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_GAJcAIX_EeSgO4VnRKF4fQ" client="_YptNIHpDEeS2zv6zlhm8qQ" supplier="_swvogIQ2EeSXhZNlyip4WA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_GmpbUIX_EeSgO4VnRKF4fQ" client="_YptNIHpDEeS2zv6zlhm8qQ" supplier="_apbBUIQ3EeSXhZNlyip4WA"/>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_yWHgwHyPEeSahu9FXjYTpw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yYNLcHyPEeSahu9FXjYTpw" source="http://www.eclipse.org/uml2/2.0.0/UML">
