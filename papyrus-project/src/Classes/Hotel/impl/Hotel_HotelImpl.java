@@ -6,7 +6,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+
 import javax.xml.soap.SOAPException;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -14,9 +16,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires;
 import Classes.Hotel.BookingRequest;
 import Classes.Hotel.HotelPackage;
+import Classes.Hotel.Hotel_Booking;
 import Classes.Hotel.Hotel_BookingSuggestion;
 import Classes.Hotel.Hotel_Hotel;
 import Classes.Hotel.Hotel_Occupancy;
@@ -407,34 +411,42 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		// Check if person info is correct
 		IPerson customer = findPerson(orderRequest.getCustomer());
 		if (customer == null) {
-			throw new RuntimeException("Customer does not exist.");
+			return false;
+			//throw new RuntimeException("Customer does not exist.");
 		}
 		if (personIsYoungerThan15(customer)) {
-			throw new RuntimeException("Customer is younger than 15.");
+			return false;
+			//throw new RuntimeException("Customer is younger than 15.");
 		}
 		if (!hasValidPaymentInfo(customer)) {
-			throw new RuntimeException("Customer doesn't have valid payment info.");
+			return false;
+			//throw new RuntimeException("Customer doesn't have valid payment info.");
 		}
 		if (basicGetPersonRegistry().isBlacklisted(customer.getId())) {
-			throw new RuntimeException("Customer is blacklisted.");
+			return false;
+			//throw new RuntimeException("Customer is blacklisted.");
 		}
 		
 		for (BookingRequest bookingReq : orderRequest.getBookingRequests()) {
 			IPerson contact = findPerson(bookingReq.getContact());
 			if (contact == null) {
-				throw new RuntimeException("Contact does not exist");
+				return false;
+				//throw new RuntimeException("Contact does not exist");
 			}
 			if (basicGetPersonRegistry().isBlacklisted(contact.getId())) {
-				throw new RuntimeException("Contact is blacklisted.");
+				return false;
+				//throw new RuntimeException("Contact is blacklisted.");
 			}
 			
 			for (int guestId : bookingReq.getGuests()) {
 				IPerson guest = findPerson(guestId);
 				if (guest == null) {
-					throw new RuntimeException("Guest does not exist.");
+					return false;
+					//throw new RuntimeException("Guest does not exist.");
 				}
 				if (basicGetPersonRegistry().isBlacklisted(guest.getId())) {
-					throw new RuntimeException("Guest is blacklisted");
+					return false;
+					//throw new RuntimeException("Guest is blacklisted");
 				}
 			}
 		}
@@ -446,17 +458,30 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			for (BookingRequest bookingReq : orderRequest.getBookingRequests()) {
 				IBookingSuggestion bs = bookingReq.getBookingSuggestion();
 				if (bs.getStartTime() >= bs.getEndTime()) {
-					throw new RuntimeException("Don't be a stupid, no negative intervals.");
+					return false;
+					//throw new RuntimeException("Don't be a stupid, no negative intervals.");
 				}
 				if (!isRoomAvailable(bs.getRoom(), bs.getStartTime(), bs.getEndTime())) {
-					throw new RuntimeException("One of the rooms is not available for booking at specified time");
+					return false;
+					//throw new RuntimeException("One of the rooms is not available for booking at specified time");
 				}
 			}
 			
-			// TODO: I'm a stupid. How to register booking in system? =(
+			EList<Hotel_Booking> creatBookings = new BasicEList<>();
+			for (BookingRequest bookingReq : orderRequest.getBookingRequests()) {
+				
+				Hotel_Booking tempBooking = new Hotel_BookingImpl(bookingReq.getGuests(), bookingReq.getContact(), orderRequest.getCustomer(),
+				     bookingReq.getBookingSuggestion().getPrice(), bookingReq.getBookingSuggestion().getStartTime(), bookingReq.getBookingSuggestion().getEndTime());
+			
+				// TODO: WTF? What happan with the room?
+				creatBookings.add(tempBooking);
+			}
+			
+			Hotel_Order order = new Hotel_OrderImpl(orderRequest.getCustomer(), creatBookings);
+			persistenceService.addOrder(order);
 		}
 		
-		return false;
+		return true;
 	}
 
 	/**
