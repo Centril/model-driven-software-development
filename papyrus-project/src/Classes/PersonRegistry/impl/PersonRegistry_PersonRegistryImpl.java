@@ -138,12 +138,13 @@ public class PersonRegistry_PersonRegistryImpl extends MinimalEObjectImpl.Contai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public IPerson createPerson(long birthDate) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		int id = 0; // TODO: Get unique ID somehow, maybe add PersonService.createPerson()
+		PersonRegistry_Person person = new PersonRegistry_PersonImpl(id, birthDate);
+		this.person.add(person);
+		return person;
 	}
 
 	/**
