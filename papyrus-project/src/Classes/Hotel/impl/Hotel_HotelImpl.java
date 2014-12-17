@@ -370,7 +370,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		for (Hotel_Occupancy occupancy : occupancies) {
 			if (room.getId() == occupancy.getRoom().getId()) {
 				// Basic 1-dimensional box collision detection
-				if (endTime <= occupancy.getStartTime() && startTime >= occupancy.getEndTime()) {
+				if (endTime > occupancy.getStartTime() && startTime < occupancy.getEndTime()) {
 					return false;
 				}
 			}
@@ -386,7 +386,6 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 */
 	public EList<ISearchResult> search(long startTime, long endTime, int numberOfPersons) {
 		
-		EList<Hotel_Occupancy> occupancies = getOccupancyService().getAllOccupancies();
 		EList<Hotel_Room> rooms = getRoomService().getAllRooms();
 		
 		EList<Hotel_Room> availableRooms = new BasicEList<>();
@@ -397,23 +396,6 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				availableRooms.add(room);
 			}
 		}
-		/*for (int i = 0; i < rooms.size(); i++) {
-			boolean available = true;
-			
-			// Loop through all occupancies
-			for (int j = 0; j < occupancies.size(); j++) {
-				// If same room and time intervals overlap the room is not available
-				if (occupancies.get(j).getRoom().getId() == rooms.get(i).getId()
-						&& !(endTime < occupancies.get(j).getStartTime()
-								|| startTime > occupancies.get(j).getEndTime())) {
-					available = false;
-				}
-			}
-			
-			if (available) {
-				availableRooms.add(rooms.get(i));
-			}
-		}*/
 		
 		// Create a list (containing lists of rooms) where the index indicates the number of beds (minus one) in the rooms
 		EList<EList<Hotel_Room>> roomsAccordingToNumBeds = new BasicEList<>();
@@ -425,33 +407,29 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		roomsAccordingToNumBeds.add(new BasicEList<Hotel_Room>());
 		
 		// Fill the new lists with appropriate rooms
-		for (int i = 0; i < availableRooms.size(); i++) {
-			int numBeds = availableRooms.get(i).getNumBeds();
+		for (Hotel_Room room : availableRooms) {
+			int numBeds = room.getNumBeds();
 			
-			// If the room has the same or less beds, put it in the appropriate list
+			// If the room has same or less beds than number of people, put it in the appropriate list
 			if (numBeds <= numberOfPersons) {
-				roomsAccordingToNumBeds.get(numBeds - 1).add(availableRooms.get(i));
+				roomsAccordingToNumBeds.get(numBeds - 1).add(room);
 			}
-			else { // If the room has more beds than the number of people, put it in the last list
-				roomsAccordingToNumBeds.get(roomsAccordingToNumBeds.size() - 1).add(availableRooms.get(i));
+			else { // Else put it in the last list
+				roomsAccordingToNumBeds.get(numberOfPersons).add(room);
 			}
 		}
 		
 		EList<ISearchResult> results = new BasicEList<ISearchResult>();
 
 		// For all rooms with the same number of beds as people, add them to the results
-		for (int i = 0; i < roomsAccordingToNumBeds.get(numberOfPersons - 1).size(); i++) {
-			
-			// Fetch the room
-			Hotel_Room room = roomsAccordingToNumBeds.get(numberOfPersons - 1).get(i);
-			
+		for (Hotel_Room room : roomsAccordingToNumBeds.get(numberOfPersons - 1)) {
 			// Create a suggestion with the room
 			Hotel_BookingSuggestion suggestion = new Hotel_BookingSuggestionImpl(room, startTime, endTime);
-			
+						
 			// Create a search result with the suggestion
 			Hotel_SearchResult searchResult = new Hotel_SearchResultImpl();
 			searchResult.getBookingSuggestion().add(suggestion);
-			
+						
 			// Add the result to the list of all results
 			results.add(searchResult);
 		}
@@ -465,8 +443,8 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 					&& j < roomsAccordingToNumBeds.get(bedsInRoomTwo - 1).size(); j++) {
 				
 				// Fetch the rooms
-				Hotel_Room roomOne = roomsAccordingToNumBeds.get(bedsInRoomOne - 1).get(i);
-				Hotel_Room roomTwo = roomsAccordingToNumBeds.get(bedsInRoomTwo - 1).get(i);
+				Hotel_Room roomOne = roomsAccordingToNumBeds.get(bedsInRoomOne - 1).get(j);
+				Hotel_Room roomTwo = roomsAccordingToNumBeds.get(bedsInRoomTwo - 1).get(j);
 				
 				// Create suggestions with the rooms
 				Hotel_BookingSuggestion suggestionOne = new Hotel_BookingSuggestionImpl(roomOne, startTime, endTime);
@@ -483,18 +461,14 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		}
 		
 		// Now just dump all the rooms containing more beds than number of people in the results...
-		for (int i = 0; i < roomsAccordingToNumBeds.get(roomsAccordingToNumBeds.size() - 1).size(); i++) {
-			
-			// Fetch the room
-			Hotel_Room room = roomsAccordingToNumBeds.get(roomsAccordingToNumBeds.size() - 1).get(i);
-			
+		for (Hotel_Room room : roomsAccordingToNumBeds.get(numberOfPersons)) {
 			// Create suggestion with the room
 			Hotel_BookingSuggestion suggestion = new Hotel_BookingSuggestionImpl(room, startTime, endTime);
-			
+						
 			// Create a search result with the suggestion
 			Hotel_SearchResult searchResult = new Hotel_SearchResultImpl();
 			searchResult.getBookingSuggestion().add(suggestion);
-			
+						
 			// Add the result to the list of all results
 			results.add(searchResult);
 		}
@@ -512,6 +486,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		return null;
 	}
 	
+	// TODO: Required age should be configurable (or in our case at least make it a bit easier to change)
 	private boolean personIsYoungerThan15(IPerson person) {
 		Calendar calendar = Calendar.getInstance();
 		calendar.add(Calendar.YEAR, -15);
