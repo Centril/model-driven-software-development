@@ -2,17 +2,20 @@
  */
 package Classes.Hotel.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import Classes.Hotel.HotelPackage;
 import Classes.Hotel.Hotel_DummyPersistenceService;
 import Classes.Hotel.Hotel_Occupancy;
 import Classes.Hotel.Hotel_Order;
 import Classes.Hotel.Hotel_Room;
-import java.lang.reflect.InvocationTargetException;
-import java.util.Collection;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,14 +62,41 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * @ordered
 	 */
 	protected EList<Hotel_Occupancy> occupancies;
-
+	
+	private void init() {
+		orders = new BasicEList<Hotel_Order>();
+		
+		rooms = new BasicEList<Hotel_Room>();
+		for (int i = 0; i < 100; i++) {
+			Hotel_RoomImpl room = new Hotel_RoomImpl();
+			room.setId(i);
+			room.setPrice(100.0 * i + 100.0);
+			room.setNumBeds(i % 5 + 1);
+			addRoom(room);
+		}
+		
+		occupancies = new BasicEList<Hotel_Occupancy>();
+		for (int i = 0; i < 1; i++) { // RUNS ONCE, YAY! 
+			Hotel_Occupancy occupancy = new Hotel_OccupancyImpl();
+			
+			Hotel_Room room = getRoomById(0);
+			occupancy.setRoom(room);
+			occupancy.setStartTime(0);
+			occupancy.setEndTime(1);
+			
+			occupancies.add(occupancy);
+		}
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected Hotel_DummyPersistenceServiceImpl() {
 		super();
+		
+		init();
 	}
 
 	/**
@@ -106,12 +136,16 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Hotel_Room getRoomById(int id) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (Hotel_Room room : rooms) {
+			if (room.getId() == id) {
+				return room;
+			}
+		}
+		
+		return null;
 	}
 
 	/**
@@ -129,12 +163,10 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean addOrder(Hotel_Order order) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return orders.add(order);
 	}
 
 	/**
@@ -143,9 +175,7 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * @generated
 	 */
 	public boolean addRoom(Hotel_Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return rooms.add(room);
 	}
 
 	/**
