@@ -1492,13 +1492,13 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_DUMMY_PERSISTENCE_SERVICE = 20;
 
 	/**
-	 * The feature id for the '<em><b>Order</b></em>' reference list.
+	 * The feature id for the '<em><b>Orders</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER = IPERSISTENCE_SERVICE_FEATURE_COUNT + 0;
+	int HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDERS = IPERSISTENCE_SERVICE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Rooms</b></em>' reference list.
@@ -2431,15 +2431,15 @@ public interface HotelPackage extends EPackage {
 	EClass getHotel_DummyPersistenceService();
 
 	/**
-	 * Returns the meta object for the reference list '{@link Classes.Hotel.Hotel_DummyPersistenceService#getOrder <em>Order</em>}'.
+	 * Returns the meta object for the reference list '{@link Classes.Hotel.Hotel_DummyPersistenceService#getOrders <em>Orders</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Order</em>'.
-	 * @see Classes.Hotel.Hotel_DummyPersistenceService#getOrder()
+	 * @return the meta object for the reference list '<em>Orders</em>'.
+	 * @see Classes.Hotel.Hotel_DummyPersistenceService#getOrders()
 	 * @see #getHotel_DummyPersistenceService()
 	 * @generated
 	 */
-	EReference getHotel_DummyPersistenceService_Order();
+	EReference getHotel_DummyPersistenceService_Orders();
 
 	/**
 	 * Returns the meta object for the reference list '{@link Classes.Hotel.Hotel_DummyPersistenceService#getRooms <em>Rooms</em>}'.
@@ -3193,12 +3193,12 @@ public interface HotelPackage extends EPackage {
 		EClass HOTEL_DUMMY_PERSISTENCE_SERVICE = eINSTANCE.getHotel_DummyPersistenceService();
 
 		/**
-		 * The meta object literal for the '<em><b>Order</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Orders</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER = eINSTANCE.getHotel_DummyPersistenceService_Order();
+		EReference HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDERS = eINSTANCE.getHotel_DummyPersistenceService_Orders();
 
 		/**
 		 * The meta object literal for the '<em><b>Rooms</b></em>' reference list feature.

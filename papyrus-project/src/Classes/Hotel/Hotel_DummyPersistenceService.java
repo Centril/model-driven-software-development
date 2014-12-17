@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link Classes.Hotel.Hotel_DummyPersistenceService#getOrder <em>Order</em>}</li>
+ *   <li>{@link Classes.Hotel.Hotel_DummyPersistenceService#getOrders <em>Orders</em>}</li>
  *   <li>{@link Classes.Hotel.Hotel_DummyPersistenceService#getRooms <em>Rooms</em>}</li>
  *   <li>{@link Classes.Hotel.Hotel_DummyPersistenceService#getOccupancies <em>Occupancies</em>}</li>
  * </ul>
@@ -25,20 +25,20 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Hotel_DummyPersistenceService extends IPersistenceService {
 	/**
-	 * Returns the value of the '<em><b>Order</b></em>' reference list.
+	 * Returns the value of the '<em><b>Orders</b></em>' reference list.
 	 * The list contents are of type {@link Classes.Hotel.Hotel_Order}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Order</em>' reference isn't clear,
+	 * If the meaning of the '<em>Orders</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order</em>' reference list.
-	 * @see Classes.Hotel.HotelPackage#getHotel_DummyPersistenceService_Order()
+	 * @return the value of the '<em>Orders</em>' reference list.
+	 * @see Classes.Hotel.HotelPackage#getHotel_DummyPersistenceService_Orders()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<Hotel_Order> getOrder();
+	EList<Hotel_Order> getOrders();
 
 	/**
 	 * Returns the value of the '<em><b>Rooms</b></em>' reference list.

@@ -373,7 +373,7 @@
         </ownedEnd>
       </nestedClassifier>
       <packagedElement xmi:type="uml:Class" xmi:id="_22PQ4IXuEeSgO4VnRKF4fQ" name="DummyPersistenceService">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_VLpJEIXvEeSgO4VnRKF4fQ" name="order" type="_E7nKgHpGEeSTh5yDLLqE0Q" association="_VLpJE4XvEeSgO4VnRKF4fQ">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_VLpJEIXvEeSgO4VnRKF4fQ" name="orders" type="_E7nKgHpGEeSTh5yDLLqE0Q" association="_VLpJE4XvEeSgO4VnRKF4fQ">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VLpJEYXvEeSgO4VnRKF4fQ"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VLpJEoXvEeSgO4VnRKF4fQ" value="*"/>
         </ownedAttribute>

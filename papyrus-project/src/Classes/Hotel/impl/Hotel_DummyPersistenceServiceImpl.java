@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl#getOrder <em>Order</em>}</li>
+ *   <li>{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl#getOrders <em>Orders</em>}</li>
  *   <li>{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl#getRooms <em>Rooms</em>}</li>
  *   <li>{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl#getOccupancies <em>Occupancies</em>}</li>
  * </ul>
@@ -31,14 +31,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Container implements Hotel_DummyPersistenceService {
 	/**
-	 * The cached value of the '{@link #getOrder() <em>Order</em>}' reference list.
+	 * The cached value of the '{@link #getOrders() <em>Orders</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOrder()
+	 * @see #getOrders()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Hotel_Order> order;
+	protected EList<Hotel_Order> orders;
 
 	/**
 	 * The cached value of the '{@link #getRooms() <em>Rooms</em>}' reference list.
@@ -84,18 +84,6 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Hotel_Order> getOrder() {
-		if (order == null) {
-			order = new EObjectResolvingEList<Hotel_Order>(Hotel_Order.class, this, HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER);
-		}
-		return order;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Hotel_Room> getRooms() {
 		if (rooms == null) {
 			rooms = new EObjectResolvingEList<Hotel_Room>(Hotel_Room.class, this, HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOMS);
@@ -132,9 +120,10 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * @generated
 	 */
 	public EList<Hotel_Order> getOrders() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (orders == null) {
+			orders = new EObjectResolvingEList<Hotel_Order>(Hotel_Order.class, this, HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDERS);
+		}
+		return orders;
 	}
 
 	/**
@@ -167,8 +156,8 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER:
-				return getOrder();
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDERS:
+				return getOrders();
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOMS:
 				return getRooms();
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCIES:
@@ -186,9 +175,9 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER:
-				getOrder().clear();
-				getOrder().addAll((Collection<? extends Hotel_Order>)newValue);
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDERS:
+				getOrders().clear();
+				getOrders().addAll((Collection<? extends Hotel_Order>)newValue);
 				return;
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOMS:
 				getRooms().clear();
@@ -210,8 +199,8 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER:
-				getOrder().clear();
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDERS:
+				getOrders().clear();
 				return;
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOMS:
 				getRooms().clear();
@@ -231,8 +220,8 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER:
-				return order != null && !order.isEmpty();
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDERS:
+				return orders != null && !orders.isEmpty();
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOMS:
 				return rooms != null && !rooms.isEmpty();
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCIES:
@@ -251,8 +240,6 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 		switch (operationID) {
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE___GET_ROOM_BY_ID__INT:
 				return getRoomById((Integer)arguments.get(0));
-			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE___GET_ORDERS:
-				return getOrders();
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE___ADD_ORDER__HOTEL_ORDER:
 				return addOrder((Hotel_Order)arguments.get(0));
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE___ADD_ROOM__HOTEL_ROOM:
