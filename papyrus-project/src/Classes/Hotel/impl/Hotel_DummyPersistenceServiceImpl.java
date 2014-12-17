@@ -68,11 +68,7 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 		
 		rooms = new BasicEList<Hotel_Room>();
 		for (int i = 0; i < 100; i++) {
-			Hotel_RoomImpl room = new Hotel_RoomImpl();
-			room.setId(i);
-			room.setPrice(100.0 * i + 100.0);
-			room.setNumBeds(i % 5 + 1);
-			addRoom(room);
+			addRoom(new Hotel_RoomImpl(i % 5 + 1, 100.0 * i + 100, i));
 		}
 		
 		occupancies = new BasicEList<Hotel_Occupancy>();
@@ -172,12 +168,10 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean addRoom(Hotel_Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return rooms.add(room);
 	}
 
 	/**
