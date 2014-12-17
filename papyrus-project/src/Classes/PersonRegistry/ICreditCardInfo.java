@@ -45,7 +45,7 @@ public interface ICreditCardInfo extends EObject {
 	 * @model kind="operation" dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
 	 * @generated
 	 */
-	String getNumber();
+	String getCCNumber();
 
 	/**
 	 * <!-- begin-user-doc -->

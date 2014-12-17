@@ -209,12 +209,12 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * @generated NOT
 	 */
 	public boolean pay(IBooking booking) {
-		IPerson customer = personRegistry.getPersonByID(booking.getCustomer());
+		IPerson customer = personRegistry.getIPersonByID(booking.getCustomer());
 		ICreditCardInfo creditcard = customer.getCreditCard();
 		double price = getBill(booking);
 		try {
 			//Not sure how we want to access bank component
-			CustomerRequires.instance().makePayment(creditcard.getNumber(), creditcard.getCCV(), creditcard.getMonth(), creditcard.getYear(), 
+			CustomerRequires.instance().makePayment(creditcard.getCCNumber(), creditcard.getCCV(), creditcard.getMonth(), creditcard.getYear(), 
 													creditcard.getFirstName(), creditcard.getLastName(), price);
 		} catch (SOAPException e) {
 			// TODO Auto-generated catch block
@@ -372,7 +372,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	}
 
 	private IPerson findPerson(int id) {
-		Collection<IPerson> people = basicGetPersonRegistry().getPeople();
+		Collection<IPerson> people = basicGetPersonRegistry().getIPeople();
 		for (IPerson person : people) {
 			if (id == person.getId()) {
 				return person;
@@ -395,7 +395,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		try {
 			CustomerRequires instance = CustomerRequires.instance();
 			ICreditCardInfo card = person.getCreditCard();
-			return instance.isCreditCardValid(card.getNumber(), card.getCCV(), card.getMonth(), card.getYear(), card.getFirstName(), card.getLastName());
+			return instance.isCreditCardValid(card.getCCNumber(), card.getCCV(), card.getMonth(), card.getYear(), card.getFirstName(), card.getLastName());
 		} catch (SOAPException e) {
 			throw new RuntimeException("Couldn't establish SOAP.");
 		}

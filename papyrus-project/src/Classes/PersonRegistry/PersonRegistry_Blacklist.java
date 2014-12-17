@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link Classes.PersonRegistry.PersonRegistry_Blacklist#getPerson <em>Person</em>}</li>
+ *   <li>{@link Classes.PersonRegistry.PersonRegistry_Blacklist#getPeople <em>People</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,22 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface PersonRegistry_Blacklist extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Person</b></em>' reference list.
-	 * The list contents are of type {@link Classes.PersonRegistry.PersonRegistry_Person}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Person</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Person</em>' reference list.
-	 * @see Classes.PersonRegistry.PersonRegistryPackage#getPersonRegistry_Blacklist_Person()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	EList<PersonRegistry_Person> getPerson();
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -50,25 +34,29 @@ public interface PersonRegistry_Blacklist extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model personRequired="true" personOrdered="false"
+	 * @model required="true" ordered="false" personRequired="true" personOrdered="false"
 	 * @generated
 	 */
-	void add(PersonRegistry_Person person);
+	boolean add(PersonRegistry_Person person);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model personRequired="true" personOrdered="false"
+	 * @model required="true" ordered="false" personRequired="true" personOrdered="false"
 	 * @generated
 	 */
-	void remove(PersonRegistry_Person person);
+	boolean remove(PersonRegistry_Person person);
 
 	/**
+	 * Returns the value of the '<em><b>People</b></em>' reference list.
+	 * The list contents are of type {@link Classes.PersonRegistry.PersonRegistry_Person}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
+	 * @return the value of the '<em>People</em>' reference list.
+	 * @see Classes.PersonRegistry.PersonRegistryPackage#getPersonRegistry_Blacklist_People()
+	 * @model ordered="false"
 	 * @generated
 	 */
-	IPerson getPeople();
+	EList<PersonRegistry_Person> getPeople();
 
 } // PersonRegistry_Blacklist

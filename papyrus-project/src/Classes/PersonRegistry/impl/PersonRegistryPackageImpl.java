@@ -219,7 +219,7 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getICreditCardInfo__GetNumber() {
+	public EOperation getICreditCardInfo__GetCCNumber() {
 		return iCreditCardInfoEClass.getEOperations().get(3);
 	}
 
@@ -327,7 +327,7 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIPerson__CreateCreditCardInfo() {
+	public EOperation getIPerson__RemoveCreditCard() {
 		return iPersonEClass.getEOperations().get(6);
 	}
 
@@ -336,7 +336,7 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIPerson__RemoveCreditCard() {
+	public EOperation getIPerson__CreateCreditCard__String_String_int_int_String_String() {
 		return iPersonEClass.getEOperations().get(7);
 	}
 
@@ -345,7 +345,7 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIPerson__CreateCreditCard__String_String_int_int_String_String() {
+	public EOperation getIPerson__GetId() {
 		return iPersonEClass.getEOperations().get(8);
 	}
 
@@ -354,7 +354,7 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIPerson__GetId() {
+	public EOperation getIPerson__SetFirstName__String() {
 		return iPersonEClass.getEOperations().get(9);
 	}
 
@@ -363,7 +363,7 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIPerson__SetFirstName__String() {
+	public EOperation getIPerson__SetLastName__String() {
 		return iPersonEClass.getEOperations().get(10);
 	}
 
@@ -372,17 +372,8 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIPerson__SetLastName__String() {
-		return iPersonEClass.getEOperations().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getIPerson__SetSSN__String() {
-		return iPersonEClass.getEOperations().get(12);
+		return iPersonEClass.getEOperations().get(11);
 	}
 
 	/**
@@ -399,7 +390,7 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPersonRegistry_Blacklist_Person() {
+	public EReference getPersonRegistry_Blacklist_People() {
 		return (EReference)personRegistry_BlacklistEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -435,15 +426,6 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getPersonRegistry_Blacklist__GetPeople() {
-		return personRegistry_BlacklistEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getPersonRegistry_PersonRegistry() {
 		return personRegistry_PersonRegistryEClass;
 	}
@@ -453,7 +435,7 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPersonRegistry_PersonRegistry_Person() {
+	public EReference getPersonRegistry_PersonRegistry_People() {
 		return (EReference)personRegistry_PersonRegistryEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -498,7 +480,7 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIPersonRegistry__GetPeople() {
+	public EOperation getIPersonRegistry__GetIPeople() {
 		return iPersonRegistryEClass.getEOperations().get(2);
 	}
 
@@ -525,7 +507,7 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIPersonRegistry__GetPersonByID__int() {
+	public EOperation getIPersonRegistry__GetIPersonByID__int() {
 		return iPersonRegistryEClass.getEOperations().get(5);
 	}
 
@@ -534,7 +516,7 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIPersonRegistry__GetPersonBySSN__String() {
+	public EOperation getIPersonRegistry__GetIPersonBySSN__String() {
 		return iPersonRegistryEClass.getEOperations().get(6);
 	}
 
@@ -574,7 +556,7 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 		createEOperation(iCreditCardInfoEClass, ICREDIT_CARD_INFO___GET_CCV);
 		createEOperation(iCreditCardInfoEClass, ICREDIT_CARD_INFO___GET_MONTH);
 		createEOperation(iCreditCardInfoEClass, ICREDIT_CARD_INFO___GET_YEAR);
-		createEOperation(iCreditCardInfoEClass, ICREDIT_CARD_INFO___GET_NUMBER);
+		createEOperation(iCreditCardInfoEClass, ICREDIT_CARD_INFO___GET_CC_NUMBER);
 		createEOperation(iCreditCardInfoEClass, ICREDIT_CARD_INFO___GET_FIRST_NAME);
 		createEOperation(iCreditCardInfoEClass, ICREDIT_CARD_INFO___GET_LAST_NAME);
 
@@ -588,7 +570,6 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 		createEOperation(iPersonEClass, IPERSON___GET_SSN);
 		createEOperation(iPersonEClass, IPERSON___GET_REGISTER_DATE);
 		createEOperation(iPersonEClass, IPERSON___GET_CREDIT_CARD);
-		createEOperation(iPersonEClass, IPERSON___CREATE_CREDIT_CARD_INFO);
 		createEOperation(iPersonEClass, IPERSON___REMOVE_CREDIT_CARD);
 		createEOperation(iPersonEClass, IPERSON___CREATE_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING);
 		createEOperation(iPersonEClass, IPERSON___GET_ID);
@@ -597,24 +578,23 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 		createEOperation(iPersonEClass, IPERSON___SET_SSN__STRING);
 
 		personRegistry_BlacklistEClass = createEClass(PERSON_REGISTRY_BLACKLIST);
-		createEReference(personRegistry_BlacklistEClass, PERSON_REGISTRY_BLACKLIST__PERSON);
+		createEReference(personRegistry_BlacklistEClass, PERSON_REGISTRY_BLACKLIST__PEOPLE);
 		createEOperation(personRegistry_BlacklistEClass, PERSON_REGISTRY_BLACKLIST___IS_BLACKLISTED__PERSONREGISTRY_PERSON);
 		createEOperation(personRegistry_BlacklistEClass, PERSON_REGISTRY_BLACKLIST___ADD__PERSONREGISTRY_PERSON);
 		createEOperation(personRegistry_BlacklistEClass, PERSON_REGISTRY_BLACKLIST___REMOVE__PERSONREGISTRY_PERSON);
-		createEOperation(personRegistry_BlacklistEClass, PERSON_REGISTRY_BLACKLIST___GET_PEOPLE);
 
 		personRegistry_PersonRegistryEClass = createEClass(PERSON_REGISTRY_PERSON_REGISTRY);
-		createEReference(personRegistry_PersonRegistryEClass, PERSON_REGISTRY_PERSON_REGISTRY__PERSON);
+		createEReference(personRegistry_PersonRegistryEClass, PERSON_REGISTRY_PERSON_REGISTRY__PEOPLE);
 		createEReference(personRegistry_PersonRegistryEClass, PERSON_REGISTRY_PERSON_REGISTRY__BLACKLIST);
 
 		iPersonRegistryEClass = createEClass(IPERSON_REGISTRY);
 		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___IS_BLACKLISTED__INT);
 		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___CREATE_PERSON__LONG);
-		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___GET_PEOPLE);
+		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___GET_IPEOPLE);
 		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___ADD_TO_BLACKLIST__INT);
 		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___REMOVE_FROM_BLACKLIST__INT);
-		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___GET_PERSON_BY_ID__INT);
-		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___GET_PERSON_BY_SSN__STRING);
+		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___GET_IPERSON_BY_ID__INT);
+		createEOperation(iPersonRegistryEClass, IPERSON_REGISTRY___GET_IPERSON_BY_SSN__STRING);
 	}
 
 	/**
@@ -665,7 +645,7 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 
 		initEOperation(getICreditCardInfo__GetYear(), ecorePackage.getEInt(), "getYear", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getICreditCardInfo__GetNumber(), theTypesPackage.getString(), "getNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getICreditCardInfo__GetCCNumber(), theTypesPackage.getString(), "getCCNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getICreditCardInfo__GetFirstName(), theTypesPackage.getString(), "getFirstName", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -687,8 +667,6 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 		initEOperation(getIPerson__GetRegisterDate(), ecorePackage.getELong(), "getRegisterDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getIPerson__GetCreditCard(), this.getICreditCardInfo(), "getCreditCard", 0, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getIPerson__CreateCreditCardInfo(), null, "createCreditCardInfo", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getIPerson__RemoveCreditCard(), null, "removeCreditCard", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -712,21 +690,19 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 		addEParameter(op, theTypesPackage.getString(), "ssn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(personRegistry_BlacklistEClass, PersonRegistry_Blacklist.class, "PersonRegistry_Blacklist", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPersonRegistry_Blacklist_Person(), this.getPersonRegistry_Person(), null, "person", null, 0, -1, PersonRegistry_Blacklist.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPersonRegistry_Blacklist_People(), this.getPersonRegistry_Person(), null, "people", null, 0, -1, PersonRegistry_Blacklist.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getPersonRegistry_Blacklist__IsBlacklisted__PersonRegistry_Person(), ecorePackage.getEBoolean(), "isBlacklisted", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getPersonRegistry_Person(), "person", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getPersonRegistry_Blacklist__Add__PersonRegistry_Person(), null, "add", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getPersonRegistry_Blacklist__Add__PersonRegistry_Person(), ecorePackage.getEBoolean(), "add", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getPersonRegistry_Person(), "person", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getPersonRegistry_Blacklist__Remove__PersonRegistry_Person(), null, "remove", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getPersonRegistry_Blacklist__Remove__PersonRegistry_Person(), ecorePackage.getEBoolean(), "remove", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getPersonRegistry_Person(), "person", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getPersonRegistry_Blacklist__GetPeople(), this.getIPerson(), "getPeople", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(personRegistry_PersonRegistryEClass, PersonRegistry_PersonRegistry.class, "PersonRegistry_PersonRegistry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPersonRegistry_PersonRegistry_Person(), this.getPersonRegistry_Person(), null, "person", null, 0, -1, PersonRegistry_PersonRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPersonRegistry_PersonRegistry_People(), this.getPersonRegistry_Person(), null, "people", null, 0, -1, PersonRegistry_PersonRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getPersonRegistry_PersonRegistry_Blacklist(), this.getPersonRegistry_Blacklist(), null, "blacklist", null, 1, 1, PersonRegistry_PersonRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(iPersonRegistryEClass, IPersonRegistry.class, "IPersonRegistry", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -737,7 +713,7 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 		op = initEOperation(getIPersonRegistry__CreatePerson__long(), this.getIPerson(), "createPerson", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getELong(), "birthDate", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getIPersonRegistry__GetPeople(), this.getIPerson(), "getPeople", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getIPersonRegistry__GetIPeople(), this.getIPerson(), "getIPeople", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIPersonRegistry__AddToBlacklist__int(), ecorePackage.getEBoolean(), "addToBlacklist", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "personID", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -745,10 +721,10 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 		op = initEOperation(getIPersonRegistry__RemoveFromBlacklist__int(), ecorePackage.getEBoolean(), "removeFromBlacklist", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "personID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIPersonRegistry__GetPersonByID__int(), this.getIPerson(), "getPersonByID", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIPersonRegistry__GetIPersonByID__int(), this.getIPerson(), "getIPersonByID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "personID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIPersonRegistry__GetPersonBySSN__String(), this.getIPerson(), "getPersonBySSN", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIPersonRegistry__GetIPersonBySSN__String(), this.getIPerson(), "getIPersonBySSN", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getString(), "ssn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Create resource

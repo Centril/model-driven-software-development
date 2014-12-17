@@ -69,14 +69,6 @@ public interface IPerson extends EObject {
 	 * @model
 	 * @generated
 	 */
-	void createCreditCardInfo();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
 	void removeCreditCard();
 
 	/**

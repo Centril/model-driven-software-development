@@ -39,7 +39,7 @@ public interface IPersonRegistry extends EObject {
 	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	EList<IPerson> getPeople();
+	EList<IPerson> getIPeople();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,7 +63,7 @@ public interface IPersonRegistry extends EObject {
 	 * @model required="true" ordered="false" personIDRequired="true" personIDOrdered="false"
 	 * @generated
 	 */
-	IPerson getPersonByID(int personID);
+	IPerson getIPersonByID(int personID);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,6 +71,6 @@ public interface IPersonRegistry extends EObject {
 	 * @model required="true" ordered="false" ssnDataType="org.eclipse.uml2.types.String" ssnRequired="true" ssnOrdered="false"
 	 * @generated
 	 */
-	IPerson getPersonBySSN(String ssn);
+	IPerson getIPersonBySSN(String ssn);
 
 } // IPersonRegistry
