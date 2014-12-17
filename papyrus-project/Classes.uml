@@ -13,7 +13,7 @@
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_YYOO4HlvEeS-dbwPGgzjtw" client="_8hQzRXlnEeS-dbwPGgzjtw" supplier="_FzWa8HluEeS-dbwPGgzjtw" contract="_FzWa8HluEeS-dbwPGgzjtw"/>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_OCMTYHloEeS-dbwPGgzjtw" name="Blacklist">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_0WG6QHloEeS-dbwPGgzjtw" name="person" type="_8hQzRXlnEeS-dbwPGgzjtw" association="_0WLLsHloEeS-dbwPGgzjtw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_0WG6QHloEeS-dbwPGgzjtw" name="people" type="_8hQzRXlnEeS-dbwPGgzjtw" association="_0WLLsHloEeS-dbwPGgzjtw">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0WG6QXloEeS-dbwPGgzjtw"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0WG6QnloEeS-dbwPGgzjtw" value="*"/>
         </ownedAttribute>
@@ -25,12 +25,21 @@
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_YzboYHloEeS-dbwPGgzjtw" name="add">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_uDlzUHloEeS-dbwPGgzjtw" name="person" type="_8hQzRXlnEeS-dbwPGgzjtw"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Kj0P8IYJEeSvNpJPJgpdPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_aRorwHloEeS-dbwPGgzjtw" name="remove">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_wrPyEHloEeS-dbwPGgzjtw" name="person" type="_8hQzRXlnEeS-dbwPGgzjtw"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_JG_FkIYJEeSvNpJPJgpdPA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_M6K64IRqEeSDgu4VwEIWQw" name="getPeople">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_QJbsMIRqEeSDgu4VwEIWQw" type="_FzWa8HluEeS-dbwPGgzjtw" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_QJbsMIRqEeSDgu4VwEIWQw" type="_8hQzRXlnEeS-dbwPGgzjtw" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NCBXwIYJEeSvNpJPJgpdPA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NCKhsIYJEeSvNpJPJgpdPA" value="*"/>
+          </ownedParameter>
         </ownedOperation>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Association" xmi:id="_0WLLsHloEeS-dbwPGgzjtw" memberEnd="_0WLLsXloEeS-dbwPGgzjtw _0WG6QHloEeS-dbwPGgzjtw">
@@ -46,7 +55,7 @@
         </ownedEnd>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_jEnngHlsEeS-dbwPGgzjtw" name="PersonRegistry">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_tkJBIIXzEeSgO4VnRKF4fQ" name="person" type="_8hQzRXlnEeS-dbwPGgzjtw" association="_tkJBI4XzEeSgO4VnRKF4fQ">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_tkJBIIXzEeSgO4VnRKF4fQ" name="people" type="_8hQzRXlnEeS-dbwPGgzjtw" association="_tkJBI4XzEeSgO4VnRKF4fQ">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tkJBIYXzEeSgO4VnRKF4fQ"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tkJBIoXzEeSgO4VnRKF4fQ" value="*"/>
         </ownedAttribute>
@@ -148,7 +157,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_ncoXUHlxEeS-dbwPGgzjtw" name="getNumber">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_ncoXUHlxEeS-dbwPGgzjtw" name="getCCNumber">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_pWZ8YHlxEeS-dbwPGgzjtw" name="number" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
