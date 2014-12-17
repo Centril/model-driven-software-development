@@ -6,7 +6,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+
 import javax.xml.soap.SOAPException;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -15,6 +17,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires;
 import Classes.Hotel.BookingRequest;
 import Classes.Hotel.HotelPackage;
@@ -362,7 +365,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 
 	private boolean isRoomAvailable(IRoom room, long startTime, long endTime) {
 		if (startTime > endTime) {
-			throw new RuntimeException("Heeey, don't be a stupid.");
+			throw new IllegalArgumentException("endTime is lower than startTime.");
 		}
 		
 		EList<Hotel_Occupancy> occupancies = getOccupancyService().getAllOccupancies();
