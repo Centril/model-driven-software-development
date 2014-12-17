@@ -2,22 +2,19 @@
  */
 package Classes.Hotel.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import Classes.Hotel.HotelPackage;
 import Classes.Hotel.Hotel_Booking;
 import Classes.Hotel.Hotel_Order;
 import Classes.Hotel.IBooking;
-
-import java.lang.reflect.InvocationTargetException;
-
-import java.util.Collection;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,6 +40,8 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 	 */
 	protected EList<Hotel_Booking> booking;
 
+	private int customer;
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -50,6 +49,14 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 	 */
 	protected Hotel_OrderImpl() {
 		super();
+	}
+	
+	protected Hotel_OrderImpl(int customerId, EList<Hotel_Booking> bookings) {
+		this.customer = customerId;
+		
+		EList<Hotel_Booking> tmpbookings = new BasicEList<>();
+		tmpbookings.addAll(bookings);
+		this.booking = tmpbookings;
 	}
 
 	/**
@@ -77,23 +84,21 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<IBooking> getBookings() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<IBooking> bookings = new BasicEList<IBooking>();
+		bookings.addAll(booking);
+		return bookings;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int getCustomer() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return customer;
 	}
 
 	/**
