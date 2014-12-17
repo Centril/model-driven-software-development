@@ -2,6 +2,8 @@
  */
 package Classes.Hotel;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -23,81 +25,51 @@ package Classes.Hotel;
  */
 public interface Hotel_DummyPersistenceService extends IPersistenceService {
 	/**
-	 * Returns the value of the '<em><b>Order</b></em>' reference.
+	 * Returns the value of the '<em><b>Order</b></em>' reference list.
+	 * The list contents are of type {@link Classes.Hotel.Hotel_Order}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order</em>' reference.
-	 * @see #setOrder(Hotel_Order)
+	 * @return the value of the '<em>Order</em>' reference list.
 	 * @see Classes.Hotel.HotelPackage#getHotel_DummyPersistenceService_Order()
-	 * @model required="true" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	Hotel_Order getOrder();
+	EList<Hotel_Order> getOrder();
 
 	/**
-	 * Sets the value of the '{@link Classes.Hotel.Hotel_DummyPersistenceService#getOrder <em>Order</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Order</em>' reference.
-	 * @see #getOrder()
-	 * @generated
-	 */
-	void setOrder(Hotel_Order value);
-
-	/**
-	 * Returns the value of the '<em><b>Room</b></em>' reference.
+	 * Returns the value of the '<em><b>Room</b></em>' reference list.
+	 * The list contents are of type {@link Classes.Hotel.Hotel_Room}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Room</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room</em>' reference.
-	 * @see #setRoom(Hotel_Room)
+	 * @return the value of the '<em>Room</em>' reference list.
 	 * @see Classes.Hotel.HotelPackage#getHotel_DummyPersistenceService_Room()
-	 * @model required="true" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	Hotel_Room getRoom();
+	EList<Hotel_Room> getRoom();
 
 	/**
-	 * Sets the value of the '{@link Classes.Hotel.Hotel_DummyPersistenceService#getRoom <em>Room</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Room</em>' reference.
-	 * @see #getRoom()
-	 * @generated
-	 */
-	void setRoom(Hotel_Room value);
-
-	/**
-	 * Returns the value of the '<em><b>Occupancy</b></em>' reference.
+	 * Returns the value of the '<em><b>Occupancy</b></em>' reference list.
+	 * The list contents are of type {@link Classes.Hotel.Hotel_Occupancy}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Occupancy</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Occupancy</em>' reference.
-	 * @see #setOccupancy(Hotel_Occupancy)
+	 * @return the value of the '<em>Occupancy</em>' reference list.
 	 * @see Classes.Hotel.HotelPackage#getHotel_DummyPersistenceService_Occupancy()
-	 * @model required="true" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	Hotel_Occupancy getOccupancy();
-
-	/**
-	 * Sets the value of the '{@link Classes.Hotel.Hotel_DummyPersistenceService#getOccupancy <em>Occupancy</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Occupancy</em>' reference.
-	 * @see #getOccupancy()
-	 * @generated
-	 */
-	void setOccupancy(Hotel_Occupancy value);
+	EList<Hotel_Occupancy> getOccupancy();
 
 } // Hotel_DummyPersistenceService

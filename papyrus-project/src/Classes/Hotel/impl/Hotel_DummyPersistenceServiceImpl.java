@@ -7,18 +7,12 @@ import Classes.Hotel.Hotel_DummyPersistenceService;
 import Classes.Hotel.Hotel_Occupancy;
 import Classes.Hotel.Hotel_Order;
 import Classes.Hotel.Hotel_Room;
-
 import java.lang.reflect.InvocationTargetException;
-
-import org.eclipse.emf.common.notify.Notification;
-
+import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,34 +31,34 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Container implements Hotel_DummyPersistenceService {
 	/**
-	 * The cached value of the '{@link #getOrder() <em>Order</em>}' reference.
+	 * The cached value of the '{@link #getOrder() <em>Order</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOrder()
 	 * @generated
 	 * @ordered
 	 */
-	protected Hotel_Order order;
+	protected EList<Hotel_Order> order;
 
 	/**
-	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference.
+	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoom()
 	 * @generated
 	 * @ordered
 	 */
-	protected Hotel_Room room;
+	protected EList<Hotel_Room> room;
 
 	/**
-	 * The cached value of the '{@link #getOccupancy() <em>Occupancy</em>}' reference.
+	 * The cached value of the '{@link #getOccupancy() <em>Occupancy</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOccupancy()
 	 * @generated
 	 * @ordered
 	 */
-	protected Hotel_Occupancy occupancy;
+	protected EList<Hotel_Occupancy> occupancy;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,14 +84,9 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Hotel_Order getOrder() {
-		if (order != null && order.eIsProxy()) {
-			InternalEObject oldOrder = (InternalEObject)order;
-			order = (Hotel_Order)eResolveProxy(oldOrder);
-			if (order != oldOrder) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER, oldOrder, order));
-			}
+	public EList<Hotel_Order> getOrder() {
+		if (order == null) {
+			order = new EObjectResolvingEList<Hotel_Order>(Hotel_Order.class, this, HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER);
 		}
 		return order;
 	}
@@ -107,35 +96,9 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Hotel_Order basicGetOrder() {
-		return order;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOrder(Hotel_Order newOrder) {
-		Hotel_Order oldOrder = order;
-		order = newOrder;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER, oldOrder, order));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Hotel_Room getRoom() {
-		if (room != null && room.eIsProxy()) {
-			InternalEObject oldRoom = (InternalEObject)room;
-			room = (Hotel_Room)eResolveProxy(oldRoom);
-			if (room != oldRoom) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOM, oldRoom, room));
-			}
+	public EList<Hotel_Room> getRoom() {
+		if (room == null) {
+			room = new EObjectResolvingEList<Hotel_Room>(Hotel_Room.class, this, HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOM);
 		}
 		return room;
 	}
@@ -145,58 +108,11 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Hotel_Room basicGetRoom() {
-		return room;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRoom(Hotel_Room newRoom) {
-		Hotel_Room oldRoom = room;
-		room = newRoom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOM, oldRoom, room));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Hotel_Occupancy getOccupancy() {
-		if (occupancy != null && occupancy.eIsProxy()) {
-			InternalEObject oldOccupancy = (InternalEObject)occupancy;
-			occupancy = (Hotel_Occupancy)eResolveProxy(oldOccupancy);
-			if (occupancy != oldOccupancy) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCY, oldOccupancy, occupancy));
-			}
+	public EList<Hotel_Occupancy> getOccupancy() {
+		if (occupancy == null) {
+			occupancy = new EObjectResolvingEList<Hotel_Occupancy>(Hotel_Occupancy.class, this, HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCY);
 		}
 		return occupancy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Hotel_Occupancy basicGetOccupancy() {
-		return occupancy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOccupancy(Hotel_Occupancy newOccupancy) {
-		Hotel_Occupancy oldOccupancy = occupancy;
-		occupancy = newOccupancy;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCY, oldOccupancy, occupancy));
 	}
 
 	/**
@@ -274,14 +190,11 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER:
-				if (resolve) return getOrder();
-				return basicGetOrder();
+				return getOrder();
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOM:
-				if (resolve) return getRoom();
-				return basicGetRoom();
+				return getRoom();
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCY:
-				if (resolve) return getOccupancy();
-				return basicGetOccupancy();
+				return getOccupancy();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -291,17 +204,21 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER:
-				setOrder((Hotel_Order)newValue);
+				getOrder().clear();
+				getOrder().addAll((Collection<? extends Hotel_Order>)newValue);
 				return;
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOM:
-				setRoom((Hotel_Room)newValue);
+				getRoom().clear();
+				getRoom().addAll((Collection<? extends Hotel_Room>)newValue);
 				return;
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCY:
-				setOccupancy((Hotel_Occupancy)newValue);
+				getOccupancy().clear();
+				getOccupancy().addAll((Collection<? extends Hotel_Occupancy>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -316,13 +233,13 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER:
-				setOrder((Hotel_Order)null);
+				getOrder().clear();
 				return;
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOM:
-				setRoom((Hotel_Room)null);
+				getRoom().clear();
 				return;
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCY:
-				setOccupancy((Hotel_Occupancy)null);
+				getOccupancy().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -337,11 +254,11 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER:
-				return order != null;
+				return order != null && !order.isEmpty();
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOM:
-				return room != null;
+				return room != null && !room.isEmpty();
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCY:
-				return occupancy != null;
+				return occupancy != null && !occupancy.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -1391,9 +1391,9 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		initEOperation(getBookingRequest__GetGuests(), ecorePackage.getEInt(), "getGuests", 1, -1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(hotel_DummyPersistenceServiceEClass, Hotel_DummyPersistenceService.class, "Hotel_DummyPersistenceService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHotel_DummyPersistenceService_Order(), this.getHotel_Order(), null, "order", null, 1, 1, Hotel_DummyPersistenceService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHotel_DummyPersistenceService_Room(), this.getHotel_Room(), null, "room", null, 1, 1, Hotel_DummyPersistenceService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHotel_DummyPersistenceService_Occupancy(), this.getHotel_Occupancy(), null, "occupancy", null, 1, 1, Hotel_DummyPersistenceService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHotel_DummyPersistenceService_Order(), this.getHotel_Order(), null, "order", null, 0, -1, Hotel_DummyPersistenceService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHotel_DummyPersistenceService_Room(), this.getHotel_Room(), null, "room", null, 0, -1, Hotel_DummyPersistenceService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHotel_DummyPersistenceService_Occupancy(), this.getHotel_Occupancy(), null, "occupancy", null, 0, -1, Hotel_DummyPersistenceService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
