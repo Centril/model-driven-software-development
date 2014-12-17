@@ -794,7 +794,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIPersistenceService__GetAllRooms() {
+	public EOperation getIPersistenceService__GetRooms() {
 		return iPersistenceServiceEClass.getEOperations().get(1);
 	}
 
@@ -812,7 +812,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIPersistenceService__GetAllOrders() {
+	public EOperation getIPersistenceService__GetOrders() {
 		return iPersistenceServiceEClass.getEOperations().get(3);
 	}
 
@@ -1019,7 +1019,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHotel_DummyPersistenceService_Room() {
+	public EReference getHotel_DummyPersistenceService_Rooms() {
 		return (EReference)hotel_DummyPersistenceServiceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1028,7 +1028,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHotel_DummyPersistenceService_Occupancy() {
+	public EReference getHotel_DummyPersistenceService_Occupancies() {
 		return (EReference)hotel_DummyPersistenceServiceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1133,9 +1133,9 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 
 		iPersistenceServiceEClass = createEClass(IPERSISTENCE_SERVICE);
 		createEOperation(iPersistenceServiceEClass, IPERSISTENCE_SERVICE___GET_OCCUPANCIES);
-		createEOperation(iPersistenceServiceEClass, IPERSISTENCE_SERVICE___GET_ALL_ROOMS);
+		createEOperation(iPersistenceServiceEClass, IPERSISTENCE_SERVICE___GET_ROOMS);
 		createEOperation(iPersistenceServiceEClass, IPERSISTENCE_SERVICE___GET_ROOM_BY_ID__INT);
-		createEOperation(iPersistenceServiceEClass, IPERSISTENCE_SERVICE___GET_ALL_ORDERS);
+		createEOperation(iPersistenceServiceEClass, IPERSISTENCE_SERVICE___GET_ORDERS);
 		createEOperation(iPersistenceServiceEClass, IPERSISTENCE_SERVICE___ADD_ORDER__HOTEL_ORDER);
 		createEOperation(iPersistenceServiceEClass, IPERSISTENCE_SERVICE___ADD_ROOM__HOTEL_ROOM);
 
@@ -1164,8 +1164,8 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 
 		hotel_DummyPersistenceServiceEClass = createEClass(HOTEL_DUMMY_PERSISTENCE_SERVICE);
 		createEReference(hotel_DummyPersistenceServiceEClass, HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER);
-		createEReference(hotel_DummyPersistenceServiceEClass, HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOM);
-		createEReference(hotel_DummyPersistenceServiceEClass, HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCY);
+		createEReference(hotel_DummyPersistenceServiceEClass, HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOMS);
+		createEReference(hotel_DummyPersistenceServiceEClass, HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCIES);
 	}
 
 	/**
@@ -1331,12 +1331,12 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 
 		initEOperation(getIPersistenceService__GetOccupancies(), this.getHotel_Occupancy(), "getOccupancies", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getIPersistenceService__GetAllRooms(), this.getHotel_Room(), "getAllRooms", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getIPersistenceService__GetRooms(), this.getHotel_Room(), "getRooms", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIPersistenceService__GetRoomById__int(), this.getHotel_Room(), "getRoomById", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "id", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getIPersistenceService__GetAllOrders(), this.getHotel_Order(), "getAllOrders", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getIPersistenceService__GetOrders(), this.getHotel_Order(), "getOrders", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIPersistenceService__AddOrder__Hotel_Order(), ecorePackage.getEBoolean(), "addOrder", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getHotel_Order(), "order", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1392,8 +1392,8 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 
 		initEClass(hotel_DummyPersistenceServiceEClass, Hotel_DummyPersistenceService.class, "Hotel_DummyPersistenceService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHotel_DummyPersistenceService_Order(), this.getHotel_Order(), null, "order", null, 0, -1, Hotel_DummyPersistenceService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHotel_DummyPersistenceService_Room(), this.getHotel_Room(), null, "room", null, 0, -1, Hotel_DummyPersistenceService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHotel_DummyPersistenceService_Occupancy(), this.getHotel_Occupancy(), null, "occupancy", null, 0, -1, Hotel_DummyPersistenceService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHotel_DummyPersistenceService_Rooms(), this.getHotel_Room(), null, "rooms", null, 0, -1, Hotel_DummyPersistenceService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHotel_DummyPersistenceService_Occupancies(), this.getHotel_Occupancy(), null, "occupancies", null, 0, -1, Hotel_DummyPersistenceService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

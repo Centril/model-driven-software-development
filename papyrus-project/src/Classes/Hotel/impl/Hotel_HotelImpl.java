@@ -244,7 +244,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 */
 	public EList<IOrder> getOrders() {
 		EList<IOrder> list = new BasicEList<IOrder>();
-		for (Hotel_Order o : persistenceService.getAllOrders()) {
+		for (Hotel_Order o : persistenceService.getOrders()) {
 			// TODO: Perhaps return "anemic" version
 			list.add(o);
 		}
@@ -281,7 +281,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			throw new IllegalArgumentException("numberOfPersons is 0 or less.");
 		}
 		
-		EList<Hotel_Room> rooms = persistenceService.getAllRooms();
+		EList<Hotel_Room> rooms = persistenceService.getRooms();
 		
 		EList<Hotel_Room> availableRooms = new BasicEList<>();
 		

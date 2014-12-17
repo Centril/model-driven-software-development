@@ -31,7 +31,7 @@ public interface IPersistenceService extends EObject {
 	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	EList<Hotel_Room> getAllRooms();
+	EList<Hotel_Room> getRooms();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -47,7 +47,7 @@ public interface IPersistenceService extends EObject {
 	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	EList<Hotel_Order> getAllOrders();
+	EList<Hotel_Order> getOrders();
 
 	/**
 	 * <!-- begin-user-doc -->

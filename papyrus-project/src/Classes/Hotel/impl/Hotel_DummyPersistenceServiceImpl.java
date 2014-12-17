@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl#getOrder <em>Order</em>}</li>
- *   <li>{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl#getRoom <em>Room</em>}</li>
- *   <li>{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl#getOccupancy <em>Occupancy</em>}</li>
+ *   <li>{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl#getRooms <em>Rooms</em>}</li>
+ *   <li>{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl#getOccupancies <em>Occupancies</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,24 +41,24 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	protected EList<Hotel_Order> order;
 
 	/**
-	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference list.
+	 * The cached value of the '{@link #getRooms() <em>Rooms</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoom()
+	 * @see #getRooms()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Hotel_Room> room;
+	protected EList<Hotel_Room> rooms;
 
 	/**
-	 * The cached value of the '{@link #getOccupancy() <em>Occupancy</em>}' reference list.
+	 * The cached value of the '{@link #getOccupancies() <em>Occupancies</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOccupancy()
+	 * @see #getOccupancies()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Hotel_Occupancy> occupancy;
+	protected EList<Hotel_Occupancy> occupancies;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,23 +96,11 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Hotel_Room> getRoom() {
-		if (room == null) {
-			room = new EObjectResolvingEList<Hotel_Room>(Hotel_Room.class, this, HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOM);
+	public EList<Hotel_Room> getRooms() {
+		if (rooms == null) {
+			rooms = new EObjectResolvingEList<Hotel_Room>(Hotel_Room.class, this, HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOMS);
 		}
-		return room;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Hotel_Occupancy> getOccupancy() {
-		if (occupancy == null) {
-			occupancy = new EObjectResolvingEList<Hotel_Occupancy>(Hotel_Occupancy.class, this, HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCY);
-		}
-		return occupancy;
+		return rooms;
 	}
 
 	/**
@@ -121,20 +109,10 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * @generated
 	 */
 	public EList<Hotel_Occupancy> getOccupancies() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Hotel_Room> getAllRooms() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (occupancies == null) {
+			occupancies = new EObjectResolvingEList<Hotel_Occupancy>(Hotel_Occupancy.class, this, HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCIES);
+		}
+		return occupancies;
 	}
 
 	/**
@@ -153,7 +131,7 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Hotel_Order> getAllOrders() {
+	public EList<Hotel_Order> getOrders() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -191,10 +169,10 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 		switch (featureID) {
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER:
 				return getOrder();
-			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOM:
-				return getRoom();
-			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCY:
-				return getOccupancy();
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOMS:
+				return getRooms();
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCIES:
+				return getOccupancies();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,13 +190,13 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 				getOrder().clear();
 				getOrder().addAll((Collection<? extends Hotel_Order>)newValue);
 				return;
-			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOM:
-				getRoom().clear();
-				getRoom().addAll((Collection<? extends Hotel_Room>)newValue);
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOMS:
+				getRooms().clear();
+				getRooms().addAll((Collection<? extends Hotel_Room>)newValue);
 				return;
-			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCY:
-				getOccupancy().clear();
-				getOccupancy().addAll((Collection<? extends Hotel_Occupancy>)newValue);
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCIES:
+				getOccupancies().clear();
+				getOccupancies().addAll((Collection<? extends Hotel_Occupancy>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -235,11 +213,11 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER:
 				getOrder().clear();
 				return;
-			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOM:
-				getRoom().clear();
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOMS:
+				getRooms().clear();
 				return;
-			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCY:
-				getOccupancy().clear();
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCIES:
+				getOccupancies().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -255,10 +233,10 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 		switch (featureID) {
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER:
 				return order != null && !order.isEmpty();
-			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOM:
-				return room != null && !room.isEmpty();
-			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCY:
-				return occupancy != null && !occupancy.isEmpty();
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOMS:
+				return rooms != null && !rooms.isEmpty();
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCIES:
+				return occupancies != null && !occupancies.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -271,14 +249,10 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE___GET_OCCUPANCIES:
-				return getOccupancies();
-			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE___GET_ALL_ROOMS:
-				return getAllRooms();
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE___GET_ROOM_BY_ID__INT:
 				return getRoomById((Integer)arguments.get(0));
-			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE___GET_ALL_ORDERS:
-				return getAllOrders();
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE___GET_ORDERS:
+				return getOrders();
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE___ADD_ORDER__HOTEL_ORDER:
 				return addOrder((Hotel_Order)arguments.get(0));
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE___ADD_ROOM__HOTEL_ROOM:
