@@ -43,9 +43,11 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	
 	private EList<Integer> guests;
 	
-	private int contact;
+	private int contact, customer;
 	
 	private double initialPrice;
+	
+	private long checkInDate, checkOutDate;
 
 	/**
 	 * The cached value of the '{@link #getOccupancy() <em>Occupancy</em>}' reference.
@@ -68,10 +70,12 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	}
 	
 	//TODO: Should have more implementation
-	protected Hotel_BookingImpl(EList<Integer> guests, int contact, double price){
+	protected Hotel_BookingImpl(EList<Integer> guests, int contact, int customer, double price, long checkInDate, long checkOutDate){
 		this.guests = guests;
 		this.contact = contact;
 		this.initialPrice = price;
+		this.checkInDate = checkInDate;
+		this.checkOutDate = checkOutDate;
 	}
 
 	/**
@@ -190,34 +194,28 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public long getCheckInDate() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return checkInDate;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public long getCheckOutDate() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return checkOutDate;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int getCustomer() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return customer;
 	}
 
 	/**
