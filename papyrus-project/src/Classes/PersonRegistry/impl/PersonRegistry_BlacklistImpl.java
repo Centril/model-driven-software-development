@@ -2,21 +2,14 @@
  */
 package Classes.PersonRegistry.impl;
 
-import Classes.PersonRegistry.IPerson;
 import Classes.PersonRegistry.PersonRegistryPackage;
 import Classes.PersonRegistry.PersonRegistry_Blacklist;
 import Classes.PersonRegistry.PersonRegistry_Person;
-
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -26,7 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link Classes.PersonRegistry.impl.PersonRegistry_BlacklistImpl#getPerson <em>Person</em>}</li>
+ *   <li>{@link Classes.PersonRegistry.impl.PersonRegistry_BlacklistImpl#getPeople <em>People</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,15 +27,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class PersonRegistry_BlacklistImpl extends MinimalEObjectImpl.Container implements PersonRegistry_Blacklist {
 	/**
-	 * The cached value of the '{@link #getPerson() <em>Person</em>}' reference list.
+	 * The cached value of the '{@link #getPeople() <em>People</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPerson()
+	 * @see #getPeople()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<PersonRegistry_Person> person;
-
+	protected EList<PersonRegistry_Person> people;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,18 +59,6 @@ public class PersonRegistry_BlacklistImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<PersonRegistry_Person> getPerson() {
-		if (person == null) {
-			person = new EObjectResolvingEList<PersonRegistry_Person>(PersonRegistry_Person.class, this, PersonRegistryPackage.PERSON_REGISTRY_BLACKLIST__PERSON);
-		}
-		return person;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isBlacklisted(PersonRegistry_Person person) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -90,7 +70,7 @@ public class PersonRegistry_BlacklistImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void add(PersonRegistry_Person person) {
+	public boolean add(PersonRegistry_Person person) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -101,7 +81,7 @@ public class PersonRegistry_BlacklistImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void remove(PersonRegistry_Person person) {
+	public boolean remove(PersonRegistry_Person person) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -112,10 +92,11 @@ public class PersonRegistry_BlacklistImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IPerson getPeople() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public EList<PersonRegistry_Person> getPeople() {
+		if (people == null) {
+			people = new EObjectResolvingEList<PersonRegistry_Person>(PersonRegistry_Person.class, this, PersonRegistryPackage.PERSON_REGISTRY_BLACKLIST__PEOPLE);
+		}
+		return people;
 	}
 
 	/**
@@ -126,8 +107,8 @@ public class PersonRegistry_BlacklistImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersonRegistryPackage.PERSON_REGISTRY_BLACKLIST__PERSON:
-				return getPerson();
+			case PersonRegistryPackage.PERSON_REGISTRY_BLACKLIST__PEOPLE:
+				return getPeople();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -141,9 +122,9 @@ public class PersonRegistry_BlacklistImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersonRegistryPackage.PERSON_REGISTRY_BLACKLIST__PERSON:
-				getPerson().clear();
-				getPerson().addAll((Collection<? extends PersonRegistry_Person>)newValue);
+			case PersonRegistryPackage.PERSON_REGISTRY_BLACKLIST__PEOPLE:
+				getPeople().clear();
+				getPeople().addAll((Collection<? extends PersonRegistry_Person>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -157,8 +138,8 @@ public class PersonRegistry_BlacklistImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersonRegistryPackage.PERSON_REGISTRY_BLACKLIST__PERSON:
-				getPerson().clear();
+			case PersonRegistryPackage.PERSON_REGISTRY_BLACKLIST__PEOPLE:
+				getPeople().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -172,8 +153,8 @@ public class PersonRegistry_BlacklistImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersonRegistryPackage.PERSON_REGISTRY_BLACKLIST__PERSON:
-				return person != null && !person.isEmpty();
+			case PersonRegistryPackage.PERSON_REGISTRY_BLACKLIST__PEOPLE:
+				return people != null && !people.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -189,13 +170,9 @@ public class PersonRegistry_BlacklistImpl extends MinimalEObjectImpl.Container i
 			case PersonRegistryPackage.PERSON_REGISTRY_BLACKLIST___IS_BLACKLISTED__PERSONREGISTRY_PERSON:
 				return isBlacklisted((PersonRegistry_Person)arguments.get(0));
 			case PersonRegistryPackage.PERSON_REGISTRY_BLACKLIST___ADD__PERSONREGISTRY_PERSON:
-				add((PersonRegistry_Person)arguments.get(0));
-				return null;
+				return add((PersonRegistry_Person)arguments.get(0));
 			case PersonRegistryPackage.PERSON_REGISTRY_BLACKLIST___REMOVE__PERSONREGISTRY_PERSON:
-				remove((PersonRegistry_Person)arguments.get(0));
-				return null;
-			case PersonRegistryPackage.PERSON_REGISTRY_BLACKLIST___GET_PEOPLE:
-				return getPeople();
+				return remove((PersonRegistry_Person)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

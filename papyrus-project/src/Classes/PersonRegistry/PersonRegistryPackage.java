@@ -131,13 +131,13 @@ public interface PersonRegistryPackage extends EPackage {
 	int ICREDIT_CARD_INFO___GET_YEAR = 2;
 
 	/**
-	 * The operation id for the '<em>Get Number</em>' operation.
+	 * The operation id for the '<em>Get CC Number</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ICREDIT_CARD_INFO___GET_NUMBER = 3;
+	int ICREDIT_CARD_INFO___GET_CC_NUMBER = 3;
 
 	/**
 	 * The operation id for the '<em>Get First Name</em>' operation.
@@ -213,13 +213,13 @@ public interface PersonRegistryPackage extends EPackage {
 	int PERSON_REGISTRY_CREDIT_CARD_INFO___GET_YEAR = ICREDIT_CARD_INFO___GET_YEAR;
 
 	/**
-	 * The operation id for the '<em>Get Number</em>' operation.
+	 * The operation id for the '<em>Get CC Number</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_REGISTRY_CREDIT_CARD_INFO___GET_NUMBER = ICREDIT_CARD_INFO___GET_NUMBER;
+	int PERSON_REGISTRY_CREDIT_CARD_INFO___GET_CC_NUMBER = ICREDIT_CARD_INFO___GET_CC_NUMBER;
 
 	/**
 	 * The operation id for the '<em>Get First Name</em>' operation.
@@ -322,22 +322,13 @@ public interface PersonRegistryPackage extends EPackage {
 	int IPERSON___GET_CREDIT_CARD = 5;
 
 	/**
-	 * The operation id for the '<em>Create Credit Card Info</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IPERSON___CREATE_CREDIT_CARD_INFO = 6;
-
-	/**
 	 * The operation id for the '<em>Remove Credit Card</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON___REMOVE_CREDIT_CARD = 7;
+	int IPERSON___REMOVE_CREDIT_CARD = 6;
 
 	/**
 	 * The operation id for the '<em>Create Credit Card</em>' operation.
@@ -346,7 +337,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON___CREATE_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING = 8;
+	int IPERSON___CREATE_CREDIT_CARD__STRING_STRING_INT_INT_STRING_STRING = 7;
 
 	/**
 	 * The operation id for the '<em>Get Id</em>' operation.
@@ -355,7 +346,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON___GET_ID = 9;
+	int IPERSON___GET_ID = 8;
 
 	/**
 	 * The operation id for the '<em>Set First Name</em>' operation.
@@ -364,7 +355,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON___SET_FIRST_NAME__STRING = 10;
+	int IPERSON___SET_FIRST_NAME__STRING = 9;
 
 	/**
 	 * The operation id for the '<em>Set Last Name</em>' operation.
@@ -373,7 +364,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON___SET_LAST_NAME__STRING = 11;
+	int IPERSON___SET_LAST_NAME__STRING = 10;
 
 	/**
 	 * The operation id for the '<em>Set SSN</em>' operation.
@@ -382,7 +373,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON___SET_SSN__STRING = 12;
+	int IPERSON___SET_SSN__STRING = 11;
 
 	/**
 	 * The number of operations of the '<em>IPerson</em>' class.
@@ -391,7 +382,7 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON_OPERATION_COUNT = 13;
+	int IPERSON_OPERATION_COUNT = 12;
 
 	/**
 	 * The meta object id for the '{@link Classes.PersonRegistry.impl.PersonRegistry_PersonImpl <em>Person Registry Person</em>}' class.
@@ -476,15 +467,6 @@ public interface PersonRegistryPackage extends EPackage {
 	int PERSON_REGISTRY_PERSON___GET_CREDIT_CARD = IPERSON___GET_CREDIT_CARD;
 
 	/**
-	 * The operation id for the '<em>Create Credit Card Info</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSON_REGISTRY_PERSON___CREATE_CREDIT_CARD_INFO = IPERSON___CREATE_CREDIT_CARD_INFO;
-
-	/**
 	 * The operation id for the '<em>Remove Credit Card</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -558,13 +540,13 @@ public interface PersonRegistryPackage extends EPackage {
 	int PERSON_REGISTRY_BLACKLIST = 5;
 
 	/**
-	 * The feature id for the '<em><b>Person</b></em>' reference list.
+	 * The feature id for the '<em><b>People</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_REGISTRY_BLACKLIST__PERSON = 0;
+	int PERSON_REGISTRY_BLACKLIST__PEOPLE = 0;
 
 	/**
 	 * The number of structural features of the '<em>Person Registry Blacklist</em>' class.
@@ -603,22 +585,13 @@ public interface PersonRegistryPackage extends EPackage {
 	int PERSON_REGISTRY_BLACKLIST___REMOVE__PERSONREGISTRY_PERSON = 2;
 
 	/**
-	 * The operation id for the '<em>Get People</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSON_REGISTRY_BLACKLIST___GET_PEOPLE = 3;
-
-	/**
 	 * The number of operations of the '<em>Person Registry Blacklist</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_REGISTRY_BLACKLIST_OPERATION_COUNT = 4;
+	int PERSON_REGISTRY_BLACKLIST_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link Classes.PersonRegistry.IPersonRegistry <em>IPerson Registry</em>}' class.
@@ -658,13 +631,13 @@ public interface PersonRegistryPackage extends EPackage {
 	int IPERSON_REGISTRY___CREATE_PERSON__LONG = 1;
 
 	/**
-	 * The operation id for the '<em>Get People</em>' operation.
+	 * The operation id for the '<em>Get IPeople</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON_REGISTRY___GET_PEOPLE = 2;
+	int IPERSON_REGISTRY___GET_IPEOPLE = 2;
 
 	/**
 	 * The operation id for the '<em>Add To Blacklist</em>' operation.
@@ -685,22 +658,22 @@ public interface PersonRegistryPackage extends EPackage {
 	int IPERSON_REGISTRY___REMOVE_FROM_BLACKLIST__INT = 4;
 
 	/**
-	 * The operation id for the '<em>Get Person By ID</em>' operation.
+	 * The operation id for the '<em>Get IPerson By ID</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON_REGISTRY___GET_PERSON_BY_ID__INT = 5;
+	int IPERSON_REGISTRY___GET_IPERSON_BY_ID__INT = 5;
 
 	/**
-	 * The operation id for the '<em>Get Person By SSN</em>' operation.
+	 * The operation id for the '<em>Get IPerson By SSN</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON_REGISTRY___GET_PERSON_BY_SSN__STRING = 6;
+	int IPERSON_REGISTRY___GET_IPERSON_BY_SSN__STRING = 6;
 
 	/**
 	 * The number of operations of the '<em>IPerson Registry</em>' class.
@@ -722,13 +695,13 @@ public interface PersonRegistryPackage extends EPackage {
 	int PERSON_REGISTRY_PERSON_REGISTRY = 6;
 
 	/**
-	 * The feature id for the '<em><b>Person</b></em>' reference list.
+	 * The feature id for the '<em><b>People</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_REGISTRY_PERSON_REGISTRY__PERSON = IPERSON_REGISTRY_FEATURE_COUNT + 0;
+	int PERSON_REGISTRY_PERSON_REGISTRY__PEOPLE = IPERSON_REGISTRY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Blacklist</b></em>' reference.
@@ -767,13 +740,13 @@ public interface PersonRegistryPackage extends EPackage {
 	int PERSON_REGISTRY_PERSON_REGISTRY___CREATE_PERSON__LONG = IPERSON_REGISTRY___CREATE_PERSON__LONG;
 
 	/**
-	 * The operation id for the '<em>Get People</em>' operation.
+	 * The operation id for the '<em>Get IPeople</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_REGISTRY_PERSON_REGISTRY___GET_PEOPLE = IPERSON_REGISTRY___GET_PEOPLE;
+	int PERSON_REGISTRY_PERSON_REGISTRY___GET_IPEOPLE = IPERSON_REGISTRY___GET_IPEOPLE;
 
 	/**
 	 * The operation id for the '<em>Add To Blacklist</em>' operation.
@@ -794,22 +767,22 @@ public interface PersonRegistryPackage extends EPackage {
 	int PERSON_REGISTRY_PERSON_REGISTRY___REMOVE_FROM_BLACKLIST__INT = IPERSON_REGISTRY___REMOVE_FROM_BLACKLIST__INT;
 
 	/**
-	 * The operation id for the '<em>Get Person By ID</em>' operation.
+	 * The operation id for the '<em>Get IPerson By ID</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_REGISTRY_PERSON_REGISTRY___GET_PERSON_BY_ID__INT = IPERSON_REGISTRY___GET_PERSON_BY_ID__INT;
+	int PERSON_REGISTRY_PERSON_REGISTRY___GET_IPERSON_BY_ID__INT = IPERSON_REGISTRY___GET_IPERSON_BY_ID__INT;
 
 	/**
-	 * The operation id for the '<em>Get Person By SSN</em>' operation.
+	 * The operation id for the '<em>Get IPerson By SSN</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_REGISTRY_PERSON_REGISTRY___GET_PERSON_BY_SSN__STRING = IPERSON_REGISTRY___GET_PERSON_BY_SSN__STRING;
+	int PERSON_REGISTRY_PERSON_REGISTRY___GET_IPERSON_BY_SSN__STRING = IPERSON_REGISTRY___GET_IPERSON_BY_SSN__STRING;
 
 	/**
 	 * The number of operations of the '<em>Person Registry Person Registry</em>' class.
@@ -882,14 +855,14 @@ public interface PersonRegistryPackage extends EPackage {
 	EOperation getICreditCardInfo__GetYear();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.PersonRegistry.ICreditCardInfo#getNumber() <em>Get Number</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.ICreditCardInfo#getCCNumber() <em>Get CC Number</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Number</em>' operation.
-	 * @see Classes.PersonRegistry.ICreditCardInfo#getNumber()
+	 * @return the meta object for the '<em>Get CC Number</em>' operation.
+	 * @see Classes.PersonRegistry.ICreditCardInfo#getCCNumber()
 	 * @generated
 	 */
-	EOperation getICreditCardInfo__GetNumber();
+	EOperation getICreditCardInfo__GetCCNumber();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.PersonRegistry.ICreditCardInfo#getFirstName() <em>Get First Name</em>}' operation.
@@ -1003,16 +976,6 @@ public interface PersonRegistryPackage extends EPackage {
 	EOperation getIPerson__GetCreditCard();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPerson#createCreditCardInfo() <em>Create Credit Card Info</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Create Credit Card Info</em>' operation.
-	 * @see Classes.PersonRegistry.IPerson#createCreditCardInfo()
-	 * @generated
-	 */
-	EOperation getIPerson__CreateCreditCardInfo();
-
-	/**
 	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPerson#removeCreditCard() <em>Remove Credit Card</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1083,15 +1046,15 @@ public interface PersonRegistryPackage extends EPackage {
 	EClass getPersonRegistry_Blacklist();
 
 	/**
-	 * Returns the meta object for the reference list '{@link Classes.PersonRegistry.PersonRegistry_Blacklist#getPerson <em>Person</em>}'.
+	 * Returns the meta object for the reference list '{@link Classes.PersonRegistry.PersonRegistry_Blacklist#getPeople <em>People</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Person</em>'.
-	 * @see Classes.PersonRegistry.PersonRegistry_Blacklist#getPerson()
+	 * @return the meta object for the reference list '<em>People</em>'.
+	 * @see Classes.PersonRegistry.PersonRegistry_Blacklist#getPeople()
 	 * @see #getPersonRegistry_Blacklist()
 	 * @generated
 	 */
-	EReference getPersonRegistry_Blacklist_Person();
+	EReference getPersonRegistry_Blacklist_People();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.PersonRegistry.PersonRegistry_Blacklist#isBlacklisted(Classes.PersonRegistry.PersonRegistry_Person) <em>Is Blacklisted</em>}' operation.
@@ -1124,16 +1087,6 @@ public interface PersonRegistryPackage extends EPackage {
 	EOperation getPersonRegistry_Blacklist__Remove__PersonRegistry_Person();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.PersonRegistry.PersonRegistry_Blacklist#getPeople() <em>Get People</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get People</em>' operation.
-	 * @see Classes.PersonRegistry.PersonRegistry_Blacklist#getPeople()
-	 * @generated
-	 */
-	EOperation getPersonRegistry_Blacklist__GetPeople();
-
-	/**
 	 * Returns the meta object for class '{@link Classes.PersonRegistry.PersonRegistry_PersonRegistry <em>Person Registry Person Registry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1144,15 +1097,15 @@ public interface PersonRegistryPackage extends EPackage {
 	EClass getPersonRegistry_PersonRegistry();
 
 	/**
-	 * Returns the meta object for the reference list '{@link Classes.PersonRegistry.PersonRegistry_PersonRegistry#getPerson <em>Person</em>}'.
+	 * Returns the meta object for the reference list '{@link Classes.PersonRegistry.PersonRegistry_PersonRegistry#getPeople <em>People</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Person</em>'.
-	 * @see Classes.PersonRegistry.PersonRegistry_PersonRegistry#getPerson()
+	 * @return the meta object for the reference list '<em>People</em>'.
+	 * @see Classes.PersonRegistry.PersonRegistry_PersonRegistry#getPeople()
 	 * @see #getPersonRegistry_PersonRegistry()
 	 * @generated
 	 */
-	EReference getPersonRegistry_PersonRegistry_Person();
+	EReference getPersonRegistry_PersonRegistry_People();
 
 	/**
 	 * Returns the meta object for the reference '{@link Classes.PersonRegistry.PersonRegistry_PersonRegistry#getBlacklist <em>Blacklist</em>}'.
@@ -1196,14 +1149,14 @@ public interface PersonRegistryPackage extends EPackage {
 	EOperation getIPersonRegistry__CreatePerson__long();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPersonRegistry#getPeople() <em>Get People</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPersonRegistry#getIPeople() <em>Get IPeople</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get People</em>' operation.
-	 * @see Classes.PersonRegistry.IPersonRegistry#getPeople()
+	 * @return the meta object for the '<em>Get IPeople</em>' operation.
+	 * @see Classes.PersonRegistry.IPersonRegistry#getIPeople()
 	 * @generated
 	 */
-	EOperation getIPersonRegistry__GetPeople();
+	EOperation getIPersonRegistry__GetIPeople();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPersonRegistry#addToBlacklist(int) <em>Add To Blacklist</em>}' operation.
@@ -1226,24 +1179,24 @@ public interface PersonRegistryPackage extends EPackage {
 	EOperation getIPersonRegistry__RemoveFromBlacklist__int();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPersonRegistry#getPersonByID(int) <em>Get Person By ID</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPersonRegistry#getIPersonByID(int) <em>Get IPerson By ID</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Person By ID</em>' operation.
-	 * @see Classes.PersonRegistry.IPersonRegistry#getPersonByID(int)
+	 * @return the meta object for the '<em>Get IPerson By ID</em>' operation.
+	 * @see Classes.PersonRegistry.IPersonRegistry#getIPersonByID(int)
 	 * @generated
 	 */
-	EOperation getIPersonRegistry__GetPersonByID__int();
+	EOperation getIPersonRegistry__GetIPersonByID__int();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPersonRegistry#getPersonBySSN(java.lang.String) <em>Get Person By SSN</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPersonRegistry#getIPersonBySSN(java.lang.String) <em>Get IPerson By SSN</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Person By SSN</em>' operation.
-	 * @see Classes.PersonRegistry.IPersonRegistry#getPersonBySSN(java.lang.String)
+	 * @return the meta object for the '<em>Get IPerson By SSN</em>' operation.
+	 * @see Classes.PersonRegistry.IPersonRegistry#getIPersonBySSN(java.lang.String)
 	 * @generated
 	 */
-	EOperation getIPersonRegistry__GetPersonBySSN__String();
+	EOperation getIPersonRegistry__GetIPersonBySSN__String();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1323,12 +1276,12 @@ public interface PersonRegistryPackage extends EPackage {
 		EOperation ICREDIT_CARD_INFO___GET_YEAR = eINSTANCE.getICreditCardInfo__GetYear();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Number</b></em>' operation.
+		 * The meta object literal for the '<em><b>Get CC Number</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ICREDIT_CARD_INFO___GET_NUMBER = eINSTANCE.getICreditCardInfo__GetNumber();
+		EOperation ICREDIT_CARD_INFO___GET_CC_NUMBER = eINSTANCE.getICreditCardInfo__GetCCNumber();
 
 		/**
 		 * The meta object literal for the '<em><b>Get First Name</b></em>' operation.
@@ -1423,14 +1376,6 @@ public interface PersonRegistryPackage extends EPackage {
 		EOperation IPERSON___GET_CREDIT_CARD = eINSTANCE.getIPerson__GetCreditCard();
 
 		/**
-		 * The meta object literal for the '<em><b>Create Credit Card Info</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IPERSON___CREATE_CREDIT_CARD_INFO = eINSTANCE.getIPerson__CreateCreditCardInfo();
-
-		/**
 		 * The meta object literal for the '<em><b>Remove Credit Card</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1489,12 +1434,12 @@ public interface PersonRegistryPackage extends EPackage {
 		EClass PERSON_REGISTRY_BLACKLIST = eINSTANCE.getPersonRegistry_Blacklist();
 
 		/**
-		 * The meta object literal for the '<em><b>Person</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>People</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PERSON_REGISTRY_BLACKLIST__PERSON = eINSTANCE.getPersonRegistry_Blacklist_Person();
+		EReference PERSON_REGISTRY_BLACKLIST__PEOPLE = eINSTANCE.getPersonRegistry_Blacklist_People();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Blacklisted</b></em>' operation.
@@ -1521,14 +1466,6 @@ public interface PersonRegistryPackage extends EPackage {
 		EOperation PERSON_REGISTRY_BLACKLIST___REMOVE__PERSONREGISTRY_PERSON = eINSTANCE.getPersonRegistry_Blacklist__Remove__PersonRegistry_Person();
 
 		/**
-		 * The meta object literal for the '<em><b>Get People</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation PERSON_REGISTRY_BLACKLIST___GET_PEOPLE = eINSTANCE.getPersonRegistry_Blacklist__GetPeople();
-
-		/**
 		 * The meta object literal for the '{@link Classes.PersonRegistry.impl.PersonRegistry_PersonRegistryImpl <em>Person Registry Person Registry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1539,12 +1476,12 @@ public interface PersonRegistryPackage extends EPackage {
 		EClass PERSON_REGISTRY_PERSON_REGISTRY = eINSTANCE.getPersonRegistry_PersonRegistry();
 
 		/**
-		 * The meta object literal for the '<em><b>Person</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>People</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PERSON_REGISTRY_PERSON_REGISTRY__PERSON = eINSTANCE.getPersonRegistry_PersonRegistry_Person();
+		EReference PERSON_REGISTRY_PERSON_REGISTRY__PEOPLE = eINSTANCE.getPersonRegistry_PersonRegistry_People();
 
 		/**
 		 * The meta object literal for the '<em><b>Blacklist</b></em>' reference feature.
@@ -1581,12 +1518,12 @@ public interface PersonRegistryPackage extends EPackage {
 		EOperation IPERSON_REGISTRY___CREATE_PERSON__LONG = eINSTANCE.getIPersonRegistry__CreatePerson__long();
 
 		/**
-		 * The meta object literal for the '<em><b>Get People</b></em>' operation.
+		 * The meta object literal for the '<em><b>Get IPeople</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IPERSON_REGISTRY___GET_PEOPLE = eINSTANCE.getIPersonRegistry__GetPeople();
+		EOperation IPERSON_REGISTRY___GET_IPEOPLE = eINSTANCE.getIPersonRegistry__GetIPeople();
 
 		/**
 		 * The meta object literal for the '<em><b>Add To Blacklist</b></em>' operation.
@@ -1605,20 +1542,20 @@ public interface PersonRegistryPackage extends EPackage {
 		EOperation IPERSON_REGISTRY___REMOVE_FROM_BLACKLIST__INT = eINSTANCE.getIPersonRegistry__RemoveFromBlacklist__int();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Person By ID</b></em>' operation.
+		 * The meta object literal for the '<em><b>Get IPerson By ID</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IPERSON_REGISTRY___GET_PERSON_BY_ID__INT = eINSTANCE.getIPersonRegistry__GetPersonByID__int();
+		EOperation IPERSON_REGISTRY___GET_IPERSON_BY_ID__INT = eINSTANCE.getIPersonRegistry__GetIPersonByID__int();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Person By SSN</b></em>' operation.
+		 * The meta object literal for the '<em><b>Get IPerson By SSN</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IPERSON_REGISTRY___GET_PERSON_BY_SSN__STRING = eINSTANCE.getIPersonRegistry__GetPersonBySSN__String();
+		EOperation IPERSON_REGISTRY___GET_IPERSON_BY_SSN__STRING = eINSTANCE.getIPersonRegistry__GetIPersonBySSN__String();
 
 	}
 

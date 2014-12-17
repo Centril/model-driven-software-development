@@ -179,17 +179,6 @@ public class PersonRegistry_PersonImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createCreditCardInfo() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public void removeCreditCard() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -322,9 +311,6 @@ public class PersonRegistry_PersonImpl extends MinimalEObjectImpl.Container impl
 				return getRegisterDate();
 			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___GET_CREDIT_CARD:
 				return getCreditCard();
-			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___CREATE_CREDIT_CARD_INFO:
-				createCreditCardInfo();
-				return null;
 			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___REMOVE_CREDIT_CARD:
 				removeCreditCard();
 				return null;

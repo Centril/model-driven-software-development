@@ -69,10 +69,6 @@
           <element xmi:type="uml:Operation" href="Classes.uml#_aRorwHloEeS-dbwPGgzjtw"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_aRrvEXloEeS-dbwPGgzjtw"/>
         </children>
-        <children xmi:type="notation:Shape" xmi:id="_M6K64YRqEeSDgu4VwEIWQw" type="3013">
-          <element xmi:type="uml:Operation" href="Classes.uml#_M6K64IRqEeSDgu4VwEIWQw"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_M6K64oRqEeSDgu4VwEIWQw"/>
-        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_OCPWuXloEeS-dbwPGgzjtw"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_OCPWunloEeS-dbwPGgzjtw"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_OCPWu3loEeS-dbwPGgzjtw"/>

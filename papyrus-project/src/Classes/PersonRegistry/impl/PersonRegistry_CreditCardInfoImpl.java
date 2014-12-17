@@ -80,7 +80,7 @@ public class PersonRegistry_CreditCardInfoImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNumber() {
+	public String getCCNumber() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -122,8 +122,8 @@ public class PersonRegistry_CreditCardInfoImpl extends MinimalEObjectImpl.Contai
 				return getMonth();
 			case PersonRegistryPackage.PERSON_REGISTRY_CREDIT_CARD_INFO___GET_YEAR:
 				return getYear();
-			case PersonRegistryPackage.PERSON_REGISTRY_CREDIT_CARD_INFO___GET_NUMBER:
-				return getNumber();
+			case PersonRegistryPackage.PERSON_REGISTRY_CREDIT_CARD_INFO___GET_CC_NUMBER:
+				return getCCNumber();
 			case PersonRegistryPackage.PERSON_REGISTRY_CREDIT_CARD_INFO___GET_FIRST_NAME:
 				return getFirstName();
 			case PersonRegistryPackage.PERSON_REGISTRY_CREDIT_CARD_INFO___GET_LAST_NAME:

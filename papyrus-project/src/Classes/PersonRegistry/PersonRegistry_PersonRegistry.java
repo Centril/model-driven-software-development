@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link Classes.PersonRegistry.PersonRegistry_PersonRegistry#getPerson <em>Person</em>}</li>
+ *   <li>{@link Classes.PersonRegistry.PersonRegistry_PersonRegistry#getPeople <em>People</em>}</li>
  *   <li>{@link Classes.PersonRegistry.PersonRegistry_PersonRegistry#getBlacklist <em>Blacklist</em>}</li>
  * </ul>
  * </p>
@@ -23,20 +23,20 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface PersonRegistry_PersonRegistry extends IPersonRegistry {
 	/**
-	 * Returns the value of the '<em><b>Person</b></em>' reference list.
+	 * Returns the value of the '<em><b>People</b></em>' reference list.
 	 * The list contents are of type {@link Classes.PersonRegistry.PersonRegistry_Person}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Person</em>' reference list isn't clear,
+	 * If the meaning of the '<em>People</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Person</em>' reference list.
-	 * @see Classes.PersonRegistry.PersonRegistryPackage#getPersonRegistry_PersonRegistry_Person()
+	 * @return the value of the '<em>People</em>' reference list.
+	 * @see Classes.PersonRegistry.PersonRegistryPackage#getPersonRegistry_PersonRegistry_People()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<PersonRegistry_Person> getPerson();
+	EList<PersonRegistry_Person> getPeople();
 
 	/**
 	 * Returns the value of the '<em><b>Blacklist</b></em>' reference.
