@@ -55,13 +55,20 @@ public class PersonRegistry_PersonRegistryImpl extends MinimalEObjectImpl.Contai
 	 */
 	protected PersonRegistry_Blacklist blacklist;
 
+	private void init() {
+		person = new BasicEList<PersonRegistry_Person>();
+		blacklist = new PersonRegistry_BlacklistImpl();
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected PersonRegistry_PersonRegistryImpl() {
 		super();
+		
+		init();
 	}
 
 	/**
@@ -127,12 +134,15 @@ public class PersonRegistry_PersonRegistryImpl extends MinimalEObjectImpl.Contai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean isBlacklisted(int personID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (PersonRegistry_Person person : person) {
+			if (person.getId() == personID) {
+				return blacklist.isBlacklisted(person);
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -153,55 +163,67 @@ public class PersonRegistry_PersonRegistryImpl extends MinimalEObjectImpl.Contai
 	 * @generated NOT
 	 */
 	public EList<IPerson> getPeople() {
-		EList<IPerson> list = new BasicEList<>();
-		for (PersonRegistry_Person p : person) {
-			list.add(p);
-		}
-		return list;
+		return new BasicEList<IPerson>(person);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean addToBlacklist(int personID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (PersonRegistry_Person person : person) {
+			if (person.getId() == personID) {
+				// TODO: return this when add() returns a boolean
+				//return blacklist.add(person);
+			}
+		}
+		return false;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean removeFromBlacklist(int personID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (PersonRegistry_Person person : person) {
+			if (person.getId() == personID) {
+				// TODO: return this when remove() returns a boolean
+				//return blacklist.remove(person);
+			}
+		}
+		return false;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public IPerson getPersonByID(int personID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (PersonRegistry_Person person : person) {
+			if (person.getId() == personID) {
+				return person;
+			}
+		}
+		
+		return null;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public IPerson getPersonBySSN(String ssn) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (PersonRegistry_Person person : person) {
+			if (person.getSSN() == ssn) {
+				return person;
+			}
+		}
+		
+		return null;
 	}
 
 	/**
