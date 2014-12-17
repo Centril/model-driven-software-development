@@ -64,7 +64,7 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	 */
 	protected Hotel_BookingImpl() {
 		super();
-		throw new IllegalArgumentException("Can't create booking without guests and contact person");
+		throw new UnsupportedOperationException("Can't create booking without guests and contact person");
 	}
 	
 	//TODO: Should have more implementation
