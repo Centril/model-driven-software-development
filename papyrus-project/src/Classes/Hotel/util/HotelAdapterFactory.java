@@ -124,16 +124,8 @@ public class HotelAdapterFactory extends AdapterFactoryImpl {
 				return createHotel_HotelAdapter();
 			}
 			@Override
-			public Adapter caseHotel_RoomService(Hotel_RoomService object) {
-				return createHotel_RoomServiceAdapter();
-			}
-			@Override
-			public Adapter caseHotel_OccupancyService(Hotel_OccupancyService object) {
-				return createHotel_OccupancyServiceAdapter();
-			}
-			@Override
-			public Adapter caseHotel_OrderService(Hotel_OrderService object) {
-				return createHotel_OrderServiceAdapter();
+			public Adapter caseIPersistenceService(IPersistenceService object) {
+				return createIPersistenceServiceAdapter();
 			}
 			@Override
 			public Adapter caseIFrontDesk(IFrontDesk object) {
@@ -154,6 +146,10 @@ public class HotelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseBookingRequest(BookingRequest object) {
 				return createBookingRequestAdapter();
+			}
+			@Override
+			public Adapter caseHotel_DummyPersistenceService(Hotel_DummyPersistenceService object) {
+				return createHotel_DummyPersistenceServiceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -372,44 +368,16 @@ public class HotelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Classes.Hotel.Hotel_RoomService <em>Hotel Room Service</em>}'.
+	 * Creates a new adapter for an object of class '{@link Classes.Hotel.IPersistenceService <em>IPersistence Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Classes.Hotel.Hotel_RoomService
+	 * @see Classes.Hotel.IPersistenceService
 	 * @generated
 	 */
-	public Adapter createHotel_RoomServiceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Classes.Hotel.Hotel_OccupancyService <em>Hotel Occupancy Service</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Classes.Hotel.Hotel_OccupancyService
-	 * @generated
-	 */
-	public Adapter createHotel_OccupancyServiceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Classes.Hotel.Hotel_OrderService <em>Hotel Order Service</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Classes.Hotel.Hotel_OrderService
-	 * @generated
-	 */
-	public Adapter createHotel_OrderServiceAdapter() {
+	public Adapter createIPersistenceServiceAdapter() {
 		return null;
 	}
 
@@ -480,6 +448,20 @@ public class HotelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBookingRequestAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Classes.Hotel.Hotel_DummyPersistenceService <em>Hotel Dummy Persistence Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Classes.Hotel.Hotel_DummyPersistenceService
+	 * @generated
+	 */
+	public Adapter createHotel_DummyPersistenceServiceAdapter() {
 		return null;
 	}
 

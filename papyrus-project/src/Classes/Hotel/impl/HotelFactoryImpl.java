@@ -65,9 +65,7 @@ public class HotelFactoryImpl extends EFactoryImpl implements HotelFactory {
 			case HotelPackage.HOTEL_BOOKING_SUGGESTION: return createHotel_BookingSuggestion();
 			case HotelPackage.HOTEL_SEARCH_RESULT: return createHotel_SearchResult();
 			case HotelPackage.HOTEL_HOTEL: return createHotel_Hotel();
-			case HotelPackage.HOTEL_ROOM_SERVICE: return createHotel_RoomService();
-			case HotelPackage.HOTEL_OCCUPANCY_SERVICE: return createHotel_OccupancyService();
-			case HotelPackage.HOTEL_ORDER_SERVICE: return createHotel_OrderService();
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE: return createHotel_DummyPersistenceService();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -168,29 +166,9 @@ public class HotelFactoryImpl extends EFactoryImpl implements HotelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Hotel_RoomService createHotel_RoomService() {
-		Hotel_RoomServiceImpl hotel_RoomService = new Hotel_RoomServiceImpl();
-		return hotel_RoomService;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Hotel_OccupancyService createHotel_OccupancyService() {
-		Hotel_OccupancyServiceImpl hotel_OccupancyService = new Hotel_OccupancyServiceImpl();
-		return hotel_OccupancyService;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Hotel_OrderService createHotel_OrderService() {
-		Hotel_OrderServiceImpl hotel_OrderService = new Hotel_OrderServiceImpl();
-		return hotel_OrderService;
+	public Hotel_DummyPersistenceService createHotel_DummyPersistenceService() {
+		Hotel_DummyPersistenceServiceImpl hotel_DummyPersistenceService = new Hotel_DummyPersistenceServiceImpl();
+		return hotel_DummyPersistenceService;
 	}
 
 	/**

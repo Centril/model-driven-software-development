@@ -158,21 +158,9 @@ public class HotelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HotelPackage.HOTEL_ROOM_SERVICE: {
-				Hotel_RoomService hotel_RoomService = (Hotel_RoomService)theEObject;
-				T result = caseHotel_RoomService(hotel_RoomService);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HotelPackage.HOTEL_OCCUPANCY_SERVICE: {
-				Hotel_OccupancyService hotel_OccupancyService = (Hotel_OccupancyService)theEObject;
-				T result = caseHotel_OccupancyService(hotel_OccupancyService);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HotelPackage.HOTEL_ORDER_SERVICE: {
-				Hotel_OrderService hotel_OrderService = (Hotel_OrderService)theEObject;
-				T result = caseHotel_OrderService(hotel_OrderService);
+			case HotelPackage.IPERSISTENCE_SERVICE: {
+				IPersistenceService iPersistenceService = (IPersistenceService)theEObject;
+				T result = caseIPersistenceService(iPersistenceService);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -203,6 +191,13 @@ public class HotelSwitch<T> extends Switch<T> {
 			case HotelPackage.BOOKING_REQUEST: {
 				BookingRequest bookingRequest = (BookingRequest)theEObject;
 				T result = caseBookingRequest(bookingRequest);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE: {
+				Hotel_DummyPersistenceService hotel_DummyPersistenceService = (Hotel_DummyPersistenceService)theEObject;
+				T result = caseHotel_DummyPersistenceService(hotel_DummyPersistenceService);
+				if (result == null) result = caseIPersistenceService(hotel_DummyPersistenceService);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -421,47 +416,17 @@ public class HotelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Hotel Room Service</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>IPersistence Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Hotel Room Service</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>IPersistence Service</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseHotel_RoomService(Hotel_RoomService object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Hotel Occupancy Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Hotel Occupancy Service</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHotel_OccupancyService(Hotel_OccupancyService object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Hotel Order Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Hotel Order Service</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHotel_OrderService(Hotel_OrderService object) {
+	public T caseIPersistenceService(IPersistenceService object) {
 		return null;
 	}
 
@@ -537,6 +502,21 @@ public class HotelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBookingRequest(BookingRequest object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Hotel Dummy Persistence Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Hotel Dummy Persistence Service</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHotel_DummyPersistenceService(Hotel_DummyPersistenceService object) {
 		return null;
 	}
 

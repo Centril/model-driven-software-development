@@ -1031,7 +1031,7 @@ public interface HotelPackage extends EPackage {
 	 * @see Classes.Hotel.impl.HotelPackageImpl#getIFrontDesk()
 	 * @generated
 	 */
-	int IFRONT_DESK = 17;
+	int IFRONT_DESK = 15;
 
 	/**
 	 * The number of structural features of the '<em>IFront Desk</em>' class.
@@ -1116,49 +1116,22 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_HOTEL = 13;
 
 	/**
-	 * The feature id for the '<em><b>Order</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_HOTEL__ORDER = IFRONT_DESK_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Person Registry</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_HOTEL__PERSON_REGISTRY = IFRONT_DESK_FEATURE_COUNT + 1;
+	int HOTEL_HOTEL__PERSON_REGISTRY = IFRONT_DESK_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Room Service</b></em>' reference.
+	 * The feature id for the '<em><b>Persistence Service</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_HOTEL__ROOM_SERVICE = IFRONT_DESK_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Occupancy Service</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_HOTEL__OCCUPANCY_SERVICE = IFRONT_DESK_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Order Service</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_HOTEL__ORDER_SERVICE = IFRONT_DESK_FEATURE_COUNT + 4;
+	int HOTEL_HOTEL__PERSISTENCE_SERVICE = IFRONT_DESK_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Hotel Hotel</em>' class.
@@ -1167,7 +1140,7 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_HOTEL_FEATURE_COUNT = IFRONT_DESK_FEATURE_COUNT + 5;
+	int HOTEL_HOTEL_FEATURE_COUNT = IFRONT_DESK_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Check In</em>' operation.
@@ -1251,23 +1224,32 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_HOTEL_OPERATION_COUNT = IFRONT_DESK_OPERATION_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link Classes.Hotel.impl.Hotel_RoomServiceImpl <em>Hotel Room Service</em>}' class.
+	 * The meta object id for the '{@link Classes.Hotel.IPersistenceService <em>IPersistence Service</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see Classes.Hotel.impl.Hotel_RoomServiceImpl
-	 * @see Classes.Hotel.impl.HotelPackageImpl#getHotel_RoomService()
+	 * @see Classes.Hotel.IPersistenceService
+	 * @see Classes.Hotel.impl.HotelPackageImpl#getIPersistenceService()
 	 * @generated
 	 */
-	int HOTEL_ROOM_SERVICE = 14;
+	int IPERSISTENCE_SERVICE = 14;
 
 	/**
-	 * The number of structural features of the '<em>Hotel Room Service</em>' class.
+	 * The number of structural features of the '<em>IPersistence Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_ROOM_SERVICE_FEATURE_COUNT = 0;
+	int IPERSISTENCE_SERVICE_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Get Occupancies</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSISTENCE_SERVICE___GET_OCCUPANCIES = 0;
 
 	/**
 	 * The operation id for the '<em>Get All Rooms</em>' operation.
@@ -1276,7 +1258,7 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_ROOM_SERVICE___GET_ALL_ROOMS = 0;
+	int IPERSISTENCE_SERVICE___GET_ALL_ROOMS = 1;
 
 	/**
 	 * The operation id for the '<em>Get Room By Id</em>' operation.
@@ -1285,81 +1267,7 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_ROOM_SERVICE___GET_ROOM_BY_ID__INT = 1;
-
-	/**
-	 * The number of operations of the '<em>Hotel Room Service</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_ROOM_SERVICE_OPERATION_COUNT = 2;
-
-	/**
-	 * The meta object id for the '{@link Classes.Hotel.impl.Hotel_OccupancyServiceImpl <em>Hotel Occupancy Service</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Classes.Hotel.impl.Hotel_OccupancyServiceImpl
-	 * @see Classes.Hotel.impl.HotelPackageImpl#getHotel_OccupancyService()
-	 * @generated
-	 */
-	int HOTEL_OCCUPANCY_SERVICE = 15;
-
-	/**
-	 * The feature id for the '<em><b>Room Service</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_OCCUPANCY_SERVICE__ROOM_SERVICE = 0;
-
-	/**
-	 * The number of structural features of the '<em>Hotel Occupancy Service</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_OCCUPANCY_SERVICE_FEATURE_COUNT = 1;
-
-	/**
-	 * The operation id for the '<em>Get All Occupancies</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_OCCUPANCY_SERVICE___GET_ALL_OCCUPANCIES = 0;
-
-	/**
-	 * The number of operations of the '<em>Hotel Occupancy Service</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_OCCUPANCY_SERVICE_OPERATION_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link Classes.Hotel.impl.Hotel_OrderServiceImpl <em>Hotel Order Service</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Classes.Hotel.impl.Hotel_OrderServiceImpl
-	 * @see Classes.Hotel.impl.HotelPackageImpl#getHotel_OrderService()
-	 * @generated
-	 */
-	int HOTEL_ORDER_SERVICE = 16;
-
-	/**
-	 * The number of structural features of the '<em>Hotel Order Service</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_ORDER_SERVICE_FEATURE_COUNT = 0;
+	int IPERSISTENCE_SERVICE___GET_ROOM_BY_ID__INT = 2;
 
 	/**
 	 * The operation id for the '<em>Get All Orders</em>' operation.
@@ -1368,16 +1276,34 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_ORDER_SERVICE___GET_ALL_ORDERS = 0;
+	int IPERSISTENCE_SERVICE___GET_ALL_ORDERS = 3;
 
 	/**
-	 * The number of operations of the '<em>Hotel Order Service</em>' class.
+	 * The operation id for the '<em>Add Order</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_ORDER_SERVICE_OPERATION_COUNT = 1;
+	int IPERSISTENCE_SERVICE___ADD_ORDER__HOTEL_ORDER = 4;
+
+	/**
+	 * The operation id for the '<em>Add Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSISTENCE_SERVICE___ADD_ROOM__HOTEL_ROOM = 5;
+
+	/**
+	 * The number of operations of the '<em>IPersistence Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSISTENCE_SERVICE_OPERATION_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.ISearch <em>ISearch</em>}' class.
@@ -1387,7 +1313,7 @@ public interface HotelPackage extends EPackage {
 	 * @see Classes.Hotel.impl.HotelPackageImpl#getISearch()
 	 * @generated
 	 */
-	int ISEARCH = 18;
+	int ISEARCH = 16;
 
 	/**
 	 * The number of structural features of the '<em>ISearch</em>' class.
@@ -1424,7 +1350,7 @@ public interface HotelPackage extends EPackage {
 	 * @see Classes.Hotel.impl.HotelPackageImpl#getIOrdering()
 	 * @generated
 	 */
-	int IORDERING = 19;
+	int IORDERING = 17;
 
 	/**
 	 * The number of structural features of the '<em>IOrdering</em>' class.
@@ -1461,7 +1387,7 @@ public interface HotelPackage extends EPackage {
 	 * @see Classes.Hotel.impl.HotelPackageImpl#getOrderRequest()
 	 * @generated
 	 */
-	int ORDER_REQUEST = 20;
+	int ORDER_REQUEST = 18;
 
 	/**
 	 * The number of structural features of the '<em>Order Request</em>' class.
@@ -1507,7 +1433,7 @@ public interface HotelPackage extends EPackage {
 	 * @see Classes.Hotel.impl.HotelPackageImpl#getBookingRequest()
 	 * @generated
 	 */
-	int BOOKING_REQUEST = 21;
+	int BOOKING_REQUEST = 19;
 
 	/**
 	 * The number of structural features of the '<em>Booking Request</em>' class.
@@ -1553,6 +1479,116 @@ public interface HotelPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING_REQUEST_OPERATION_COUNT = 3;
+
+
+	/**
+	 * The meta object id for the '{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl <em>Hotel Dummy Persistence Service</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl
+	 * @see Classes.Hotel.impl.HotelPackageImpl#getHotel_DummyPersistenceService()
+	 * @generated
+	 */
+	int HOTEL_DUMMY_PERSISTENCE_SERVICE = 20;
+
+	/**
+	 * The feature id for the '<em><b>Order</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER = IPERSISTENCE_SERVICE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Room</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOM = IPERSISTENCE_SERVICE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Occupancy</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCY = IPERSISTENCE_SERVICE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Hotel Dummy Persistence Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_DUMMY_PERSISTENCE_SERVICE_FEATURE_COUNT = IPERSISTENCE_SERVICE_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Occupancies</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_DUMMY_PERSISTENCE_SERVICE___GET_OCCUPANCIES = IPERSISTENCE_SERVICE___GET_OCCUPANCIES;
+
+	/**
+	 * The operation id for the '<em>Get All Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_DUMMY_PERSISTENCE_SERVICE___GET_ALL_ROOMS = IPERSISTENCE_SERVICE___GET_ALL_ROOMS;
+
+	/**
+	 * The operation id for the '<em>Get Room By Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_DUMMY_PERSISTENCE_SERVICE___GET_ROOM_BY_ID__INT = IPERSISTENCE_SERVICE___GET_ROOM_BY_ID__INT;
+
+	/**
+	 * The operation id for the '<em>Get All Orders</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_DUMMY_PERSISTENCE_SERVICE___GET_ALL_ORDERS = IPERSISTENCE_SERVICE___GET_ALL_ORDERS;
+
+	/**
+	 * The operation id for the '<em>Add Order</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_DUMMY_PERSISTENCE_SERVICE___ADD_ORDER__HOTEL_ORDER = IPERSISTENCE_SERVICE___ADD_ORDER__HOTEL_ORDER;
+
+	/**
+	 * The operation id for the '<em>Add Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_DUMMY_PERSISTENCE_SERVICE___ADD_ROOM__HOTEL_ROOM = IPERSISTENCE_SERVICE___ADD_ROOM__HOTEL_ROOM;
+
+	/**
+	 * The number of operations of the '<em>Hotel Dummy Persistence Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_DUMMY_PERSISTENCE_SERVICE_OPERATION_COUNT = IPERSISTENCE_SERVICE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -2113,17 +2149,6 @@ public interface HotelPackage extends EPackage {
 	EClass getHotel_Hotel();
 
 	/**
-	 * Returns the meta object for the reference list '{@link Classes.Hotel.Hotel_Hotel#getOrder <em>Order</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Order</em>'.
-	 * @see Classes.Hotel.Hotel_Hotel#getOrder()
-	 * @see #getHotel_Hotel()
-	 * @generated
-	 */
-	EReference getHotel_Hotel_Order();
-
-	/**
 	 * Returns the meta object for the reference '{@link Classes.Hotel.Hotel_Hotel#getPersonRegistry <em>Person Registry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2135,118 +2160,85 @@ public interface HotelPackage extends EPackage {
 	EReference getHotel_Hotel_PersonRegistry();
 
 	/**
-	 * Returns the meta object for the reference '{@link Classes.Hotel.Hotel_Hotel#getRoomService <em>Room Service</em>}'.
+	 * Returns the meta object for the reference '{@link Classes.Hotel.Hotel_Hotel#getPersistenceService <em>Persistence Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Room Service</em>'.
-	 * @see Classes.Hotel.Hotel_Hotel#getRoomService()
+	 * @return the meta object for the reference '<em>Persistence Service</em>'.
+	 * @see Classes.Hotel.Hotel_Hotel#getPersistenceService()
 	 * @see #getHotel_Hotel()
 	 * @generated
 	 */
-	EReference getHotel_Hotel_RoomService();
+	EReference getHotel_Hotel_PersistenceService();
 
 	/**
-	 * Returns the meta object for the reference '{@link Classes.Hotel.Hotel_Hotel#getOccupancyService <em>Occupancy Service</em>}'.
+	 * Returns the meta object for class '{@link Classes.Hotel.IPersistenceService <em>IPersistence Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Occupancy Service</em>'.
-	 * @see Classes.Hotel.Hotel_Hotel#getOccupancyService()
-	 * @see #getHotel_Hotel()
+	 * @return the meta object for class '<em>IPersistence Service</em>'.
+	 * @see Classes.Hotel.IPersistenceService
 	 * @generated
 	 */
-	EReference getHotel_Hotel_OccupancyService();
+	EClass getIPersistenceService();
 
 	/**
-	 * Returns the meta object for the reference '{@link Classes.Hotel.Hotel_Hotel#getOrderService <em>Order Service</em>}'.
+	 * Returns the meta object for the '{@link Classes.Hotel.IPersistenceService#getOccupancies() <em>Get Occupancies</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Order Service</em>'.
-	 * @see Classes.Hotel.Hotel_Hotel#getOrderService()
-	 * @see #getHotel_Hotel()
+	 * @return the meta object for the '<em>Get Occupancies</em>' operation.
+	 * @see Classes.Hotel.IPersistenceService#getOccupancies()
 	 * @generated
 	 */
-	EReference getHotel_Hotel_OrderService();
+	EOperation getIPersistenceService__GetOccupancies();
 
 	/**
-	 * Returns the meta object for class '{@link Classes.Hotel.Hotel_RoomService <em>Hotel Room Service</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Hotel Room Service</em>'.
-	 * @see Classes.Hotel.Hotel_RoomService
-	 * @generated
-	 */
-	EClass getHotel_RoomService();
-
-	/**
-	 * Returns the meta object for the '{@link Classes.Hotel.Hotel_RoomService#getAllRooms() <em>Get All Rooms</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.Hotel.IPersistenceService#getAllRooms() <em>Get All Rooms</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Get All Rooms</em>' operation.
-	 * @see Classes.Hotel.Hotel_RoomService#getAllRooms()
+	 * @see Classes.Hotel.IPersistenceService#getAllRooms()
 	 * @generated
 	 */
-	EOperation getHotel_RoomService__GetAllRooms();
+	EOperation getIPersistenceService__GetAllRooms();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.Hotel.Hotel_RoomService#getRoomById(int) <em>Get Room By Id</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.Hotel.IPersistenceService#getRoomById(int) <em>Get Room By Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Get Room By Id</em>' operation.
-	 * @see Classes.Hotel.Hotel_RoomService#getRoomById(int)
+	 * @see Classes.Hotel.IPersistenceService#getRoomById(int)
 	 * @generated
 	 */
-	EOperation getHotel_RoomService__GetRoomById__int();
+	EOperation getIPersistenceService__GetRoomById__int();
 
 	/**
-	 * Returns the meta object for class '{@link Classes.Hotel.Hotel_OccupancyService <em>Hotel Occupancy Service</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Hotel Occupancy Service</em>'.
-	 * @see Classes.Hotel.Hotel_OccupancyService
-	 * @generated
-	 */
-	EClass getHotel_OccupancyService();
-
-	/**
-	 * Returns the meta object for the reference '{@link Classes.Hotel.Hotel_OccupancyService#getRoomService <em>Room Service</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Room Service</em>'.
-	 * @see Classes.Hotel.Hotel_OccupancyService#getRoomService()
-	 * @see #getHotel_OccupancyService()
-	 * @generated
-	 */
-	EReference getHotel_OccupancyService_RoomService();
-
-	/**
-	 * Returns the meta object for the '{@link Classes.Hotel.Hotel_OccupancyService#getAllOccupancies() <em>Get All Occupancies</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get All Occupancies</em>' operation.
-	 * @see Classes.Hotel.Hotel_OccupancyService#getAllOccupancies()
-	 * @generated
-	 */
-	EOperation getHotel_OccupancyService__GetAllOccupancies();
-
-	/**
-	 * Returns the meta object for class '{@link Classes.Hotel.Hotel_OrderService <em>Hotel Order Service</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Hotel Order Service</em>'.
-	 * @see Classes.Hotel.Hotel_OrderService
-	 * @generated
-	 */
-	EClass getHotel_OrderService();
-
-	/**
-	 * Returns the meta object for the '{@link Classes.Hotel.Hotel_OrderService#getAllOrders() <em>Get All Orders</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.Hotel.IPersistenceService#getAllOrders() <em>Get All Orders</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Get All Orders</em>' operation.
-	 * @see Classes.Hotel.Hotel_OrderService#getAllOrders()
+	 * @see Classes.Hotel.IPersistenceService#getAllOrders()
 	 * @generated
 	 */
-	EOperation getHotel_OrderService__GetAllOrders();
+	EOperation getIPersistenceService__GetAllOrders();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IPersistenceService#addOrder(Classes.Hotel.Hotel_Order) <em>Add Order</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Order</em>' operation.
+	 * @see Classes.Hotel.IPersistenceService#addOrder(Classes.Hotel.Hotel_Order)
+	 * @generated
+	 */
+	EOperation getIPersistenceService__AddOrder__Hotel_Order();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IPersistenceService#addRoom(Classes.Hotel.Hotel_Room) <em>Add Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Room</em>' operation.
+	 * @see Classes.Hotel.IPersistenceService#addRoom(Classes.Hotel.Hotel_Room)
+	 * @generated
+	 */
+	EOperation getIPersistenceService__AddRoom__Hotel_Room();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.IFrontDesk <em>IFront Desk</em>}'.
@@ -2427,6 +2419,49 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getBookingRequest__GetGuests();
+
+	/**
+	 * Returns the meta object for class '{@link Classes.Hotel.Hotel_DummyPersistenceService <em>Hotel Dummy Persistence Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Hotel Dummy Persistence Service</em>'.
+	 * @see Classes.Hotel.Hotel_DummyPersistenceService
+	 * @generated
+	 */
+	EClass getHotel_DummyPersistenceService();
+
+	/**
+	 * Returns the meta object for the reference '{@link Classes.Hotel.Hotel_DummyPersistenceService#getOrder <em>Order</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Order</em>'.
+	 * @see Classes.Hotel.Hotel_DummyPersistenceService#getOrder()
+	 * @see #getHotel_DummyPersistenceService()
+	 * @generated
+	 */
+	EReference getHotel_DummyPersistenceService_Order();
+
+	/**
+	 * Returns the meta object for the reference '{@link Classes.Hotel.Hotel_DummyPersistenceService#getRoom <em>Room</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Room</em>'.
+	 * @see Classes.Hotel.Hotel_DummyPersistenceService#getRoom()
+	 * @see #getHotel_DummyPersistenceService()
+	 * @generated
+	 */
+	EReference getHotel_DummyPersistenceService_Room();
+
+	/**
+	 * Returns the meta object for the reference '{@link Classes.Hotel.Hotel_DummyPersistenceService#getOccupancy <em>Occupancy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Occupancy</em>'.
+	 * @see Classes.Hotel.Hotel_DummyPersistenceService#getOccupancy()
+	 * @see #getHotel_DummyPersistenceService()
+	 * @generated
+	 */
+	EReference getHotel_DummyPersistenceService_Occupancy();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2920,14 +2955,6 @@ public interface HotelPackage extends EPackage {
 		EClass HOTEL_HOTEL = eINSTANCE.getHotel_Hotel();
 
 		/**
-		 * The meta object literal for the '<em><b>Order</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference HOTEL_HOTEL__ORDER = eINSTANCE.getHotel_Hotel_Order();
-
-		/**
 		 * The meta object literal for the '<em><b>Person Registry</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2936,38 +2963,30 @@ public interface HotelPackage extends EPackage {
 		EReference HOTEL_HOTEL__PERSON_REGISTRY = eINSTANCE.getHotel_Hotel_PersonRegistry();
 
 		/**
-		 * The meta object literal for the '<em><b>Room Service</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Persistence Service</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HOTEL_HOTEL__ROOM_SERVICE = eINSTANCE.getHotel_Hotel_RoomService();
+		EReference HOTEL_HOTEL__PERSISTENCE_SERVICE = eINSTANCE.getHotel_Hotel_PersistenceService();
 
 		/**
-		 * The meta object literal for the '<em><b>Occupancy Service</b></em>' reference feature.
+		 * The meta object literal for the '{@link Classes.Hotel.IPersistenceService <em>IPersistence Service</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see Classes.Hotel.IPersistenceService
+		 * @see Classes.Hotel.impl.HotelPackageImpl#getIPersistenceService()
 		 * @generated
 		 */
-		EReference HOTEL_HOTEL__OCCUPANCY_SERVICE = eINSTANCE.getHotel_Hotel_OccupancyService();
+		EClass IPERSISTENCE_SERVICE = eINSTANCE.getIPersistenceService();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Service</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Occupancies</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HOTEL_HOTEL__ORDER_SERVICE = eINSTANCE.getHotel_Hotel_OrderService();
-
-		/**
-		 * The meta object literal for the '{@link Classes.Hotel.impl.Hotel_RoomServiceImpl <em>Hotel Room Service</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Classes.Hotel.impl.Hotel_RoomServiceImpl
-		 * @see Classes.Hotel.impl.HotelPackageImpl#getHotel_RoomService()
-		 * @generated
-		 */
-		EClass HOTEL_ROOM_SERVICE = eINSTANCE.getHotel_RoomService();
+		EOperation IPERSISTENCE_SERVICE___GET_OCCUPANCIES = eINSTANCE.getIPersistenceService__GetOccupancies();
 
 		/**
 		 * The meta object literal for the '<em><b>Get All Rooms</b></em>' operation.
@@ -2975,7 +2994,7 @@ public interface HotelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation HOTEL_ROOM_SERVICE___GET_ALL_ROOMS = eINSTANCE.getHotel_RoomService__GetAllRooms();
+		EOperation IPERSISTENCE_SERVICE___GET_ALL_ROOMS = eINSTANCE.getIPersistenceService__GetAllRooms();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Room By Id</b></em>' operation.
@@ -2983,43 +3002,7 @@ public interface HotelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation HOTEL_ROOM_SERVICE___GET_ROOM_BY_ID__INT = eINSTANCE.getHotel_RoomService__GetRoomById__int();
-
-		/**
-		 * The meta object literal for the '{@link Classes.Hotel.impl.Hotel_OccupancyServiceImpl <em>Hotel Occupancy Service</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Classes.Hotel.impl.Hotel_OccupancyServiceImpl
-		 * @see Classes.Hotel.impl.HotelPackageImpl#getHotel_OccupancyService()
-		 * @generated
-		 */
-		EClass HOTEL_OCCUPANCY_SERVICE = eINSTANCE.getHotel_OccupancyService();
-
-		/**
-		 * The meta object literal for the '<em><b>Room Service</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference HOTEL_OCCUPANCY_SERVICE__ROOM_SERVICE = eINSTANCE.getHotel_OccupancyService_RoomService();
-
-		/**
-		 * The meta object literal for the '<em><b>Get All Occupancies</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation HOTEL_OCCUPANCY_SERVICE___GET_ALL_OCCUPANCIES = eINSTANCE.getHotel_OccupancyService__GetAllOccupancies();
-
-		/**
-		 * The meta object literal for the '{@link Classes.Hotel.impl.Hotel_OrderServiceImpl <em>Hotel Order Service</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Classes.Hotel.impl.Hotel_OrderServiceImpl
-		 * @see Classes.Hotel.impl.HotelPackageImpl#getHotel_OrderService()
-		 * @generated
-		 */
-		EClass HOTEL_ORDER_SERVICE = eINSTANCE.getHotel_OrderService();
+		EOperation IPERSISTENCE_SERVICE___GET_ROOM_BY_ID__INT = eINSTANCE.getIPersistenceService__GetRoomById__int();
 
 		/**
 		 * The meta object literal for the '<em><b>Get All Orders</b></em>' operation.
@@ -3027,7 +3010,23 @@ public interface HotelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation HOTEL_ORDER_SERVICE___GET_ALL_ORDERS = eINSTANCE.getHotel_OrderService__GetAllOrders();
+		EOperation IPERSISTENCE_SERVICE___GET_ALL_ORDERS = eINSTANCE.getIPersistenceService__GetAllOrders();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Order</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IPERSISTENCE_SERVICE___ADD_ORDER__HOTEL_ORDER = eINSTANCE.getIPersistenceService__AddOrder__Hotel_Order();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IPERSISTENCE_SERVICE___ADD_ROOM__HOTEL_ROOM = eINSTANCE.getIPersistenceService__AddRoom__Hotel_Room();
 
 		/**
 		 * The meta object literal for the '{@link Classes.Hotel.IFrontDesk <em>IFront Desk</em>}' class.
@@ -3182,6 +3181,40 @@ public interface HotelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation BOOKING_REQUEST___GET_GUESTS = eINSTANCE.getBookingRequest__GetGuests();
+
+		/**
+		 * The meta object literal for the '{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl <em>Hotel Dummy Persistence Service</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl
+		 * @see Classes.Hotel.impl.HotelPackageImpl#getHotel_DummyPersistenceService()
+		 * @generated
+		 */
+		EClass HOTEL_DUMMY_PERSISTENCE_SERVICE = eINSTANCE.getHotel_DummyPersistenceService();
+
+		/**
+		 * The meta object literal for the '<em><b>Order</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDER = eINSTANCE.getHotel_DummyPersistenceService_Order();
+
+		/**
+		 * The meta object literal for the '<em><b>Room</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOM = eINSTANCE.getHotel_DummyPersistenceService_Room();
+
+		/**
+		 * The meta object literal for the '<em><b>Occupancy</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCY = eINSTANCE.getHotel_DummyPersistenceService_Occupancy();
 
 	}
 

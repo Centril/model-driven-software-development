@@ -103,31 +103,13 @@ public interface HotelFactory extends EFactory {
 	Hotel_Hotel createHotel_Hotel();
 
 	/**
-	 * Returns a new object of class '<em>Hotel Room Service</em>'.
+	 * Returns a new object of class '<em>Hotel Dummy Persistence Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Hotel Room Service</em>'.
+	 * @return a new object of class '<em>Hotel Dummy Persistence Service</em>'.
 	 * @generated
 	 */
-	Hotel_RoomService createHotel_RoomService();
-
-	/**
-	 * Returns a new object of class '<em>Hotel Occupancy Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Hotel Occupancy Service</em>'.
-	 * @generated
-	 */
-	Hotel_OccupancyService createHotel_OccupancyService();
-
-	/**
-	 * Returns a new object of class '<em>Hotel Order Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Hotel Order Service</em>'.
-	 * @generated
-	 */
-	Hotel_OrderService createHotel_OrderService();
+	Hotel_DummyPersistenceService createHotel_DummyPersistenceService();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -6,9 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
-
 import javax.xml.soap.SOAPException;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -16,24 +14,20 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires;
 import Classes.Hotel.BookingRequest;
 import Classes.Hotel.HotelPackage;
 import Classes.Hotel.Hotel_BookingSuggestion;
 import Classes.Hotel.Hotel_Hotel;
 import Classes.Hotel.Hotel_Occupancy;
-import Classes.Hotel.Hotel_OccupancyService;
 import Classes.Hotel.Hotel_Order;
-import Classes.Hotel.Hotel_OrderService;
 import Classes.Hotel.Hotel_Room;
-import Classes.Hotel.Hotel_RoomService;
 import Classes.Hotel.Hotel_SearchResult;
 import Classes.Hotel.IBooking;
 import Classes.Hotel.IBookingSuggestion;
 import Classes.Hotel.IOrder;
 import Classes.Hotel.IOrdering;
+import Classes.Hotel.IPersistenceService;
 import Classes.Hotel.IRoom;
 import Classes.Hotel.ISearch;
 import Classes.Hotel.ISearchResult;
@@ -49,27 +43,14 @@ import Classes.PersonRegistry.IPersonRegistry;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link Classes.Hotel.impl.Hotel_HotelImpl#getOrder <em>Order</em>}</li>
  *   <li>{@link Classes.Hotel.impl.Hotel_HotelImpl#getPersonRegistry <em>Person Registry</em>}</li>
- *   <li>{@link Classes.Hotel.impl.Hotel_HotelImpl#getRoomService <em>Room Service</em>}</li>
- *   <li>{@link Classes.Hotel.impl.Hotel_HotelImpl#getOccupancyService <em>Occupancy Service</em>}</li>
- *   <li>{@link Classes.Hotel.impl.Hotel_HotelImpl#getOrderService <em>Order Service</em>}</li>
+ *   <li>{@link Classes.Hotel.impl.Hotel_HotelImpl#getPersistenceService <em>Persistence Service</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hotel_Hotel {
-	/**
-	 * The cached value of the '{@link #getOrder() <em>Order</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrder()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Hotel_Order> order;
-
 	/**
 	 * The cached value of the '{@link #getPersonRegistry() <em>Person Registry</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -81,34 +62,14 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	protected IPersonRegistry personRegistry;
 
 	/**
-	 * The cached value of the '{@link #getRoomService() <em>Room Service</em>}' reference.
+	 * The cached value of the '{@link #getPersistenceService() <em>Persistence Service</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoomService()
+	 * @see #getPersistenceService()
 	 * @generated
 	 * @ordered
 	 */
-	protected Hotel_RoomService roomService;
-
-	/**
-	 * The cached value of the '{@link #getOccupancyService() <em>Occupancy Service</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOccupancyService()
-	 * @generated
-	 * @ordered
-	 */
-	protected Hotel_OccupancyService occupancyService;
-
-	/**
-	 * The cached value of the '{@link #getOrderService() <em>Order Service</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderService()
-	 * @generated
-	 * @ordered
-	 */
-	protected Hotel_OrderService orderService;
+	protected IPersistenceService persistenceService;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,8 +79,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	protected Hotel_HotelImpl() {
 		super();
 
-		roomService = new Hotel_RoomServiceImpl();
-		occupancyService = new Hotel_OccupancyServiceImpl();
+		persistenceService = new Hotel_DummyPersistenceServiceImpl();
 	}
 
 	/**
@@ -130,18 +90,6 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	@Override
 	protected EClass eStaticClass() {
 		return HotelPackage.Literals.HOTEL_HOTEL;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Hotel_Order> getOrder() {
-		if (order == null) {
-			order = new EObjectResolvingEList<Hotel_Order>(Hotel_Order.class, this, HotelPackage.HOTEL_HOTEL__ORDER);
-		}
-		return order;
 	}
 
 	/**
@@ -187,16 +135,16 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Hotel_RoomService getRoomService() {
-		if (roomService != null && roomService.eIsProxy()) {
-			InternalEObject oldRoomService = (InternalEObject)roomService;
-			roomService = (Hotel_RoomService)eResolveProxy(oldRoomService);
-			if (roomService != oldRoomService) {
+	public IPersistenceService getPersistenceService() {
+		if (persistenceService != null && persistenceService.eIsProxy()) {
+			InternalEObject oldPersistenceService = (InternalEObject)persistenceService;
+			persistenceService = (IPersistenceService)eResolveProxy(oldPersistenceService);
+			if (persistenceService != oldPersistenceService) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelPackage.HOTEL_HOTEL__ROOM_SERVICE, oldRoomService, roomService));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelPackage.HOTEL_HOTEL__PERSISTENCE_SERVICE, oldPersistenceService, persistenceService));
 			}
 		}
-		return roomService;
+		return persistenceService;
 	}
 
 	/**
@@ -204,8 +152,8 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Hotel_RoomService basicGetRoomService() {
-		return roomService;
+	public IPersistenceService basicGetPersistenceService() {
+		return persistenceService;
 	}
 
 	/**
@@ -213,87 +161,11 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRoomService(Hotel_RoomService newRoomService) {
-		Hotel_RoomService oldRoomService = roomService;
-		roomService = newRoomService;
+	public void setPersistenceService(IPersistenceService newPersistenceService) {
+		IPersistenceService oldPersistenceService = persistenceService;
+		persistenceService = newPersistenceService;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelPackage.HOTEL_HOTEL__ROOM_SERVICE, oldRoomService, roomService));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Hotel_OccupancyService getOccupancyService() {
-		if (occupancyService != null && occupancyService.eIsProxy()) {
-			InternalEObject oldOccupancyService = (InternalEObject)occupancyService;
-			occupancyService = (Hotel_OccupancyService)eResolveProxy(oldOccupancyService);
-			if (occupancyService != oldOccupancyService) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelPackage.HOTEL_HOTEL__OCCUPANCY_SERVICE, oldOccupancyService, occupancyService));
-			}
-		}
-		return occupancyService;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Hotel_OccupancyService basicGetOccupancyService() {
-		return occupancyService;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOccupancyService(Hotel_OccupancyService newOccupancyService) {
-		Hotel_OccupancyService oldOccupancyService = occupancyService;
-		occupancyService = newOccupancyService;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelPackage.HOTEL_HOTEL__OCCUPANCY_SERVICE, oldOccupancyService, occupancyService));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Hotel_OrderService getOrderService() {
-		if (orderService != null && orderService.eIsProxy()) {
-			InternalEObject oldOrderService = (InternalEObject)orderService;
-			orderService = (Hotel_OrderService)eResolveProxy(oldOrderService);
-			if (orderService != oldOrderService) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HotelPackage.HOTEL_HOTEL__ORDER_SERVICE, oldOrderService, orderService));
-			}
-		}
-		return orderService;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Hotel_OrderService basicGetOrderService() {
-		return orderService;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOrderService(Hotel_OrderService newOrderService) {
-		Hotel_OrderService oldOrderService = orderService;
-		orderService = newOrderService;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HotelPackage.HOTEL_HOTEL__ORDER_SERVICE, oldOrderService, orderService));
+			eNotify(new ENotificationImpl(this, Notification.SET, HotelPackage.HOTEL_HOTEL__PERSISTENCE_SERVICE, oldPersistenceService, persistenceService));
 	}
 
 	/**
@@ -368,7 +240,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 */
 	public EList<IOrder> getOrders() {
 		EList<IOrder> list = new BasicEList<IOrder>();
-		for (Hotel_Order o : order) {
+		for (Hotel_Order o : persistenceService.getAllOrders()) {
 			// TODO: Perhaps return "anemic" version
 			list.add(o);
 		}
@@ -380,7 +252,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			throw new IllegalArgumentException("endTime is lower than startTime.");
 		}
 		
-		EList<Hotel_Occupancy> occupancies = getOccupancyService().getAllOccupancies();
+		EList<Hotel_Occupancy> occupancies = persistenceService.getOccupancies();
 		
 		for (Hotel_Occupancy occupancy : occupancies) {
 			if (room.getId() == occupancy.getRoom().getId()) {
@@ -405,7 +277,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			throw new IllegalArgumentException("numberOfPersons is 0 or less.");
 		}
 		
-		EList<Hotel_Room> rooms = getRoomService().getAllRooms();
+		EList<Hotel_Room> rooms = persistenceService.getAllRooms();
 		
 		EList<Hotel_Room> availableRooms = new BasicEList<>();
 		
@@ -595,20 +467,12 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HotelPackage.HOTEL_HOTEL__ORDER:
-				return getOrder();
 			case HotelPackage.HOTEL_HOTEL__PERSON_REGISTRY:
 				if (resolve) return getPersonRegistry();
 				return basicGetPersonRegistry();
-			case HotelPackage.HOTEL_HOTEL__ROOM_SERVICE:
-				if (resolve) return getRoomService();
-				return basicGetRoomService();
-			case HotelPackage.HOTEL_HOTEL__OCCUPANCY_SERVICE:
-				if (resolve) return getOccupancyService();
-				return basicGetOccupancyService();
-			case HotelPackage.HOTEL_HOTEL__ORDER_SERVICE:
-				if (resolve) return getOrderService();
-				return basicGetOrderService();
+			case HotelPackage.HOTEL_HOTEL__PERSISTENCE_SERVICE:
+				if (resolve) return getPersistenceService();
+				return basicGetPersistenceService();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -622,21 +486,11 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HotelPackage.HOTEL_HOTEL__ORDER:
-				getOrder().clear();
-				getOrder().addAll((Collection<? extends Hotel_Order>)newValue);
-				return;
 			case HotelPackage.HOTEL_HOTEL__PERSON_REGISTRY:
 				setPersonRegistry((IPersonRegistry)newValue);
 				return;
-			case HotelPackage.HOTEL_HOTEL__ROOM_SERVICE:
-				setRoomService((Hotel_RoomService)newValue);
-				return;
-			case HotelPackage.HOTEL_HOTEL__OCCUPANCY_SERVICE:
-				setOccupancyService((Hotel_OccupancyService)newValue);
-				return;
-			case HotelPackage.HOTEL_HOTEL__ORDER_SERVICE:
-				setOrderService((Hotel_OrderService)newValue);
+			case HotelPackage.HOTEL_HOTEL__PERSISTENCE_SERVICE:
+				setPersistenceService((IPersistenceService)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -650,20 +504,11 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HotelPackage.HOTEL_HOTEL__ORDER:
-				getOrder().clear();
-				return;
 			case HotelPackage.HOTEL_HOTEL__PERSON_REGISTRY:
 				setPersonRegistry((IPersonRegistry)null);
 				return;
-			case HotelPackage.HOTEL_HOTEL__ROOM_SERVICE:
-				setRoomService((Hotel_RoomService)null);
-				return;
-			case HotelPackage.HOTEL_HOTEL__OCCUPANCY_SERVICE:
-				setOccupancyService((Hotel_OccupancyService)null);
-				return;
-			case HotelPackage.HOTEL_HOTEL__ORDER_SERVICE:
-				setOrderService((Hotel_OrderService)null);
+			case HotelPackage.HOTEL_HOTEL__PERSISTENCE_SERVICE:
+				setPersistenceService((IPersistenceService)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -677,16 +522,10 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HotelPackage.HOTEL_HOTEL__ORDER:
-				return order != null && !order.isEmpty();
 			case HotelPackage.HOTEL_HOTEL__PERSON_REGISTRY:
 				return personRegistry != null;
-			case HotelPackage.HOTEL_HOTEL__ROOM_SERVICE:
-				return roomService != null;
-			case HotelPackage.HOTEL_HOTEL__OCCUPANCY_SERVICE:
-				return occupancyService != null;
-			case HotelPackage.HOTEL_HOTEL__ORDER_SERVICE:
-				return orderService != null;
+			case HotelPackage.HOTEL_HOTEL__PERSISTENCE_SERVICE:
+				return persistenceService != null;
 		}
 		return super.eIsSet(featureID);
 	}
