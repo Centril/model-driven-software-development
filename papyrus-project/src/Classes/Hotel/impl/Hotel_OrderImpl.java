@@ -84,7 +84,7 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public EList<IBooking> getBookings() {
 		EList<IBooking> bookings = new BasicEList<IBooking>();
