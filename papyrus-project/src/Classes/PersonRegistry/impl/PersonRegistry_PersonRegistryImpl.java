@@ -150,7 +150,8 @@ public class PersonRegistry_PersonRegistryImpl extends MinimalEObjectImpl.Contai
 	 */
 	public IPerson createPerson(long birthDate) {
 		int id = 0; // TODO: Get unique ID somehow, maybe add PersonService.createPerson()
-		PersonRegistry_Person person = new PersonRegistry_PersonImpl(id, birthDate);
+		long now = System.currentTimeMillis();
+		PersonRegistry_Person person = new PersonRegistry_PersonImpl(id, birthDate, now);
 		this.people.add(person);
 		return person;
 	}

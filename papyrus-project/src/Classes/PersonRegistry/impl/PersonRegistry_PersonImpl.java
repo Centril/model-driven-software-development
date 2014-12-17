@@ -42,10 +42,10 @@ public class PersonRegistry_PersonImpl extends MinimalEObjectImpl.Container impl
 
 	private int id;
 	private long birthDate;
-	private String firstName;
-	private String lastName;
-	private String ssn;
 	private long registerDate;
+	private String firstName = "";
+	private String lastName = "";
+	private String ssn = "";
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -64,10 +64,11 @@ public class PersonRegistry_PersonImpl extends MinimalEObjectImpl.Container impl
 	 * @param birthDate 
 	 * @generated NOT
 	 */
-	protected PersonRegistry_PersonImpl(int id, long birthDate) {
+	protected PersonRegistry_PersonImpl(int id, long birthDate, long registerDate) {
 		super();
 		this.id = id;
 		this.birthDate = birthDate;
+		this.registerDate = registerDate;
 	}
 
 	/**
@@ -166,34 +167,28 @@ public class PersonRegistry_PersonImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public ICreditCardInfo getCreditCard() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return creditCardInfo;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void removeCreditCard() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.creditCardInfo = null;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void createCreditCard(String number, String ccv, int month, int year, String firstName, String lastName) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.creditCardInfo = new PersonRegistry_CreditCardInfoImpl(number, ccv, month, year, firstName, lastName);
 	}
 
 	/**
