@@ -41,11 +41,11 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	 */
 	protected Hotel_Stay stay;
 	
+	//IDs of people in personregistry
 	private EList<Integer> guests;
-	
 	private int contact, customer;
-	
 	private double initialPrice;
+	//
 	
 	private long checkInDate, checkOutDate;
 
@@ -69,7 +69,7 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 		throw new UnsupportedOperationException("Can't create booking without guests and contact person");
 	}
 	
-	//TODO: Should have more implementation
+	//TODO: Should have more implementation, stay and occupancy probably
 	protected Hotel_BookingImpl(EList<Integer> guests, int contact, int customer, double price, long checkInDate, long checkOutDate){
 		this.guests = guests;
 		this.contact = contact;
@@ -179,6 +179,7 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	 * @generated NOT
 	 */
 	public double getPrice() {
+		//TODO: Add real price calculation
 		return initialPrice;// + stay.priceFromThere();
 	}
 
