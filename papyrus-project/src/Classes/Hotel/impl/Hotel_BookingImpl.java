@@ -10,12 +10,9 @@ import Classes.Hotel.Hotel_Stay;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -43,6 +40,10 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	 * @ordered
 	 */
 	protected Hotel_Stay stay;
+	
+	private EList<Integer> guests;
+	
+	private int contact;
 
 	/**
 	 * The cached value of the '{@link #getOccupancy() <em>Occupancy</em>}' reference.
@@ -61,6 +62,13 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	 */
 	protected Hotel_BookingImpl() {
 		super();
+		throw new IllegalArgumentException("Can't create booking without guests and contact person");
+	}
+	
+	//TODO: Should have more implementation
+	protected Hotel_BookingImpl(EList<Integer> guests, int contact){
+		this.guests = guests;
+		this.contact = contact;
 	}
 
 	/**
@@ -152,12 +160,10 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int getContact() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return contact;
 	}
 
 	/**
@@ -174,12 +180,10 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Integer> getGuests() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return guests;
 	}
 
 	/**
