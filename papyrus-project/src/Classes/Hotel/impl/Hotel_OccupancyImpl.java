@@ -53,8 +53,14 @@ public class Hotel_OccupancyImpl extends MinimalEObjectImpl.Container implements
 	 */
 	protected Hotel_OccupancyImpl() {
 		super();
-		
 		this.numKeys = 0;
+	}
+	
+	protected Hotel_OccupancyImpl(long startTime, long endTime) {
+		super();
+		this.numKeys = 0;
+		this.startTime = startTime;
+		this.endTime = endTime;
 	}
 
 	/**
