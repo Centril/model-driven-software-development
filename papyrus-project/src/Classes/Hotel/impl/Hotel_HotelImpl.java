@@ -330,12 +330,24 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean pay(IBooking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		IPerson customer = personRegistry.getPersonByID(booking.getCustomer());
+		ICreditCardInfo creditcard = customer.getCreditCard();
+		double price = getBill(booking);
+		try {
+			//Not sure how we want to access bank component
+			CustomerRequires.instance().makePayment(creditcard.getNumber(), creditcard.getCCV(), creditcard.getMonth(), creditcard.getYear(), 
+													creditcard.getFirstName(), creditcard.getLastName(), price);
+		} catch (SOAPException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		
+		// TODO: Mark booking as payed somehow
+		return true;
 	}
 
 	/**
