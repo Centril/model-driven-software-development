@@ -434,6 +434,12 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zd450HvOEeSHatiNfZ-sGg" value="*"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_7xu8oIbBEeSr6pyyCXGAzQ" name="getRelevantCheckInBookings">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_uRAtIIbCEeSr6pyyCXGAzQ" name="personID">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Af7UoIbDEeSr6pyyCXGAzQ" type="_qX9ogHpMEeS2zv6zlhm8qQ" direction="return"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_Alz5MIRdEeS-E_c58KLc5g" name="IOrdering">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_juaS8Hv_EeSHatiNfZ-sGg" name="placeOrder">
@@ -484,6 +490,11 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_JUyKYIagEeSNheO0P0uV7g" name="setPaid">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_QdWvkIagEeSNheO0P0uV7g" name="state">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_ceOLgIbDEeSr6pyyCXGAzQ" name="getId">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_h3O3kIbDEeSr6pyyCXGAzQ" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
