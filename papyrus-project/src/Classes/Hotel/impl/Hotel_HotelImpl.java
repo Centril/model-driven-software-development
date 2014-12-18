@@ -210,12 +210,11 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public double getBill(int bookingID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		IBooking booking = persistenceService.getBookingById(bookingID);
+		return booking.getPrice(); //A bill should include customer and price objects. But double...
 	}
 
 	private Hotel_Booking findBooking(IBooking booking){
@@ -228,16 +227,6 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		}
 		
 		return null;
-	}
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public double getBill(IBooking booking) {
-		return booking.getPrice(); //A bill should include customer and price objects. But double...
 	}
 
 	/**
@@ -256,37 +245,13 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean pay(int bookingID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean checkOut(int bookingID, int numKeys) {
-		Hotel_Booking booking = persistenceService.getBookingById(bookingID);
-		if(booking.isCheckedIn()){
-			return true;
-		}
-		return false;
-		// TODO: implement this method
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean pay(IBooking booking) {
+		IBooking booking = persistenceService.getBookingById(bookingID);
 		IPerson customer = personRegistry.getIPersonByID(booking.getCustomer());
 		ICreditCardInfo creditcard = customer.getCreditCard();
-		double price = getBill(booking);
+		double price = getBill(bookingID);
 		try {
 			CustomerRequires bank = CustomerRequires.instance();
 			
@@ -304,8 +269,35 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			e.printStackTrace();
 			return false;
 		}
-		
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean checkOut(int bookingID) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean checkOut(int bookingID, int numKeys) {
+		Hotel_Booking booking = persistenceService.getBookingById(bookingID);
+		if(booking.isCheckedIn()){
+			booking.getOccupancy().removeKeys(numKeys);
+			booking.setCheckedIn(false);
+			return true;
+		}
+		return false;
+		// TODO: implement this method
+	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -356,6 +348,17 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		return relevantBookings;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean handInKeys(int bookingId, int nbrKeys) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
 	private boolean isRoomAvailable(IRoom room, long startTime, long endTime) {
 		if (startTime > endTime) {
 			throw new IllegalArgumentException("endTime is lower than startTime.");
@@ -364,10 +367,13 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		EList<Hotel_Occupancy> occupancies = persistenceService.getOccupancies();
 		
 		for (Hotel_Occupancy occupancy : occupancies) {
-			if (room.getId() == occupancy.getRoom().getId()) {
-				// Basic 1-dimensional box collision detection
-				if (endTime > occupancy.getStartTime() && startTime < occupancy.getEndTime()) {
-					return false;
+			if (occupancy.getRoom() != null) {
+				if (room.getId() == occupancy.getRoom().getId()) {
+			
+					// Basic 1-dimensional box collision detection
+					if (endTime > occupancy.getStartTime() && startTime < occupancy.getEndTime()) {
+						return false;
+					}
 				}
 			}
 		}
@@ -611,6 +617,15 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * @generated
 	 */
 	public EList<IRoom> getRooms() {
+		return new BasicEList<IRoom>(persistenceService.getRooms());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void deleteRoom(int roomId) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -710,6 +725,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			switch (baseOperationID) {
 				case HotelPackage.ICONFIGURATION___CREATE_ROOM__INT_DOUBLE: return HotelPackage.HOTEL_HOTEL___CREATE_ROOM__INT_DOUBLE;
 				case HotelPackage.ICONFIGURATION___GET_ROOMS: return HotelPackage.HOTEL_HOTEL___GET_ROOMS;
+				case HotelPackage.ICONFIGURATION___DELETE_ROOM__INT: return HotelPackage.HOTEL_HOTEL___DELETE_ROOM__INT;
 				default: return -1;
 			}
 		}
@@ -732,12 +748,14 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				return getBookings();
 			case HotelPackage.HOTEL_HOTEL___PAY__INT:
 				return pay((Integer)arguments.get(0));
-			case HotelPackage.HOTEL_HOTEL___CHECK_OUT__INT_INT:
-				return checkOut((Integer)arguments.get(0), (Integer)arguments.get(1));
+			case HotelPackage.HOTEL_HOTEL___CHECK_OUT__INT:
+				return checkOut((Integer)arguments.get(0));
 			case HotelPackage.HOTEL_HOTEL___GET_ORDERS:
 				return getOrders();
 			case HotelPackage.HOTEL_HOTEL___GET_RELEVANT_CHECK_IN_BOOKINGS__INT:
 				return getRelevantCheckInBookings((Integer)arguments.get(0));
+			case HotelPackage.HOTEL_HOTEL___HAND_IN_KEYS__INT_INT:
+				return handInKeys((Integer)arguments.get(0), (Integer)arguments.get(1));
 			case HotelPackage.HOTEL_HOTEL___SEARCH__LONG_LONG_INT:
 				return search((Long)arguments.get(0), (Long)arguments.get(1), (Integer)arguments.get(2));
 			case HotelPackage.HOTEL_HOTEL___PLACE_ORDER__ORDERREQUEST:
@@ -746,6 +764,9 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				return createRoom((Integer)arguments.get(0), (Double)arguments.get(1));
 			case HotelPackage.HOTEL_HOTEL___GET_ROOMS:
 				return getRooms();
+			case HotelPackage.HOTEL_HOTEL___DELETE_ROOM__INT:
+				deleteRoom((Integer)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

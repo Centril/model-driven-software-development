@@ -37,4 +37,12 @@ public interface IConfiguration extends EObject {
 	 */
 	EList<IRoom> getRooms();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model roomIdRequired="true" roomIdOrdered="false"
+	 * @generated
+	 */
+	void deleteRoom(int roomId);
+
 } // IConfiguration

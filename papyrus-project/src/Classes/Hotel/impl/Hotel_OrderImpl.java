@@ -128,6 +128,17 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void setCustomer(int customerId) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -199,6 +210,9 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 				return getID();
 			case HotelPackage.HOTEL_ORDER___SET_ID__INT:
 				setID((Integer)arguments.get(0));
+				return null;
+			case HotelPackage.HOTEL_ORDER___SET_CUSTOMER__INT:
+				setCustomer((Integer)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

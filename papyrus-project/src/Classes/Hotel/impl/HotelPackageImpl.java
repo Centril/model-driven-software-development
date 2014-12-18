@@ -550,6 +550,15 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getHotel_Booking__SetCustomer__int() {
+		return hotel_BookingEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIBooking() {
 		return iBookingEClass;
 	}
@@ -678,6 +687,15 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 */
 	public EOperation getHotel_Order__SetID__int() {
 		return hotel_OrderEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getHotel_Order__SetCustomer__int() {
+		return hotel_OrderEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1000,7 +1018,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIFrontDesk__CheckOut__int_int() {
+	public EOperation getIFrontDesk__CheckOut__int() {
 		return iFrontDeskEClass.getEOperations().get(4);
 	}
 
@@ -1020,6 +1038,15 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 */
 	public EOperation getIFrontDesk__GetRelevantCheckInBookings__int() {
 		return iFrontDeskEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIFrontDesk__HandInKeys__int_int() {
+		return iFrontDeskEClass.getEOperations().get(7);
 	}
 
 	/**
@@ -1153,6 +1180,15 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIConfiguration__DeleteRoom__int() {
+		return iConfigurationEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getHotel_DummyPersistenceService() {
 		return hotel_DummyPersistenceServiceEClass;
 	}
@@ -1248,6 +1284,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		createEReference(hotel_BookingEClass, HOTEL_BOOKING__OCCUPANCY);
 		createEOperation(hotel_BookingEClass, HOTEL_BOOKING___SET_ID__INT);
 		createEOperation(hotel_BookingEClass, HOTEL_BOOKING___SET_CHECKED_IN__BOOLEAN);
+		createEOperation(hotel_BookingEClass, HOTEL_BOOKING___SET_CUSTOMER__INT);
 
 		iBookingEClass = createEClass(IBOOKING);
 		createEOperation(iBookingEClass, IBOOKING___GET_CONTACT);
@@ -1265,6 +1302,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		hotel_OrderEClass = createEClass(HOTEL_ORDER);
 		createEReference(hotel_OrderEClass, HOTEL_ORDER__BOOKING);
 		createEOperation(hotel_OrderEClass, HOTEL_ORDER___SET_ID__INT);
+		createEOperation(hotel_OrderEClass, HOTEL_ORDER___SET_CUSTOMER__INT);
 
 		iOrderEClass = createEClass(IORDER);
 		createEOperation(iOrderEClass, IORDER___GET_BOOKINGS);
@@ -1308,9 +1346,10 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		createEOperation(iFrontDeskEClass, IFRONT_DESK___GET_BILL__INT);
 		createEOperation(iFrontDeskEClass, IFRONT_DESK___GET_BOOKINGS);
 		createEOperation(iFrontDeskEClass, IFRONT_DESK___PAY__INT);
-		createEOperation(iFrontDeskEClass, IFRONT_DESK___CHECK_OUT__INT_INT);
+		createEOperation(iFrontDeskEClass, IFRONT_DESK___CHECK_OUT__INT);
 		createEOperation(iFrontDeskEClass, IFRONT_DESK___GET_ORDERS);
 		createEOperation(iFrontDeskEClass, IFRONT_DESK___GET_RELEVANT_CHECK_IN_BOOKINGS__INT);
+		createEOperation(iFrontDeskEClass, IFRONT_DESK___HAND_IN_KEYS__INT_INT);
 
 		iSearchEClass = createEClass(ISEARCH);
 		createEOperation(iSearchEClass, ISEARCH___SEARCH__LONG_LONG_INT);
@@ -1330,6 +1369,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		iConfigurationEClass = createEClass(ICONFIGURATION);
 		createEOperation(iConfigurationEClass, ICONFIGURATION___CREATE_ROOM__INT_DOUBLE);
 		createEOperation(iConfigurationEClass, ICONFIGURATION___GET_ROOMS);
+		createEOperation(iConfigurationEClass, ICONFIGURATION___DELETE_ROOM__INT);
 
 		hotel_DummyPersistenceServiceEClass = createEClass(HOTEL_DUMMY_PERSISTENCE_SERVICE);
 		createEReference(hotel_DummyPersistenceServiceEClass, HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDERS);
@@ -1451,6 +1491,9 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		op = initEOperation(getHotel_Booking__SetCheckedIn__boolean(), null, "setCheckedIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "isCheckedIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		op = initEOperation(getHotel_Booking__SetCustomer__int(), null, "setCustomer", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "customerId", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(iBookingEClass, IBooking.class, "IBooking", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEOperation(getIBooking__GetContact(), ecorePackage.getEInt(), "getContact", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1481,6 +1524,9 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 
 		op = initEOperation(getHotel_Order__SetID__int(), null, "setID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "orderID", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getHotel_Order__SetCustomer__int(), null, "setCustomer", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "customerId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(iOrderEClass, IOrder.class, "IOrder", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1558,14 +1604,17 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		op = initEOperation(getIFrontDesk__Pay__int(), ecorePackage.getEBoolean(), "pay", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIFrontDesk__CheckOut__int_int(), ecorePackage.getEBoolean(), "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIFrontDesk__CheckOut__int(), ecorePackage.getEBoolean(), "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "numKeys", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getIFrontDesk__GetOrders(), this.getIOrder(), "getOrders", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIFrontDesk__GetRelevantCheckInBookings__int(), this.getIBooking(), "getRelevantCheckInBookings", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "personID", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIFrontDesk__HandInKeys__int_int(), ecorePackage.getEBoolean(), "handInKeys", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "bookingId", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "nbrKeys", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(iSearchEClass, ISearch.class, "ISearch", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1600,6 +1649,9 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		addEParameter(op, ecorePackage.getEDouble(), "basePrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getIConfiguration__GetRooms(), this.getIRoom(), "getRooms", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIConfiguration__DeleteRoom__int(), null, "deleteRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "roomId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(hotel_DummyPersistenceServiceEClass, Hotel_DummyPersistenceService.class, "Hotel_DummyPersistenceService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHotel_DummyPersistenceService_Orders(), this.getHotel_Order(), null, "orders", null, 0, -1, Hotel_DummyPersistenceService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

@@ -766,13 +766,22 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_BOOKING___SET_CHECKED_IN__BOOLEAN = IBOOKING_OPERATION_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Set Customer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_BOOKING___SET_CUSTOMER__INT = IBOOKING_OPERATION_COUNT + 2;
+
+	/**
 	 * The number of operations of the '<em>Hotel Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_BOOKING_OPERATION_COUNT = IBOOKING_OPERATION_COUNT + 2;
+	int HOTEL_BOOKING_OPERATION_COUNT = IBOOKING_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.IOrder <em>IOrder</em>}' class.
@@ -894,13 +903,22 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_ORDER___SET_ID__INT = IORDER_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Set Customer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_ORDER___SET_CUSTOMER__INT = IORDER_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>Hotel Order</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_ORDER_OPERATION_COUNT = IORDER_OPERATION_COUNT + 1;
+	int HOTEL_ORDER_OPERATION_COUNT = IORDER_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.IBookingSuggestion <em>IBooking Suggestion</em>}' class.
@@ -1211,7 +1229,7 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IFRONT_DESK___CHECK_OUT__INT_INT = 4;
+	int IFRONT_DESK___CHECK_OUT__INT = 4;
 
 	/**
 	 * The operation id for the '<em>Get Orders</em>' operation.
@@ -1232,13 +1250,22 @@ public interface HotelPackage extends EPackage {
 	int IFRONT_DESK___GET_RELEVANT_CHECK_IN_BOOKINGS__INT = 6;
 
 	/**
+	 * The operation id for the '<em>Hand In Keys</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFRONT_DESK___HAND_IN_KEYS__INT_INT = 7;
+
+	/**
 	 * The number of operations of the '<em>IFront Desk</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IFRONT_DESK_OPERATION_COUNT = 7;
+	int IFRONT_DESK_OPERATION_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.impl.Hotel_HotelImpl <em>Hotel Hotel</em>}' class.
@@ -1320,7 +1347,7 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_HOTEL___CHECK_OUT__INT_INT = IFRONT_DESK___CHECK_OUT__INT_INT;
+	int HOTEL_HOTEL___CHECK_OUT__INT = IFRONT_DESK___CHECK_OUT__INT;
 
 	/**
 	 * The operation id for the '<em>Get Orders</em>' operation.
@@ -1339,6 +1366,15 @@ public interface HotelPackage extends EPackage {
 	 * @ordered
 	 */
 	int HOTEL_HOTEL___GET_RELEVANT_CHECK_IN_BOOKINGS__INT = IFRONT_DESK___GET_RELEVANT_CHECK_IN_BOOKINGS__INT;
+
+	/**
+	 * The operation id for the '<em>Hand In Keys</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_HOTEL___HAND_IN_KEYS__INT_INT = IFRONT_DESK___HAND_IN_KEYS__INT_INT;
 
 	/**
 	 * The operation id for the '<em>Search</em>' operation.
@@ -1377,13 +1413,22 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_HOTEL___GET_ROOMS = IFRONT_DESK_OPERATION_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Delete Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_HOTEL___DELETE_ROOM__INT = IFRONT_DESK_OPERATION_COUNT + 4;
+
+	/**
 	 * The number of operations of the '<em>Hotel Hotel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_HOTEL_OPERATION_COUNT = IFRONT_DESK_OPERATION_COUNT + 4;
+	int HOTEL_HOTEL_OPERATION_COUNT = IFRONT_DESK_OPERATION_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.IPersistenceService <em>IPersistence Service</em>}' class.
@@ -1708,13 +1753,22 @@ public interface HotelPackage extends EPackage {
 	int ICONFIGURATION___GET_ROOMS = 1;
 
 	/**
+	 * The operation id for the '<em>Delete Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ICONFIGURATION___DELETE_ROOM__INT = 2;
+
+	/**
 	 * The number of operations of the '<em>IConfiguration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ICONFIGURATION_OPERATION_COUNT = 2;
+	int ICONFIGURATION_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl <em>Hotel Dummy Persistence Service</em>}' class.
@@ -2168,6 +2222,16 @@ public interface HotelPackage extends EPackage {
 	EOperation getHotel_Booking__SetCheckedIn__boolean();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.Hotel_Booking#setCustomer(int) <em>Set Customer</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Customer</em>' operation.
+	 * @see Classes.Hotel.Hotel_Booking#setCustomer(int)
+	 * @generated
+	 */
+	EOperation getHotel_Booking__SetCustomer__int();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.IBooking <em>IBooking</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2317,6 +2381,16 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getHotel_Order__SetID__int();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.Hotel_Order#setCustomer(int) <em>Set Customer</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Customer</em>' operation.
+	 * @see Classes.Hotel.Hotel_Order#setCustomer(int)
+	 * @generated
+	 */
+	EOperation getHotel_Order__SetCustomer__int();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.IOrder <em>IOrder</em>}'.
@@ -2673,14 +2747,14 @@ public interface HotelPackage extends EPackage {
 	EOperation getIFrontDesk__Pay__int();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.Hotel.IFrontDesk#checkOut(int, int) <em>Check Out</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.Hotel.IFrontDesk#checkOut(int) <em>Check Out</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Check Out</em>' operation.
-	 * @see Classes.Hotel.IFrontDesk#checkOut(int, int)
+	 * @see Classes.Hotel.IFrontDesk#checkOut(int)
 	 * @generated
 	 */
-	EOperation getIFrontDesk__CheckOut__int_int();
+	EOperation getIFrontDesk__CheckOut__int();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.Hotel.IFrontDesk#getOrders() <em>Get Orders</em>}' operation.
@@ -2701,6 +2775,16 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIFrontDesk__GetRelevantCheckInBookings__int();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IFrontDesk#handInKeys(int, int) <em>Hand In Keys</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Hand In Keys</em>' operation.
+	 * @see Classes.Hotel.IFrontDesk#handInKeys(int, int)
+	 * @generated
+	 */
+	EOperation getIFrontDesk__HandInKeys__int_int();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.ISearch <em>ISearch</em>}'.
@@ -2841,6 +2925,16 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIConfiguration__GetRooms();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IConfiguration#deleteRoom(int) <em>Delete Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Delete Room</em>' operation.
+	 * @see Classes.Hotel.IConfiguration#deleteRoom(int)
+	 * @generated
+	 */
+	EOperation getIConfiguration__DeleteRoom__int();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.Hotel_DummyPersistenceService <em>Hotel Dummy Persistence Service</em>}'.
@@ -3169,6 +3263,14 @@ public interface HotelPackage extends EPackage {
 		EOperation HOTEL_BOOKING___SET_CHECKED_IN__BOOLEAN = eINSTANCE.getHotel_Booking__SetCheckedIn__boolean();
 
 		/**
+		 * The meta object literal for the '<em><b>Set Customer</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation HOTEL_BOOKING___SET_CUSTOMER__INT = eINSTANCE.getHotel_Booking__SetCustomer__int();
+
+		/**
 		 * The meta object literal for the '{@link Classes.Hotel.IBooking <em>IBooking</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3291,6 +3393,14 @@ public interface HotelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation HOTEL_ORDER___SET_ID__INT = eINSTANCE.getHotel_Order__SetID__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Customer</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation HOTEL_ORDER___SET_CUSTOMER__INT = eINSTANCE.getHotel_Order__SetCustomer__int();
 
 		/**
 		 * The meta object literal for the '{@link Classes.Hotel.IOrder <em>IOrder</em>}' class.
@@ -3594,7 +3704,7 @@ public interface HotelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IFRONT_DESK___CHECK_OUT__INT_INT = eINSTANCE.getIFrontDesk__CheckOut__int_int();
+		EOperation IFRONT_DESK___CHECK_OUT__INT = eINSTANCE.getIFrontDesk__CheckOut__int();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Orders</b></em>' operation.
@@ -3611,6 +3721,14 @@ public interface HotelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IFRONT_DESK___GET_RELEVANT_CHECK_IN_BOOKINGS__INT = eINSTANCE.getIFrontDesk__GetRelevantCheckInBookings__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Hand In Keys</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IFRONT_DESK___HAND_IN_KEYS__INT_INT = eINSTANCE.getIFrontDesk__HandInKeys__int_int();
 
 		/**
 		 * The meta object literal for the '{@link Classes.Hotel.ISearch <em>ISearch</em>}' class.
@@ -3733,6 +3851,14 @@ public interface HotelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ICONFIGURATION___GET_ROOMS = eINSTANCE.getIConfiguration__GetRooms();
+
+		/**
+		 * The meta object literal for the '<em><b>Delete Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ICONFIGURATION___DELETE_ROOM__INT = eINSTANCE.getIConfiguration__DeleteRoom__int();
 
 		/**
 		 * The meta object literal for the '{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl <em>Hotel Dummy Persistence Service</em>}' class.

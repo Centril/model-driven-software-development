@@ -56,10 +56,10 @@ public interface IFrontDesk extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false" numKeysRequired="true" numKeysOrdered="false"
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
 	 * @generated
 	 */
-	boolean checkOut(int bookingID, int numKeys);
+	boolean checkOut(int bookingID);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,5 +76,13 @@ public interface IFrontDesk extends EObject {
 	 * @generated
 	 */
 	EList<IBooking> getRelevantCheckInBookings(int personID);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" bookingIdRequired="true" bookingIdOrdered="false" nbrKeysRequired="true" nbrKeysOrdered="false"
+	 * @generated
+	 */
+	boolean handInKeys(int bookingId, int nbrKeys);
 
 } // IFrontDesk
