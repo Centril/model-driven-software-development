@@ -330,12 +330,36 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<IBooking> getRelevantCheckInBookings(int personID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		IPerson person = findPerson(personID);
+		if (person == null) return null;
+		
+		EList<IBooking> relevantBookings = new BasicEList<>();
+		
+		EList<IBooking> allBookings = getBookings();
+		for (IBooking booking : allBookings) {
+			if (booking.getContact() == personID) {
+				relevantBookings.add(booking);
+			}
+		}
+		
+		Calendar cal = Calendar.getInstance();
+		Date currentDate = cal.getTime();
+		cal.add(Calendar.HOUR, 12);
+		Date halfADayIntoTheFuture = cal.getTime();
+		
+		for (IBooking booking : relevantBookings) {
+			Date bookingCheckIn = new Date(booking.getCheckInDate());
+			Date bookingCheckOut = new Date(booking.getCheckOutDate());
+			
+			if (currentDate.before(bookingCheckOut) && halfADayIntoTheFuture.after(bookingCheckIn)) {
+				relevantBookings.add(booking);
+			}
+		}
+		
+		return relevantBookings;
 	}
 
 	private boolean isRoomAvailable(IRoom room, long startTime, long endTime) {
