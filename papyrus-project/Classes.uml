@@ -305,13 +305,6 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TmZSYoRWEeS_Fud_KU3BbA" value="1"/>
         </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_OauNUHvHEeSHatiNfZ-sGg" client="_CWQjwHpEEeSTh5yDLLqE0Q" supplier="_qX9ogHpMEeS2zv6zlhm8qQ" contract="_qX9ogHpMEeS2zv6zlhm8qQ"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_k-hjAIafEeSNheO0P0uV7g" name="getContact">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_k-mbgIafEeSNheO0P0uV7g" name="contact" direction="return">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_k-npoIafEeSNheO0P0uV7g" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k-oQsIafEeSNheO0P0uV7g" value="1"/>
-          </ownedParameter>
-        </ownedOperation>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Association" xmi:id="_iVwmQHpEEeSTh5yDLLqE0Q" memberEnd="_iVwmQXpEEeSTh5yDLLqE0Q _iVncUHpEEeSTh5yDLLqE0Q">
         <name xsi:nil="true"/>
@@ -483,12 +476,12 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_k-ZAIIafEeSNheO0P0uV7g" name="isPayed">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_k-ZAIIafEeSNheO0P0uV7g" name="isPaid">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_IXLSoIagEeSNheO0P0uV7g" name="isPayed" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_JUyKYIagEeSNheO0P0uV7g" name="setPayed">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JUyKYIagEeSNheO0P0uV7g" name="setPaid">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_QdWvkIagEeSNheO0P0uV7g" name="state">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
