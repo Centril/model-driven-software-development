@@ -4,6 +4,8 @@ package Classes.Hotel;
 
 import org.eclipse.emf.ecore.EObject;
 
+import Classes.Hotel.impl.Hotel_HotelImpl;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>IConfiguration</b></em>'.
@@ -15,6 +17,9 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface IConfiguration extends EObject {
+	
+	IConfiguration instance = Hotel_HotelImpl.getInstance();
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

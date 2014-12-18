@@ -3,8 +3,9 @@
 package Classes.PersonRegistry;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
+
+import Classes.PersonRegistry.impl.PersonRegistry_PersonRegistryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,6 +18,9 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface IPersonRegistry extends EObject {
+	
+	IPersonRegistry instance = PersonRegistry_PersonRegistryImpl.getInstance();
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

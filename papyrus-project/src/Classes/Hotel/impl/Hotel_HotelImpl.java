@@ -76,6 +76,15 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 */
 	protected IPersistenceService persistenceService;
 
+	private static Hotel_Hotel instance;
+	
+	public static Hotel_Hotel getInstance() {
+		if (instance == null) {
+			instance = new Hotel_HotelImpl();
+		}
+		return instance;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
