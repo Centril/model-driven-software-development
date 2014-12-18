@@ -274,7 +274,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean checkOut(int bookingID) {
 		Hotel_Booking booking = persistenceService.getBookingById(bookingID);
