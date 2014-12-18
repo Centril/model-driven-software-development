@@ -45,4 +45,12 @@ public interface Hotel_Order extends IOrder {
 	 */
 	void setID(int orderID);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model customerIdRequired="true" customerIdOrdered="false"
+	 * @generated
+	 */
+	void setCustomer(int customerId);
+
 } // Hotel_Order

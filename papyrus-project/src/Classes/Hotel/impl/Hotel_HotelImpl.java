@@ -273,6 +273,17 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean checkOut(int bookingID) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public boolean checkOut(int bookingID, int numKeys) {
@@ -334,6 +345,17 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		}
 		
 		return relevantBookings;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean handInKeys(int bookingId, int nbrKeys) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	private boolean isRoomAvailable(IRoom room, long startTime, long endTime) {
@@ -602,6 +624,17 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void deleteRoom(int roomId) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -691,6 +724,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			switch (baseOperationID) {
 				case HotelPackage.ICONFIGURATION___CREATE_ROOM__INT_DOUBLE: return HotelPackage.HOTEL_HOTEL___CREATE_ROOM__INT_DOUBLE;
 				case HotelPackage.ICONFIGURATION___GET_ROOMS: return HotelPackage.HOTEL_HOTEL___GET_ROOMS;
+				case HotelPackage.ICONFIGURATION___DELETE_ROOM__INT: return HotelPackage.HOTEL_HOTEL___DELETE_ROOM__INT;
 				default: return -1;
 			}
 		}
@@ -713,12 +747,14 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				return getBookings();
 			case HotelPackage.HOTEL_HOTEL___PAY__INT:
 				return pay((Integer)arguments.get(0));
-			case HotelPackage.HOTEL_HOTEL___CHECK_OUT__INT_INT:
-				return checkOut((Integer)arguments.get(0), (Integer)arguments.get(1));
+			case HotelPackage.HOTEL_HOTEL___CHECK_OUT__INT:
+				return checkOut((Integer)arguments.get(0));
 			case HotelPackage.HOTEL_HOTEL___GET_ORDERS:
 				return getOrders();
 			case HotelPackage.HOTEL_HOTEL___GET_RELEVANT_CHECK_IN_BOOKINGS__INT:
 				return getRelevantCheckInBookings((Integer)arguments.get(0));
+			case HotelPackage.HOTEL_HOTEL___HAND_IN_KEYS__INT_INT:
+				return handInKeys((Integer)arguments.get(0), (Integer)arguments.get(1));
 			case HotelPackage.HOTEL_HOTEL___SEARCH__LONG_LONG_INT:
 				return search((Long)arguments.get(0), (Long)arguments.get(1), (Integer)arguments.get(2));
 			case HotelPackage.HOTEL_HOTEL___PLACE_ORDER__ORDERREQUEST:
@@ -727,6 +763,9 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				return createRoom((Integer)arguments.get(0), (Double)arguments.get(1));
 			case HotelPackage.HOTEL_HOTEL___GET_ROOMS:
 				return getRooms();
+			case HotelPackage.HOTEL_HOTEL___DELETE_ROOM__INT:
+				deleteRoom((Integer)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -89,4 +89,12 @@ public interface Hotel_Booking extends IBooking {
 	 */
 	void setCheckedIn(boolean isCheckedIn);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model customerIdRequired="true" customerIdOrdered="false"
+	 * @generated
+	 */
+	void setCustomer(int customerId);
+
 } // Hotel_Booking
