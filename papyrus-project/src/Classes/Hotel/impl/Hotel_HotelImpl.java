@@ -231,12 +231,11 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		Date checkInDate = new Date(existsBooking.getCheckInDate());
 		Date checkOutDate = new Date(existsBooking.getCheckOutDate());
 		if(cal.getTime().after(checkInDate) && cal.getTime().before(checkOutDate)){
-			//if(TODO: booking.isCheckedIn){
+			if(!(existsBooking.isCheckedIn())){
 				//do check in things
-				//TODO: setCheckedIn(true)
+				existsBooking.setCheckedIn(true);
 				existsBooking.getOccupancy().addKeys(numKeys);
-			//}
-			
+			}	
 		}
 		return false;
 	}
