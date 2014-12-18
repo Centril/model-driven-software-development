@@ -285,6 +285,9 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		if (numberOfPersons < 1) {
 			throw new IllegalArgumentException("numberOfPersons is 0 or less.");
 		}
+		if (numberOfPersons > 100) {
+			throw new IllegalArgumentException("numberOfPersons is 100 or more");
+		}
 		
 		EList<Hotel_Room> rooms = persistenceService.getRooms();
 		
