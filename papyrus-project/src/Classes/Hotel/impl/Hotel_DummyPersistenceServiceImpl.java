@@ -69,23 +69,8 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	
 	private void init() {
 		orders = new BasicEList<Hotel_Order>();
-		
 		rooms = new BasicEList<Hotel_Room>();
-		for (int i = 0; i < 100; i++) {
-			addRoom(new Hotel_RoomImpl((i % 5) + 1, 100.0 * i + 100));
-		}
-		
 		occupancies = new BasicEList<Hotel_Occupancy>();
-		for (int i = 0; i < 1; i++) { // RUNS ONCE, YAY! 
-			Hotel_Occupancy occupancy = new Hotel_OccupancyImpl();
-			
-			Hotel_Room room = getRoomById(0);
-			occupancy.setRoom(room);
-			occupancy.setStartTime(0);
-			occupancy.setEndTime(1);
-			
-			occupancies.add(occupancy);
-		}
 	}
 	
 	/**
