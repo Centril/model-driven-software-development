@@ -209,12 +209,11 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public double getBill(int bookingID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		IBooking booking = persistenceService.getBookingById(bookingID);
+		return booking.getPrice(); //A bill should include customer and price objects. But double...
 	}
 
 	private Hotel_Booking findBooking(IBooking booking){
@@ -227,16 +226,6 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		}
 		
 		return null;
-	}
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public double getBill(IBooking booking) {
-		return booking.getPrice(); //A bill should include customer and price objects. But double...
 	}
 
 	/**
@@ -255,12 +244,30 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean pay(int bookingID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		IBooking booking = persistenceService.getBookingById(bookingID);
+		IPerson customer = personRegistry.getIPersonByID(booking.getCustomer());
+		ICreditCardInfo creditcard = customer.getCreditCard();
+		double price = getBill(bookingID);
+		try {
+			CustomerRequires bank = CustomerRequires.instance();
+			
+			if (bank.isCreditCardValid(creditcard.getCCNumber(), creditcard.getCCV(), creditcard.getMonth(), creditcard.getYear(), creditcard.getFirstName(), creditcard.getLastName())) {
+				return false;
+			}
+			
+			if (bank.makePayment(creditcard.getCCNumber(), creditcard.getCCV(), creditcard.getMonth(), creditcard.getYear(), creditcard.getFirstName(), creditcard.getLastName(), price)) {
+				booking.setPaid(true);
+				return true;
+			}
+			return false;
+		
+		} catch (SOAPException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	/**
@@ -279,33 +286,6 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		// TODO: implement this method
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean pay(IBooking booking) {
-		IPerson customer = personRegistry.getIPersonByID(booking.getCustomer());
-		ICreditCardInfo creditcard = customer.getCreditCard();
-		double price = getBill(booking);
-		try {
-			//Not sure how we want to access bank component
-			boolean result = CustomerRequires.instance().makePayment(creditcard.getCCNumber(), creditcard.getCCV(), creditcard.getMonth(), creditcard.getYear(), 
-													creditcard.getFirstName(), creditcard.getLastName(), price);
-			
-			if(result) {
-				booking.setPaid(true);
-				return true;
-			} else {
-				return false;
-			}
-		} catch (SOAPException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return false;
-		}
-		
-	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -364,10 +344,13 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		EList<Hotel_Occupancy> occupancies = persistenceService.getOccupancies();
 		
 		for (Hotel_Occupancy occupancy : occupancies) {
-			if (room.getId() == occupancy.getRoom().getId()) {
-				// Basic 1-dimensional box collision detection
-				if (endTime > occupancy.getStartTime() && startTime < occupancy.getEndTime()) {
-					return false;
+			if (occupancy.getRoom() != null) {
+				if (room.getId() == occupancy.getRoom().getId()) {
+			
+					// Basic 1-dimensional box collision detection
+					if (endTime > occupancy.getStartTime() && startTime < occupancy.getEndTime()) {
+						return false;
+					}
 				}
 			}
 		}
@@ -611,9 +594,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * @generated
 	 */
 	public EList<IRoom> getRooms() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return new BasicEList<IRoom>(persistenceService.getRooms());
 	}
 
 	/**
