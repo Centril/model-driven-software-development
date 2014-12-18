@@ -829,6 +829,16 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_e7aA0IbdEeSt8_l0V0kmcA" name="setLegalAge">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_lQIHMIbdEeSt8_l0V0kmcA" name="age">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_m8ka4IbdEeSt8_l0V0kmcA" name="getLegalAge">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_o-SbAIbdEeSt8_l0V0kmcA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_yWHgwHyPEeSahu9FXjYTpw">
