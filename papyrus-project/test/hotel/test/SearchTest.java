@@ -27,4 +27,10 @@ public class SearchTest {
 		search.search(1, 0, 1);
 	}
 
+	@Test
+	public void testTooManyGuests() {
+		EList<ISearchResult> results = search.search(1, 2, Integer.MAX_VALUE);
+		assertTrue(results.isEmpty());
+	}
+
 }
