@@ -185,7 +185,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	private Hotel_Booking findBooking(IBooking booking){
 		for(Hotel_Order order : persistenceService.getOrders()){
 			for(Hotel_Booking aBooking : order.getBooking()){
-				if(aBooking == booking){ //TODO change to check with ID
+				if(aBooking == booking){ //TODO: change to check with ID
 					return aBooking;
 				}
 			}
@@ -200,17 +200,22 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * @generated NOT
 	 */
 	public boolean checkIn(IBooking booking, int numKeys) {
-		if(findBooking(booking) == null){
+		Hotel_Booking existsBooking = findBooking(booking);
+		if(existsBooking == null){
 			return false; //requested booking to check in doesn't exist
 		}
 		
 		Calendar cal = Calendar.getInstance();
-		Date checkInDate = new Date(booking.getCheckInDate());
-		Date checkOutDate = new Date(booking.getCheckOutDate());
+		Date checkInDate = new Date(existsBooking.getCheckInDate());
+		Date checkOutDate = new Date(existsBooking.getCheckOutDate());
 		if(cal.getTime().after(checkInDate) && cal.getTime().before(checkOutDate)){
-			//TODO do check in things
+			//if(TODO: booking.isCheckedIn){
+				//do check in things
+				//TODO: setCheckedIn(true)
+				existsBooking.getOccupancy().addKeys(numKeys);
+			//}
+			
 		}
-
 		return false;
 	}
 
