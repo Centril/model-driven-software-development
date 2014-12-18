@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import javax.xml.soap.SOAPException;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires;
@@ -16,16 +17,21 @@ import Classes.PersonRegistry.IPersonRegistry;
 
 public class OrderingTest {
 	
-	@Test
-	public void testOrdering() {
+	private CustomerRequires customerRequires;
+	private AdministratorRequires adminRequires;
+	private Hotel_Hotel hotel;
+	private ISearch iSearch;
+	private IOrdering iOrdering;
+	private IPersonRegistry iPersonReg;
+	
+	@Before
+	public void before() {
 		// Ensure the existence of credit cards with money associated with some folks.
-		CustomerRequires customerRequires = null;
 		try {
 			customerRequires = CustomerRequires.instance();
 		} catch (SOAPException soppa) {
 			assertTrue(false);
 		}
-		AdministratorRequires adminRequires = null;
 		try {
 			adminRequires = AdministratorRequires.instance();
 		} catch (SOAPException soppa) {
@@ -51,12 +57,14 @@ public class OrderingTest {
 			assertTrue(false);
 		}
 		
-		
-		
-		Hotel_Hotel hotel = HotelFactory.eINSTANCE.createHotel_Hotel();
-		ISearch iSearch = hotel;
-		IOrdering iOrdering = hotel;
-		IPersonRegistry iPersonReg = hotel.getPersonRegistry();
+		hotel = HotelFactory.eINSTANCE.createHotel_Hotel();
+		iSearch = hotel;
+		iOrdering = hotel;
+		iPersonReg = hotel.getPersonRegistry();
+	}
+	
+	@Test
+	public void testOrdering() {
 		
 	}
 }

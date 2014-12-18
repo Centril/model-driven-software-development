@@ -47,7 +47,9 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	private double initialPrice;
 	//
 	
+	//Expected dates for checking in and out
 	private long checkInDate, checkOutDate;
+	
 
 	/**
 	 * The cached value of the '{@link #getOccupancy() <em>Occupancy</em>}' reference.

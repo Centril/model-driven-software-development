@@ -214,16 +214,21 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		double price = getBill(booking);
 		try {
 			//Not sure how we want to access bank component
-			CustomerRequires.instance().makePayment(creditcard.getCCNumber(), creditcard.getCCV(), creditcard.getMonth(), creditcard.getYear(), 
+			boolean result = CustomerRequires.instance().makePayment(creditcard.getCCNumber(), creditcard.getCCV(), creditcard.getMonth(), creditcard.getYear(), 
 													creditcard.getFirstName(), creditcard.getLastName(), price);
+			
+			if(result) {
+				// TODO: Mark booking as payed somehow
+				return true;
+			} else {
+				return false;
+			}
 		} catch (SOAPException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}
 		
-		// TODO: Mark booking as payed somehow
-		return true;
 	}
 
 	/**
@@ -279,6 +284,9 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		
 		if (numberOfPersons < 1) {
 			throw new IllegalArgumentException("numberOfPersons is 0 or less.");
+		}
+		if (numberOfPersons > 100) {
+			throw new IllegalArgumentException("numberOfPersons is 100 or more");
 		}
 		
 		EList<Hotel_Room> rooms = persistenceService.getRooms();
