@@ -1431,13 +1431,31 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_HOTEL___DELETE_ROOM__INT = IFRONT_DESK_OPERATION_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Set Legal Age</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_HOTEL___SET_LEGAL_AGE__INT = IFRONT_DESK_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Get Legal Age</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_HOTEL___GET_LEGAL_AGE = IFRONT_DESK_OPERATION_COUNT + 6;
+
+	/**
 	 * The number of operations of the '<em>Hotel Hotel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_HOTEL_OPERATION_COUNT = IFRONT_DESK_OPERATION_COUNT + 5;
+	int HOTEL_HOTEL_OPERATION_COUNT = IFRONT_DESK_OPERATION_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.IPersistenceService <em>IPersistence Service</em>}' class.
@@ -1771,13 +1789,31 @@ public interface HotelPackage extends EPackage {
 	int ICONFIGURATION___DELETE_ROOM__INT = 2;
 
 	/**
+	 * The operation id for the '<em>Set Legal Age</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ICONFIGURATION___SET_LEGAL_AGE__INT = 3;
+
+	/**
+	 * The operation id for the '<em>Get Legal Age</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ICONFIGURATION___GET_LEGAL_AGE = 4;
+
+	/**
 	 * The number of operations of the '<em>IConfiguration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ICONFIGURATION_OPERATION_COUNT = 3;
+	int ICONFIGURATION_OPERATION_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl <em>Hotel Dummy Persistence Service</em>}' class.
@@ -2956,6 +2992,26 @@ public interface HotelPackage extends EPackage {
 	EOperation getIConfiguration__DeleteRoom__int();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IConfiguration#setLegalAge(int) <em>Set Legal Age</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Legal Age</em>' operation.
+	 * @see Classes.Hotel.IConfiguration#setLegalAge(int)
+	 * @generated
+	 */
+	EOperation getIConfiguration__SetLegalAge__int();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IConfiguration#getLegalAge() <em>Get Legal Age</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Legal Age</em>' operation.
+	 * @see Classes.Hotel.IConfiguration#getLegalAge()
+	 * @generated
+	 */
+	EOperation getIConfiguration__GetLegalAge();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.Hotel_DummyPersistenceService <em>Hotel Dummy Persistence Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3886,6 +3942,22 @@ public interface HotelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ICONFIGURATION___DELETE_ROOM__INT = eINSTANCE.getIConfiguration__DeleteRoom__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Legal Age</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ICONFIGURATION___SET_LEGAL_AGE__INT = eINSTANCE.getIConfiguration__SetLegalAge__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Legal Age</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ICONFIGURATION___GET_LEGAL_AGE = eINSTANCE.getIConfiguration__GetLegalAge();
 
 		/**
 		 * The meta object literal for the '{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl <em>Hotel Dummy Persistence Service</em>}' class.

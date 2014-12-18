@@ -625,6 +625,28 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void setLegalAge(int age) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getLegalAge() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -715,6 +737,8 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				case HotelPackage.ICONFIGURATION___CREATE_ROOM__INT_DOUBLE: return HotelPackage.HOTEL_HOTEL___CREATE_ROOM__INT_DOUBLE;
 				case HotelPackage.ICONFIGURATION___GET_ROOMS: return HotelPackage.HOTEL_HOTEL___GET_ROOMS;
 				case HotelPackage.ICONFIGURATION___DELETE_ROOM__INT: return HotelPackage.HOTEL_HOTEL___DELETE_ROOM__INT;
+				case HotelPackage.ICONFIGURATION___SET_LEGAL_AGE__INT: return HotelPackage.HOTEL_HOTEL___SET_LEGAL_AGE__INT;
+				case HotelPackage.ICONFIGURATION___GET_LEGAL_AGE: return HotelPackage.HOTEL_HOTEL___GET_LEGAL_AGE;
 				default: return -1;
 			}
 		}
@@ -756,6 +780,11 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			case HotelPackage.HOTEL_HOTEL___DELETE_ROOM__INT:
 				deleteRoom((Integer)arguments.get(0));
 				return null;
+			case HotelPackage.HOTEL_HOTEL___SET_LEGAL_AGE__INT:
+				setLegalAge((Integer)arguments.get(0));
+				return null;
+			case HotelPackage.HOTEL_HOTEL___GET_LEGAL_AGE:
+				return getLegalAge();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

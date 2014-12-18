@@ -1198,6 +1198,24 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIConfiguration__SetLegalAge__int() {
+		return iConfigurationEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIConfiguration__GetLegalAge() {
+		return iConfigurationEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getHotel_DummyPersistenceService() {
 		return hotel_DummyPersistenceServiceEClass;
 	}
@@ -1380,6 +1398,8 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		createEOperation(iConfigurationEClass, ICONFIGURATION___CREATE_ROOM__INT_DOUBLE);
 		createEOperation(iConfigurationEClass, ICONFIGURATION___GET_ROOMS);
 		createEOperation(iConfigurationEClass, ICONFIGURATION___DELETE_ROOM__INT);
+		createEOperation(iConfigurationEClass, ICONFIGURATION___SET_LEGAL_AGE__INT);
+		createEOperation(iConfigurationEClass, ICONFIGURATION___GET_LEGAL_AGE);
 
 		hotel_DummyPersistenceServiceEClass = createEClass(HOTEL_DUMMY_PERSISTENCE_SERVICE);
 		createEReference(hotel_DummyPersistenceServiceEClass, HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDERS);
@@ -1665,6 +1685,11 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 
 		op = initEOperation(getIConfiguration__DeleteRoom__int(), null, "deleteRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomId", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIConfiguration__SetLegalAge__int(), null, "setLegalAge", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "age", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getIConfiguration__GetLegalAge(), ecorePackage.getEInt(), "getLegalAge", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(hotel_DummyPersistenceServiceEClass, Hotel_DummyPersistenceService.class, "Hotel_DummyPersistenceService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHotel_DummyPersistenceService_Orders(), this.getHotel_Order(), null, "orders", null, 0, -1, Hotel_DummyPersistenceService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

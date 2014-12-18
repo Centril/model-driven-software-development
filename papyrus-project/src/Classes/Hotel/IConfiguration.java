@@ -45,4 +45,20 @@ public interface IConfiguration extends EObject {
 	 */
 	void deleteRoom(int roomId);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ageRequired="true" ageOrdered="false"
+	 * @generated
+	 */
+	void setLegalAge(int age);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	int getLegalAge();
+
 } // IConfiguration
