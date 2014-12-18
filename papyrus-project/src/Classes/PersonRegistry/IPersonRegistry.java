@@ -5,6 +5,8 @@ package Classes.PersonRegistry;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
+import Classes.Hotel.IConfiguration;
+import Classes.Hotel.impl.Hotel_HotelImpl;
 import Classes.PersonRegistry.impl.PersonRegistry_PersonRegistryImpl;
 
 /**
@@ -19,10 +21,8 @@ import Classes.PersonRegistry.impl.PersonRegistry_PersonRegistryImpl;
  */
 public interface IPersonRegistry extends EObject {
 
-	static IPersonRegistry getInstance() {
-		return PersonRegistry_PersonRegistryImpl.getInstance();
-	}
-
+	final IPersonRegistry instance = PersonRegistry_PersonRegistryImpl.getInstance();
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

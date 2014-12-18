@@ -18,10 +18,8 @@ import Classes.Hotel.impl.Hotel_HotelImpl;
  */
 public interface IOrdering extends EObject {
 	
-	static IOrdering getInstance() {
-		return Hotel_HotelImpl.getInstance();
-	}
-
+	final IOrdering instance = Hotel_HotelImpl.getInstance();
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
