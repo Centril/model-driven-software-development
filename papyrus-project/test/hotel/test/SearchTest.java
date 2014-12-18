@@ -30,7 +30,7 @@ public class SearchTest {
 
 	@Test(expected=IllegalArgumentException.class)
 	public void testTooManyGuests() {
-		EList<ISearchResult> results = search.search(1, 2, Integer.MAX_VALUE);
+		search.search(1, 2, Integer.MAX_VALUE);
 	}
 
 	@Test

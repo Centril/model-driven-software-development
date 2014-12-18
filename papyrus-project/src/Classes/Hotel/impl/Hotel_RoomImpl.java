@@ -57,7 +57,7 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 		
 		this.nbrOfBeds = nbrOfBeds;
 		this.basePrice = basePrice;
-		this.roomId = 0;
+		this.roomId = -1;
 		this.OutOfOrder = false;
 		this.roomInfo = "";
 	}
