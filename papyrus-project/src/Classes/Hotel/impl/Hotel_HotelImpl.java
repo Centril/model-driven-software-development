@@ -214,9 +214,11 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * @generated
 	 */
 	public EList<IBooking> getBookings() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<IBooking> bookings = new BasicEList<>();
+		for (Hotel_Order order : persistenceService.getOrders()) {
+			bookings.addAll(order.getBooking());
+		}
+		return bookings;
 	}
 
 	/**
