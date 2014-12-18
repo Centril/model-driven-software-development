@@ -53,4 +53,12 @@ public interface Hotel_Order extends IOrder {
 	 */
 	void setCustomer(int customerId);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model bookingRequired="true" bookingOrdered="false"
+	 * @generated
+	 */
+	void addBooking(Hotel_Booking booking);
+
 } // Hotel_Order
