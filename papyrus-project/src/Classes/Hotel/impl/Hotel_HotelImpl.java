@@ -390,14 +390,13 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		return null;
 	}
 	
-	// TODO: Required age should be configurable (or in our case at least make it a bit easier to change)
-	private boolean personIsYoungerThan15(IPerson person) {
+	private boolean personIsYoungerThanX(IPerson person, int x) {
 		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.YEAR, -15);
-		Date fifteenYearsAgo = calendar.getTime();
+		calendar.add(Calendar.YEAR, - x);
+		Date xYearsAgo = calendar.getTime();
 		
 		Date personBirthDate = new Date(person.getBirthDate());
-		return fifteenYearsAgo.before(personBirthDate);
+		return xYearsAgo.before(personBirthDate);
 	}
 	
 	private boolean hasValidPaymentInfo(IPerson person) {
@@ -424,7 +423,8 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			return false;
 			//throw new RuntimeException("Customer does not exist.");
 		}
-		if (personIsYoungerThan15(customer)) {
+		//TODO: Maybe required age shouldn't be hardcoded
+		if (personIsYoungerThanX(customer, 15)) {
 			return false;
 			//throw new RuntimeException("Customer is younger than 15.");
 		}
