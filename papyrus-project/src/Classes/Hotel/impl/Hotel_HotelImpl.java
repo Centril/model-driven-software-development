@@ -337,12 +337,13 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean handInKeys(int bookingId, int nbrKeys) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		persistenceService.getBookingById(bookingId).getOccupancy().removeKeys(nbrKeys);
+		if(persistenceService.getBookingById(bookingId).getOccupancy().getNumKeys() > 0) // Not all keys are handed in
+			return false;
+		return true;
 	}
 
 	private boolean isRoomAvailable(IRoom room, long startTime, long endTime) {
@@ -600,7 +601,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<IRoom> getRooms() {
 		return new BasicEList<IRoom>(persistenceService.getRooms());

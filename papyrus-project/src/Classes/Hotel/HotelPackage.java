@@ -912,13 +912,22 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_ORDER___SET_CUSTOMER__INT = IORDER_OPERATION_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Add Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_ORDER___ADD_BOOKING__HOTEL_BOOKING = IORDER_OPERATION_COUNT + 2;
+
+	/**
 	 * The number of operations of the '<em>Hotel Order</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_ORDER_OPERATION_COUNT = IORDER_OPERATION_COUNT + 2;
+	int HOTEL_ORDER_OPERATION_COUNT = IORDER_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.IBookingSuggestion <em>IBooking Suggestion</em>}' class.
@@ -2393,6 +2402,16 @@ public interface HotelPackage extends EPackage {
 	EOperation getHotel_Order__SetCustomer__int();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.Hotel_Order#addBooking(Classes.Hotel.Hotel_Booking) <em>Add Booking</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Booking</em>' operation.
+	 * @see Classes.Hotel.Hotel_Order#addBooking(Classes.Hotel.Hotel_Booking)
+	 * @generated
+	 */
+	EOperation getHotel_Order__AddBooking__Hotel_Booking();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.IOrder <em>IOrder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3401,6 +3420,14 @@ public interface HotelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation HOTEL_ORDER___SET_CUSTOMER__INT = eINSTANCE.getHotel_Order__SetCustomer__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Booking</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation HOTEL_ORDER___ADD_BOOKING__HOTEL_BOOKING = eINSTANCE.getHotel_Order__AddBooking__Hotel_Booking();
 
 		/**
 		 * The meta object literal for the '{@link Classes.Hotel.IOrder <em>IOrder</em>}' class.

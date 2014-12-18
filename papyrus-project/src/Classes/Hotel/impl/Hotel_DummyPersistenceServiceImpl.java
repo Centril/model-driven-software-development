@@ -191,7 +191,7 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Hotel_Order getOrderById(int orderID) {
 		for(Hotel_Order order : orders){
@@ -204,23 +204,28 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public Hotel_Booking getBookings() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public EList<Hotel_Booking> getBookings() {
+		EList<Hotel_Booking> bookings = new BasicEList<>();
+		for (Hotel_Order order : orders) {
+			bookings.addAll(order.getBooking());
+		}
+		return bookings;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Hotel_Booking getBookingById(int bookingID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (Hotel_Booking booking : this.getBookings()) {
+			if (booking.getID() == bookingID) {
+				return booking;
+			}
+		}
+		return null;
 	}
 
 	/**
