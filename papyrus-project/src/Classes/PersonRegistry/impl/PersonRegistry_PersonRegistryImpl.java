@@ -59,6 +59,15 @@ public class PersonRegistry_PersonRegistryImpl extends MinimalEObjectImpl.Contai
 	 */
 	protected PersonRegistry_Blacklist blacklist;
 
+	private static PersonRegistry_PersonRegistry instance;
+	
+	public static PersonRegistry_PersonRegistry getInstance() {
+		if (instance == null) {
+			instance = new PersonRegistry_PersonRegistryImpl();
+		}
+		return instance;
+	}
+	
 	private void init() {
 		people = new BasicEList<PersonRegistry_Person>();
 		blacklist = new PersonRegistry_BlacklistImpl();
@@ -325,5 +334,6 @@ public class PersonRegistry_PersonRegistryImpl extends MinimalEObjectImpl.Contai
 		}
 		return super.eInvoke(operationID, arguments);
 	}
+
 
 } //PersonRegistry_PersonRegistryImpl

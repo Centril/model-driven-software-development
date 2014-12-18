@@ -3,8 +3,9 @@
 package Classes.Hotel;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
+
+import Classes.Hotel.impl.Hotel_HotelImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,6 +18,9 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface IFrontDesk extends EObject {
+	
+	final IFrontDesk instance = Hotel_HotelImpl.getInstance();
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,5 +68,13 @@ public interface IFrontDesk extends EObject {
 	 * @generated
 	 */
 	EList<IOrder> getOrders();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" personIDRequired="true" personIDOrdered="false"
+	 * @generated
+	 */
+	IBooking getRelevantCheckInBookings(int personID);
 
 } // IFrontDesk

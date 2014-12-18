@@ -65,7 +65,7 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 */
 	protected EList<Hotel_Occupancy> occupancies;
 	
-	private AtomicInteger baseId = new AtomicInteger(0);
+	private AtomicInteger baseId = new AtomicInteger(1);
 	
 	private void init() {
 		orders = new BasicEList<Hotel_Order>();
@@ -179,6 +179,11 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * @generated NOT
 	 */
 	public boolean addRoom(Hotel_Room room) {
+		if (room.getId() != 0) {
+			throw new IllegalArgumentException("Room's id appears to have been changed already");
+		}
+
+		// Yes, it's not pretty to modify when adding
 		room.setId(baseId.getAndIncrement());
 		return rooms.add(room);
 	}
