@@ -46,6 +46,7 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	private EList<Integer> guests;
 	private int contact, customer;
 	private double initialPrice;
+	private boolean isCheckedIn;
 	//
 	
 	//Expected dates for checking in and out
@@ -82,6 +83,7 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 		this.checkInDate = checkInDate;
 		this.checkOutDate = checkOutDate;
 		this.occupancy = occupancy;
+		this.isCheckedIn = false;
 	}
 
 	/**
@@ -268,12 +270,10 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean isCheckedIn() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return isCheckedIn;
 	}
 
 	/**
@@ -290,12 +290,10 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setCheckedIn(boolean isCheckedIn) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.isCheckedIn = isCheckedIn;
 	}
 
 	/**
