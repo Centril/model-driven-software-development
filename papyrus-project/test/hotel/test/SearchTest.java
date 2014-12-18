@@ -3,6 +3,7 @@ package hotel.test;
 import static org.junit.Assert.*;
 import hotel.test.util.ConfigUtil;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
@@ -123,22 +124,20 @@ public class SearchTest {
 		assertTrue(getNumBeds(bs) == numBeds);		
 	}
 	
-	// Check if ISearchResult contains exact number of expected beds (Need test for test!)
+	// Check if ISearchResult contains exact number of expected beds
 	private static void assertNumBeds(ISearchResult sr, int... numBeds) {
 		List<IBookingSuggestion> bss = sr.getBookingSuggestions();
 		assertTrue(bss.size() == numBeds.length);
 
-		boolean[] used = new boolean[numBeds.length];
-		outer:
-		for (IBookingSuggestion bs : bss) {
-			for (int i = 0; i < numBeds.length; i++) {
-				if (!used[i] && getNumBeds(bs) == numBeds[i]) {
-					used[i] = true;
-					continue outer;
-				}
-			}
-			fail();
+		// Move beds for each suggestion to int array
+		int[] bookingBeds = new int[bss.size()];
+		for (int i = 0; i < bss.size(); i++) {
+			bookingBeds[i] = getNumBeds(bss.get(i));
 		}
+
+		Arrays.sort(bookingBeds);
+		Arrays.sort(numBeds);
+		assertTrue(Arrays.equals(bookingBeds, numBeds));
 	}
 	
 	private static int getNumBeds(IBookingSuggestion bs) {
