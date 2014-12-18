@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import Classes.Hotel.HotelPackage;
+import Classes.Hotel.Hotel_Booking;
 import Classes.Hotel.Hotel_DummyPersistenceService;
 import Classes.Hotel.Hotel_Occupancy;
 import Classes.Hotel.Hotel_Order;
@@ -162,6 +163,10 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * @generated NOT
 	 */
 	public boolean addOrder(Hotel_Order order) {
+		// TODO: Fulahck
+		for (Hotel_Booking booking : order.getBooking()) {
+			occupancies.add(booking.getOccupancy());
+		}
 		return orders.add(order);
 	}
 
