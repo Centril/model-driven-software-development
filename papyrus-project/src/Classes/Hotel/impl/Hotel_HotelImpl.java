@@ -185,12 +185,25 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean checkIn(int bookingID, int numKeys) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Hotel_Booking booking = persistenceService.getBookingById(bookingID);
+		if(booking == null){
+			return false; //requested booking to check in doesn't exist
+		}
+		
+		Calendar cal = Calendar.getInstance();
+		Date checkInDate = new Date(booking.getCheckInDate());
+		Date checkOutDate = new Date(booking.getCheckOutDate());
+		if(cal.getTime().after(checkInDate) && cal.getTime().before(checkOutDate)){
+			if(!(booking.isCheckedIn())){
+				//do check in things
+				booking.setCheckedIn(true);
+				booking.getOccupancy().addKeys(numKeys);
+			}	
+		}
+		return false;
 	}
 
 	/**
@@ -216,29 +229,6 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		return null;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean checkIn(IBooking booking, int numKeys) {
-		Hotel_Booking existsBooking = findBooking(booking);
-		if(existsBooking == null){
-			return false; //requested booking to check in doesn't exist
-		}
-		
-		Calendar cal = Calendar.getInstance();
-		Date checkInDate = new Date(existsBooking.getCheckInDate());
-		Date checkOutDate = new Date(existsBooking.getCheckOutDate());
-		if(cal.getTime().after(checkInDate) && cal.getTime().before(checkOutDate)){
-			if(!(existsBooking.isCheckedIn())){
-				//do check in things
-				existsBooking.setCheckedIn(true);
-				existsBooking.getOccupancy().addKeys(numKeys);
-			}	
-		}
-		return false;
-	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -276,12 +266,15 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean checkOut(int bookingID, int numKeys) {
+		Hotel_Booking booking = persistenceService.getBookingById(bookingID);
+		if(booking.isCheckedIn()){
+			return true;
+		}
+		return false;
 		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
