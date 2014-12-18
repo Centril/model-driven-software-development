@@ -18,9 +18,11 @@ import Classes.PersonRegistry.impl.PersonRegistry_PersonRegistryImpl;
  * @generated
  */
 public interface IPersonRegistry extends EObject {
-	
-	IPersonRegistry instance = PersonRegistry_PersonRegistryImpl.getInstance();
-	
+
+	static IPersonRegistry getInstance() {
+		return PersonRegistry_PersonRegistryImpl.getInstance();
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
