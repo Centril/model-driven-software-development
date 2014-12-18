@@ -4,9 +4,6 @@ package Classes.PersonRegistry;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-
-import Classes.Hotel.IConfiguration;
-import Classes.Hotel.impl.Hotel_HotelImpl;
 import Classes.PersonRegistry.impl.PersonRegistry_PersonRegistryImpl;
 
 /**

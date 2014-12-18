@@ -190,9 +190,6 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 				return getNumBeds();
 			case HotelPackage.HOTEL_ROOM___GET_PRICE:
 				return getPrice();
-			case HotelPackage.HOTEL_ROOM___SET_ID__INT:
-				setId((Integer)arguments.get(0));
-				return null;
 			case HotelPackage.HOTEL_ROOM___SET_NUM_BEDS__INT:
 				setNumBeds((Integer)arguments.get(0));
 				return null;
@@ -214,6 +211,9 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 				return null;
 			case HotelPackage.HOTEL_ROOM___IS_OUT_OF_ORDER:
 				return isOutOfOrder();
+			case HotelPackage.HOTEL_ROOM___SET_ID__INT:
+				setId((Integer)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

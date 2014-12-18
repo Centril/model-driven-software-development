@@ -193,6 +193,39 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Hotel_Order getOrderById(int orderID) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Hotel_Booking getBookings() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Hotel_Booking getBookingById(int bookingID) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -284,6 +317,12 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 				return addOrder((Hotel_Order)arguments.get(0));
 			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE___ADD_ROOM__HOTEL_ROOM:
 				return addRoom((Hotel_Room)arguments.get(0));
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE___GET_ORDER_BY_ID__INT:
+				return getOrderById((Integer)arguments.get(0));
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE___GET_BOOKINGS:
+				return getBookings();
+			case HotelPackage.HOTEL_DUMMY_PERSISTENCE_SERVICE___GET_BOOKING_BY_ID__INT:
+				return getBookingById((Integer)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

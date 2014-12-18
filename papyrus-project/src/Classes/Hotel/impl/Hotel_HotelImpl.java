@@ -182,6 +182,28 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			eNotify(new ENotificationImpl(this, Notification.SET, HotelPackage.HOTEL_HOTEL__PERSISTENCE_SERVICE, oldPersistenceService, persistenceService));
 	}
 	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean checkIn(int bookingID, int numKeys) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public double getBill(int bookingID) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
 	private Hotel_Booking findBooking(IBooking booking){
 		for(Hotel_Order order : persistenceService.getOrders()){
 			for(Hotel_Booking aBooking : order.getBooking()){
@@ -244,6 +266,28 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean pay(int bookingID) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean checkOut(int bookingID, int numKeys) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public boolean pay(IBooking booking) {
@@ -272,17 +316,6 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean checkOut(IBooking booking, int numKeys) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public EList<IOrder> getOrders() {
@@ -299,7 +332,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IBooking getRelevantCheckInBookings(int personID) {
+	public EList<IBooking> getRelevantCheckInBookings(int personID) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -560,7 +593,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IRoom getRooms() {
+	public EList<IRoom> getRooms() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -674,16 +707,16 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HotelPackage.HOTEL_HOTEL___CHECK_IN__IBOOKING_INT:
-				return checkIn((IBooking)arguments.get(0), (Integer)arguments.get(1));
-			case HotelPackage.HOTEL_HOTEL___GET_BILL__IBOOKING:
-				return getBill((IBooking)arguments.get(0));
+			case HotelPackage.HOTEL_HOTEL___CHECK_IN__INT_INT:
+				return checkIn((Integer)arguments.get(0), (Integer)arguments.get(1));
+			case HotelPackage.HOTEL_HOTEL___GET_BILL__INT:
+				return getBill((Integer)arguments.get(0));
 			case HotelPackage.HOTEL_HOTEL___GET_BOOKINGS:
 				return getBookings();
-			case HotelPackage.HOTEL_HOTEL___PAY__IBOOKING:
-				return pay((IBooking)arguments.get(0));
-			case HotelPackage.HOTEL_HOTEL___CHECK_OUT__IBOOKING_INT:
-				return checkOut((IBooking)arguments.get(0), (Integer)arguments.get(1));
+			case HotelPackage.HOTEL_HOTEL___PAY__INT:
+				return pay((Integer)arguments.get(0));
+			case HotelPackage.HOTEL_HOTEL___CHECK_OUT__INT_INT:
+				return checkOut((Integer)arguments.get(0), (Integer)arguments.get(1));
 			case HotelPackage.HOTEL_HOTEL___GET_ORDERS:
 				return getOrders();
 			case HotelPackage.HOTEL_HOTEL___GET_RELEVANT_CHECK_IN_BOOKINGS__INT:

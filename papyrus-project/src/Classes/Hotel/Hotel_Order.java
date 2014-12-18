@@ -37,4 +37,12 @@ public interface Hotel_Order extends IOrder {
 	 */
 	EList<Hotel_Booking> getBooking();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model orderIDRequired="true" orderIDOrdered="false"
+	 * @generated
+	 */
+	void setID(int orderID);
+
 } // Hotel_Order

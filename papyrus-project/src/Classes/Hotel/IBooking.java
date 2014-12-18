@@ -87,6 +87,22 @@ public interface IBooking extends EObject {
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
-	int getId();
+	int getID();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	IRoom getIRoom();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isCheckedIn();
 
 } // IBooking

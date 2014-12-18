@@ -33,4 +33,12 @@ public interface IOrder extends EObject {
 	 */
 	int getCustomer();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	int getID();
+
 } // IOrder

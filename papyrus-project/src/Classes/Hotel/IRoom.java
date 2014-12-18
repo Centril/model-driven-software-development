@@ -42,14 +42,6 @@ public interface IRoom extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model idRequired="true" idOrdered="false"
-	 * @generated
-	 */
-	void setId(int id);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model numBedsRequired="true" numBedsOrdered="false"
 	 * @generated
 	 */

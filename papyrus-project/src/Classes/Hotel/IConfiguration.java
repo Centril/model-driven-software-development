@@ -5,6 +5,7 @@ package Classes.Hotel;
 import org.eclipse.emf.ecore.EObject;
 
 import Classes.Hotel.impl.Hotel_HotelImpl;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,9 +32,9 @@ public interface IConfiguration extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
+	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	IRoom getRooms();
+	EList<IRoom> getRooms();
 
 } // IConfiguration

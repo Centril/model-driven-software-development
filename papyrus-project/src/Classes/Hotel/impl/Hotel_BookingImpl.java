@@ -7,6 +7,7 @@ import Classes.Hotel.Hotel_Booking;
 import Classes.Hotel.Hotel_Occupancy;
 import Classes.Hotel.Hotel_Stay;
 
+import Classes.Hotel.IRoom;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -247,7 +248,51 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getId() {
+	public int getID() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IRoom getIRoom() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isCheckedIn() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setID(int id) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCheckedIn(boolean isCheckedIn) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -349,7 +394,17 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 				setPaid((Boolean)arguments.get(0));
 				return null;
 			case HotelPackage.HOTEL_BOOKING___GET_ID:
-				return getId();
+				return getID();
+			case HotelPackage.HOTEL_BOOKING___GET_IROOM:
+				return getIRoom();
+			case HotelPackage.HOTEL_BOOKING___IS_CHECKED_IN:
+				return isCheckedIn();
+			case HotelPackage.HOTEL_BOOKING___SET_ID__INT:
+				setID((Integer)arguments.get(0));
+				return null;
+			case HotelPackage.HOTEL_BOOKING___SET_CHECKED_IN__BOOLEAN:
+				setCheckedIn((Boolean)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

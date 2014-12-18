@@ -65,4 +65,28 @@ public interface IPersistenceService extends EObject {
 	 */
 	boolean addRoom(Hotel_Room room);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" orderIDRequired="true" orderIDOrdered="false"
+	 * @generated
+	 */
+	Hotel_Order getOrderById(int orderID);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	Hotel_Booking getBookings();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
+	 * @generated
+	 */
+	Hotel_Booking getBookingById(int bookingID);
+
 } // IPersistenceService

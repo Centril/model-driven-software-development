@@ -310,13 +310,6 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TmZSYoRWEeS_Fud_KU3BbA" value="1"/>
         </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_OauNUHvHEeSHatiNfZ-sGg" client="_CWQjwHpEEeSTh5yDLLqE0Q" supplier="_qX9ogHpMEeS2zv6zlhm8qQ" contract="_qX9ogHpMEeS2zv6zlhm8qQ"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_q88M8YbFEeSXNtfOmMNmAQ" name="getContact">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_q89bEIbFEeSXNtfOmMNmAQ" name="contact" direction="return">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_q8-CIIbFEeSXNtfOmMNmAQ" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_q8-pMIbFEeSXNtfOmMNmAQ" value="1"/>
-          </ownedParameter>
-        </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_ZpumcIbKEeSFtPtunm2T_g" name="setID">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_cUeVcIbKEeSFtPtunm2T_g" name="id">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>

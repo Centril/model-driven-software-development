@@ -73,4 +73,20 @@ public interface Hotel_Booking extends IBooking {
 	 */
 	void setOccupancy(Hotel_Occupancy value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model idRequired="true" idOrdered="false"
+	 * @generated
+	 */
+	void setID(int id);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model isCheckedInRequired="true" isCheckedInOrdered="false"
+	 * @generated
+	 */
+	void setCheckedIn(boolean isCheckedIn);
+
 } // Hotel_Booking

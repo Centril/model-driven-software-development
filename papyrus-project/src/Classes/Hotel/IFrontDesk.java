@@ -19,24 +19,24 @@ import Classes.Hotel.impl.Hotel_HotelImpl;
  */
 public interface IFrontDesk extends EObject {
 	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false" numKeysRequired="true" numKeysOrdered="false"
+	 * @generated
+	 */
+	boolean checkIn(int bookingID, int numKeys);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
+	 * @generated
+	 */
+	double getBill(int bookingID);
+
 	final IFrontDesk instance = Hotel_HotelImpl.getInstance();
 	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false" numKeysRequired="true" numKeysOrdered="false"
-	 * @generated
-	 */
-	boolean checkIn(IBooking booking, int numKeys);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false"
-	 * @generated
-	 */
-	double getBill(IBooking booking);
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -48,18 +48,18 @@ public interface IFrontDesk extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false"
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
 	 * @generated
 	 */
-	boolean pay(IBooking booking);
+	boolean pay(int bookingID);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false" numKeysRequired="true" numKeysOrdered="false"
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false" numKeysRequired="true" numKeysOrdered="false"
 	 * @generated
 	 */
-	boolean checkOut(IBooking booking, int numKeys);
+	boolean checkOut(int bookingID, int numKeys);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,9 +72,9 @@ public interface IFrontDesk extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" personIDRequired="true" personIDOrdered="false"
+	 * @model ordered="false" personIDRequired="true" personIDOrdered="false"
 	 * @generated
 	 */
-	IBooking getRelevantCheckInBookings(int personID);
+	EList<IBooking> getRelevantCheckInBookings(int personID);
 
 } // IFrontDesk
