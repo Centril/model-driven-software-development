@@ -219,7 +219,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 													creditcard.getFirstName(), creditcard.getLastName(), price);
 			
 			if(result) {
-				// TODO: Mark booking as payed somehow
+				booking.setPaid(true);
 				return true;
 			} else {
 				return false;
