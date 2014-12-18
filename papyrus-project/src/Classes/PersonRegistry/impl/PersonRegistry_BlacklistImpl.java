@@ -5,8 +5,11 @@ package Classes.PersonRegistry.impl;
 import Classes.PersonRegistry.PersonRegistryPackage;
 import Classes.PersonRegistry.PersonRegistry_Blacklist;
 import Classes.PersonRegistry.PersonRegistry_Person;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -35,13 +38,20 @@ public class PersonRegistry_BlacklistImpl extends MinimalEObjectImpl.Container i
 	 * @ordered
 	 */
 	protected EList<PersonRegistry_Person> people;
+	private static PersonRegistry_Blacklist instance;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected PersonRegistry_BlacklistImpl() {
-		super();
+		people = new BasicEList<PersonRegistry_Person>();
+	}
+	
+	public static PersonRegistry_Blacklist getInstance(){
+		if(instance == null)
+			return new PersonRegistry_BlacklistImpl();
+		return instance;
 	}
 
 	/**
@@ -57,34 +67,28 @@ public class PersonRegistry_BlacklistImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean isBlacklisted(PersonRegistry_Person person) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return people.contains(person);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean add(PersonRegistry_Person person) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return people.add(person);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean remove(PersonRegistry_Person person) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return people.remove(person);
 	}
 
 	/**
