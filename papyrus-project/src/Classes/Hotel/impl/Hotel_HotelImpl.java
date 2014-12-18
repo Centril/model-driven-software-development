@@ -220,7 +220,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	private Hotel_Booking findBooking(IBooking booking){
 		for(Hotel_Order order : persistenceService.getOrders()){
 			for(Hotel_Booking aBooking : order.getBooking()){
-				if(aBooking == booking){ //TODO: change to check with ID
+				if(aBooking.getID() == booking.getID()){
 					return aBooking;
 				}
 			}
