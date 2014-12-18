@@ -209,12 +209,11 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public double getBill(int bookingID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		IBooking booking = persistenceService.getBookingById(bookingID);
+		return booking.getPrice(); //A bill should include customer and price objects. But double...
 	}
 
 	private Hotel_Booking findBooking(IBooking booking){
@@ -227,16 +226,6 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		}
 		
 		return null;
-	}
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public double getBill(IBooking booking) {
-		return booking.getPrice(); //A bill should include customer and price objects. But double...
 	}
 
 	/**
@@ -255,37 +244,13 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean pay(int bookingID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean checkOut(int bookingID, int numKeys) {
-		Hotel_Booking booking = persistenceService.getBookingById(bookingID);
-		if(booking.isCheckedIn()){
-			return true;
-		}
-		return false;
-		// TODO: implement this method
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean pay(IBooking booking) {
+		IBooking booking = persistenceService.getBookingById(bookingID);
 		IPerson customer = personRegistry.getIPersonByID(booking.getCustomer());
 		ICreditCardInfo creditcard = customer.getCreditCard();
-		double price = getBill(booking);
+		double price = getBill(bookingID);
 		try {
 			//Not sure how we want to access bank component
 			boolean result = CustomerRequires.instance().makePayment(creditcard.getCCNumber(), creditcard.getCCV(), creditcard.getMonth(), creditcard.getYear(), 
@@ -302,8 +267,22 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			e.printStackTrace();
 			return false;
 		}
-		
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean checkOut(int bookingID, int numKeys) {
+		Hotel_Booking booking = persistenceService.getBookingById(bookingID);
+		if(booking.isCheckedIn()){
+			return true;
+		}
+		return false;
+		// TODO: implement this method
+	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
