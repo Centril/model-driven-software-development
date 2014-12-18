@@ -94,6 +94,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		super();
 
 		persistenceService = new Hotel_DummyPersistenceServiceImpl();
+		personRegistry = IPersonRegistry.instance;
 	}
 
 	/**

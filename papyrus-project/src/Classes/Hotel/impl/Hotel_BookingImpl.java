@@ -6,8 +6,9 @@ import Classes.Hotel.HotelPackage;
 import Classes.Hotel.Hotel_Booking;
 import Classes.Hotel.Hotel_Occupancy;
 import Classes.Hotel.Hotel_Stay;
-
 import Classes.Hotel.IRoom;
+import Classes.PersonRegistry.IPersonRegistry;
+
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -296,12 +297,13 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setCustomer(int customerId) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (IPersonRegistry.instance.getIPersonByID(customerId) == null) {
+			throw new IllegalArgumentException("Customer doesn't exist.");
+		}
+		this.customer = customerId;
 	}
 
 	/**
