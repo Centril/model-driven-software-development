@@ -18,7 +18,7 @@ import Classes.Hotel.impl.Hotel_HotelImpl;
  */
 public interface IConfiguration extends EObject {
 	
-	IConfiguration instance = Hotel_HotelImpl.getInstance();
+	final IConfiguration instance = Hotel_HotelImpl.getInstance();
 	
 	/**
 	 * <!-- begin-user-doc -->

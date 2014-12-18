@@ -19,7 +19,7 @@ import Classes.Hotel.impl.Hotel_HotelImpl;
  */
 public interface ISearch extends EObject {
 	
-	ISearch instance = Hotel_HotelImpl.getInstance();
+	final ISearch instance = Hotel_HotelImpl.getInstance();
 	
 	/**
 	 * <!-- begin-user-doc -->
