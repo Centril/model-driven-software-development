@@ -504,9 +504,6 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_q88M8IbFEeSXNtfOmMNmAQ" name="getOccupancy">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_uGZRMIbFEeSXNtfOmMNmAQ" type="_oSNI0Ho_EeSTh5yDLLqE0Q" direction="return"/>
-      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_2IPy8Ho8EeSTh5yDLLqE0Q" name="ISearch">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_zZgvQHpREeSTh5yDLLqE0Q" name="search" visibility="public">
