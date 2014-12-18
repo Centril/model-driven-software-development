@@ -722,6 +722,12 @@
     <packagedElement xmi:type="uml:Interface" xmi:id="_5aq-cIacEeSOfdq9lGlLAw" name="IConfiguration">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_DiMoEIadEeSOfdq9lGlLAw" name="createRoom">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_X2eZkIadEeSOfdq9lGlLAw" name="room" type="_GcRsYIRUEeS_Fud_KU3BbA" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_c6mhIIalEeSOfdq9lGlLAw" name="nbrOfBeds">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_fNE6EIalEeSOfdq9lGlLAw" name="basePrice">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_Did4YIaeEeSOfdq9lGlLAw" name="getRooms">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_cvnn4IafEeSOfdq9lGlLAw" type="_GcRsYIRUEeS_Fud_KU3BbA" direction="return"/>
