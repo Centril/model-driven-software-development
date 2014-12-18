@@ -2,7 +2,6 @@ package hotel.test;
 
 import static org.junit.Assert.*;
 
-import java.util.Calendar;
 import org.junit.Test;
 
 import Classes.PersonRegistry.IPerson;
@@ -23,9 +22,7 @@ public class PersonRegistryTest {
 		int year = 2077;
 		
 		// Send in data
-		Calendar birthDateCal = Calendar.getInstance();
-		birthDateCal.add(Calendar.YEAR, -18);
-		long birthDate = birthDateCal.getTimeInMillis();
+		long birthDate = -3581025132L;
 		IPerson created = registry.createPerson(birthDate);
 		created.setFirstName(firstName);
 		created.setLastName(lastName);
@@ -36,6 +33,7 @@ public class PersonRegistryTest {
 		
 		// Validate that the same is sent back when asking
 		IPerson sentBack = registry.getIPersonByID(personID);
+		assertEquals(birthDate, sentBack.getBirthDate());
 		assertEquals(firstName, sentBack.getFirstName());
 		assertEquals(lastName, sentBack.getLastName());
 		assertEquals(ssn, sentBack.getSSN());
