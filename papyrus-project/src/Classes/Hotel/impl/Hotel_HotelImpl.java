@@ -294,18 +294,19 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		ICreditCardInfo creditcard = customer.getCreditCard();
 		double price = getBill(booking);
 		try {
-			//Not sure how we want to access bank component
-			boolean result = CustomerRequires.instance().makePayment(creditcard.getCCNumber(), creditcard.getCCV(), creditcard.getMonth(), creditcard.getYear(), 
-													creditcard.getFirstName(), creditcard.getLastName(), price);
+			CustomerRequires bank = CustomerRequires.instance();
 			
-			if(result) {
-				booking.setPaid(true);
-				return true;
-			} else {
+			if (bank.isCreditCardValid(creditcard.getCCNumber(), creditcard.getCCV(), creditcard.getMonth(), creditcard.getYear(), creditcard.getFirstName(), creditcard.getLastName())) {
 				return false;
 			}
+			
+			if (bank.makePayment(creditcard.getCCNumber(), creditcard.getCCV(), creditcard.getMonth(), creditcard.getYear(), creditcard.getFirstName(), creditcard.getLastName(), price)) {
+				booking.setPaid(true);
+				return true;
+			}
+			return false;
+		
 		} catch (SOAPException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}
