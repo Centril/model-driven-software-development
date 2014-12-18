@@ -1036,7 +1036,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIConfiguration__CreateRoom() {
+	public EOperation getIConfiguration__CreateRoom__int_double() {
 		return iConfigurationEClass.getEOperations().get(0);
 	}
 
@@ -1218,7 +1218,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		createEOperation(bookingRequestEClass, BOOKING_REQUEST___GET_GUESTS);
 
 		iConfigurationEClass = createEClass(ICONFIGURATION);
-		createEOperation(iConfigurationEClass, ICONFIGURATION___CREATE_ROOM);
+		createEOperation(iConfigurationEClass, ICONFIGURATION___CREATE_ROOM__INT_DOUBLE);
 		createEOperation(iConfigurationEClass, ICONFIGURATION___GET_ROOMS);
 
 		hotel_DummyPersistenceServiceEClass = createEClass(HOTEL_DUMMY_PERSISTENCE_SERVICE);
@@ -1457,7 +1457,9 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 
 		initEClass(iConfigurationEClass, IConfiguration.class, "IConfiguration", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEOperation(getIConfiguration__CreateRoom(), this.getIRoom(), "createRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIConfiguration__CreateRoom__int_double(), this.getIRoom(), "createRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "nbrOfBeds", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "basePrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getIConfiguration__GetRooms(), this.getIRoom(), "getRooms", 1, 1, IS_UNIQUE, !IS_ORDERED);
 

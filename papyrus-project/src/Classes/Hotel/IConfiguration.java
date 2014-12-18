@@ -18,10 +18,10 @@ public interface IConfiguration extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false"
+	 * @model required="true" ordered="false" nbrOfBedsRequired="true" nbrOfBedsOrdered="false" basePriceRequired="true" basePriceOrdered="false"
 	 * @generated
 	 */
-	IRoom createRoom();
+	IRoom createRoom(int nbrOfBeds, double basePrice);
 
 	/**
 	 * <!-- begin-user-doc -->

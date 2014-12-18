@@ -499,12 +499,12 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public IRoom createRoom() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public IRoom createRoom(int nbrOfBeds, double basePrice) {
+		Hotel_RoomImpl room = new Hotel_RoomImpl(nbrOfBeds, basePrice);
+		persistenceService.addRoom(room);
+		return room;
 	}
 
 	/**
@@ -610,7 +610,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		}
 		if (baseClass == IConfiguration.class) {
 			switch (baseOperationID) {
-				case HotelPackage.ICONFIGURATION___CREATE_ROOM: return HotelPackage.HOTEL_HOTEL___CREATE_ROOM;
+				case HotelPackage.ICONFIGURATION___CREATE_ROOM__INT_DOUBLE: return HotelPackage.HOTEL_HOTEL___CREATE_ROOM__INT_DOUBLE;
 				case HotelPackage.ICONFIGURATION___GET_ROOMS: return HotelPackage.HOTEL_HOTEL___GET_ROOMS;
 				default: return -1;
 			}
@@ -642,8 +642,8 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				return search((Long)arguments.get(0), (Long)arguments.get(1), (Integer)arguments.get(2));
 			case HotelPackage.HOTEL_HOTEL___PLACE_ORDER__ORDERREQUEST:
 				return placeOrder((OrderRequest)arguments.get(0));
-			case HotelPackage.HOTEL_HOTEL___CREATE_ROOM:
-				return createRoom();
+			case HotelPackage.HOTEL_HOTEL___CREATE_ROOM__INT_DOUBLE:
+				return createRoom((Integer)arguments.get(0), (Double)arguments.get(1));
 			case HotelPackage.HOTEL_HOTEL___GET_ROOMS:
 				return getRooms();
 		}

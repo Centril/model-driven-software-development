@@ -1257,7 +1257,7 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_HOTEL___CREATE_ROOM = IFRONT_DESK_OPERATION_COUNT + 2;
+	int HOTEL_HOTEL___CREATE_ROOM__INT_DOUBLE = IFRONT_DESK_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get Rooms</em>' operation.
@@ -1561,7 +1561,7 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICONFIGURATION___CREATE_ROOM = 0;
+	int ICONFIGURATION___CREATE_ROOM__INT_DOUBLE = 0;
 
 	/**
 	 * The operation id for the '<em>Get Rooms</em>' operation.
@@ -2551,14 +2551,14 @@ public interface HotelPackage extends EPackage {
 	EClass getIConfiguration();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.Hotel.IConfiguration#createRoom() <em>Create Room</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.Hotel.IConfiguration#createRoom(int, double) <em>Create Room</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create Room</em>' operation.
-	 * @see Classes.Hotel.IConfiguration#createRoom()
+	 * @see Classes.Hotel.IConfiguration#createRoom(int, double)
 	 * @generated
 	 */
-	EOperation getIConfiguration__CreateRoom();
+	EOperation getIConfiguration__CreateRoom__int_double();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.Hotel.IConfiguration#getRooms() <em>Get Rooms</em>}' operation.
@@ -3364,7 +3364,7 @@ public interface HotelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ICONFIGURATION___CREATE_ROOM = eINSTANCE.getIConfiguration__CreateRoom();
+		EOperation ICONFIGURATION___CREATE_ROOM__INT_DOUBLE = eINSTANCE.getIConfiguration__CreateRoom__int_double();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Rooms</b></em>' operation.

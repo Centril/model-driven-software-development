@@ -4,6 +4,7 @@ package Classes.Hotel.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -64,12 +65,14 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 */
 	protected EList<Hotel_Occupancy> occupancies;
 	
+	private AtomicInteger baseId = new AtomicInteger(0);
+	
 	private void init() {
 		orders = new BasicEList<Hotel_Order>();
 		
 		rooms = new BasicEList<Hotel_Room>();
 		for (int i = 0; i < 100; i++) {
-			addRoom(new Hotel_RoomImpl(i % 5 + 1, 100.0 * i + 100, i, ""));
+			addRoom(new Hotel_RoomImpl((i % 5) + 1, 100.0 * i + 100));
 		}
 		
 		occupancies = new BasicEList<Hotel_Occupancy>();
@@ -176,6 +179,7 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * @generated NOT
 	 */
 	public boolean addRoom(Hotel_Room room) {
+		room.setId(baseId.getAndIncrement());
 		return rooms.add(room);
 	}
 

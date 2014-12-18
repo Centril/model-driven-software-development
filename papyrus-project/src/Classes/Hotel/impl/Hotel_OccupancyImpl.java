@@ -5,10 +5,7 @@ package Classes.Hotel.impl;
 import Classes.Hotel.HotelPackage;
 import Classes.Hotel.Hotel_Occupancy;
 import Classes.Hotel.Hotel_Room;
-import Classes.Hotel.IRoom;
-
 import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
