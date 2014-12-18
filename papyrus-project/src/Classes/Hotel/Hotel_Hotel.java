@@ -21,7 +21,7 @@ import Classes.PersonRegistry.IPersonRegistry;
  * @model
  * @generated
  */
-public interface Hotel_Hotel extends IFrontDesk, ISearch, IOrdering {
+public interface Hotel_Hotel extends IFrontDesk, ISearch, IOrdering, IConfiguration {
 	/**
 	 * Returns the value of the '<em><b>Person Registry</b></em>' reference.
 	 * <!-- begin-user-doc -->

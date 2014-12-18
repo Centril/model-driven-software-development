@@ -305,13 +305,6 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TmZSYoRWEeS_Fud_KU3BbA" value="1"/>
         </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_OauNUHvHEeSHatiNfZ-sGg" client="_CWQjwHpEEeSTh5yDLLqE0Q" supplier="_qX9ogHpMEeS2zv6zlhm8qQ" contract="_qX9ogHpMEeS2zv6zlhm8qQ"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_k-hjAIafEeSNheO0P0uV7g" name="getContact">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_k-mbgIafEeSNheO0P0uV7g" name="contact" direction="return">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_k-npoIafEeSNheO0P0uV7g" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k-oQsIafEeSNheO0P0uV7g" value="1"/>
-          </ownedParameter>
-        </ownedOperation>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Association" xmi:id="_iVwmQHpEEeSTh5yDLLqE0Q" memberEnd="_iVwmQXpEEeSTh5yDLLqE0Q _iVncUHpEEeSTh5yDLLqE0Q">
         <name xsi:nil="true"/>
@@ -362,6 +355,7 @@
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_w6KdAHvHEeSHatiNfZ-sGg" client="_u9vzoHvHEeSHatiNfZ-sGg" supplier="_YptNIHpDEeS2zv6zlhm8qQ" contract="_YptNIHpDEeS2zv6zlhm8qQ"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_iMYzwIRIEeS-E_c58KLc5g" client="_u9vzoHvHEeSHatiNfZ-sGg" supplier="_2IPy8Ho8EeSTh5yDLLqE0Q" contract="_2IPy8Ho8EeSTh5yDLLqE0Q"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_VBZ-MIReEeS-E_c58KLc5g" client="_u9vzoHvHEeSHatiNfZ-sGg" supplier="_Alz5MIRdEeS-E_c58KLc5g" contract="_Alz5MIRdEeS-E_c58KLc5g"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_z_lZUIadEeSOfdq9lGlLAw" client="_u9vzoHvHEeSHatiNfZ-sGg" supplier="_5aq-cIacEeSOfdq9lGlLAw" contract="_5aq-cIacEeSOfdq9lGlLAw"/>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Association" xmi:id="_SKXrs3vDEeSHatiNfZ-sGg" memberEnd="_SKXrtHvDEeSHatiNfZ-sGg _SKXrsHvDEeSHatiNfZ-sGg">
         <ownedEnd xmi:type="uml:Property" xmi:id="_SKXrtHvDEeSHatiNfZ-sGg" name="bookingSuggestion" type="_9NVDcHo1EeSTh5yDLLqE0Q" association="_SKXrs3vDEeSHatiNfZ-sGg">
@@ -482,12 +476,12 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_k-ZAIIafEeSNheO0P0uV7g" name="isPayed">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_k-ZAIIafEeSNheO0P0uV7g" name="isPaid">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_IXLSoIagEeSNheO0P0uV7g" name="isPayed" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_JUyKYIagEeSNheO0P0uV7g" name="setPayed">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JUyKYIagEeSNheO0P0uV7g" name="setPaid">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_QdWvkIagEeSNheO0P0uV7g" name="state">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
@@ -725,6 +719,20 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Usage" xmi:id="_GAJcAIX_EeSgO4VnRKF4fQ" client="_YptNIHpDEeS2zv6zlhm8qQ" supplier="_swvogIQ2EeSXhZNlyip4WA"/>
     <packagedElement xmi:type="uml:Usage" xmi:id="_GmpbUIX_EeSgO4VnRKF4fQ" client="_YptNIHpDEeS2zv6zlhm8qQ" supplier="_apbBUIQ3EeSXhZNlyip4WA"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_5aq-cIacEeSOfdq9lGlLAw" name="IConfiguration">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_DiMoEIadEeSOfdq9lGlLAw" name="createRoom">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_X2eZkIadEeSOfdq9lGlLAw" name="room" type="_GcRsYIRUEeS_Fud_KU3BbA" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_c6mhIIalEeSOfdq9lGlLAw" name="nbrOfBeds">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_fNE6EIalEeSOfdq9lGlLAw" name="basePrice">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Did4YIaeEeSOfdq9lGlLAw" name="getRooms">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cvnn4IafEeSOfdq9lGlLAw" type="_GcRsYIRUEeS_Fud_KU3BbA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_yWHgwHyPEeSahu9FXjYTpw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yYNLcHyPEeSahu9FXjYTpw" source="http://www.eclipse.org/uml2/2.0.0/UML">

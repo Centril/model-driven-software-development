@@ -50,6 +50,8 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	//Expected dates for checking in and out
 	private long checkInDate, checkOutDate;
 	
+	private boolean isPaid = false;
+	
 
 	/**
 	 * The cached value of the '{@link #getOccupancy() <em>Occupancy</em>}' reference.
@@ -225,6 +227,24 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean isPaid() {
+		return isPaid;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setPaid(boolean state) {
+		isPaid = state;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -312,6 +332,11 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 				return getCheckOutDate();
 			case HotelPackage.HOTEL_BOOKING___GET_CUSTOMER:
 				return getCustomer();
+			case HotelPackage.HOTEL_BOOKING___IS_PAID:
+				return isPaid();
+			case HotelPackage.HOTEL_BOOKING___SET_PAID__BOOLEAN:
+				setPaid((Boolean)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

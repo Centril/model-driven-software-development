@@ -29,6 +29,7 @@ import Classes.Hotel.Hotel_Room;
 import Classes.Hotel.Hotel_SearchResult;
 import Classes.Hotel.IBooking;
 import Classes.Hotel.IBookingSuggestion;
+import Classes.Hotel.IConfiguration;
 import Classes.Hotel.IOrder;
 import Classes.Hotel.IOrdering;
 import Classes.Hotel.IPersistenceService;
@@ -233,7 +234,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 													creditcard.getFirstName(), creditcard.getLastName(), price);
 			
 			if(result) {
-				// TODO: Mark booking as payed somehow
+				booking.setPaid(true);
 				return true;
 			} else {
 				return false;
@@ -404,14 +405,13 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		return null;
 	}
 	
-	// TODO: Required age should be configurable (or in our case at least make it a bit easier to change)
-	private boolean personIsYoungerThan15(IPerson person) {
+	private boolean personIsYoungerThanX(IPerson person, int x) {
 		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.YEAR, -15);
-		Date fifteenYearsAgo = calendar.getTime();
+		calendar.add(Calendar.YEAR, - x);
+		Date xYearsAgo = calendar.getTime();
 		
 		Date personBirthDate = new Date(person.getBirthDate());
-		return fifteenYearsAgo.before(personBirthDate);
+		return xYearsAgo.before(personBirthDate);
 	}
 	
 	private boolean hasValidPaymentInfo(IPerson person) {
@@ -438,7 +438,8 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			return false;
 			//throw new RuntimeException("Customer does not exist.");
 		}
-		if (personIsYoungerThan15(customer)) {
+		//TODO: Maybe required age shouldn't be hardcoded
+		if (personIsYoungerThanX(customer, 15)) {
 			return false;
 			//throw new RuntimeException("Customer is younger than 15.");
 		}
@@ -508,6 +509,28 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		}
 		
 		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public IRoom createRoom(int nbrOfBeds, double basePrice) {
+		Hotel_RoomImpl room = new Hotel_RoomImpl(nbrOfBeds, basePrice);
+		persistenceService.addRoom(room);
+		return room;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IRoom getRooms() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -600,6 +623,13 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				default: return -1;
 			}
 		}
+		if (baseClass == IConfiguration.class) {
+			switch (baseOperationID) {
+				case HotelPackage.ICONFIGURATION___CREATE_ROOM__INT_DOUBLE: return HotelPackage.HOTEL_HOTEL___CREATE_ROOM__INT_DOUBLE;
+				case HotelPackage.ICONFIGURATION___GET_ROOMS: return HotelPackage.HOTEL_HOTEL___GET_ROOMS;
+				default: return -1;
+			}
+		}
 		return super.eDerivedOperationID(baseOperationID, baseClass);
 	}
 
@@ -627,6 +657,10 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				return search((Long)arguments.get(0), (Long)arguments.get(1), (Integer)arguments.get(2));
 			case HotelPackage.HOTEL_HOTEL___PLACE_ORDER__ORDERREQUEST:
 				return placeOrder((OrderRequest)arguments.get(0));
+			case HotelPackage.HOTEL_HOTEL___CREATE_ROOM__INT_DOUBLE:
+				return createRoom((Integer)arguments.get(0), (Double)arguments.get(1));
+			case HotelPackage.HOTEL_HOTEL___GET_ROOMS:
+				return getRooms();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

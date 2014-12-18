@@ -7,8 +7,11 @@ import Classes.PersonRegistry.PersonRegistryPackage;
 import Classes.PersonRegistry.PersonRegistry_Blacklist;
 import Classes.PersonRegistry.PersonRegistry_Person;
 import Classes.PersonRegistry.PersonRegistry_PersonRegistry;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -33,6 +36,9 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * @generated
  */
 public class PersonRegistry_PersonRegistryImpl extends MinimalEObjectImpl.Container implements PersonRegistry_PersonRegistry {
+	
+	static AtomicInteger baseId = new AtomicInteger(154);
+	
 	/**
 	 * The cached value of the '{@link #getPeople() <em>People</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -149,7 +155,7 @@ public class PersonRegistry_PersonRegistryImpl extends MinimalEObjectImpl.Contai
 	 * @generated NOT
 	 */
 	public IPerson createPerson(long birthDate) {
-		int id = 0; // TODO: Get unique ID somehow, maybe add PersonService.createPerson()
+		int id = baseId.getAndIncrement();
 		long now = System.currentTimeMillis();
 		PersonRegistry_Person person = new PersonRegistry_PersonImpl(id, birthDate, now);
 		this.people.add(person);

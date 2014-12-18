@@ -4,6 +4,7 @@ package Classes.Hotel.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -12,6 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import Classes.Hotel.HotelPackage;
+import Classes.Hotel.Hotel_Booking;
 import Classes.Hotel.Hotel_DummyPersistenceService;
 import Classes.Hotel.Hotel_Occupancy;
 import Classes.Hotel.Hotel_Order;
@@ -63,12 +65,14 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 */
 	protected EList<Hotel_Occupancy> occupancies;
 	
+	private AtomicInteger baseId = new AtomicInteger(0);
+	
 	private void init() {
 		orders = new BasicEList<Hotel_Order>();
 		
 		rooms = new BasicEList<Hotel_Room>();
 		for (int i = 0; i < 100; i++) {
-			addRoom(new Hotel_RoomImpl(i % 5 + 1, 100.0 * i + 100, i, ""));
+			addRoom(new Hotel_RoomImpl((i % 5) + 1, 100.0 * i + 100));
 		}
 		
 		occupancies = new BasicEList<Hotel_Occupancy>();
@@ -162,6 +166,10 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * @generated NOT
 	 */
 	public boolean addOrder(Hotel_Order order) {
+		// TODO: Fulahck
+		for (Hotel_Booking booking : order.getBooking()) {
+			occupancies.add(booking.getOccupancy());
+		}
 		return orders.add(order);
 	}
 
@@ -171,6 +179,7 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * @generated NOT
 	 */
 	public boolean addRoom(Hotel_Room room) {
+		room.setId(baseId.getAndIncrement());
 		return rooms.add(room);
 	}
 
