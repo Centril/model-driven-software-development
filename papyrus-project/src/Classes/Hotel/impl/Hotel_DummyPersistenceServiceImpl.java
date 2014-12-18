@@ -194,9 +194,11 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	 * @generated
 	 */
 	public Hotel_Order getOrderById(int orderID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for(Hotel_Order order : orders){
+			if(order.getID() == orderID)
+				return order;
+		}
+		return null;
 	}
 
 	/**
