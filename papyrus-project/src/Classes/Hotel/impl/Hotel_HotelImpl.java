@@ -401,6 +401,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		}
 	}
 	
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -470,8 +471,10 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			EList<Hotel_Booking> creatBookings = new BasicEList<>();
 			for (BookingRequest bookingReq : orderRequest.getBookingRequests()) {
 				
+				Hotel_OccupancyImpl occupancy = new Hotel_OccupancyImpl(bookingReq.getBookingSuggestion().getStartTime(), bookingReq.getBookingSuggestion().getEndTime(), persistenceService.getRoomById(bookingReq.getBookingSuggestion().getRoom().getId()));
+				
 				Hotel_Booking tempBooking = new Hotel_BookingImpl(bookingReq.getGuests(), bookingReq.getContact(), orderRequest.getCustomer(),
-				     bookingReq.getBookingSuggestion().getPrice(), bookingReq.getBookingSuggestion().getStartTime(), bookingReq.getBookingSuggestion().getEndTime());
+				     bookingReq.getBookingSuggestion().getPrice(), bookingReq.getBookingSuggestion().getStartTime(), bookingReq.getBookingSuggestion().getEndTime(), occupancy);
 			
 				// TODO: WTF? What happan with the room?
 				creatBookings.add(tempBooking);

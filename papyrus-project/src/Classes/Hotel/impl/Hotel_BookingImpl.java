@@ -70,12 +70,13 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	}
 	
 	//TODO: Should have more implementation, stay and occupancy probably
-	protected Hotel_BookingImpl(EList<Integer> guests, int contact, int customer, double price, long checkInDate, long checkOutDate){
+	protected Hotel_BookingImpl(EList<Integer> guests, int contact, int customer, double price, long checkInDate, long checkOutDate, Hotel_OccupancyImpl occupancy){
 		this.guests = guests;
 		this.contact = contact;
 		this.initialPrice = price;
 		this.checkInDate = checkInDate;
 		this.checkOutDate = checkOutDate;
+		this.occupancy = occupancy;
 	}
 
 	/**

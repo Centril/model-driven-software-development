@@ -56,7 +56,7 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 		if(roomInfo == null)
 			this.roomInfo = "";
 		else
-		this.roomInfo = roomInfo;
+			this.roomInfo = roomInfo;
 	}
 
 	/**
