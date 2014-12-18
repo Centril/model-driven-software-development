@@ -363,10 +363,13 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		EList<Hotel_Occupancy> occupancies = persistenceService.getOccupancies();
 		
 		for (Hotel_Occupancy occupancy : occupancies) {
-			if (room.getId() == occupancy.getRoom().getId()) {
-				// Basic 1-dimensional box collision detection
-				if (endTime > occupancy.getStartTime() && startTime < occupancy.getEndTime()) {
-					return false;
+			if (occupancy.getRoom() != null) {
+				if (room.getId() == occupancy.getRoom().getId()) {
+			
+					// Basic 1-dimensional box collision detection
+					if (endTime > occupancy.getStartTime() && startTime < occupancy.getEndTime()) {
+						return false;
+					}
 				}
 			}
 		}
