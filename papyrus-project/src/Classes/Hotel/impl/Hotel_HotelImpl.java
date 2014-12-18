@@ -588,8 +588,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				
 				Hotel_Booking tempBooking = new Hotel_BookingImpl(bookingReq.getGuests(), bookingReq.getContact(), orderRequest.getCustomer(),
 				     bookingReq.getBookingSuggestion().getPrice(), bookingReq.getBookingSuggestion().getStartTime(), bookingReq.getBookingSuggestion().getEndTime(), occupancy);
-			
-				// TODO: WTF? What happan with the room?
+				
 				creatBookings.add(tempBooking);
 			}
 			
