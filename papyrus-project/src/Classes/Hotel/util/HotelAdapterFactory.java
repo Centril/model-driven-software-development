@@ -148,6 +148,10 @@ public class HotelAdapterFactory extends AdapterFactoryImpl {
 				return createBookingRequestAdapter();
 			}
 			@Override
+			public Adapter caseIConfiguration(IConfiguration object) {
+				return createIConfigurationAdapter();
+			}
+			@Override
 			public Adapter caseHotel_DummyPersistenceService(Hotel_DummyPersistenceService object) {
 				return createHotel_DummyPersistenceServiceAdapter();
 			}
@@ -448,6 +452,20 @@ public class HotelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBookingRequestAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Classes.Hotel.IConfiguration <em>IConfiguration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Classes.Hotel.IConfiguration
+	 * @generated
+	 */
+	public Adapter createIConfigurationAdapter() {
 		return null;
 	}
 

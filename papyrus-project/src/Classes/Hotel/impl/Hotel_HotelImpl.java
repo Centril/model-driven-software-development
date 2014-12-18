@@ -29,6 +29,7 @@ import Classes.Hotel.Hotel_Room;
 import Classes.Hotel.Hotel_SearchResult;
 import Classes.Hotel.IBooking;
 import Classes.Hotel.IBookingSuggestion;
+import Classes.Hotel.IConfiguration;
 import Classes.Hotel.IOrder;
 import Classes.Hotel.IOrdering;
 import Classes.Hotel.IPersistenceService;
@@ -500,6 +501,28 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public IRoom createRoom() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IRoom getRooms() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -585,6 +608,13 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				default: return -1;
 			}
 		}
+		if (baseClass == IConfiguration.class) {
+			switch (baseOperationID) {
+				case HotelPackage.ICONFIGURATION___CREATE_ROOM: return HotelPackage.HOTEL_HOTEL___CREATE_ROOM;
+				case HotelPackage.ICONFIGURATION___GET_ROOMS: return HotelPackage.HOTEL_HOTEL___GET_ROOMS;
+				default: return -1;
+			}
+		}
 		return super.eDerivedOperationID(baseOperationID, baseClass);
 	}
 
@@ -612,6 +642,10 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				return search((Long)arguments.get(0), (Long)arguments.get(1), (Integer)arguments.get(2));
 			case HotelPackage.HOTEL_HOTEL___PLACE_ORDER__ORDERREQUEST:
 				return placeOrder((OrderRequest)arguments.get(0));
+			case HotelPackage.HOTEL_HOTEL___CREATE_ROOM:
+				return createRoom();
+			case HotelPackage.HOTEL_HOTEL___GET_ROOMS:
+				return getRooms();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

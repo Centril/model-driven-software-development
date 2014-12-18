@@ -227,6 +227,28 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isPaid() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPaid(boolean state) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -312,6 +334,11 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 				return getCheckOutDate();
 			case HotelPackage.HOTEL_BOOKING___GET_CUSTOMER:
 				return getCustomer();
+			case HotelPackage.HOTEL_BOOKING___IS_PAID:
+				return isPaid();
+			case HotelPackage.HOTEL_BOOKING___SET_PAID__BOOLEAN:
+				setPaid((Boolean)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

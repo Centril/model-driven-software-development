@@ -155,6 +155,7 @@ public class HotelSwitch<T> extends Switch<T> {
 				if (result == null) result = caseIFrontDesk(hotel_Hotel);
 				if (result == null) result = caseISearch(hotel_Hotel);
 				if (result == null) result = caseIOrdering(hotel_Hotel);
+				if (result == null) result = caseIConfiguration(hotel_Hotel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -191,6 +192,12 @@ public class HotelSwitch<T> extends Switch<T> {
 			case HotelPackage.BOOKING_REQUEST: {
 				BookingRequest bookingRequest = (BookingRequest)theEObject;
 				T result = caseBookingRequest(bookingRequest);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HotelPackage.ICONFIGURATION: {
+				IConfiguration iConfiguration = (IConfiguration)theEObject;
+				T result = caseIConfiguration(iConfiguration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -502,6 +509,21 @@ public class HotelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBookingRequest(BookingRequest object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IConfiguration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IConfiguration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIConfiguration(IConfiguration object) {
 		return null;
 	}
 

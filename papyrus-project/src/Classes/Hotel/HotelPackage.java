@@ -567,13 +567,31 @@ public interface HotelPackage extends EPackage {
 	int IBOOKING___GET_CUSTOMER = 5;
 
 	/**
+	 * The operation id for the '<em>Is Paid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING___IS_PAID = 6;
+
+	/**
+	 * The operation id for the '<em>Set Paid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING___SET_PAID__BOOLEAN = 7;
+
+	/**
 	 * The number of operations of the '<em>IBooking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_OPERATION_COUNT = 6;
+	int IBOOKING_OPERATION_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.impl.Hotel_BookingImpl <em>Hotel Booking</em>}' class.
@@ -665,6 +683,24 @@ public interface HotelPackage extends EPackage {
 	 * @ordered
 	 */
 	int HOTEL_BOOKING___GET_CUSTOMER = IBOOKING___GET_CUSTOMER;
+
+	/**
+	 * The operation id for the '<em>Is Paid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_BOOKING___IS_PAID = IBOOKING___IS_PAID;
+
+	/**
+	 * The operation id for the '<em>Set Paid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_BOOKING___SET_PAID__BOOLEAN = IBOOKING___SET_PAID__BOOLEAN;
 
 	/**
 	 * The number of operations of the '<em>Hotel Booking</em>' class.
@@ -1215,13 +1251,31 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_HOTEL___PLACE_ORDER__ORDERREQUEST = IFRONT_DESK_OPERATION_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Create Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_HOTEL___CREATE_ROOM = IFRONT_DESK_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_HOTEL___GET_ROOMS = IFRONT_DESK_OPERATION_COUNT + 3;
+
+	/**
 	 * The number of operations of the '<em>Hotel Hotel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_HOTEL_OPERATION_COUNT = IFRONT_DESK_OPERATION_COUNT + 2;
+	int HOTEL_HOTEL_OPERATION_COUNT = IFRONT_DESK_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.IPersistenceService <em>IPersistence Service</em>}' class.
@@ -1482,6 +1536,52 @@ public interface HotelPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link Classes.Hotel.IConfiguration <em>IConfiguration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Classes.Hotel.IConfiguration
+	 * @see Classes.Hotel.impl.HotelPackageImpl#getIConfiguration()
+	 * @generated
+	 */
+	int ICONFIGURATION = 20;
+
+	/**
+	 * The number of structural features of the '<em>IConfiguration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ICONFIGURATION_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Create Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ICONFIGURATION___CREATE_ROOM = 0;
+
+	/**
+	 * The operation id for the '<em>Get Rooms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ICONFIGURATION___GET_ROOMS = 1;
+
+	/**
+	 * The number of operations of the '<em>IConfiguration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ICONFIGURATION_OPERATION_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl <em>Hotel Dummy Persistence Service</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1489,7 +1589,7 @@ public interface HotelPackage extends EPackage {
 	 * @see Classes.Hotel.impl.HotelPackageImpl#getHotel_DummyPersistenceService()
 	 * @generated
 	 */
-	int HOTEL_DUMMY_PERSISTENCE_SERVICE = 20;
+	int HOTEL_DUMMY_PERSISTENCE_SERVICE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Orders</b></em>' reference list.
@@ -1954,6 +2054,26 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIBooking__GetCustomer();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IBooking#isPaid() <em>Is Paid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Paid</em>' operation.
+	 * @see Classes.Hotel.IBooking#isPaid()
+	 * @generated
+	 */
+	EOperation getIBooking__IsPaid();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IBooking#setPaid(boolean) <em>Set Paid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Paid</em>' operation.
+	 * @see Classes.Hotel.IBooking#setPaid(boolean)
+	 * @generated
+	 */
+	EOperation getIBooking__SetPaid__boolean();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.Hotel_Order <em>Hotel Order</em>}'.
@@ -2421,6 +2541,36 @@ public interface HotelPackage extends EPackage {
 	EOperation getBookingRequest__GetGuests();
 
 	/**
+	 * Returns the meta object for class '{@link Classes.Hotel.IConfiguration <em>IConfiguration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>IConfiguration</em>'.
+	 * @see Classes.Hotel.IConfiguration
+	 * @generated
+	 */
+	EClass getIConfiguration();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IConfiguration#createRoom() <em>Create Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Room</em>' operation.
+	 * @see Classes.Hotel.IConfiguration#createRoom()
+	 * @generated
+	 */
+	EOperation getIConfiguration__CreateRoom();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IConfiguration#getRooms() <em>Get Rooms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Rooms</em>' operation.
+	 * @see Classes.Hotel.IConfiguration#getRooms()
+	 * @generated
+	 */
+	EOperation getIConfiguration__GetRooms();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.Hotel_DummyPersistenceService <em>Hotel Dummy Persistence Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2787,6 +2937,22 @@ public interface HotelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IBOOKING___GET_CUSTOMER = eINSTANCE.getIBooking__GetCustomer();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Paid</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IBOOKING___IS_PAID = eINSTANCE.getIBooking__IsPaid();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Paid</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IBOOKING___SET_PAID__BOOLEAN = eINSTANCE.getIBooking__SetPaid__boolean();
 
 		/**
 		 * The meta object literal for the '{@link Classes.Hotel.impl.Hotel_OrderImpl <em>Hotel Order</em>}' class.
@@ -3181,6 +3347,32 @@ public interface HotelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation BOOKING_REQUEST___GET_GUESTS = eINSTANCE.getBookingRequest__GetGuests();
+
+		/**
+		 * The meta object literal for the '{@link Classes.Hotel.IConfiguration <em>IConfiguration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Classes.Hotel.IConfiguration
+		 * @see Classes.Hotel.impl.HotelPackageImpl#getIConfiguration()
+		 * @generated
+		 */
+		EClass ICONFIGURATION = eINSTANCE.getIConfiguration();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ICONFIGURATION___CREATE_ROOM = eINSTANCE.getIConfiguration__CreateRoom();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Rooms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ICONFIGURATION___GET_ROOMS = eINSTANCE.getIConfiguration__GetRooms();
 
 		/**
 		 * The meta object literal for the '{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl <em>Hotel Dummy Persistence Service</em>}' class.
