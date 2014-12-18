@@ -188,15 +188,21 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean checkIn(IBooking booking, int numKeys) {
 		if(findBooking(booking) == null){
-			
+			return false; //requested booking to check in doesn't exist
 		}
+		
+		Calendar cal = Calendar.getInstance();
+		Date checkInDate = new Date(booking.getCheckInDate());
+		Date checkOutDate = new Date(booking.getCheckOutDate());
+		if(cal.getTime().after(checkInDate) && cal.getTime().before(checkOutDate)){
+			//TODO do check in things
+		}
+		
 		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
