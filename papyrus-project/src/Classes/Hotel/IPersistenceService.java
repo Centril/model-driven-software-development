@@ -76,10 +76,10 @@ public interface IPersistenceService extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
+	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	Hotel_Booking getBookings();
+	EList<Hotel_Booking> getBookings();
 
 	/**
 	 * <!-- begin-user-doc -->

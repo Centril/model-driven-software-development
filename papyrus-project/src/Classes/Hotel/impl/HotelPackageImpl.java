@@ -703,6 +703,15 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getHotel_Order__AddBooking__Hotel_Booking() {
+		return hotel_OrderEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIOrder() {
 		return iOrderEClass;
 	}
@@ -1303,6 +1312,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		createEReference(hotel_OrderEClass, HOTEL_ORDER__BOOKING);
 		createEOperation(hotel_OrderEClass, HOTEL_ORDER___SET_ID__INT);
 		createEOperation(hotel_OrderEClass, HOTEL_ORDER___SET_CUSTOMER__INT);
+		createEOperation(hotel_OrderEClass, HOTEL_ORDER___ADD_BOOKING__HOTEL_BOOKING);
 
 		iOrderEClass = createEClass(IORDER);
 		createEOperation(iOrderEClass, IORDER___GET_BOOKINGS);
@@ -1528,6 +1538,9 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		op = initEOperation(getHotel_Order__SetCustomer__int(), null, "setCustomer", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "customerId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		op = initEOperation(getHotel_Order__AddBooking__Hotel_Booking(), null, "addBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getHotel_Booking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(iOrderEClass, IOrder.class, "IOrder", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEOperation(getIOrder__GetBookings(), this.getIBooking(), "getBookings", 1, -1, IS_UNIQUE, !IS_ORDERED);
@@ -1585,7 +1598,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		op = initEOperation(getIPersistenceService__GetOrderById__int(), this.getHotel_Order(), "getOrderById", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "orderID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getIPersistenceService__GetBookings(), this.getHotel_Booking(), "getBookings", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getIPersistenceService__GetBookings(), this.getHotel_Booking(), "getBookings", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIPersistenceService__GetBookingById__int(), this.getHotel_Booking(), "getBookingById", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
