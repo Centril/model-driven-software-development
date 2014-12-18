@@ -1,11 +1,11 @@
 package hotel.test;
 
+import static org.junit.Assert.assertTrue;
+
 import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
-import Classes.Hotel.HotelFactory;
 import Classes.Hotel.IBookingSuggestion;
 import Classes.Hotel.ISearch;
 import Classes.Hotel.ISearchResult;
@@ -15,7 +15,7 @@ public class SearchTest {
 
 	@Before
 	public void before() {
-		search = HotelFactory.eINSTANCE.createHotel_Hotel();
+		search = ISearch.instance;
 	}
 
 	@Test(expected=IllegalArgumentException.class)
@@ -28,10 +28,9 @@ public class SearchTest {
 		search.search(1, 0, 1);
 	}
 
-	@Test
+	@Test(expected=IllegalArgumentException.class)
 	public void testTooManyGuests() {
 		EList<ISearchResult> results = search.search(1, 2, Integer.MAX_VALUE);
-		assertTrue(results.isEmpty());
 	}
 
 	@Test
