@@ -362,6 +362,7 @@
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_w6KdAHvHEeSHatiNfZ-sGg" client="_u9vzoHvHEeSHatiNfZ-sGg" supplier="_YptNIHpDEeS2zv6zlhm8qQ" contract="_YptNIHpDEeS2zv6zlhm8qQ"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_iMYzwIRIEeS-E_c58KLc5g" client="_u9vzoHvHEeSHatiNfZ-sGg" supplier="_2IPy8Ho8EeSTh5yDLLqE0Q" contract="_2IPy8Ho8EeSTh5yDLLqE0Q"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_VBZ-MIReEeS-E_c58KLc5g" client="_u9vzoHvHEeSHatiNfZ-sGg" supplier="_Alz5MIRdEeS-E_c58KLc5g" contract="_Alz5MIRdEeS-E_c58KLc5g"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_z_lZUIadEeSOfdq9lGlLAw" client="_u9vzoHvHEeSHatiNfZ-sGg" supplier="_5aq-cIacEeSOfdq9lGlLAw" contract="_5aq-cIacEeSOfdq9lGlLAw"/>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Association" xmi:id="_SKXrs3vDEeSHatiNfZ-sGg" memberEnd="_SKXrtHvDEeSHatiNfZ-sGg _SKXrsHvDEeSHatiNfZ-sGg">
         <ownedEnd xmi:type="uml:Property" xmi:id="_SKXrtHvDEeSHatiNfZ-sGg" name="bookingSuggestion" type="_9NVDcHo1EeSTh5yDLLqE0Q" association="_SKXrs3vDEeSHatiNfZ-sGg">
@@ -725,6 +726,14 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Usage" xmi:id="_GAJcAIX_EeSgO4VnRKF4fQ" client="_YptNIHpDEeS2zv6zlhm8qQ" supplier="_swvogIQ2EeSXhZNlyip4WA"/>
     <packagedElement xmi:type="uml:Usage" xmi:id="_GmpbUIX_EeSgO4VnRKF4fQ" client="_YptNIHpDEeS2zv6zlhm8qQ" supplier="_apbBUIQ3EeSXhZNlyip4WA"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_5aq-cIacEeSOfdq9lGlLAw" name="IConfiguration">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_DiMoEIadEeSOfdq9lGlLAw" name="createRoom">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_X2eZkIadEeSOfdq9lGlLAw" name="room" type="_GcRsYIRUEeS_Fud_KU3BbA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Did4YIaeEeSOfdq9lGlLAw" name="getRooms">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cvnn4IafEeSOfdq9lGlLAw" type="_GcRsYIRUEeS_Fud_KU3BbA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_yWHgwHyPEeSahu9FXjYTpw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yYNLcHyPEeSahu9FXjYTpw" source="http://www.eclipse.org/uml2/2.0.0/UML">
