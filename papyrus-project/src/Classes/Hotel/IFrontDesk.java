@@ -69,4 +69,12 @@ public interface IFrontDesk extends EObject {
 	 */
 	EList<IOrder> getOrders();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" personIDRequired="true" personIDOrdered="false"
+	 * @generated
+	 */
+	IBooking getRelevantCheckInBookings(int personID);
+
 } // IFrontDesk

@@ -81,4 +81,12 @@ public interface IBooking extends EObject {
 	 */
 	void setPaid(boolean state);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	int getId();
+
 } // IBooking

@@ -247,6 +247,17 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getId() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -337,6 +348,8 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 			case HotelPackage.HOTEL_BOOKING___SET_PAID__BOOLEAN:
 				setPaid((Boolean)arguments.get(0));
 				return null;
+			case HotelPackage.HOTEL_BOOKING___GET_ID:
+				return getId();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

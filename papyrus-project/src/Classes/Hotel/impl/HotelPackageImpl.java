@@ -613,6 +613,15 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIBooking__GetId() {
+		return iBookingEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getHotel_Order() {
 		return hotel_OrderEClass;
 	}
@@ -928,6 +937,15 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIFrontDesk__GetRelevantCheckInBookings__int() {
+		return iFrontDeskEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getISearch() {
 		return iSearchEClass;
 	}
@@ -1157,6 +1175,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		createEOperation(iBookingEClass, IBOOKING___GET_CUSTOMER);
 		createEOperation(iBookingEClass, IBOOKING___IS_PAID);
 		createEOperation(iBookingEClass, IBOOKING___SET_PAID__BOOLEAN);
+		createEOperation(iBookingEClass, IBOOKING___GET_ID);
 
 		hotel_OrderEClass = createEClass(HOTEL_ORDER);
 		createEReference(hotel_OrderEClass, HOTEL_ORDER__BOOKING);
@@ -1201,6 +1220,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		createEOperation(iFrontDeskEClass, IFRONT_DESK___PAY__IBOOKING);
 		createEOperation(iFrontDeskEClass, IFRONT_DESK___CHECK_OUT__IBOOKING_INT);
 		createEOperation(iFrontDeskEClass, IFRONT_DESK___GET_ORDERS);
+		createEOperation(iFrontDeskEClass, IFRONT_DESK___GET_RELEVANT_CHECK_IN_BOOKINGS__INT);
 
 		iSearchEClass = createEClass(ISEARCH);
 		createEOperation(iSearchEClass, ISEARCH___SEARCH__LONG_LONG_INT);
@@ -1354,6 +1374,8 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		op = initEOperation(getIBooking__SetPaid__boolean(), null, "setPaid", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "state", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		initEOperation(getIBooking__GetId(), ecorePackage.getEInt(), "getId", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(hotel_OrderEClass, Hotel_Order.class, "Hotel_Order", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHotel_Order_Booking(), this.getHotel_Booking(), null, "booking", null, 0, -1, Hotel_Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -1428,6 +1450,9 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		addEParameter(op, ecorePackage.getEInt(), "numKeys", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getIFrontDesk__GetOrders(), this.getIOrder(), "getOrders", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIFrontDesk__GetRelevantCheckInBookings__int(), this.getIBooking(), "getRelevantCheckInBookings", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "personID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(iSearchEClass, ISearch.class, "ISearch", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

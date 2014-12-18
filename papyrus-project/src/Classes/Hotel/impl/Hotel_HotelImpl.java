@@ -200,9 +200,6 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * @generated
 	 */
 	public boolean checkIn(IBooking booking, int numKeys) {
-		if(findBooking(booking) == null){
-			
-		}
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -223,11 +220,9 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * @generated
 	 */
 	public EList<IBooking> getBookings() {
-		EList<IBooking> bookings = new BasicEList<>();
-		for (Hotel_Order order : persistenceService.getOrders()) {
-			bookings.addAll(order.getBooking());
-		}
-		return bookings;
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -281,6 +276,17 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			list.add(o);
 		}
 		return list;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IBooking getRelevantCheckInBookings(int personID) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	private boolean isRoomAvailable(IRoom room, long startTime, long endTime) {
@@ -664,6 +670,8 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				return checkOut((IBooking)arguments.get(0), (Integer)arguments.get(1));
 			case HotelPackage.HOTEL_HOTEL___GET_ORDERS:
 				return getOrders();
+			case HotelPackage.HOTEL_HOTEL___GET_RELEVANT_CHECK_IN_BOOKINGS__INT:
+				return getRelevantCheckInBookings((Integer)arguments.get(0));
 			case HotelPackage.HOTEL_HOTEL___SEARCH__LONG_LONG_INT:
 				return search((Long)arguments.get(0), (Long)arguments.get(1), (Integer)arguments.get(2));
 			case HotelPackage.HOTEL_HOTEL___PLACE_ORDER__ORDERREQUEST:
