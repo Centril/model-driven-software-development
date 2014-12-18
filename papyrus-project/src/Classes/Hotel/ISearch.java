@@ -3,8 +3,9 @@
 package Classes.Hotel;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
+
+import Classes.Hotel.impl.Hotel_HotelImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,6 +18,9 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface ISearch extends EObject {
+	
+	ISearch instance = Hotel_HotelImpl.getInstance();
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
