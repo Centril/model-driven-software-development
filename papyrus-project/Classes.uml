@@ -305,6 +305,13 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TmZSYoRWEeS_Fud_KU3BbA" value="1"/>
         </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_OauNUHvHEeSHatiNfZ-sGg" client="_CWQjwHpEEeSTh5yDLLqE0Q" supplier="_qX9ogHpMEeS2zv6zlhm8qQ" contract="_qX9ogHpMEeS2zv6zlhm8qQ"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_q88M8YbFEeSXNtfOmMNmAQ" name="getContact">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_q89bEIbFEeSXNtfOmMNmAQ" name="contact" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_q8-CIIbFEeSXNtfOmMNmAQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_q8-pMIbFEeSXNtfOmMNmAQ" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Association" xmi:id="_iVwmQHpEEeSTh5yDLLqE0Q" memberEnd="_iVwmQXpEEeSTh5yDLLqE0Q _iVncUHpEEeSTh5yDLLqE0Q">
         <name xsi:nil="true"/>
@@ -496,6 +503,9 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_h3O3kIbDEeSr6pyyCXGAzQ" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_q88M8IbFEeSXNtfOmMNmAQ" name="getOccupancy">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_uGZRMIbFEeSXNtfOmMNmAQ" type="_oSNI0Ho_EeSTh5yDLLqE0Q" direction="return"/>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_2IPy8Ho8EeSTh5yDLLqE0Q" name="ISearch">
