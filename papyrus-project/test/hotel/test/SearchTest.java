@@ -1,6 +1,6 @@
 package hotel.test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import hotel.test.util.ConfigUtil;
 
 import java.util.List;
@@ -52,7 +52,7 @@ public class SearchTest {
 		}
 	}
 	
-	// Check if room for two is found if searching for two
+	// Check if room with two beds is found for two people
 	@Test
 	public void testFindOneTwoBed() {
 		ConfigUtil.removeAllRooms();
@@ -61,10 +61,10 @@ public class SearchTest {
 		List<ISearchResult> results = doSearch(2);
 		
 		assertTrue(results.size() == 1);
-		testOneRoomResult(results.get(0), 2);
+		assertNumBedsOneRoom(results.get(0), 2);
 	}
 
-	// Check if rooms three people is found if only option is 4-bed
+	// Check if room with four beds is found for three people
 	@Test
 	public void testFindUnfilledButOnlyAvailable() {
 		ConfigUtil.removeAllRooms();
@@ -73,15 +73,32 @@ public class SearchTest {
 		
 		List<ISearchResult> results = doSearch(3);
 		assertTrue(results.size() == 1);
-		testOneRoomResult(results.get(0), 4);
+		assertNumBedsOneRoom(results.get(0), 4);
+	}
+
+	// Check if one 3-bed and 4-bed is found for 7 people
+	@Test
+	public void testFindFilledTwoRoomResult() {
+		ConfigUtil.removeAllRooms();
+		makeRoomsAvailable(1, 1);
+		makeRoomsAvailable(3, 1);
+		makeRoomsAvailable(4, 1);
+		
+		List<ISearchResult> results = doSearch(7);
+		assertTrue(results.size() == 1);
+		assertNumBeds(results.get(0), 3, 4);
 	}
 	
-	// Make a number of dummy rooms with fixed price
-	private void makeRoomsAvailable(int numBeds, int amount) {
-		IConfiguration configuration = IConfiguration.instance;
-		for(int i = 0; i < amount; i++) {
-			configuration.createRoom(numBeds, 100.0);
-		}
+	// Check if two 4-bed rooms are found for 7 persons if 7-bed not available 
+	@Test
+	public void testFindMultiUnfilledButOnlyAvailable() {
+		ConfigUtil.removeAllRooms();
+		makeRoomsAvailable(2, 1);
+		makeRoomsAvailable(4, 2);
+		
+		List<ISearchResult> results = doSearch(7);
+		assertTrue(results.size() == 1);
+		assertNumBeds(results.get(0), 4, 4);
 	}
 
 	// Search with standard interval from 1 day from now to 2 days from now.
@@ -91,13 +108,43 @@ public class SearchTest {
 		return search.search(from, to, numBeds);
 	}
 
+	// Make a number of dummy rooms with fixed price
+	private static void makeRoomsAvailable(int numBeds, int amount) {
+		IConfiguration configuration = IConfiguration.instance;
+		for(int i = 0; i < amount; i++) {
+			configuration.createRoom(numBeds, 100.0);
+		}
+	}
+
 	// Test that result contain one suggestion with an expected number of beds
-	private void testOneRoomResult(ISearchResult result, int numBeds) {
+	private static void assertNumBedsOneRoom(ISearchResult result, int numBeds) {
 		assertTrue(result.getBookingSuggestions().size() == 1);
 		IBookingSuggestion bs = result.getBookingSuggestions().get(0);
-		assertTrue(bs.getRoom().getNumBeds() == numBeds);		
+		assertTrue(getNumBeds(bs) == numBeds);		
 	}
 	
+	// Check if ISearchResult contains exact number of expected beds (Need test for test!)
+	private static void assertNumBeds(ISearchResult sr, int... numBeds) {
+		List<IBookingSuggestion> bss = sr.getBookingSuggestions();
+		assertTrue(bss.size() == numBeds.length);
+
+		boolean[] used = new boolean[numBeds.length];
+		outer:
+		for (IBookingSuggestion bs : bss) {
+			for (int i = 0; i < numBeds.length; i++) {
+				if (!used[i] && getNumBeds(bs) == numBeds[i]) {
+					used[i] = true;
+					continue outer;
+				}
+			}
+			fail();
+		}
+	}
+	
+	private static int getNumBeds(IBookingSuggestion bs) {
+		return bs.getRoom().getNumBeds();
+	}
+
 	private void testNGuests(int n) {
 		EList<ISearchResult> results = search.search(1, 2, n);
 		for (ISearchResult result : results) {
