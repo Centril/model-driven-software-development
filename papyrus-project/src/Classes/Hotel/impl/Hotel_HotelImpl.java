@@ -616,8 +616,6 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		// TODO: Before someone tries to implement this, keep in mind that bookings is connected to rooms.
 		// If we just remove a room from the list then the Room will still connect since we have pointers to it from Bookings.
 		// So, be very careful. Maybe don't implement this.
-		
-		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
