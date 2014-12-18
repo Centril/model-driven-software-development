@@ -171,6 +171,18 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HotelPackage.HOTEL_HOTEL__PERSISTENCE_SERVICE, oldPersistenceService, persistenceService));
 	}
+	
+	private Hotel_Booking findBooking(IBooking booking){
+		for(Hotel_Order order : persistenceService.getOrders()){
+			for(Hotel_Booking aBooking : order.getBooking()){
+				if(aBooking == booking){ //TODO change to check with ID
+					return aBooking;
+				}
+			}
+		}
+		
+		return null;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,6 +190,9 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * @generated
 	 */
 	public boolean checkIn(IBooking booking, int numKeys) {
+		if(findBooking(booking) == null){
+			
+		}
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
