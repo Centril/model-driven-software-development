@@ -271,6 +271,8 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	public boolean checkOut(int bookingID, int numKeys) {
 		Hotel_Booking booking = persistenceService.getBookingById(bookingID);
 		if(booking.isCheckedIn()){
+			booking.getOccupancy().removeKeys(numKeys);
+			booking.setCheckedIn(false);
 			return true;
 		}
 		return false;
