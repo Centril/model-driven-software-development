@@ -16,7 +16,7 @@
   </packagedElement>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_w0micHPCEeSGppoau5iR6g" name="Check in"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_yKxEIHPCEeSGppoau5iR6g" name="Check out"/>
-  <packagedElement xmi:type="uml:UseCase" xmi:id="_zaNSwHPCEeSGppoau5iR6g" name="Pay invoice"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_zaNSwHPCEeSGppoau5iR6g" name="Handle payment"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_1lbNIHPCEeSGppoau5iR6g" name="System setup"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_3XH0QHPCEeSGppoau5iR6g" name="Remove booking"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_542KIHPCEeSGppoau5iR6g" name="Adjust properties"/>
