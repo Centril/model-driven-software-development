@@ -561,8 +561,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean placeOrder(OrderRequest orderRequest) {
-		//TODO Check if over maxInterval or maxTimeInFuture 
+	public boolean placeOrder(OrderRequest orderRequest) { 
 		// Check if person info is correct
 		IPerson customer = findPerson(orderRequest.getCustomer());
 		if (customer == null) {
