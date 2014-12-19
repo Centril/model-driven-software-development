@@ -398,6 +398,10 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			throw new IllegalArgumentException("numberOfPersons is 100 or more");
 		}
 		
+		if (startTime < System.currentTimeMillis()) {
+			throw new IllegalArgumentException("startTime has already passed.");
+		}
+		
 		if(startTime >= endTime) {
 			throw new IllegalArgumentException("endTime before or equal to startTime");
 		}

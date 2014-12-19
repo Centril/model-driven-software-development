@@ -158,7 +158,9 @@ public class SearchTest {
 	}
 
 	private void testNGuests(int n) {
-		EList<ISearchResult> results = search.search(1, 2, n);
+		long from = System.currentTimeMillis() + MILLIS_IN_DAY;
+		long to = from + MILLIS_IN_DAY;
+		EList<ISearchResult> results = search.search(from, to, n);
 		for (ISearchResult result : results) {
 			assertEnoughBeds(n, result);
 		}
