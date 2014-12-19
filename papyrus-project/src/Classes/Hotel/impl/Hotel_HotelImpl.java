@@ -312,12 +312,12 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		IPerson person = findPerson(personID);
 		if (person == null) return null;
 		
-		EList<IBooking> relevantBookings = new BasicEList<>();
+		EList<IBooking> contactBookings = new BasicEList<>();
 		
 		EList<IBooking> allBookings = getBookings();
 		for (IBooking booking : allBookings) {
 			if (booking.getContact() == personID) {
-				relevantBookings.add(booking);
+				contactBookings.add(booking);
 			}
 		}
 		
@@ -325,8 +325,9 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		Date currentDate = cal.getTime();
 		cal.add(Calendar.HOUR, 12);
 		Date halfADayIntoTheFuture = cal.getTime();
+		EList<IBooking> relevantBookings = new BasicEList<>();
 		
-		for (IBooking booking : relevantBookings) {
+		for (IBooking booking : contactBookings) {
 			Date bookingCheckIn = new Date(booking.getCheckInDate());
 			Date bookingCheckOut = new Date(booking.getCheckOutDate());
 			

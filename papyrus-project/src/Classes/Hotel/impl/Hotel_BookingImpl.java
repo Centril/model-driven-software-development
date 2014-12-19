@@ -47,8 +47,8 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	private EList<Integer> guests;
 	private int contact, customer;
 	private double initialPrice;
-	
 	//
+	
 	private int bookingId;
 	
 	//Expected dates for checking in and out

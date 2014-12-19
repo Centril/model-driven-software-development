@@ -19,6 +19,7 @@ import org.junit.Test;
 
 import Classes.Hotel.BookingRequest;
 import Classes.Hotel.Hotel_Hotel;
+import Classes.Hotel.IBooking;
 import Classes.Hotel.IBookingSuggestion;
 import Classes.Hotel.IConfiguration;
 import Classes.Hotel.IFrontDesk;
@@ -78,35 +79,44 @@ private static final CreditCardDetails TESLA = ccd("1212131941431336", "666", 2,
 		order = new MockOrderRequest(person.getId(), bookings);	
 		
 		hotel.placeOrder(order);
+		bookingID = findBookingIdByContactId(frontdesk, person.getId());
 	}
 	
+	@Test
 	public void testCantFindBooking(){
-		assertTrue(!frontdesk.checkIn(Integer.MAX_VALUE, 2));
+		IBooking booking = hotel.getRelevantCheckInBookings(person.getId()).get(0);
+		if(booking == null) {
+			assertTrue(false);
+		} else {
+			//Should find a booking with relevant info
+			assertTrue(booking.getID() == bookingID && booking.getContact() == person.getId());
+		}
 	}
 	
 	@Test 
 	public void testCheckInHaveNoBooking() {
-		assertTrue(!frontdesk.checkIn(0, 0));
+		int sampleID = bookingID + 1; //Should only exist one booking, ergo one bookingID
+		assertTrue(!frontdesk.checkIn(sampleID, 2));
 	}
 
 	@Test
-	public void testCheckInWhenAlreadyCheckedIn() {
-		frontdesk.checkIn(bookingID, 2);
-		assertTrue(!frontdesk.checkIn(bookingID, 2));
+	public void testCheckInAndDoubleCheckIn() {
+		boolean first = frontdesk.checkIn(bookingID, 2);
+		boolean second = frontdesk.checkIn(bookingID, 2);
+		assertTrue(first && !second);
 	}
+	
 	
 	@Test
 	public void testToEarlyForCheckIn(){
 		
 	}
-	
+
+	@Test
 	public void testToLateForCheckIn(){
 		
 	}
 	
-	public void testKeysNotHandedBack(){
-		
-	}
 	
 	private static CreditCardDetails ccd (String ccNumber, String ccv, int expiryMonth,
 			int expiryYear, String firstName, String lastName, double initialBalance) {
@@ -133,5 +143,14 @@ private static final CreditCardDetails TESLA = ccd("1212131941431336", "666", 2,
 			this.lastName = lastName;
 			this.initialBalance = initialBalance;
 		}
+	}
+	
+	private static int findBookingIdByContactId(IFrontDesk iFrontDesk, int contactId) {
+		for (IBooking booking : iFrontDesk.getBookings()) {
+			if (booking.getContact() == contactId) {
+				return booking.getID();
+			}
+		}
+		return -1;
 	}
 }

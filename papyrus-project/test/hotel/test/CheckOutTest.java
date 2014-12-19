@@ -5,6 +5,8 @@ import hotel.test.mock.MockBookingRequest;
 import hotel.test.mock.MockOrderRequest;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import org.eclipse.emf.common.util.BasicEList;
@@ -13,6 +15,7 @@ import org.junit.Test;
 
 import Classes.Hotel.BookingRequest;
 import Classes.Hotel.Hotel_Hotel;
+import Classes.Hotel.IBooking;
 import Classes.Hotel.IConfiguration;
 import Classes.Hotel.IFrontDesk;
 import Classes.Hotel.IPersistenceService;
@@ -32,7 +35,7 @@ public class CheckOutTest {
 	private IPerson person;
 	private ISearch search;
 	private IConfiguration config;
-	private IPersistenceService persistance;
+	private Calendar cal;
 	
 	private MockOrderRequest order;
 	
@@ -56,8 +59,12 @@ public class CheckOutTest {
 		person.setSSN("somethingTooOld");
 		
 		person.createCreditCard(TESLA.ccNumber, TESLA.ccv, TESLA.expiryMonth, TESLA.expiryYear, TESLA.firstName, TESLA.lastName);
+		cal = Calendar.getInstance();
+		Date today = cal.getTime();
+		cal.add(Calendar.HOUR, 24*2);
+		Date inTwoDays = cal.getTime();
 		
-		ISearchResult searchResult = search.search(System.currentTimeMillis(), System.currentTimeMillis()+1, 1).get(0);
+		ISearchResult searchResult = search.search(today.getTime(), inTwoDays.getTime(), 1).get(0);
 		
 		List<BookingRequest> bookings = new BasicEList<>();
 		List<Integer> guests = new ArrayList<>(1);
@@ -67,7 +74,7 @@ public class CheckOutTest {
 		
 
 		hotel.placeOrder(order);
-		bookingID = hotel.getBookings().get(0).getID();		
+		bookingID = findBookingIdByContactId(frontdesk, person.getId());	
 	}
 	
 	@Test 
@@ -109,5 +116,14 @@ public class CheckOutTest {
 			this.lastName = lastName;
 			this.initialBalance = initialBalance;
 		}
+	}
+	
+	private static int findBookingIdByContactId(IFrontDesk iFrontDesk, int contactId) {
+		for (IBooking booking : iFrontDesk.getBookings()) {
+			if (booking.getContact() == contactId) {
+				return booking.getID();
+			}
+		}
+		return -1;
 	}
 }
