@@ -203,6 +203,8 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		}
 		
 		Calendar cal = Calendar.getInstance();
+		//Allowed to check in 6 hours early :s
+		cal.add(Calendar.HOUR, 6);
 		Date checkInDate = new Date(booking.getCheckInDate());
 		Date checkOutDate = new Date(booking.getCheckOutDate());
 		if(cal.getTime().after(checkInDate) && cal.getTime().before(checkOutDate)){
@@ -250,9 +252,10 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 */
 	public boolean pay(int bookingID) {
 		IBooking booking = persistenceService.getBookingById(bookingID);
-		if(booking == null) {
+		if(booking == null || booking.isPaid()) {
 			return false;
 		}
+
 		IPerson customer = personRegistry.getIPersonByID(booking.getCustomer());
 		ICreditCardInfo creditcard = customer.getCreditCard();
 		double price = getBill(bookingID);

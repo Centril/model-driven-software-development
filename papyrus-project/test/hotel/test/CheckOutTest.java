@@ -1,6 +1,7 @@
 package hotel.test;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 import hotel.test.mock.MockBookingRequest;
 import hotel.test.mock.MockOrderRequest;
 
@@ -35,6 +36,8 @@ public class CheckOutTest {
 	private ISearch search;
 	private IConfiguration config;
 	private Calendar cal;
+	private Date today;
+	private Date inTwoDays;
 	
 	private MockOrderRequest order;
 	
@@ -57,9 +60,10 @@ public class CheckOutTest {
 		
 		person.createCreditCard(TESLA.ccNumber, TESLA.ccv, TESLA.expiryMonth, TESLA.expiryYear, TESLA.firstName, TESLA.lastName);
 		cal = Calendar.getInstance();
-		Date today = cal.getTime();
+		cal.add(Calendar.MINUTE, 15);
+		today = cal.getTime();
 		cal.add(Calendar.HOUR, 24*2);
-		Date inTwoDays = cal.getTime();
+		inTwoDays = cal.getTime();
 		
 		ISearchResult searchResult = search.search(today.getTime(), inTwoDays.getTime(), 1).get(0);
 		
@@ -78,15 +82,27 @@ public class CheckOutTest {
 	@Test
 	public void testCheckOutWithBooking() {
 		int bookingID = placeOrder(order, person);
-		boolean firstTry = frontdesk.checkOut(bookingID);
+		assertFalse(frontdesk.checkOut(bookingID));
 		frontdesk.checkIn(bookingID, 3);
-		boolean secondTry = frontdesk.checkOut(bookingID);
-		assertTrue(!firstTry && secondTry); //First try should fail and second succeed and booking should be checked out	
+		assertTrue(frontdesk.checkOut(bookingID));
 	}
 	
 	@Test
-	public void testSomethingElse() {
-		//TODO: test something else
+	public void testHandInKeys() {
+		ISearchResult searchResult = search.search(today.getTime(), inTwoDays.getTime(), 1).get(0);
+		
+		List<BookingRequest> bookings = new BasicEList<>();
+		List<Integer> guests = new ArrayList<>(1);
+		guests.add(person.getId());
+		bookings.add(new MockBookingRequest(searchResult.getBookingSuggestions().get(0), guests, person.getId()));
+		order = new MockOrderRequest(person.getId(), bookings);	
+		
+		int bookingID = placeOrder(order, person);
+		frontdesk.checkIn(bookingID, 3);
+		boolean first = frontdesk.handInKeys(bookingID, 2);
+		boolean second = frontdesk.handInKeys(bookingID, 3);
+		assertTrue(!first && second); //Should fail with wrong number of keys, but work with right number
+		frontdesk.checkOut(bookingID); // For good measure
 	}
 	
 	
