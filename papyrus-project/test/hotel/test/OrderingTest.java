@@ -1,6 +1,6 @@
 package hotel.test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import hotel.test.mock.MockBookingRequest;
 import hotel.test.mock.MockOrderRequest;
 
@@ -27,6 +27,7 @@ import Classes.Hotel.ISearchResult;
 import Classes.Hotel.OrderRequest;
 import Classes.PersonRegistry.IPerson;
 import Classes.PersonRegistry.IPersonRegistry;
+import Classes.PersonRegistry.PersonRegistryFactory;
 
 public class OrderingTest {
 	private static final CreditCardDetails TESLA = ccd("1212131941431336", "666", 2, 16, "Nikola", "Tesla", 100000);
@@ -38,6 +39,7 @@ public class OrderingTest {
 	private ISearch iSearch;
 	private IOrdering iOrdering;
 	private IPersonRegistry iPersonReg;
+	private IConfiguration iConfiguration;
 	
 	@Before
 	public void before() throws SOAPException {
@@ -53,14 +55,15 @@ public class OrderingTest {
 		Hotel_Hotel hotel = HotelFactory.eINSTANCE.createHotel_Hotel();
 		iSearch = hotel;
 		iOrdering = hotel;
-		iPersonReg = hotel.getPersonRegistry();
+		iConfiguration = hotel;
+		iPersonReg = PersonRegistryFactory.eINSTANCE.createPersonRegistry_PersonRegistry();
 	}
 
 	private void setUpAccount(CreditCardDetails ccd) throws SOAPException {
 		if (customerRequires.isCreditCardValid(ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName)) {
-			adminRequires.removeCreditCard(ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName);
+			assertTrue(adminRequires.removeCreditCard(ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName));
 		}
-		adminRequires.addCreditCard(ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName);
+		assertTrue(adminRequires.addCreditCard(ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName));
 		adminRequires.makeDeposit(ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName, ccd.initialBalance);
 	}
 
