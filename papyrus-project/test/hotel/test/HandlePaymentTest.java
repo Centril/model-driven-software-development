@@ -100,5 +100,4 @@ public class HandlePaymentTest {
 			this.initialBalance = initialBalance;
 		}
 	}
-
 }
