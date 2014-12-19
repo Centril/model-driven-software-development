@@ -2,14 +2,8 @@
  */
 package Classes.Hotel.impl;
 
-import Classes.Hotel.HotelPackage;
-import Classes.Hotel.Hotel_Booking;
-import Classes.Hotel.Hotel_Occupancy;
-import Classes.Hotel.Hotel_Stay;
-import Classes.Hotel.IRoom;
-import Classes.PersonRegistry.IPersonRegistry;
-
 import java.lang.reflect.InvocationTargetException;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
@@ -17,6 +11,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import Classes.Hotel.HotelPackage;
+import Classes.Hotel.Hotel_Booking;
+import Classes.Hotel.Hotel_Occupancy;
+import Classes.Hotel.Hotel_Stay;
+import Classes.Hotel.IRoom;
+import Classes.PersonRegistry.IPersonRegistry;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,6 +43,8 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	 * @ordered
 	 */
 	protected Hotel_Stay stay;
+	
+	private static AtomicInteger baseId = new AtomicInteger(0);
 	
 	//IDs of people in personregistry
 	private EList<Integer> guests;
@@ -88,6 +91,7 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 		this.isCheckedIn = false;
 		this.isCheckedOut = false;
 		this.isPaid = false;
+		this.bookingId = baseId.getAndIncrement();
 	}
 
 	/**
