@@ -205,6 +205,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				//do check in things
 				booking.setCheckedIn(true);
 				booking.getOccupancy().addKeys(numKeys);
+				return true;
 			}	
 		}
 		return false;

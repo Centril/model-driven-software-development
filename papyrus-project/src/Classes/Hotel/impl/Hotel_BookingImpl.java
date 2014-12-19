@@ -78,7 +78,7 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 		throw new UnsupportedOperationException("Can't create booking without guests and contact person");
 	}
 	
-	//TODO: Should have more implementation, stay and occupancy probably
+	//TODO: Should have more implementation, stay probably
 	protected Hotel_BookingImpl(EList<Integer> guests, int contact, int customer, double price, long checkInDate, long checkOutDate, Hotel_OccupancyImpl occupancy){
 		this.guests = guests;
 		this.contact = contact;

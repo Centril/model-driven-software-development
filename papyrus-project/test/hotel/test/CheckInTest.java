@@ -9,6 +9,7 @@ public class CheckInTest {
 	@Test
 	public void test() {
 		fail("Not yet implemented");
+		//Test getRelevantCheckInBookings
 	}
 
 }
