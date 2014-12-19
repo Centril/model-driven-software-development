@@ -60,8 +60,6 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 		this.roomId = -1;
 		this.OutOfOrder = false;
 		this.roomInfo = "";
-		
-		System.out.println(this);
 	}
 
 	/**
