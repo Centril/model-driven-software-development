@@ -1,7 +1,6 @@
 package hotel.test;
 
 import static org.junit.Assert.*;
-import hotel.test.util.ConfigUtil;
 
 import java.util.Arrays;
 import java.util.List;
