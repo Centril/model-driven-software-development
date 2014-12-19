@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link Classes.Hotel.Hotel_Order#getBooking <em>Booking</em>}</li>
+ *   <li>{@link Classes.Hotel.Hotel_Order#getBookings <em>Bookings</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,20 +22,20 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Hotel_Order extends IOrder {
 	/**
-	 * Returns the value of the '<em><b>Booking</b></em>' reference list.
+	 * Returns the value of the '<em><b>Bookings</b></em>' reference list.
 	 * The list contents are of type {@link Classes.Hotel.Hotel_Booking}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Booking</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Bookings</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Booking</em>' reference list.
-	 * @see Classes.Hotel.HotelPackage#getHotel_Order_Booking()
+	 * @return the value of the '<em>Bookings</em>' reference list.
+	 * @see Classes.Hotel.HotelPackage#getHotel_Order_Bookings()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<Hotel_Booking> getBooking();
+	EList<Hotel_Booking> getBookings();
 
 	/**
 	 * <!-- begin-user-doc -->

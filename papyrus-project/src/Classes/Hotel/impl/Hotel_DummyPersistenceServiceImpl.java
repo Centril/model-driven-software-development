@@ -107,7 +107,7 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 		// For now, assemble all occupancies for non-checked out bookings
 		EList<Hotel_Occupancy> list = new BasicEList<Hotel_Occupancy>(); 
 		for (Hotel_Order order : orders) {
-			for (Hotel_Booking booking : order.getBooking()) {
+			for (Hotel_Booking booking : order.getBookings()) {
 				if (!booking.isCheckedOut()) {
 					Hotel_Stay stay = booking.getStay();
 					list.addAll(stay.getOccupancy());
@@ -189,7 +189,7 @@ public class Hotel_DummyPersistenceServiceImpl extends MinimalEObjectImpl.Contai
 	public EList<Hotel_Booking> getBookings() {
 		EList<Hotel_Booking> bookings = new BasicEList<>();
 		for (Hotel_Order order : orders) {
-			bookings.addAll(order.getBooking());
+			bookings.addAll(order.getBookings());
 		}
 		return bookings;
 	}

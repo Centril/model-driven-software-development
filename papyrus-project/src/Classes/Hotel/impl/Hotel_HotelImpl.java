@@ -238,7 +238,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	public EList<IBooking> getBookings() {
 		EList<IBooking> bookings = new BasicEList<>();
 		for (Hotel_Order order : persistenceService.getOrders()) {
-			bookings.addAll(order.getBooking());
+			bookings.addAll(order.getBookings());
 		}
 		return bookings;
 	}

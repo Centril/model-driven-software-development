@@ -848,13 +848,13 @@ public interface HotelPackage extends EPackage {
 	int IORDER_FEATURE_COUNT = 0;
 
 	/**
-	 * The operation id for the '<em>Get Bookings</em>' operation.
+	 * The operation id for the '<em>Get IBookings</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IORDER___GET_BOOKINGS = 0;
+	int IORDER___GET_IBOOKINGS = 0;
 
 	/**
 	 * The operation id for the '<em>Get Customer</em>' operation.
@@ -894,13 +894,13 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_ORDER = 7;
 
 	/**
-	 * The feature id for the '<em><b>Booking</b></em>' reference list.
+	 * The feature id for the '<em><b>Bookings</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_ORDER__BOOKING = IORDER_FEATURE_COUNT + 0;
+	int HOTEL_ORDER__BOOKINGS = IORDER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Hotel Order</em>' class.
@@ -912,13 +912,13 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_ORDER_FEATURE_COUNT = IORDER_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Get Bookings</em>' operation.
+	 * The operation id for the '<em>Get IBookings</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_ORDER___GET_BOOKINGS = IORDER___GET_BOOKINGS;
+	int HOTEL_ORDER___GET_IBOOKINGS = IORDER___GET_IBOOKINGS;
 
 	/**
 	 * The operation id for the '<em>Get Customer</em>' operation.
@@ -2519,15 +2519,15 @@ public interface HotelPackage extends EPackage {
 	EClass getHotel_Order();
 
 	/**
-	 * Returns the meta object for the reference list '{@link Classes.Hotel.Hotel_Order#getBooking <em>Booking</em>}'.
+	 * Returns the meta object for the reference list '{@link Classes.Hotel.Hotel_Order#getBookings <em>Bookings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Booking</em>'.
-	 * @see Classes.Hotel.Hotel_Order#getBooking()
+	 * @return the meta object for the reference list '<em>Bookings</em>'.
+	 * @see Classes.Hotel.Hotel_Order#getBookings()
 	 * @see #getHotel_Order()
 	 * @generated
 	 */
-	EReference getHotel_Order_Booking();
+	EReference getHotel_Order_Bookings();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.Hotel.Hotel_Order#setID(int) <em>Set ID</em>}' operation.
@@ -2570,14 +2570,14 @@ public interface HotelPackage extends EPackage {
 	EClass getIOrder();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.Hotel.IOrder#getBookings() <em>Get Bookings</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.Hotel.IOrder#getIBookings() <em>Get IBookings</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Bookings</em>' operation.
-	 * @see Classes.Hotel.IOrder#getBookings()
+	 * @return the meta object for the '<em>Get IBookings</em>' operation.
+	 * @see Classes.Hotel.IOrder#getIBookings()
 	 * @generated
 	 */
-	EOperation getIOrder__GetBookings();
+	EOperation getIOrder__GetIBookings();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.Hotel.IOrder#getCustomer() <em>Get Customer</em>}' operation.
@@ -3607,12 +3607,12 @@ public interface HotelPackage extends EPackage {
 		EClass HOTEL_ORDER = eINSTANCE.getHotel_Order();
 
 		/**
-		 * The meta object literal for the '<em><b>Booking</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Bookings</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HOTEL_ORDER__BOOKING = eINSTANCE.getHotel_Order_Booking();
+		EReference HOTEL_ORDER__BOOKINGS = eINSTANCE.getHotel_Order_Bookings();
 
 		/**
 		 * The meta object literal for the '<em><b>Set ID</b></em>' operation.
@@ -3649,12 +3649,12 @@ public interface HotelPackage extends EPackage {
 		EClass IORDER = eINSTANCE.getIOrder();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Bookings</b></em>' operation.
+		 * The meta object literal for the '<em><b>Get IBookings</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IORDER___GET_BOOKINGS = eINSTANCE.getIOrder__GetBookings();
+		EOperation IORDER___GET_IBOOKINGS = eINSTANCE.getIOrder__GetIBookings();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Customer</b></em>' operation.

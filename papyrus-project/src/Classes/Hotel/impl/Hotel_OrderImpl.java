@@ -4,13 +4,11 @@ package Classes.Hotel.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
-
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import Classes.Hotel.HotelPackage;
 import Classes.Hotel.Hotel_Booking;
 import Classes.Hotel.Hotel_Order;
@@ -23,7 +21,7 @@ import Classes.Hotel.IBooking;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link Classes.Hotel.impl.Hotel_OrderImpl#getBooking <em>Booking</em>}</li>
+ *   <li>{@link Classes.Hotel.impl.Hotel_OrderImpl#getBookings <em>Bookings</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,14 +29,14 @@ import Classes.Hotel.IBooking;
  */
 public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hotel_Order {
 	/**
-	 * The cached value of the '{@link #getBooking() <em>Booking</em>}' reference list.
+	 * The cached value of the '{@link #getBookings() <em>Bookings</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBooking()
+	 * @see #getBookings()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Hotel_Booking> booking;
+	protected EList<Hotel_Booking> bookings;
 
 	private int customer;
 	private int orderID;
@@ -57,7 +55,7 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 		
 		EList<Hotel_Booking> tmpbookings = new BasicEList<>();
 		tmpbookings.addAll(bookings);
-		this.booking = tmpbookings;
+		this.bookings = tmpbookings;
 	}
 
 	/**
@@ -75,11 +73,11 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Hotel_Booking> getBooking() {
-		if (booking == null) {
-			booking = new EObjectResolvingEList<Hotel_Booking>(Hotel_Booking.class, this, HotelPackage.HOTEL_ORDER__BOOKING);
+	public EList<Hotel_Booking> getBookings() {
+		if (bookings == null) {
+			bookings = new EObjectResolvingEList<Hotel_Booking>(Hotel_Booking.class, this, HotelPackage.HOTEL_ORDER__BOOKINGS);
 		}
-		return booking;
+		return bookings;
 	}
 
 	/**
@@ -87,9 +85,9 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList<IBooking> getBookings() {
+	public EList<IBooking> getIBookings() {
 		EList<IBooking> tempBookings = new BasicEList<>();
-		tempBookings.addAll(booking);
+		tempBookings.addAll(bookings);
 		return tempBookings;
 	}
 
@@ -135,7 +133,7 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 	 * @generated NOT
 	 */
 	public void addBooking(Hotel_Booking booking) {
-		this.booking.add(booking);
+		this.bookings.add(booking);
 	}
 
 	/**
@@ -146,8 +144,8 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HotelPackage.HOTEL_ORDER__BOOKING:
-				return getBooking();
+			case HotelPackage.HOTEL_ORDER__BOOKINGS:
+				return getBookings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,9 +159,9 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HotelPackage.HOTEL_ORDER__BOOKING:
-				getBooking().clear();
-				getBooking().addAll((Collection<? extends Hotel_Booking>)newValue);
+			case HotelPackage.HOTEL_ORDER__BOOKINGS:
+				getBookings().clear();
+				getBookings().addAll((Collection<? extends Hotel_Booking>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -177,8 +175,8 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HotelPackage.HOTEL_ORDER__BOOKING:
-				getBooking().clear();
+			case HotelPackage.HOTEL_ORDER__BOOKINGS:
+				getBookings().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -192,8 +190,8 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HotelPackage.HOTEL_ORDER__BOOKING:
-				return booking != null && !booking.isEmpty();
+			case HotelPackage.HOTEL_ORDER__BOOKINGS:
+				return bookings != null && !bookings.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -206,8 +204,8 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HotelPackage.HOTEL_ORDER___GET_BOOKINGS:
-				return getBookings();
+			case HotelPackage.HOTEL_ORDER___GET_IBOOKINGS:
+				return getIBookings();
 			case HotelPackage.HOTEL_ORDER___GET_CUSTOMER:
 				return getCustomer();
 			case HotelPackage.HOTEL_ORDER___GET_ID:

@@ -712,7 +712,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHotel_Order_Booking() {
+	public EReference getHotel_Order_Bookings() {
 		return (EReference)hotel_OrderEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -757,7 +757,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIOrder__GetBookings() {
+	public EOperation getIOrder__GetIBookings() {
 		return iOrderEClass.getEOperations().get(0);
 	}
 
@@ -1376,13 +1376,13 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		createEOperation(iBookingEClass, IBOOKING___IS_CHECKED_OUT);
 
 		hotel_OrderEClass = createEClass(HOTEL_ORDER);
-		createEReference(hotel_OrderEClass, HOTEL_ORDER__BOOKING);
+		createEReference(hotel_OrderEClass, HOTEL_ORDER__BOOKINGS);
 		createEOperation(hotel_OrderEClass, HOTEL_ORDER___SET_ID__INT);
 		createEOperation(hotel_OrderEClass, HOTEL_ORDER___SET_CUSTOMER__INT);
 		createEOperation(hotel_OrderEClass, HOTEL_ORDER___ADD_BOOKING__HOTEL_BOOKING);
 
 		iOrderEClass = createEClass(IORDER);
-		createEOperation(iOrderEClass, IORDER___GET_BOOKINGS);
+		createEOperation(iOrderEClass, IORDER___GET_IBOOKINGS);
 		createEOperation(iOrderEClass, IORDER___GET_CUSTOMER);
 		createEOperation(iOrderEClass, IORDER___GET_ID);
 
@@ -1610,7 +1610,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		initEOperation(getIBooking__IsCheckedOut(), ecorePackage.getEBoolean(), "isCheckedOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(hotel_OrderEClass, Hotel_Order.class, "Hotel_Order", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHotel_Order_Booking(), this.getHotel_Booking(), null, "booking", null, 0, -1, Hotel_Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHotel_Order_Bookings(), this.getHotel_Booking(), null, "bookings", null, 0, -1, Hotel_Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getHotel_Order__SetID__int(), null, "setID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "orderID", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1623,7 +1623,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 
 		initEClass(iOrderEClass, IOrder.class, "IOrder", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEOperation(getIOrder__GetBookings(), this.getIBooking(), "getBookings", 1, -1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getIOrder__GetIBookings(), this.getIBooking(), "getIBookings", 1, -1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getIOrder__GetCustomer(), ecorePackage.getEInt(), "getCustomer", 1, 1, IS_UNIQUE, !IS_ORDERED);
 

@@ -144,8 +144,8 @@ public class OrderingTest {
 		assertEquals(1, orders.size());
 		IOrder order = orders.get(0);
 		assertEquals(personID, order.getCustomer());
-		assertEquals(1, order.getBookings().size());
-		IBooking booking = order.getBookings().get(0);
+		assertEquals(1, order.getIBookings().size());
+		IBooking booking = order.getIBookings().get(0);
 		assertEquals(personID, booking.getContact());
 		assertEquals(1, booking.getGuests().size());
 		assertEquals(personID, booking.getGuests().get(0).intValue());
