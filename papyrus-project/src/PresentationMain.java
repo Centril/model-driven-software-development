@@ -15,6 +15,7 @@ import se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires;
 import Classes.Hotel.BookingRequest;
 import Classes.Hotel.HotelFactory;
 import Classes.Hotel.Hotel_Hotel;
+import Classes.Hotel.IBooking;
 import Classes.Hotel.IConfiguration;
 import Classes.Hotel.IFrontDesk;
 import Classes.Hotel.IOrdering;
@@ -56,6 +57,7 @@ public class PresentationMain {
 		//System.out.println(iConfig.createRoom(2, 1000));
 		//System.out.println(iConfig.createRoom(3, 1300));
 		
+		
 		// Use case: Search
 		System.out.println("\nUse Case: Search\nSearches for available rooms from today to 4 days in the future for 2 persons.");
 		Calendar cal = Calendar.getInstance();
@@ -67,6 +69,7 @@ public class PresentationMain {
 		for (ISearchResult result : results) {
 			System.out.println(result.toString());
 		}
+		
 		
 		// Use case: Ordering
 		System.out.println("\nUse Case: Ordering");
@@ -95,7 +98,33 @@ public class PresentationMain {
 			System.out.println("placeOrder() failed!");
 		}
 		
+		
+		// Use case: Check in
+		System.out.println("\nUse Case: Check in");
+		int stalinsBookingId = findBookingIdByContactId(iFrontDesk, stalinId);
+		int teslasBookingId = findBookingIdByContactId(iFrontDesk, teslaId);
+		
+		if (iFrontDesk.checkIn(stalinsBookingId, 1)) {
+			System.out.println("Stalins check in succeded!");
+		} else {
+			System.out.println("Stalins check in failed!");
+		}
+		if (iFrontDesk.checkIn(teslasBookingId, 1)) {
+			System.out.println("Teslas check in succeeded!");
+		} else {
+			System.out.println("Teslas check in failed!");
+		}
+		
 		System.out.println("\nComputer over.");
+	}
+	
+	private static int findBookingIdByContactId(IFrontDesk iFrontDesk, int contactId) {
+		for (IBooking booking : iFrontDesk.getBookings()) {
+			if (booking.getContact() == contactId) {
+				return booking.getID();
+			}
+		}
+		return -1;
 	}
 	
 	private static int findPersonIdByName(IPersonRegistry iPersonReg, String firstName, String lastName) {
