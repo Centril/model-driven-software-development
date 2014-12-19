@@ -232,6 +232,50 @@ public class PersonRegistry_PersonImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPhoneNumber() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPhoneNumber(String number) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getEmail() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEmail(String email) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -322,6 +366,16 @@ public class PersonRegistry_PersonImpl extends MinimalEObjectImpl.Container impl
 				return null;
 			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___SET_SSN__STRING:
 				setSSN((String)arguments.get(0));
+				return null;
+			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___GET_PHONE_NUMBER:
+				return getPhoneNumber();
+			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___SET_PHONE_NUMBER__STRING:
+				setPhoneNumber((String)arguments.get(0));
+				return null;
+			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___GET_EMAIL:
+				return getEmail();
+			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___SET_EMAIL__STRING:
+				setEmail((String)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
