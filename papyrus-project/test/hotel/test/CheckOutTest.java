@@ -18,7 +18,6 @@ import Classes.Hotel.Hotel_Hotel;
 import Classes.Hotel.IBooking;
 import Classes.Hotel.IConfiguration;
 import Classes.Hotel.IFrontDesk;
-import Classes.Hotel.IPersistenceService;
 import Classes.Hotel.ISearch;
 import Classes.Hotel.ISearchResult;
 import Classes.Hotel.impl.Hotel_HotelImpl;
