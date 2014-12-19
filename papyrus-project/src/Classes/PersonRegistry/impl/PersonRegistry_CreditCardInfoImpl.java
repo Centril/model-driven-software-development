@@ -135,5 +135,34 @@ public class PersonRegistry_CreditCardInfoImpl extends MinimalEObjectImpl.Contai
 		}
 		return super.eInvoke(operationID, arguments);
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("CreditCardInfo[");
+		
+		sb.append("ccNumber=");
+		sb.append(ccNumber);
+		
+		sb.append(", ccv=");
+		sb.append(ccv);
+		
+		sb.append(", month=");
+		sb.append(month);
+		
+		sb.append(", year=");
+		sb.append(year);
+		
+		sb.append(", firstName=");
+		sb.append(firstName);
+		
+		sb.append(", lastName=");
+		sb.append(lastName);
+		
+		sb.append("]");
+		
+		return sb.toString();
+	}
 
 } //PersonRegistry_CreditCardInfoImpl

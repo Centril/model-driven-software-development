@@ -133,6 +133,26 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_-a2B8IeHEeSmRKJjN160SA" name="getPhoneNumber">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_CsbL4IeIEeSmRKJjN160SA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_DT6CoIeIEeSmRKJjN160SA" name="setPhoneNumber">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_FDTjsIeIEeSmRKJjN160SA" name="number">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Fnf14IeIEeSmRKJjN160SA" name="getEmail">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_HwbRQIeIEeSmRKJjN160SA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_IKIKsIeIEeSmRKJjN160SA" name="setEmail">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JnI7QIeIEeSmRKJjN160SA" name="email">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_z_LuYHlwEeS-dbwPGgzjtw" name="ICreditCardInfo">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_LEgrMHlxEeS-dbwPGgzjtw" name="getCCV">

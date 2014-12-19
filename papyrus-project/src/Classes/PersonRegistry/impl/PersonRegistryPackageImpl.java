@@ -381,6 +381,42 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIPerson__GetPhoneNumber() {
+		return iPersonEClass.getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIPerson__SetPhoneNumber__String() {
+		return iPersonEClass.getEOperations().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIPerson__GetEmail() {
+		return iPersonEClass.getEOperations().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIPerson__SetEmail__String() {
+		return iPersonEClass.getEOperations().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPersonRegistry_Blacklist() {
 		return personRegistry_BlacklistEClass;
 	}
@@ -576,6 +612,10 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 		createEOperation(iPersonEClass, IPERSON___SET_FIRST_NAME__STRING);
 		createEOperation(iPersonEClass, IPERSON___SET_LAST_NAME__STRING);
 		createEOperation(iPersonEClass, IPERSON___SET_SSN__STRING);
+		createEOperation(iPersonEClass, IPERSON___GET_PHONE_NUMBER);
+		createEOperation(iPersonEClass, IPERSON___SET_PHONE_NUMBER__STRING);
+		createEOperation(iPersonEClass, IPERSON___GET_EMAIL);
+		createEOperation(iPersonEClass, IPERSON___SET_EMAIL__STRING);
 
 		personRegistry_BlacklistEClass = createEClass(PERSON_REGISTRY_BLACKLIST);
 		createEReference(personRegistry_BlacklistEClass, PERSON_REGISTRY_BLACKLIST__PEOPLE);
@@ -688,6 +728,16 @@ public class PersonRegistryPackageImpl extends EPackageImpl implements PersonReg
 
 		op = initEOperation(getIPerson__SetSSN__String(), null, "setSSN", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getString(), "ssn", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getIPerson__GetPhoneNumber(), theTypesPackage.getString(), "getPhoneNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIPerson__SetPhoneNumber__String(), null, "setPhoneNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "number", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getIPerson__GetEmail(), theTypesPackage.getString(), "getEmail", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIPerson__SetEmail__String(), null, "setEmail", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "email", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(personRegistry_BlacklistEClass, PersonRegistry_Blacklist.class, "PersonRegistry_Blacklist", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPersonRegistry_Blacklist_People(), this.getPersonRegistry_Person(), null, "people", null, 0, -1, PersonRegistry_Blacklist.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
