@@ -572,7 +572,9 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		if (basicGetPersonRegistry().isBlacklisted(customer.getId())) {
 			throw new IllegalArgumentException("Customer is blacklisted.");
 		}
-		
+		if (orderRequest.getBookingRequests().isEmpty()) {
+			throw new IllegalArgumentException("Order does not contain any bookings.");
+		}
 		for (BookingRequest bookingReq : orderRequest.getBookingRequests()) {
 			IPerson contact = findPerson(bookingReq.getContact());
 			if (contact == null) {

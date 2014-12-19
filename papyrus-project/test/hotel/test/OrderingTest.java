@@ -21,6 +21,7 @@ import Classes.Hotel.BookingRequest;
 import Classes.Hotel.HotelFactory;
 import Classes.Hotel.Hotel_Hotel;
 import Classes.Hotel.IBooking;
+import Classes.Hotel.IBookingSuggestion;
 import Classes.Hotel.IConfiguration;
 import Classes.Hotel.IFrontDesk;
 import Classes.Hotel.IOrder;
@@ -150,6 +151,44 @@ public class OrderingTest {
 		assertEquals(personID, booking.getGuests().get(0).intValue());
 	}
 
+	@Test(expected=java.lang.IllegalArgumentException.class)
+	public void testForgetBookingSuggestion() {
+		iConfiguration.createRoom(1, 1.0);
+
+		int id = createPerson(0L, DISNEY);
+
+		long now = System.currentTimeMillis();
+		iSearch.search(addDays(now, 1), addDays(now, 5), 1);
+		OrderRequest or = new MockOrderRequest(id, Arrays.<BookingRequest>asList());
+
+		iOrdering.placeOrder(or);
+	}
+
+	@Test(expected=java.lang.IllegalArgumentException.class)
+	public void testDuplicateOrderRequest() {
+		iConfiguration.createRoom(2, 1.0);
+		
+		int stalin = createPerson(0L, STALIN);
+		int tesla = createPerson(-1L, TESLA);
+
+		long now = System.currentTimeMillis();
+		EList<ISearchResult> results = iSearch.search(addDays(now, 1), addDays(now, 2), 2);
+		IBookingSuggestion bs = results.get(0).getBookingSuggestions().get(0);
+		MockBookingRequest stalinBr = new MockBookingRequest(bs, Arrays.asList(stalin, tesla), stalin);
+		MockBookingRequest teslaBr = new MockBookingRequest(bs, Arrays.asList(tesla, stalin), tesla);
+		iOrdering.placeOrder(new MockOrderRequest(stalin, Arrays.<BookingRequest>asList(stalinBr)));
+		iOrdering.placeOrder(new MockOrderRequest(tesla, Arrays.<BookingRequest>asList(teslaBr)));
+	}
+
+	private int createPerson(long birthDate, CreditCardDetails ccd) {
+		IPerson person = iPersonReg.createPerson(birthDate);
+		person.createCreditCard(ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName);
+		return person.getId();
+	}
+
+	private static long addDays(long date, int days) {
+		return date + days * MILLIS_IN_DAY;
+	}
 
 	private static CreditCardDetails ccd (String ccNumber, String ccv, int expiryMonth,
 			int expiryYear, String firstName, String lastName, double initialBalance) {
