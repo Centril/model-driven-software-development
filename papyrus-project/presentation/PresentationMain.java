@@ -36,12 +36,11 @@ public class PresentationMain {
 		System.out.println("Hello, welcome to group 12's presentation!\n");
 		
 		System.out.println("\nBuilt a new hotel!");
-		Hotel_Hotel hotel = HotelFactory.eINSTANCE.createHotel_Hotel();
-		IConfiguration iConfig = hotel;
-		ISearch iSearch = hotel;
-		IOrdering iOrdering = hotel;
-		IPersonRegistry iPersonReg = hotel.getPersonRegistry();
-		IFrontDesk iFrontDesk = hotel;
+		IConfiguration iConfig = IConfiguration.instance;
+		ISearch iSearch = ISearch.instance;
+		IOrdering iOrdering = IOrdering.instance;
+		IPersonRegistry iPersonReg = IPersonRegistry.instance;
+		IFrontDesk iFrontDesk = IFrontDesk.instance;
 		
 		System.out.println("\nSetup bank account for some famous people and register them in hotel.");
 		setUpAccount(TESLA);
