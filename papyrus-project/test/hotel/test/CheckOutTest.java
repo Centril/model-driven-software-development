@@ -1,6 +1,7 @@
 package hotel.test;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 import hotel.test.mock.MockBookingRequest;
 import hotel.test.mock.MockOrderRequest;
 
@@ -59,7 +60,7 @@ public class CheckOutTest {
 		
 		person.createCreditCard(TESLA.ccNumber, TESLA.ccv, TESLA.expiryMonth, TESLA.expiryYear, TESLA.firstName, TESLA.lastName);
 		cal = Calendar.getInstance();
-		cal.add(Calendar.HOUR, 6);
+		cal.add(Calendar.MINUTE, 15);
 		today = cal.getTime();
 		cal.add(Calendar.HOUR, 24*2);
 		inTwoDays = cal.getTime();
@@ -81,10 +82,10 @@ public class CheckOutTest {
 	@Test
 	public void testCheckOutWithBooking() {
 		int bookingID = placeOrder(order, person);
-		boolean firstTry = frontdesk.checkOut(bookingID);
+		System.out.println(bookingID);
+		assertFalse(frontdesk.checkOut(bookingID));
 		frontdesk.checkIn(bookingID, 3);
-		boolean secondTry = frontdesk.checkOut(bookingID);
-		assertTrue(!firstTry && secondTry); //First try should fail and second succeed and booking should be checked out	
+		assertTrue(frontdesk.checkOut(bookingID));
 	}
 	
 	@Test
@@ -98,6 +99,7 @@ public class CheckOutTest {
 		order = new MockOrderRequest(person.getId(), bookings);	
 		
 		int bookingID = placeOrder(order, person);
+		System.out.println(bookingID);
 		frontdesk.checkIn(bookingID, 3);
 		boolean first = frontdesk.handInKeys(bookingID, 2);
 		boolean second = frontdesk.handInKeys(bookingID, 3);
