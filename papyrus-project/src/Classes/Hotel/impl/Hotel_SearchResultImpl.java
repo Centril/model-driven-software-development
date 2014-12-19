@@ -181,5 +181,23 @@ public class Hotel_SearchResultImpl extends MinimalEObjectImpl.Container impleme
 		}
 		return super.eInvoke(operationID, arguments);
 	}
+	
+	@Override
+	public String toString() {
+		
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("SearchResult[");
+		
+		sb.append("price=");
+		sb.append(getPrice());
+		
+		sb.append(", suggestions=");
+		sb.append(getBookingSuggestion());
+
+		sb.append("]");
+		
+		return sb.toString();
+	}
 
 } //Hotel_SearchResultImpl

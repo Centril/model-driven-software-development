@@ -57,8 +57,6 @@ public class Hotel_BookingSuggestionImpl extends MinimalEObjectImpl.Container im
 		this.room = room;
 		this.startTime = startTime;
 		this.endTime = endTime;
-		
-		System.out.println(this);
 	}
 	
 	/**
