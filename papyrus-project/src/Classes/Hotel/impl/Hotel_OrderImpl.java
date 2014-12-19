@@ -41,6 +41,7 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 	protected EList<Hotel_Booking> booking;
 
 	private int customer;
+	private int orderID;
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,23 +105,19 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int getID() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return orderID;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setID(int orderID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.orderID = orderID;
 	}
 
 	/**
