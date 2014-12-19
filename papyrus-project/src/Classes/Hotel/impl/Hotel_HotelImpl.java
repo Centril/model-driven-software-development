@@ -265,7 +265,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		try {
 			CustomerRequires bank = CustomerRequires.instance();
 			
-			if (bank.isCreditCardValid(creditcard.getCCNumber(), creditcard.getCCV(), creditcard.getMonth(), creditcard.getYear(), creditcard.getFirstName(), creditcard.getLastName())) {
+			if (!bank.isCreditCardValid(creditcard.getCCNumber(), creditcard.getCCV(), creditcard.getMonth(), creditcard.getYear(), creditcard.getFirstName(), creditcard.getLastName())) {
 				return false;
 			}
 			
@@ -276,7 +276,6 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			return false;
 		
 		} catch (SOAPException e) {
-			e.printStackTrace();
 			return false;
 		}
 	}

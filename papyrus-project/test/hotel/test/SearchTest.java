@@ -107,6 +107,16 @@ public class SearchTest {
 		assertNumBeds(results.get(0), 4, 4);
 	}
 
+	// Check for three 3-bed rooms are returned when searching for 9 people
+	@Test
+	public void testThreeRoomResult() {
+		makeRoomsAvailable(3, 3);
+		
+		List<ISearchResult> results = doSearch(9);
+		assertEquals(1, results.size());
+		assertNumBeds(results.get(0), 3, 3, 3);
+	}
+
 	// Search with standard interval from 1 day from now to 2 days from now.
 	private List<ISearchResult> doSearch(int numBeds) {
 		long from = System.currentTimeMillis() + MILLIS_IN_DAY;
