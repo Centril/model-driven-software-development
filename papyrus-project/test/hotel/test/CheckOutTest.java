@@ -82,7 +82,6 @@ public class CheckOutTest {
 	@Test
 	public void testCheckOutWithBooking() {
 		int bookingID = placeOrder(order, person);
-		System.out.println(bookingID);
 		assertFalse(frontdesk.checkOut(bookingID));
 		frontdesk.checkIn(bookingID, 3);
 		assertTrue(frontdesk.checkOut(bookingID));
@@ -99,7 +98,6 @@ public class CheckOutTest {
 		order = new MockOrderRequest(person.getId(), bookings);	
 		
 		int bookingID = placeOrder(order, person);
-		System.out.println(bookingID);
 		frontdesk.checkIn(bookingID, 3);
 		boolean first = frontdesk.handInKeys(bookingID, 2);
 		boolean second = frontdesk.handInKeys(bookingID, 3);
