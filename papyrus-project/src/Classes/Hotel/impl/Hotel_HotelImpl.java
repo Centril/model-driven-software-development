@@ -516,42 +516,34 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		// Check if person info is correct
 		IPerson customer = findPerson(orderRequest.getCustomer());
 		if (customer == null) {
-			return false;
-			//throw new RuntimeException("Customer does not exist.");
+			throw new IllegalArgumentException("Customer does not exist.");
 		}
 		if (personIsYoungerThanX(customer, legalAge)) {
-			return false;
-			//throw new RuntimeException("Customer is younger than 15.");
+			throw new IllegalArgumentException("Customer is younger than 15.");
 		}
 		if (!hasValidPaymentInfo(customer)) {
-			return false;
-			//throw new RuntimeException("Customer doesn't have valid payment info.");
+			throw new IllegalArgumentException("Customer doesn't have valid payment info.");
 		}
 		if (basicGetPersonRegistry().isBlacklisted(customer.getId())) {
-			return false;
-			//throw new RuntimeException("Customer is blacklisted.");
+			throw new IllegalArgumentException("Customer is blacklisted.");
 		}
 		
 		for (BookingRequest bookingReq : orderRequest.getBookingRequests()) {
 			IPerson contact = findPerson(bookingReq.getContact());
 			if (contact == null) {
-				return false;
-				//throw new RuntimeException("Contact does not exist");
+				throw new IllegalArgumentException("Contact does not exist");
 			}
 			if (basicGetPersonRegistry().isBlacklisted(contact.getId())) {
-				return false;
-				//throw new RuntimeException("Contact is blacklisted.");
+				throw new IllegalArgumentException("Contact is blacklisted.");
 			}
 			
 			for (int guestId : bookingReq.getGuests()) {
 				IPerson guest = findPerson(guestId);
 				if (guest == null) {
-					return false;
-					//throw new RuntimeException("Guest does not exist.");
+					throw new IllegalArgumentException("Guest does not exist.");
 				}
 				if (basicGetPersonRegistry().isBlacklisted(guest.getId())) {
-					return false;
-					//throw new RuntimeException("Guest is blacklisted");
+					throw new IllegalArgumentException("Guest is blacklisted");
 				}
 			}
 		}
@@ -563,12 +555,10 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			for (BookingRequest bookingReq : orderRequest.getBookingRequests()) {
 				IBookingSuggestion bs = bookingReq.getBookingSuggestion();
 				if (bs.getStartTime() >= bs.getEndTime()) {
-					return false;
-					//throw new RuntimeException("Don't be a stupid, no negative intervals.");
+					throw new IllegalArgumentException("endTime is before or at the same time as the starTime.");
 				}
 				if (!isRoomAvailable(bs.getRoom(), bs.getStartTime(), bs.getEndTime())) {
-					return false;
-					//throw new RuntimeException("One of the rooms is not available for booking at specified time");
+					throw new IllegalArgumentException("One of the rooms is not available for booking at specified time");
 				}
 			}
 			
