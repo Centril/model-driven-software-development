@@ -144,8 +144,8 @@ public class OrderingTest {
 		assertEquals(1, orders.size());
 		IOrder order = orders.get(0);
 		assertEquals(personID, order.getCustomer());
-		assertEquals(1, order.getBookings().size());
-		IBooking booking = order.getBookings().get(0);
+		assertEquals(1, order.getIBookings().size());
+		IBooking booking = order.getIBookings().get(0);
 		assertEquals(personID, booking.getContact());
 		assertEquals(1, booking.getGuests().size());
 		assertEquals(personID, booking.getGuests().get(0).intValue());
@@ -198,6 +198,29 @@ public class OrderingTest {
 		MockOrderRequest or2 = createOrderRequest(group2, 0, addDays(now, 3), 2);
 		assertTrue(iOrdering.placeOrder(or2));
 		assertTrue(iOrdering.placeOrder(or1));
+	}
+
+	@Test(expected=java.lang.IllegalArgumentException.class)
+	public void testBlacklistedCustomer() {
+		iConfiguration.createRoom(1, 1.1);
+
+		int disney = createPerson(-12L, DISNEY);
+		iPersonReg.addToBlacklist(disney);
+
+		MockOrderRequest or = createOrderRequest(new int[] {disney}, 0, addDays(System.currentTimeMillis(), 1), 2);
+		iOrdering.placeOrder(or);
+	}
+
+	@Test(expected=java.lang.IllegalArgumentException.class)
+	public void testBlacklistedGuest() {
+		iConfiguration.createRoom(2, 1.1);
+
+		int disney = createPerson(-12L, DISNEY);
+		int stalin = createPerson(-1L, STALIN);
+		iPersonReg.addToBlacklist(stalin);
+
+		MockOrderRequest or = createOrderRequest(new int[] {disney, stalin}, 0, addDays(System.currentTimeMillis(), 1), 2);
+		iOrdering.placeOrder(or);
 	}
 
 	private MockOrderRequest createOrderRequest(int[] guests, int customer, long startDate, int days) {

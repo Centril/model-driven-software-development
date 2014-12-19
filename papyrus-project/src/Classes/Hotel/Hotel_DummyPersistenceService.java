@@ -15,7 +15,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link Classes.Hotel.Hotel_DummyPersistenceService#getOrders <em>Orders</em>}</li>
  *   <li>{@link Classes.Hotel.Hotel_DummyPersistenceService#getRooms <em>Rooms</em>}</li>
- *   <li>{@link Classes.Hotel.Hotel_DummyPersistenceService#getOccupancies <em>Occupancies</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,21 +54,5 @@ public interface Hotel_DummyPersistenceService extends IPersistenceService {
 	 * @generated
 	 */
 	EList<Hotel_Room> getRooms();
-
-	/**
-	 * Returns the value of the '<em><b>Occupancies</b></em>' reference list.
-	 * The list contents are of type {@link Classes.Hotel.Hotel_Occupancy}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Occupancies</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Occupancies</em>' reference list.
-	 * @see Classes.Hotel.HotelPackage#getHotel_DummyPersistenceService_Occupancies()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	EList<Hotel_Occupancy> getOccupancies();
 
 } // Hotel_DummyPersistenceService

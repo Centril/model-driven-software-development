@@ -23,7 +23,7 @@ public interface IOrder extends EObject {
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
-	EList<IBooking> getBookings();
+	EList<IBooking> getIBookings();
 
 	/**
 	 * <!-- begin-user-doc -->
