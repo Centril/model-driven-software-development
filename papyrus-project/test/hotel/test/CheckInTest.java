@@ -75,11 +75,13 @@ private static final CreditCardDetails TESLA = ccd("1212131941431336", "666", 2,
 		List<Integer> guests = new ArrayList<>(1);
 		guests.add(person.getId());
 		bookings.add(new MockBookingRequest(searchResult.getBookingSuggestions().get(0), guests, person.getId()));
-		order = new MockOrderRequest(person.getId(), bookings);		
+		order = new MockOrderRequest(person.getId(), bookings);	
+		
+		hotel.placeOrder(order);
 	}
 	
 	public void testCantFindBooking(){
-		
+		assertTrue(!frontdesk.checkIn(Integer.MAX_VALUE, 2));
 	}
 	
 	@Test 
@@ -89,6 +91,7 @@ private static final CreditCardDetails TESLA = ccd("1212131941431336", "666", 2,
 
 	@Test
 	public void testCheckInWhenAlreadyCheckedIn() {
+		frontdesk.checkIn(bookingID, 2);
 		assertTrue(!frontdesk.checkIn(bookingID, 2));
 	}
 	
