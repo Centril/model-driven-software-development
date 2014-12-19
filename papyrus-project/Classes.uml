@@ -332,15 +332,8 @@
           </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="__PQ3kId-EeSOAqruVTgZ0g" name="setCheckedOut">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_F_0lYId_EeSOAqruVTgZ0g" name="hasCheckedOut">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_F_0lYId_EeSOAqruVTgZ0g" name="isCheckedOut">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-          </ownedParameter>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_I8RIYId_EeSOAqruVTgZ0g" name="getContact">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_I8UywId_EeSOAqruVTgZ0g" name="contact" direction="return">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_I8WA4Id_EeSOAqruVTgZ0g" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_I8Wn8Id_EeSOAqruVTgZ0g" value="1"/>
           </ownedParameter>
         </ownedOperation>
       </nestedClassifier>

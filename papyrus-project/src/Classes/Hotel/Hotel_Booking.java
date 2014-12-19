@@ -97,4 +97,12 @@ public interface Hotel_Booking extends IBooking {
 	 */
 	void setCustomer(int customerId);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model isCheckedOutRequired="true" isCheckedOutOrdered="false"
+	 * @generated
+	 */
+	void setCheckedOut(boolean isCheckedOut);
+
 } // Hotel_Booking

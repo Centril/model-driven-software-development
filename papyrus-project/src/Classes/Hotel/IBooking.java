@@ -105,4 +105,12 @@ public interface IBooking extends EObject {
 	 */
 	boolean isCheckedIn();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isCheckedOut();
+
 } // IBooking

@@ -621,13 +621,22 @@ public interface HotelPackage extends EPackage {
 	int IBOOKING___IS_CHECKED_IN = 10;
 
 	/**
+	 * The operation id for the '<em>Is Checked Out</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING___IS_CHECKED_OUT = 11;
+
+	/**
 	 * The number of operations of the '<em>IBooking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_OPERATION_COUNT = 11;
+	int IBOOKING_OPERATION_COUNT = 12;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.impl.Hotel_BookingImpl <em>Hotel Booking</em>}' class.
@@ -766,6 +775,15 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_BOOKING___IS_CHECKED_IN = IBOOKING___IS_CHECKED_IN;
 
 	/**
+	 * The operation id for the '<em>Is Checked Out</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_BOOKING___IS_CHECKED_OUT = IBOOKING___IS_CHECKED_OUT;
+
+	/**
 	 * The operation id for the '<em>Set ID</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -793,13 +811,22 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_BOOKING___SET_CUSTOMER__INT = IBOOKING_OPERATION_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Set Checked Out</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_BOOKING___SET_CHECKED_OUT__BOOLEAN = IBOOKING_OPERATION_COUNT + 3;
+
+	/**
 	 * The number of operations of the '<em>Hotel Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_BOOKING_OPERATION_COUNT = IBOOKING_OPERATION_COUNT + 3;
+	int HOTEL_BOOKING_OPERATION_COUNT = IBOOKING_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.IOrder <em>IOrder</em>}' class.
@@ -2315,6 +2342,16 @@ public interface HotelPackage extends EPackage {
 	EOperation getHotel_Booking__SetCustomer__int();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.Hotel_Booking#setCheckedOut(boolean) <em>Set Checked Out</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Checked Out</em>' operation.
+	 * @see Classes.Hotel.Hotel_Booking#setCheckedOut(boolean)
+	 * @generated
+	 */
+	EOperation getHotel_Booking__SetCheckedOut__boolean();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.IBooking <em>IBooking</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2433,6 +2470,16 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIBooking__IsCheckedIn();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IBooking#isCheckedOut() <em>Is Checked Out</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Checked Out</em>' operation.
+	 * @see Classes.Hotel.IBooking#isCheckedOut()
+	 * @generated
+	 */
+	EOperation getIBooking__IsCheckedOut();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.Hotel_Order <em>Hotel Order</em>}'.
@@ -3400,6 +3447,14 @@ public interface HotelPackage extends EPackage {
 		EOperation HOTEL_BOOKING___SET_CUSTOMER__INT = eINSTANCE.getHotel_Booking__SetCustomer__int();
 
 		/**
+		 * The meta object literal for the '<em><b>Set Checked Out</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation HOTEL_BOOKING___SET_CHECKED_OUT__BOOLEAN = eINSTANCE.getHotel_Booking__SetCheckedOut__boolean();
+
+		/**
 		 * The meta object literal for the '{@link Classes.Hotel.IBooking <em>IBooking</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3496,6 +3551,14 @@ public interface HotelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IBOOKING___IS_CHECKED_IN = eINSTANCE.getIBooking__IsCheckedIn();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Checked Out</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IBOOKING___IS_CHECKED_OUT = eINSTANCE.getIBooking__IsCheckedOut();
 
 		/**
 		 * The meta object literal for the '{@link Classes.Hotel.impl.Hotel_OrderImpl <em>Hotel Order</em>}' class.
