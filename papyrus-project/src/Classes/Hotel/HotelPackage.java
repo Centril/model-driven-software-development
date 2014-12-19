@@ -1494,13 +1494,31 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_HOTEL___GET_LEGAL_AGE = IFRONT_DESK_OPERATION_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Set Max Booking Interval</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_HOTEL___SET_MAX_BOOKING_INTERVAL__LONG = IFRONT_DESK_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Set Max Time In Future Booking Is Possible</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_HOTEL___SET_MAX_TIME_IN_FUTURE_BOOKING_IS_POSSIBLE__LONG = IFRONT_DESK_OPERATION_COUNT + 8;
+
+	/**
 	 * The number of operations of the '<em>Hotel Hotel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_HOTEL_OPERATION_COUNT = IFRONT_DESK_OPERATION_COUNT + 7;
+	int HOTEL_HOTEL_OPERATION_COUNT = IFRONT_DESK_OPERATION_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.IPersistenceService <em>IPersistence Service</em>}' class.
@@ -1852,13 +1870,31 @@ public interface HotelPackage extends EPackage {
 	int ICONFIGURATION___GET_LEGAL_AGE = 4;
 
 	/**
+	 * The operation id for the '<em>Set Max Booking Interval</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ICONFIGURATION___SET_MAX_BOOKING_INTERVAL__LONG = 5;
+
+	/**
+	 * The operation id for the '<em>Set Max Time In Future Booking Is Possible</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ICONFIGURATION___SET_MAX_TIME_IN_FUTURE_BOOKING_IS_POSSIBLE__LONG = 6;
+
+	/**
 	 * The number of operations of the '<em>IConfiguration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ICONFIGURATION_OPERATION_COUNT = 5;
+	int ICONFIGURATION_OPERATION_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl <em>Hotel Dummy Persistence Service</em>}' class.
@@ -3097,6 +3133,26 @@ public interface HotelPackage extends EPackage {
 	EOperation getIConfiguration__GetLegalAge();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IConfiguration#setMaxBookingInterval(long) <em>Set Max Booking Interval</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Max Booking Interval</em>' operation.
+	 * @see Classes.Hotel.IConfiguration#setMaxBookingInterval(long)
+	 * @generated
+	 */
+	EOperation getIConfiguration__SetMaxBookingInterval__long();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IConfiguration#setMaxTimeInFutureBookingIsPossible(long) <em>Set Max Time In Future Booking Is Possible</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Max Time In Future Booking Is Possible</em>' operation.
+	 * @see Classes.Hotel.IConfiguration#setMaxTimeInFutureBookingIsPossible(long)
+	 * @generated
+	 */
+	EOperation getIConfiguration__SetMaxTimeInFutureBookingIsPossible__long();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.Hotel_DummyPersistenceService <em>Hotel Dummy Persistence Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4075,6 +4131,22 @@ public interface HotelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ICONFIGURATION___GET_LEGAL_AGE = eINSTANCE.getIConfiguration__GetLegalAge();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Max Booking Interval</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ICONFIGURATION___SET_MAX_BOOKING_INTERVAL__LONG = eINSTANCE.getIConfiguration__SetMaxBookingInterval__long();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Max Time In Future Booking Is Possible</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ICONFIGURATION___SET_MAX_TIME_IN_FUTURE_BOOKING_IS_POSSIBLE__LONG = eINSTANCE.getIConfiguration__SetMaxTimeInFutureBookingIsPossible__long();
 
 		/**
 		 * The meta object literal for the '{@link Classes.Hotel.impl.Hotel_DummyPersistenceServiceImpl <em>Hotel Dummy Persistence Service</em>}' class.
