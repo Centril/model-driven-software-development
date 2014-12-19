@@ -56,6 +56,9 @@ import Classes.PersonRegistry.IPersonRegistry;
  * @generated
  */
 public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hotel_Hotel {
+	
+	private int legalAge;
+	
 	/**
 	 * The cached value of the '{@link #getPersonRegistry() <em>Person Registry</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -623,23 +626,19 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setLegalAge(int age) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.legalAge = age;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int getLegalAge() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return legalAge;
 	}
 
 	/**
