@@ -60,6 +60,8 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 		this.roomId = -1;
 		this.OutOfOrder = false;
 		this.roomInfo = "";
+		
+		System.out.println(this);
 	}
 
 	/**
@@ -216,6 +218,42 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+	
+	@Override
+	public String toString() {
+		
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("Room[");
+		
+		sb.append("id=");
+		sb.append(getId());
+		
+		sb.append(", beds=");
+		sb.append(getNumBeds());
+
+		sb.append(", price=");
+		sb.append(getPrice());
+		
+		sb.append(", isOutOfOrder=");
+		sb.append(isOutOfOrder());
+		
+		if (getName() != null && getName() != "") {
+			sb.append(", name=\"");
+			sb.append(getName());
+			sb.append("\"");
+		}
+		
+		if (getRoomInfo() != null && getRoomInfo() != "") {
+			sb.append(", info=\"");
+			sb.append(getRoomInfo());
+			sb.append("\"");
+		}
+
+		sb.append("]");
+		
+		return sb.toString();
 	}
 
 } //Hotel_RoomImpl
