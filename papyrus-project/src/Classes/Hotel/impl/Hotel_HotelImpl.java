@@ -67,6 +67,8 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 
 	private static final int MAX_ROOM_COMBINATION = 2;
 	private int legalAge = 18;
+	private long maxBookingInterval; //TODO set clever defaults
+	private long maxTimeInFutureBookingIsPossible;
 
 	/**
 	 * The cached value of the '{@link #getPersonRegistry() <em>Person Registry</em>}' reference.
@@ -678,23 +680,19 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setMaxBookingInterval(long length) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.maxBookingInterval = length;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setMaxTimeInFutureBookingIsPossible(long time) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.maxTimeInFutureBookingIsPossible = time;
 	}
 
 	/**
