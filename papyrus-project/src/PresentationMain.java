@@ -1,14 +1,22 @@
+import hotel.test.mock.MockBookingRequest;
+import hotel.test.mock.MockOrderRequest;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 import javax.xml.soap.SOAPException;
 
+import org.eclipse.emf.common.util.EList;
+
 import se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires;
 import se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires;
+import Classes.Hotel.BookingRequest;
 import Classes.Hotel.HotelFactory;
 import Classes.Hotel.Hotel_Hotel;
 import Classes.Hotel.IConfiguration;
+import Classes.Hotel.IFrontDesk;
 import Classes.Hotel.IOrdering;
 import Classes.Hotel.ISearch;
 import Classes.Hotel.ISearchResult;
@@ -30,8 +38,9 @@ public class PresentationMain {
 		Hotel_Hotel hotel = HotelFactory.eINSTANCE.createHotel_Hotel();
 		IConfiguration iConfig = hotel;
 		ISearch iSearch = hotel;
-		IOrdering iOrder = hotel;
+		IOrdering iOrdering = hotel;
 		IPersonRegistry iPersonReg = hotel.getPersonRegistry();
+		IFrontDesk iFrontDesk = hotel;
 		
 		System.out.println("\nSetup bank account for some famous people and register them in hotel.");
 		setUpAccount(TESLA);
@@ -44,8 +53,8 @@ public class PresentationMain {
 		System.out.println("\nSetup (use case maybe): Creates 4 rooms in the newly built hotel.");
 		System.out.println(iConfig.createRoom(1, 400));
 		System.out.println(iConfig.createRoom(1, 450));
-		System.out.println(iConfig.createRoom(2, 1000));
-		System.out.println(iConfig.createRoom(3, 1300));
+		//System.out.println(iConfig.createRoom(2, 1000));
+		//System.out.println(iConfig.createRoom(3, 1300));
 		
 		// Use case: Search
 		System.out.println("\nUse Case: Search\nSearches for available rooms from today to 4 days in the future for 2 persons.");
@@ -61,10 +70,42 @@ public class PresentationMain {
 		
 		// Use case: Ordering
 		System.out.println("\nUse Case: Ordering");
+		if (results.get(0).getBookingSuggestions().size() != 2) {
+			throw new AssertionError("This should never happan in presentation exception.");
+		}
 		
+		int stalinId = findPersonIdByName(iPersonReg, STALIN.firstName, STALIN.lastName);
+		List<Integer> firstRoomGuests = new ArrayList<>();
+		firstRoomGuests.add(stalinId);
+		MockBookingRequest firstRoom = new MockBookingRequest(results.get(0).getBookingSuggestions().get(0), firstRoomGuests, stalinId);
 		
+		int teslaId = findPersonIdByName(iPersonReg, TESLA.firstName, TESLA.lastName);
+		List<Integer> secondRoomGuests = new ArrayList<>();
+		secondRoomGuests.add(teslaId);
+		MockBookingRequest secondRoom = new MockBookingRequest(results.get(0).getBookingSuggestions().get(1), secondRoomGuests, teslaId);
+		
+		List<BookingRequest> bookingRequests = new ArrayList<>();
+		bookingRequests.add(firstRoom);
+		bookingRequests.add(secondRoom);
+		MockOrderRequest orderRequest = new MockOrderRequest(stalinId, bookingRequests);
+		
+		if (iOrdering.placeOrder(orderRequest)) {
+			System.out.println("placeOrder() succeeded!");
+		} else {
+			System.out.println("placeOrder() failed!");
+		}
 		
 		System.out.println("\nComputer over.");
+	}
+	
+	private static int findPersonIdByName(IPersonRegistry iPersonReg, String firstName, String lastName) {
+		EList<IPerson> persons = iPersonReg.getIPeople();
+		for (IPerson person : persons) {
+			if (person.getFirstName().equalsIgnoreCase(firstName) && person.getLastName().equalsIgnoreCase(lastName)) {
+				return person.getId();
+			}
+		}
+		return -1;
 	}
 	
 	private static void registerPersonInRegistry(IPersonRegistry personRegistry, CreditCardDetails ccd, long birthDate) {
