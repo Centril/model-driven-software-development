@@ -10,6 +10,9 @@ import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.Test;
 
+import Classes.Hotel.HotelFactory;
+import Classes.Hotel.HotelPackage;
+import Classes.Hotel.Hotel_Hotel;
 import Classes.Hotel.IBookingSuggestion;
 import Classes.Hotel.IConfiguration;
 import Classes.Hotel.ISearch;
@@ -20,10 +23,15 @@ public class SearchTest {
 	private static final long MILLIS_IN_DAY = 86400000L;
 
 	private ISearch search;
+	private IConfiguration configuration;
 
 	@Before
 	public void before() {
-		search = ISearch.instance;
+		// ISearch.instance, and similar, would be used for real implementation, for testing
+		// purposes though, we create a new instance for each test
+		Hotel_Hotel hotel = HotelFactory.eINSTANCE.createHotel_Hotel();
+		search = hotel;
+		configuration = hotel;
 	}
 
 	@Test(expected=IllegalArgumentException.class)
@@ -56,49 +64,46 @@ public class SearchTest {
 	// Check if room with two beds is found for two people
 	@Test
 	public void testFindOneTwoBed() {
-		ConfigUtil.removeAllRooms();
 		makeRoomsAvailable(2, 1);
 		
 		List<ISearchResult> results = doSearch(2);
 		
-		assertTrue(results.size() == 1);
+		assertEquals(1, results.size());
 		assertNumBedsOneRoom(results.get(0), 2);
 	}
 
 	// Check if room with four beds is found for three people
 	@Test
 	public void testFindUnfilledButOnlyAvailable() {
-		ConfigUtil.removeAllRooms();
 		makeRoomsAvailable(2, 1);
 		makeRoomsAvailable(4, 1);
 		
 		List<ISearchResult> results = doSearch(3);
-		assertTrue(results.size() == 1);
+		assertEquals(1, results.size());
 		assertNumBedsOneRoom(results.get(0), 4);
 	}
 
 	// Check if one 3-bed and 4-bed is found for 7 people
 	@Test
 	public void testFindFilledTwoRoomResult() {
-		ConfigUtil.removeAllRooms();
 		makeRoomsAvailable(1, 1);
 		makeRoomsAvailable(3, 1);
 		makeRoomsAvailable(4, 1);
 		
 		List<ISearchResult> results = doSearch(7);
-		assertTrue(results.size() == 1);
+
+		assertEquals(1, results.size());
 		assertNumBeds(results.get(0), 3, 4);
 	}
 	
 	// Check if two 4-bed rooms are found for 7 persons if 7-bed not available 
 	@Test
 	public void testFindMultiUnfilledButOnlyAvailable() {
-		ConfigUtil.removeAllRooms();
 		makeRoomsAvailable(2, 1);
 		makeRoomsAvailable(4, 2);
 		
 		List<ISearchResult> results = doSearch(7);
-		assertTrue(results.size() == 1);
+		assertEquals(1, results.size());
 		assertNumBeds(results.get(0), 4, 4);
 	}
 
@@ -110,8 +115,7 @@ public class SearchTest {
 	}
 
 	// Make a number of dummy rooms with fixed price
-	private static void makeRoomsAvailable(int numBeds, int amount) {
-		IConfiguration configuration = IConfiguration.instance;
+	private void makeRoomsAvailable(int numBeds, int amount) {
 		for(int i = 0; i < amount; i++) {
 			configuration.createRoom(numBeds, 100.0);
 		}

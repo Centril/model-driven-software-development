@@ -3,9 +3,13 @@
 package Classes.Hotel.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.xml.soap.SOAPException;
 
@@ -56,9 +60,10 @@ import Classes.PersonRegistry.IPersonRegistry;
  * @generated
  */
 public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hotel_Hotel {
-	
+
 	private int legalAge;
-	
+	private static final int MAX_ROOM_COMBINATION = 2;
+
 	/**
 	 * The cached value of the '{@link #getPersonRegistry() <em>Person Registry</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -374,94 +379,185 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			throw new IllegalArgumentException("numberOfPersons is 100 or more");
 		}
 		
-		EList<Hotel_Room> rooms = persistenceService.getRooms();
-		
-		EList<Hotel_Room> availableRooms = new BasicEList<>();
-		
-		// Loop through all rooms in the hotel
-		for (Hotel_Room room : rooms) {
-			if (isRoomAvailable(room, startTime, endTime)) {
-				availableRooms.add(room);
-			}
-		}
-		
-		// Create a list (containing lists of rooms) where the index indicates the number of beds (minus one) in the rooms
-		EList<EList<Hotel_Room>> roomsAccordingToNumBeds = new BasicEList<>();
-		for (int i = 0; i < numberOfPersons; i++) {
-			roomsAccordingToNumBeds.add(new BasicEList<Hotel_Room>());
-		}
-		
-		// Also add a list containing all the rooms larger than necessary
-		roomsAccordingToNumBeds.add(new BasicEList<Hotel_Room>());
-		
-		// Fill the new lists with appropriate rooms
-		for (Hotel_Room room : availableRooms) {
-			int numBeds = room.getNumBeds();
-			
-			// If the room has same or less beds than number of people, put it in the appropriate list
-			if (numBeds <= numberOfPersons) {
-				roomsAccordingToNumBeds.get(numBeds - 1).add(room);
-			}
-			else { // Else put it in the last list
-				roomsAccordingToNumBeds.get(numberOfPersons).add(room);
-			}
+		if(startTime >= endTime) {
+			throw new IllegalArgumentException("endTime before or equal to startTime");
 		}
 		
 		EList<ISearchResult> results = new BasicEList<ISearchResult>();
+		
+		EList<Hotel_Room> rooms = persistenceService.getRooms();
 
-		// For all rooms with the same number of beds as people, add them to the results
-		for (Hotel_Room room : roomsAccordingToNumBeds.get(numberOfPersons - 1)) {
-			// Create a suggestion with the room
-			Hotel_BookingSuggestion suggestion = new Hotel_BookingSuggestionImpl(room, startTime, endTime);
-						
-			// Create a search result with the suggestion
-			Hotel_SearchResult searchResult = new Hotel_SearchResultImpl();
-			searchResult.getBookingSuggestion().add(suggestion);
-						
-			// Add the result to the list of all results
-			results.add(searchResult);
+		if (rooms.size() < 1) {
+			return results;
+		}
+
+		
+		// Add everything into roomtype map, could be cached / done somewhere else
+		Map<Integer, List<Hotel_Room>> roomtypeToRoom = new HashMap<Integer, List<Hotel_Room>>();
+		for(Hotel_Room r : rooms) {
+			List<Hotel_Room> ofType = roomtypeToRoom.get(r.getNumBeds());
+			if(ofType == null) {
+				ofType = new ArrayList<Hotel_Room>();
+				roomtypeToRoom.put(r.getNumBeds(), ofType);
+			}
+			ofType.add(r);
 		}
 		
-		// For 2 rooms with the same number of beds as people, add them to the results
-		for (int i = 0; i < numberOfPersons / 2; i++) {
-			int bedsInRoomOne = numberOfPersons / 2;
-			int bedsInRoomTwo = numberOfPersons - bedsInRoomOne;
-			
-			for (int j = 0; j < roomsAccordingToNumBeds.get(bedsInRoomOne - 1).size()
-					&& j < roomsAccordingToNumBeds.get(bedsInRoomTwo - 1).size(); j++) {
-				
-				// Fetch the rooms
-				Hotel_Room roomOne = roomsAccordingToNumBeds.get(bedsInRoomOne - 1).get(j);
-				Hotel_Room roomTwo = roomsAccordingToNumBeds.get(bedsInRoomTwo - 1).get(j);
-				
-				// Create suggestions with the rooms
-				Hotel_BookingSuggestion suggestionOne = new Hotel_BookingSuggestionImpl(roomOne, startTime, endTime);
-				Hotel_BookingSuggestion suggestionTwo = new Hotel_BookingSuggestionImpl(roomTwo, startTime, endTime);
-				
-				// Create a search result with the suggestions
-				Hotel_SearchResult searchResult = new Hotel_SearchResultImpl();
-				searchResult.getBookingSuggestion().add(suggestionOne);
-				searchResult.getBookingSuggestion().add(suggestionTwo);
-				
-				// Add the result to the list of all results
-				results.add(searchResult);
+		List<Integer> roomTypesAvailable = new ArrayList<Integer>(roomtypeToRoom.keySet());
+		int largestRoom = roomTypesAvailable.get(roomTypesAvailable.size() - 1);
+
+		// Keep track of the smallest value for the largest room in previous result. I know, makes no sense.
+		// Used to prevent getting a room as big in a result with more rooms.
+		int minLargestRoomSize = 0; //  
+		boolean minFound = false;
+
+		for (int numRooms = 1; numRooms <= MAX_ROOM_COMBINATION; numRooms++) {
+			for (int extraBeds = 0; extraBeds < largestRoom; extraBeds++) {
+				List<ISearchResult> partResult = findValidResults(numberOfPersons, startTime, endTime, numRooms,extraBeds, roomTypesAvailable, largestRoom, roomtypeToRoom);
+
+				if (partResult.size() > 0) {
+					
+					// Try to not add results that are plainly worse than those
+					// with less rooms
+					int partLargest = getLargestRoomSize(partResult);
+					if (!minFound || partLargest < minLargestRoomSize) {
+						minLargestRoomSize = partLargest;
+						minFound = true;
+					} else {
+						continue; // A bit unsure if this is appropriate
+					}
+					
+					results.addAll(partResult);
+					break;
+				}
 			}
 		}
 		
-		// Now just dump all the rooms containing more beds than number of people in the results...
-		for (Hotel_Room room : roomsAccordingToNumBeds.get(numberOfPersons)) {
-			// Create suggestion with the room
-			Hotel_BookingSuggestion suggestion = new Hotel_BookingSuggestionImpl(room, startTime, endTime);
-						
-			// Create a search result with the suggestion
-			Hotel_SearchResult searchResult = new Hotel_SearchResultImpl();
-			searchResult.getBookingSuggestion().add(suggestion);
-						
-			// Add the result to the list of all results
-			results.add(searchResult);
-		}
-		
 		return results;
+	}
+
+	private int getLargestRoomSize(List<ISearchResult> partResult) {
+		int max = 0;
+		for(ISearchResult sr : partResult) {
+			for (IBookingSuggestion bs : sr.getBookingSuggestions()) {
+				max = Math.max(max, bs.getRoom().getNumBeds());
+			}
+		}
+		return max;
+	}
+
+	private List<ISearchResult> findValidResults(int numPeople, long startTime,
+			long endTime, int numRooms, int extraBeds,
+			List<Integer> roomTypesAvailable,
+			int largestRoom, Map<Integer, List<Hotel_Room>> roomtypeToRoom) {
+		List<ISearchResult> results = new ArrayList<ISearchResult>();
+		if (numRooms == 1) {
+			fillOneRoomresults(results, numPeople, startTime, startTime,
+					endTime, extraBeds, roomTypesAvailable, largestRoom, roomtypeToRoom);
+		} else if (numRooms == 2) {
+			fillTwoRoomresults(results, numPeople, startTime, startTime,
+					endTime, extraBeds, roomTypesAvailable, largestRoom, roomtypeToRoom);
+		} else {
+			// No can do
+		}
+		return results;
+	}
+
+	private void fillOneRoomresults(List<ISearchResult> results, int numPeople,
+			long startTime, long startTime2, long endTime, int extraBeds,
+			List<Integer> roomTypesAvailable, int largestRoom,
+			Map<Integer, List<Hotel_Room>> roomtypeToRoom) {
+		List<Hotel_Room> rooms = roomtypeToRoom.get(numPeople + extraBeds);
+		if (rooms == null) {
+			return;
+		}
+		Hotel_Room room = findOneResultInList(rooms, startTime, endTime);
+
+		if (room == null) {
+			return;
+		}
+
+		Hotel_BookingSuggestion sug = new Hotel_BookingSuggestionImpl(room,
+				startTime, endTime);
+		Hotel_SearchResult res = new Hotel_SearchResultImpl();
+		res.addBookingSuggestion(sug);
+		results.add(res);
+	}
+
+	private void fillTwoRoomresults(List<ISearchResult> results, int numPeople,
+			long startTime, long startTime2, long endTime, int extraBeds,
+			List<Integer> roomTypesAvailable,
+			int largestRoom, Map<Integer, List<Hotel_Room>> roomtypeToRoom) {
+		for (int room1Beds = 1; true; room1Beds++) {
+			int room2Beds = numPeople - room1Beds + extraBeds;
+
+			if(room1Beds > room2Beds) {
+				break;
+			}
+			
+			Hotel_Room room1Match = null;
+			Hotel_Room room2Match = null;
+
+			// Need to handle rooms of the same type separately
+			if (room1Beds != room2Beds) {
+
+				List<Hotel_Room> room1Sized = roomtypeToRoom.get(room1Beds);
+				List<Hotel_Room> room2Sized = roomtypeToRoom.get(room2Beds);
+
+				if (room1Sized == null || room2Sized == null) {
+					continue;
+				}
+
+				room1Match = findOneResultInList(room1Sized, startTime, endTime);
+
+				if (room1Match == null) {
+					continue;
+				}
+
+				room2Match = findOneResultInList(room2Sized, startTime, endTime);
+				if (room2Match == null) {
+					continue;
+				}
+
+			} else {				
+				List<Hotel_Room> roomsSharedSize = roomtypeToRoom
+						.get(room1Beds);
+				if (roomsSharedSize == null) {
+					continue;
+				}
+				List<Hotel_Room> roomsFound = new ArrayList<>();
+				for (Hotel_Room room : roomsSharedSize) {
+					if (isRoomAvailable(room, startTime, endTime)) {
+						roomsFound.add(room);
+						if (roomsFound.size() == 2) {
+							break;
+						}
+					}
+				}
+				if (roomsFound.size() != 2) {
+					continue;
+				}
+				room1Match = roomsFound.get(0);
+				room2Match = roomsFound.get(1);
+			}
+
+			Hotel_SearchResult result = new Hotel_SearchResultImpl();
+			result.addBookingSuggestion(new Hotel_BookingSuggestionImpl(
+					room1Match, startTime, endTime));
+			result.addBookingSuggestion(new Hotel_BookingSuggestionImpl(
+					room2Match, startTime, endTime));
+			results.add(result);
+		}
+	}
+	
+	private Hotel_Room findOneResultInList(List<Hotel_Room> list,
+			long startTime, long endTime) {
+		for (Hotel_Room room : list) {
+			if (isRoomAvailable(room, startTime, endTime)) {
+				return room;
+			}
+		}
+		return null;
 	}
 
 	private IPerson findPerson(int id) {
@@ -504,42 +600,34 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		// Check if person info is correct
 		IPerson customer = findPerson(orderRequest.getCustomer());
 		if (customer == null) {
-			return false;
-			//throw new RuntimeException("Customer does not exist.");
+			throw new IllegalArgumentException("Customer does not exist.");
 		}
 		if (personIsYoungerThanX(customer, legalAge)) {
-			return false;
-			//throw new RuntimeException("Customer is younger than 15.");
+			throw new IllegalArgumentException("Customer is younger than 15.");
 		}
 		if (!hasValidPaymentInfo(customer)) {
-			return false;
-			//throw new RuntimeException("Customer doesn't have valid payment info.");
+			throw new IllegalArgumentException("Customer doesn't have valid payment info.");
 		}
 		if (basicGetPersonRegistry().isBlacklisted(customer.getId())) {
-			return false;
-			//throw new RuntimeException("Customer is blacklisted.");
+			throw new IllegalArgumentException("Customer is blacklisted.");
 		}
 		
 		for (BookingRequest bookingReq : orderRequest.getBookingRequests()) {
 			IPerson contact = findPerson(bookingReq.getContact());
 			if (contact == null) {
-				return false;
-				//throw new RuntimeException("Contact does not exist");
+				throw new IllegalArgumentException("Contact does not exist");
 			}
 			if (basicGetPersonRegistry().isBlacklisted(contact.getId())) {
-				return false;
-				//throw new RuntimeException("Contact is blacklisted.");
+				throw new IllegalArgumentException("Contact is blacklisted.");
 			}
 			
 			for (int guestId : bookingReq.getGuests()) {
 				IPerson guest = findPerson(guestId);
 				if (guest == null) {
-					return false;
-					//throw new RuntimeException("Guest does not exist.");
+					throw new IllegalArgumentException("Guest does not exist.");
 				}
 				if (basicGetPersonRegistry().isBlacklisted(guest.getId())) {
-					return false;
-					//throw new RuntimeException("Guest is blacklisted");
+					throw new IllegalArgumentException("Guest is blacklisted");
 				}
 			}
 		}
@@ -551,12 +639,10 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			for (BookingRequest bookingReq : orderRequest.getBookingRequests()) {
 				IBookingSuggestion bs = bookingReq.getBookingSuggestion();
 				if (bs.getStartTime() >= bs.getEndTime()) {
-					return false;
-					//throw new RuntimeException("Don't be a stupid, no negative intervals.");
+					throw new IllegalArgumentException("endTime is before or at the same time as the starTime.");
 				}
 				if (!isRoomAvailable(bs.getRoom(), bs.getStartTime(), bs.getEndTime())) {
-					return false;
-					//throw new RuntimeException("One of the rooms is not available for booking at specified time");
+					throw new IllegalArgumentException("One of the rooms is not available for booking at specified time");
 				}
 			}
 			
