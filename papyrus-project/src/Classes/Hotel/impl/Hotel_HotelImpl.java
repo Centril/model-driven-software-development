@@ -221,18 +221,6 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		return booking.getPrice(); //A bill should include customer and price objects. But double...
 	}
 
-	private Hotel_Booking findBooking(IBooking booking){
-		for(Hotel_Order order : persistenceService.getOrders()){
-			for(Hotel_Booking aBooking : order.getBooking()){
-				if(aBooking.getID() == booking.getID()){
-					return aBooking;
-				}
-			}
-		}
-		
-		return null;
-	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
