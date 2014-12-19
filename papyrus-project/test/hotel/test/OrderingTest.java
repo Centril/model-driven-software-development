@@ -83,7 +83,8 @@ public class OrderingTest {
 		config.createRoom(2, 400);
 		config.createRoom(1, 200);
 		
-		ISearchResult firstResult = search.search(System.currentTimeMillis(), System.currentTimeMillis()+1, 3).get(0);
+		long currentTime = System.currentTimeMillis();
+		ISearchResult firstResult = search.search(currentTime, currentTime+1, 3).get(0);
 		
 		IPerson personOne = personReg.createPerson(0);
 		personOne.setFirstName("Nikola");
