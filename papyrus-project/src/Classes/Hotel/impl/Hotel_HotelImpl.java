@@ -361,6 +361,8 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	}
 
 	private boolean isRoomAvailable(IRoom room, long startTime, long endTime) {
+		if(room.isOutOfOrder())
+			return false;
 		if (startTime > endTime) {
 			throw new IllegalArgumentException("endTime is lower than startTime.");
 		}
