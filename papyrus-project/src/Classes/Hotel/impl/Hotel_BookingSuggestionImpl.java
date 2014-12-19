@@ -9,12 +9,9 @@ import Classes.Hotel.Hotel_Room;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -60,6 +57,8 @@ public class Hotel_BookingSuggestionImpl extends MinimalEObjectImpl.Container im
 		this.room = room;
 		this.startTime = startTime;
 		this.endTime = endTime;
+		
+		System.out.println(this);
 	}
 	
 	/**
@@ -212,6 +211,27 @@ public class Hotel_BookingSuggestionImpl extends MinimalEObjectImpl.Container im
 				return getEndTime();
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+	
+	@Override
+	public String toString() {
+		
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("BookingSuggestion[");
+		
+		sb.append("startTime=");
+		sb.append(getStartTime());
+		
+		sb.append(", endTime=");
+		sb.append(getEndTime());
+
+		sb.append(", room=");
+		sb.append(getRoom());
+		
+		sb.append("]");
+		
+		return sb.toString();
 	}
 
 } //Hotel_BookingSuggestionImpl
