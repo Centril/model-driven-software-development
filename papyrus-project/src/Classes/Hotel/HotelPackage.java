@@ -1925,22 +1925,13 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOMS = IPERSISTENCE_SERVICE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Occupancies</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCIES = IPERSISTENCE_SERVICE_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Hotel Dummy Persistence Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_DUMMY_PERSISTENCE_SERVICE_FEATURE_COUNT = IPERSISTENCE_SERVICE_FEATURE_COUNT + 3;
+	int HOTEL_DUMMY_PERSISTENCE_SERVICE_FEATURE_COUNT = IPERSISTENCE_SERVICE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get Occupancies</em>' operation.
@@ -3185,17 +3176,6 @@ public interface HotelPackage extends EPackage {
 	EReference getHotel_DummyPersistenceService_Rooms();
 
 	/**
-	 * Returns the meta object for the reference list '{@link Classes.Hotel.Hotel_DummyPersistenceService#getOccupancies <em>Occupancies</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Occupancies</em>'.
-	 * @see Classes.Hotel.Hotel_DummyPersistenceService#getOccupancies()
-	 * @see #getHotel_DummyPersistenceService()
-	 * @generated
-	 */
-	EReference getHotel_DummyPersistenceService_Occupancies();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4173,14 +4153,6 @@ public interface HotelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference HOTEL_DUMMY_PERSISTENCE_SERVICE__ROOMS = eINSTANCE.getHotel_DummyPersistenceService_Rooms();
-
-		/**
-		 * The meta object literal for the '<em><b>Occupancies</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference HOTEL_DUMMY_PERSISTENCE_SERVICE__OCCUPANCIES = eINSTANCE.getHotel_DummyPersistenceService_Occupancies();
 
 	}
 

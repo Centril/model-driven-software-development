@@ -448,10 +448,6 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XKmJEYXvEeSgO4VnRKF4fQ"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XKmJEoXvEeSgO4VnRKF4fQ" value="*"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_jqL2QIXvEeSgO4VnRKF4fQ" name="occupancies" type="_oSNI0Ho_EeSTh5yDLLqE0Q" association="_jqVAMIXvEeSgO4VnRKF4fQ">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jqL2QYXvEeSgO4VnRKF4fQ"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jqL2QoXvEeSgO4VnRKF4fQ" value="*"/>
-        </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_GkFp0IXvEeSgO4VnRKF4fQ" client="_22PQ4IXuEeSgO4VnRKF4fQ" supplier="_UFbkYIXuEeSgO4VnRKF4fQ" contract="_UFbkYIXuEeSgO4VnRKF4fQ"/>
       </packagedElement>
     </packagedElement>
@@ -828,12 +824,6 @@
       <ownedEnd xmi:type="uml:Property" xmi:id="_XKmJFIXvEeSgO4VnRKF4fQ" name="dps" type="_22PQ4IXuEeSgO4VnRKF4fQ" association="_XKmJE4XvEeSgO4VnRKF4fQ">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XKmJFYXvEeSgO4VnRKF4fQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XKmJFoXvEeSgO4VnRKF4fQ" value="1"/>
-      </ownedEnd>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_jqVAMIXvEeSgO4VnRKF4fQ" memberEnd="_jqVAMYXvEeSgO4VnRKF4fQ _jqL2QIXvEeSgO4VnRKF4fQ">
-      <ownedEnd xmi:type="uml:Property" xmi:id="_jqVAMYXvEeSgO4VnRKF4fQ" name="dps" type="_22PQ4IXuEeSgO4VnRKF4fQ" association="_jqVAMIXvEeSgO4VnRKF4fQ">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jqVAMoXvEeSgO4VnRKF4fQ" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jqVAM4XvEeSgO4VnRKF4fQ" value="1"/>
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_nI6344X4EeSgO4VnRKF4fQ" memberEnd="_nI635IX4EeSgO4VnRKF4fQ _nI634IX4EeSgO4VnRKF4fQ">

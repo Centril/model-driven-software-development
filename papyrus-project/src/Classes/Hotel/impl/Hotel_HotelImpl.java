@@ -9,14 +9,10 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
-
 import javax.xml.soap.SOAPException;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -24,17 +20,14 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires;
 import Classes.Hotel.BookingRequest;
 import Classes.Hotel.HotelPackage;
 import Classes.Hotel.Hotel_Booking;
-import Classes.Hotel.Hotel_BookingSuggestion;
 import Classes.Hotel.Hotel_Hotel;
 import Classes.Hotel.Hotel_Occupancy;
 import Classes.Hotel.Hotel_Order;
 import Classes.Hotel.Hotel_Room;
-import Classes.Hotel.Hotel_SearchResult;
 import Classes.Hotel.IBooking;
 import Classes.Hotel.IBookingSuggestion;
 import Classes.Hotel.IConfiguration;
