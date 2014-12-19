@@ -476,13 +476,31 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_STAY_FEATURE_COUNT = 1;
 
 	/**
+	 * The operation id for the '<em>Get Current Occupancy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_STAY___GET_CURRENT_OCCUPANCY = 0;
+
+	/**
+	 * The operation id for the '<em>Add Occupancy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_STAY___ADD_OCCUPANCY__HOTEL_OCCUPANCY = 1;
+
+	/**
 	 * The number of operations of the '<em>Hotel Stay</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_STAY_OPERATION_COUNT = 0;
+	int HOTEL_STAY_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.IBooking <em>IBooking</em>}' class.
@@ -2215,6 +2233,26 @@ public interface HotelPackage extends EPackage {
 	EReference getHotel_Stay_Occupancy();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.Hotel_Stay#getCurrentOccupancy() <em>Get Current Occupancy</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Current Occupancy</em>' operation.
+	 * @see Classes.Hotel.Hotel_Stay#getCurrentOccupancy()
+	 * @generated
+	 */
+	EOperation getHotel_Stay__GetCurrentOccupancy();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.Hotel_Stay#addOccupancy(Classes.Hotel.Hotel_Occupancy) <em>Add Occupancy</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Occupancy</em>' operation.
+	 * @see Classes.Hotel.Hotel_Stay#addOccupancy(Classes.Hotel.Hotel_Occupancy)
+	 * @generated
+	 */
+	EOperation getHotel_Stay__AddOccupancy__Hotel_Occupancy();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.Hotel_Booking <em>Hotel Booking</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3294,6 +3332,22 @@ public interface HotelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference HOTEL_STAY__OCCUPANCY = eINSTANCE.getHotel_Stay_Occupancy();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Current Occupancy</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation HOTEL_STAY___GET_CURRENT_OCCUPANCY = eINSTANCE.getHotel_Stay__GetCurrentOccupancy();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Occupancy</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation HOTEL_STAY___ADD_OCCUPANCY__HOTEL_OCCUPANCY = eINSTANCE.getHotel_Stay__AddOccupancy__Hotel_Occupancy();
 
 		/**
 		 * The meta object literal for the '{@link Classes.Hotel.impl.Hotel_BookingImpl <em>Hotel Booking</em>}' class.

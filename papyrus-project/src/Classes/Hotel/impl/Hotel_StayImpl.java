@@ -6,6 +6,7 @@ import Classes.Hotel.HotelPackage;
 import Classes.Hotel.Hotel_Occupancy;
 import Classes.Hotel.Hotel_Stay;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
@@ -76,6 +77,28 @@ public class Hotel_StayImpl extends MinimalEObjectImpl.Container implements Hote
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Hotel_Occupancy getCurrentOccupancy() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addOccupancy(Hotel_Occupancy occupancy) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -129,6 +152,23 @@ public class Hotel_StayImpl extends MinimalEObjectImpl.Container implements Hote
 				return occupancy != null && !occupancy.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case HotelPackage.HOTEL_STAY___GET_CURRENT_OCCUPANCY:
+				return getCurrentOccupancy();
+			case HotelPackage.HOTEL_STAY___ADD_OCCUPANCY__HOTEL_OCCUPANCY:
+				addOccupancy((Hotel_Occupancy)arguments.get(0));
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //Hotel_StayImpl

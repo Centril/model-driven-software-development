@@ -39,4 +39,20 @@ public interface Hotel_Stay extends EObject {
 	 */
 	EList<Hotel_Occupancy> getOccupancy();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	Hotel_Occupancy getCurrentOccupancy();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model occupancyRequired="true" occupancyOrdered="false"
+	 * @generated
+	 */
+	void addOccupancy(Hotel_Occupancy occupancy);
+
 } // Hotel_Stay

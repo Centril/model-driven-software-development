@@ -505,6 +505,24 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getHotel_Stay__GetCurrentOccupancy() {
+		return hotel_StayEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getHotel_Stay__AddOccupancy__Hotel_Occupancy() {
+		return hotel_StayEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getHotel_Booking() {
 		return hotel_BookingEClass;
 	}
@@ -1305,6 +1323,8 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 
 		hotel_StayEClass = createEClass(HOTEL_STAY);
 		createEReference(hotel_StayEClass, HOTEL_STAY__OCCUPANCY);
+		createEOperation(hotel_StayEClass, HOTEL_STAY___GET_CURRENT_OCCUPANCY);
+		createEOperation(hotel_StayEClass, HOTEL_STAY___ADD_OCCUPANCY__HOTEL_OCCUPANCY);
 
 		hotel_BookingEClass = createEClass(HOTEL_BOOKING);
 		createEReference(hotel_BookingEClass, HOTEL_BOOKING__STAY);
@@ -1510,6 +1530,11 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 
 		initEClass(hotel_StayEClass, Hotel_Stay.class, "Hotel_Stay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHotel_Stay_Occupancy(), this.getHotel_Occupancy(), null, "occupancy", null, 1, -1, Hotel_Stay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEOperation(getHotel_Stay__GetCurrentOccupancy(), this.getHotel_Occupancy(), "getCurrentOccupancy", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getHotel_Stay__AddOccupancy__Hotel_Occupancy(), null, "addOccupancy", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getHotel_Occupancy(), "occupancy", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(hotel_BookingEClass, Hotel_Booking.class, "Hotel_Booking", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHotel_Booking_Stay(), this.getHotel_Stay(), null, "stay", null, 1, 1, Hotel_Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
