@@ -1252,6 +1252,24 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIConfiguration__SetMaxBookingInterval__long() {
+		return iConfigurationEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIConfiguration__SetMaxTimeInFutureBookingIsPossible__long() {
+		return iConfigurationEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getHotel_DummyPersistenceService() {
 		return hotel_DummyPersistenceServiceEClass;
 	}
@@ -1440,6 +1458,8 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		createEOperation(iConfigurationEClass, ICONFIGURATION___DELETE_ROOM__INT);
 		createEOperation(iConfigurationEClass, ICONFIGURATION___SET_LEGAL_AGE__INT);
 		createEOperation(iConfigurationEClass, ICONFIGURATION___GET_LEGAL_AGE);
+		createEOperation(iConfigurationEClass, ICONFIGURATION___SET_MAX_BOOKING_INTERVAL__LONG);
+		createEOperation(iConfigurationEClass, ICONFIGURATION___SET_MAX_TIME_IN_FUTURE_BOOKING_IS_POSSIBLE__LONG);
 
 		hotel_DummyPersistenceServiceEClass = createEClass(HOTEL_DUMMY_PERSISTENCE_SERVICE);
 		createEReference(hotel_DummyPersistenceServiceEClass, HOTEL_DUMMY_PERSISTENCE_SERVICE__ORDERS);
@@ -1740,6 +1760,12 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		addEParameter(op, ecorePackage.getEInt(), "age", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getIConfiguration__GetLegalAge(), ecorePackage.getEInt(), "getLegalAge", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIConfiguration__SetMaxBookingInterval__long(), null, "setMaxBookingInterval", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getELong(), "length", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIConfiguration__SetMaxTimeInFutureBookingIsPossible__long(), null, "setMaxTimeInFutureBookingIsPossible", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getELong(), "time", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(hotel_DummyPersistenceServiceEClass, Hotel_DummyPersistenceService.class, "Hotel_DummyPersistenceService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHotel_DummyPersistenceService_Orders(), this.getHotel_Order(), null, "orders", null, 0, -1, Hotel_DummyPersistenceService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

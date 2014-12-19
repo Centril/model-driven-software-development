@@ -875,6 +875,16 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="__gYCcIeOEeSIGO6D-GGauQ" name="setMaxBookingInterval">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_EmtqIIePEeSIGO6D-GGauQ" name="length">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_FIqgoIePEeSIGO6D-GGauQ" name="setMaxTimeInFutureBookingIsPossible">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Vl-noIePEeSIGO6D-GGauQ" name="time">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_yWHgwHyPEeSahu9FXjYTpw">

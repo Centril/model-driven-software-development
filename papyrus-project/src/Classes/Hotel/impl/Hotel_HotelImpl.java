@@ -6,6 +6,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -398,10 +400,27 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		
 		EList<Hotel_Room> rooms = persistenceService.getRooms();
 
+	
+		
 		if (rooms.size() < 1) {
 			return results;
 		}
 
+		Collections.sort(rooms, new Comparator<Hotel_Room>() {
+
+			@Override
+			public int compare(Hotel_Room o1, Hotel_Room o2) {
+				double diff = o1.getPrice() - o2.getPrice();
+				if (diff < 0) {
+					return -1;
+				} else if (diff > 0) {
+					return 1;
+				} else {
+					return 0;
+				}
+			}
+
+		});
 		
 		// Add everything into roomtype map, could be cached / done somewhere else
 		Map<Integer, List<Hotel_Room>> roomtypeToRoom = new HashMap<Integer, List<Hotel_Room>>();
@@ -733,6 +752,28 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void setMaxBookingInterval(long length) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxTimeInFutureBookingIsPossible(long time) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -825,6 +866,8 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				case HotelPackage.ICONFIGURATION___DELETE_ROOM__INT: return HotelPackage.HOTEL_HOTEL___DELETE_ROOM__INT;
 				case HotelPackage.ICONFIGURATION___SET_LEGAL_AGE__INT: return HotelPackage.HOTEL_HOTEL___SET_LEGAL_AGE__INT;
 				case HotelPackage.ICONFIGURATION___GET_LEGAL_AGE: return HotelPackage.HOTEL_HOTEL___GET_LEGAL_AGE;
+				case HotelPackage.ICONFIGURATION___SET_MAX_BOOKING_INTERVAL__LONG: return HotelPackage.HOTEL_HOTEL___SET_MAX_BOOKING_INTERVAL__LONG;
+				case HotelPackage.ICONFIGURATION___SET_MAX_TIME_IN_FUTURE_BOOKING_IS_POSSIBLE__LONG: return HotelPackage.HOTEL_HOTEL___SET_MAX_TIME_IN_FUTURE_BOOKING_IS_POSSIBLE__LONG;
 				default: return -1;
 			}
 		}
@@ -871,6 +914,12 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				return null;
 			case HotelPackage.HOTEL_HOTEL___GET_LEGAL_AGE:
 				return getLegalAge();
+			case HotelPackage.HOTEL_HOTEL___SET_MAX_BOOKING_INTERVAL__LONG:
+				setMaxBookingInterval((Long)arguments.get(0));
+				return null;
+			case HotelPackage.HOTEL_HOTEL___SET_MAX_TIME_IN_FUTURE_BOOKING_IS_POSSIBLE__LONG:
+				setMaxTimeInFutureBookingIsPossible((Long)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

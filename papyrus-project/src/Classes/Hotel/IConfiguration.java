@@ -61,4 +61,20 @@ public interface IConfiguration extends EObject {
 	 */
 	int getLegalAge();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model lengthRequired="true" lengthOrdered="false"
+	 * @generated
+	 */
+	void setMaxBookingInterval(long length);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model timeRequired="true" timeOrdered="false"
+	 * @generated
+	 */
+	void setMaxTimeInFutureBookingIsPossible(long time);
+
 } // IConfiguration
