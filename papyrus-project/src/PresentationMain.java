@@ -150,12 +150,12 @@ public class PresentationMain {
 		
 		// Use case: Handle Payment
 		System.out.println("\nUse Case: Pay");
-		if (iFrontDesk.pay(stalinId)) {
+		if (iFrontDesk.pay(stalinsBookingId)) {
 			System.out.println("Stalin successfully paid for his booking!");
 		} else {
 			System.out.println("Stalin failed to pay for his booking. Police are on their way.");
 		}
-		if (iFrontDesk.pay(teslaId)) {
+		if (iFrontDesk.pay(teslasBookingId)) {
 			System.out.println("Tesla succesfully paid for his booking!");
 		} else {
 			System.out.println("Tesla failed to pay for his booking. He gets a slap on his hand.");
