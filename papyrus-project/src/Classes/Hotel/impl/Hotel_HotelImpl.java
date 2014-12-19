@@ -6,6 +6,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -398,10 +400,27 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		
 		EList<Hotel_Room> rooms = persistenceService.getRooms();
 
+	
+		
 		if (rooms.size() < 1) {
 			return results;
 		}
 
+		Collections.sort(rooms, new Comparator<Hotel_Room>() {
+
+			@Override
+			public int compare(Hotel_Room o1, Hotel_Room o2) {
+				double diff = o1.getPrice() - o2.getPrice();
+				if (diff < 0) {
+					return -1;
+				} else if (diff > 0) {
+					return 1;
+				} else {
+					return 0;
+				}
+			}
+
+		});
 		
 		// Add everything into roomtype map, could be cached / done somewhere else
 		Map<Integer, List<Hotel_Room>> roomtypeToRoom = new HashMap<Integer, List<Hotel_Room>>();
