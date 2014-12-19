@@ -518,8 +518,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			return false;
 			//throw new RuntimeException("Customer does not exist.");
 		}
-		//TODO: Maybe required age shouldn't be hardcoded
-		if (personIsYoungerThanX(customer, 15)) {
+		if (personIsYoungerThanX(customer, legalAge)) {
 			return false;
 			//throw new RuntimeException("Customer is younger than 15.");
 		}
