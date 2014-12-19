@@ -365,7 +365,7 @@
         </ownedEnd>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_E7nKgHpGEeSTh5yDLLqE0Q" name="Order">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_1sGTQHvNEeSHatiNfZ-sGg" name="booking" type="_CWQjwHpEEeSTh5yDLLqE0Q" association="_1sGTQ3vNEeSHatiNfZ-sGg">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_1sGTQHvNEeSHatiNfZ-sGg" name="bookings" type="_CWQjwHpEEeSTh5yDLLqE0Q" association="_1sGTQ3vNEeSHatiNfZ-sGg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1sGTQXvNEeSHatiNfZ-sGg"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1sGTQnvNEeSHatiNfZ-sGg" value="*"/>
         </ownedAttribute>
@@ -647,7 +647,7 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_ZyNl0HvOEeSHatiNfZ-sGg" name="IOrder">
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_dHlmMHvOEeSHatiNfZ-sGg" name="getBookings">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_dHlmMHvOEeSHatiNfZ-sGg" name="getIBookings">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_iZeWkHvOEeSHatiNfZ-sGg" name="bookings" type="_qX9ogHpMEeS2zv6zlhm8qQ" direction="return">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lTTqcHvOEeSHatiNfZ-sGg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lTdbcXvOEeSHatiNfZ-sGg" value="*"/>
