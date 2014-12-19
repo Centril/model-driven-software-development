@@ -10,8 +10,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.xml.soap.SOAPException;
 
@@ -314,12 +316,12 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		IPerson person = findPerson(personID);
 		if (person == null) return null;
 		
-		EList<IBooking> relevantBookings = new BasicEList<>();
+		EList<IBooking> contactBookings = new BasicEList<>();
 		
 		EList<IBooking> allBookings = getBookings();
 		for (IBooking booking : allBookings) {
 			if (booking.getContact() == personID) {
-				relevantBookings.add(booking);
+				contactBookings.add(booking);
 			}
 		}
 		
@@ -327,8 +329,9 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		Date currentDate = cal.getTime();
 		cal.add(Calendar.HOUR, 12);
 		Date halfADayIntoTheFuture = cal.getTime();
+		EList<IBooking> relevantBookings = new BasicEList<>();
 		
-		for (IBooking booking : relevantBookings) {
+		for (IBooking booking : contactBookings) {
 			Date bookingCheckIn = new Date(booking.getCheckInDate());
 			Date bookingCheckOut = new Date(booking.getCheckOutDate());
 			
@@ -406,188 +409,113 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			return results;
 		}
 
-		Collections.sort(rooms, new Comparator<Hotel_Room>() {
 
+		abstract class RoomContainer {
+			abstract int nBeds();
+			abstract double price();
+			abstract Hotel_Room room();
+		}
+		List<RoomContainer> sortedRooms = new ArrayList<>(rooms.size());
+		for (final Hotel_Room room : rooms) {
+			if (!isRoomAvailable(room, startTime, endTime)) {
+				continue;
+			}
+			sortedRooms.add(new RoomContainer() {
+				Hotel_Room room() {
+					return room;
+				}
+				double price() {
+					return room.getPrice();
+				}
+				int nBeds() {
+					return room.getNumBeds();
+				}
+			});
+		}
+		Comparator<RoomContainer> comparator = new Comparator<RoomContainer>() {
 			@Override
-			public int compare(Hotel_Room o1, Hotel_Room o2) {
-				double diff = o1.getPrice() - o2.getPrice();
-				if (diff < 0) {
-					return -1;
-				} else if (diff > 0) {
-					return 1;
-				} else {
-					return 0;
+			public int compare(RoomContainer o1, RoomContainer o2) {
+				int bedCompare = Integer.compare(o1.nBeds(), o2.nBeds());
+				return bedCompare != 0 ? bedCompare : Double.compare(o1.price(), o2.price());
+			}
+		};
+		Collections.sort(sortedRooms, comparator);
+		class DummyRoom extends RoomContainer {
+			private final int beds;
+			private final double price;
+
+			DummyRoom(int beds, double price) {
+				this.beds = beds;
+				this.price = price;
+			}
+			int nBeds() {
+				return beds;
+			}
+			double price() {
+				return price;
+			}
+			Hotel_Room room() {
+				return null;
+			}
+		}
+
+		Set<Set<RoomContainer>> resultSet = new HashSet<>();
+		nRooms: for (int nRooms = 1; nRooms <= numberOfPersons && nRooms <= sortedRooms.size(); nRooms++) {
+			int perRoom = numberOfPersons / nRooms;
+			int extra = numberOfPersons % nRooms;
+			int remaining = numberOfPersons;
+			Set<RoomContainer> selected = new HashSet<>(nRooms);
+			for (int upper =  -1 - (Collections.binarySearch(sortedRooms, new DummyRoom(perRoom + 1, -1.0), comparator)); extra > 0; upper++) {
+				if (upper >= sortedRooms.size()) {
+					continue nRooms;
 				}
+				RoomContainer room = sortedRooms.get(upper);
+				selected.add(room);
+				remaining -= room.nBeds();
+				extra -= room.nBeds() - perRoom;
 			}
-
-		});
-		
-		// Add everything into roomtype map, could be cached / done somewhere else
-		Map<Integer, List<Hotel_Room>> roomtypeToRoom = new HashMap<Integer, List<Hotel_Room>>();
-		for(Hotel_Room r : rooms) {
-			List<Hotel_Room> ofType = roomtypeToRoom.get(r.getNumBeds());
-			if(ofType == null) {
-				ofType = new ArrayList<Hotel_Room>();
-				roomtypeToRoom.put(r.getNumBeds(), ofType);
-			}
-			ofType.add(r);
-		}
-		
-		List<Integer> roomTypesAvailable = new ArrayList<Integer>(roomtypeToRoom.keySet());
-		int largestRoom = roomTypesAvailable.get(roomTypesAvailable.size() - 1);
-
-		// Keep track of the smallest value for the largest room in previous result. I know, makes no sense.
-		// Used to prevent getting a room as big in a result with more rooms.
-		int minLargestRoomSize = 0; //  
-		boolean minFound = false;
-
-		for (int numRooms = 1; numRooms <= MAX_ROOM_COMBINATION; numRooms++) {
-			for (int extraBeds = 0; extraBeds < largestRoom; extraBeds++) {
-				List<ISearchResult> partResult = findValidResults(numberOfPersons, startTime, endTime, numRooms,extraBeds, roomTypesAvailable, largestRoom, roomtypeToRoom);
-
-				if (partResult.size() > 0) {
-					
-					// Try to not add results that are plainly worse than those
-					// with less rooms
-					int partLargest = getLargestRoomSize(partResult);
-					if (!minFound || partLargest < minLargestRoomSize) {
-						minLargestRoomSize = partLargest;
-						minFound = true;
-					} else {
-						continue; // A bit unsure if this is appropriate
-					}
-					
-					results.addAll(partResult);
-					break;
+			for (int lower = -1 - Collections.binarySearch(sortedRooms, new DummyRoom(perRoom, -1.0), comparator);
+					remaining >= perRoom;
+					lower++) {
+				if (lower >= sortedRooms.size()) {
+					continue nRooms;
 				}
-			}
-		}
-		
-		return results;
-	}
-
-	private int getLargestRoomSize(List<ISearchResult> partResult) {
-		int max = 0;
-		for(ISearchResult sr : partResult) {
-			for (IBookingSuggestion bs : sr.getBookingSuggestions()) {
-				max = Math.max(max, bs.getRoom().getNumBeds());
-			}
-		}
-		return max;
-	}
-
-	private List<ISearchResult> findValidResults(int numPeople, long startTime,
-			long endTime, int numRooms, int extraBeds,
-			List<Integer> roomTypesAvailable,
-			int largestRoom, Map<Integer, List<Hotel_Room>> roomtypeToRoom) {
-		List<ISearchResult> results = new ArrayList<ISearchResult>();
-		if (numRooms == 1) {
-			fillOneRoomresults(results, numPeople, startTime, startTime,
-					endTime, extraBeds, roomTypesAvailable, largestRoom, roomtypeToRoom);
-		} else if (numRooms == 2) {
-			fillTwoRoomresults(results, numPeople, startTime, startTime,
-					endTime, extraBeds, roomTypesAvailable, largestRoom, roomtypeToRoom);
-		} else {
-			// No can do
-		}
-		return results;
-	}
-
-	private void fillOneRoomresults(List<ISearchResult> results, int numPeople,
-			long startTime, long startTime2, long endTime, int extraBeds,
-			List<Integer> roomTypesAvailable, int largestRoom,
-			Map<Integer, List<Hotel_Room>> roomtypeToRoom) {
-		List<Hotel_Room> rooms = roomtypeToRoom.get(numPeople + extraBeds);
-		if (rooms == null) {
-			return;
-		}
-		Hotel_Room room = findOneResultInList(rooms, startTime, endTime);
-
-		if (room == null) {
-			return;
-		}
-
-		Hotel_BookingSuggestion sug = new Hotel_BookingSuggestionImpl(room,
-				startTime, endTime);
-		Hotel_SearchResult res = new Hotel_SearchResultImpl();
-		res.addBookingSuggestion(sug);
-		results.add(res);
-	}
-
-	private void fillTwoRoomresults(List<ISearchResult> results, int numPeople,
-			long startTime, long startTime2, long endTime, int extraBeds,
-			List<Integer> roomTypesAvailable,
-			int largestRoom, Map<Integer, List<Hotel_Room>> roomtypeToRoom) {
-		for (int room1Beds = 1; true; room1Beds++) {
-			int room2Beds = numPeople - room1Beds + extraBeds;
-
-			if(room1Beds > room2Beds) {
-				break;
-			}
-			
-			Hotel_Room room1Match = null;
-			Hotel_Room room2Match = null;
-
-			// Need to handle rooms of the same type separately
-			if (room1Beds != room2Beds) {
-
-				List<Hotel_Room> room1Sized = roomtypeToRoom.get(room1Beds);
-				List<Hotel_Room> room2Sized = roomtypeToRoom.get(room2Beds);
-
-				if (room1Sized == null || room2Sized == null) {
+				if (selected.contains(sortedRooms.get(lower))) {
 					continue;
 				}
-
-				room1Match = findOneResultInList(room1Sized, startTime, endTime);
-
-				if (room1Match == null) {
-					continue;
-				}
-
-				room2Match = findOneResultInList(room2Sized, startTime, endTime);
-				if (room2Match == null) {
-					continue;
-				}
-
-			} else {				
-				List<Hotel_Room> roomsSharedSize = roomtypeToRoom
-						.get(room1Beds);
-				if (roomsSharedSize == null) {
-					continue;
-				}
-				List<Hotel_Room> roomsFound = new ArrayList<>();
-				for (Hotel_Room room : roomsSharedSize) {
-					if (isRoomAvailable(room, startTime, endTime)) {
-						roomsFound.add(room);
-						if (roomsFound.size() == 2) {
-							break;
-						}
-					}
-				}
-				if (roomsFound.size() != 2) {
-					continue;
-				}
-				room1Match = roomsFound.get(0);
-				room2Match = roomsFound.get(1);
+				RoomContainer room = sortedRooms.get(lower);
+				selected.add(room);
+				remaining -= room.nBeds();
 			}
+			for (int last = -1 - Collections.binarySearch(sortedRooms, new DummyRoom(remaining, -1.0), comparator); remaining > 0; last++) {
+				if (last >= sortedRooms.size()) {
+					continue nRooms;
+				}
+			    if (selected.contains(sortedRooms.get(last))) {
+					continue;
+				}
+				RoomContainer room = sortedRooms.get(last);
+				selected.add(room);
+				remaining -= room.nBeds();
+			}
+			// If we get here, we have a suggestion!
+			for (RoomContainer rc: selected) {
+				if (rc.nBeds() + remaining < 0) {
+					continue nRooms;
+				}
+			}
+			resultSet.add(selected);
+		}
 
-			Hotel_SearchResult result = new Hotel_SearchResultImpl();
-			result.addBookingSuggestion(new Hotel_BookingSuggestionImpl(
-					room1Match, startTime, endTime));
-			result.addBookingSuggestion(new Hotel_BookingSuggestionImpl(
-					room2Match, startTime, endTime));
+		for (Set<RoomContainer> selected : resultSet) {
+			Hotel_SearchResultImpl result = new Hotel_SearchResultImpl();
+			for (RoomContainer rc : selected) {
+				result.addBookingSuggestion(new Hotel_BookingSuggestionImpl(rc.room(), startTime, endTime));
+			}
 			results.add(result);
 		}
-	}
-	
-	private Hotel_Room findOneResultInList(List<Hotel_Room> list,
-			long startTime, long endTime) {
-		for (Hotel_Room room : list) {
-			if (isRoomAvailable(room, startTime, endTime)) {
-				return room;
-			}
-		}
-		return null;
+
+		return results;
 	}
 
 	private IPerson findPerson(int id) {
