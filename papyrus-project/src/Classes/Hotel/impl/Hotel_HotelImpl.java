@@ -61,8 +61,8 @@ import Classes.PersonRegistry.IPersonRegistry;
  */
 public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hotel_Hotel {
 
-	private int legalAge;
 	private static final int MAX_ROOM_COMBINATION = 2;
+	private int legalAge = 18;
 
 	/**
 	 * The cached value of the '{@link #getPersonRegistry() <em>Person Registry</em>}' reference.
@@ -580,12 +580,12 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		}
 		return null;
 	}
-	
-	private boolean personIsYoungerThanX(IPerson person, int x) {
+
+	private boolean personIsYoungerThan(IPerson person, int ageInYears) {
 		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.YEAR, - x);
+		calendar.add(Calendar.YEAR, -ageInYears);
 		Date xYearsAgo = calendar.getTime();
-		
+
 		Date personBirthDate = new Date(person.getBirthDate());
 		return xYearsAgo.before(personBirthDate);
 	}
@@ -613,8 +613,8 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		if (customer == null) {
 			throw new IllegalArgumentException("Customer does not exist.");
 		}
-		if (personIsYoungerThanX(customer, legalAge)) {
-			throw new IllegalArgumentException("Customer is younger than 15.");
+		if (personIsYoungerThan(customer, legalAge)) {
+			throw new IllegalArgumentException("Customer is not of legal age.");
 		}
 		if (!hasValidPaymentInfo(customer)) {
 			throw new IllegalArgumentException("Customer doesn't have valid payment info.");
