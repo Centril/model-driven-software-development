@@ -200,6 +200,29 @@ public class OrderingTest {
 		assertTrue(iOrdering.placeOrder(or1));
 	}
 
+	@Test(expected=java.lang.IllegalArgumentException.class)
+	public void testBlacklistedCustomer() {
+		iConfiguration.createRoom(1, 1.1);
+
+		int disney = createPerson(-12L, DISNEY);
+		iPersonReg.addToBlacklist(disney);
+
+		MockOrderRequest or = createOrderRequest(new int[] {disney}, 0, addDays(System.currentTimeMillis(), 1), 2);
+		iOrdering.placeOrder(or);
+	}
+
+	@Test(expected=java.lang.IllegalArgumentException.class)
+	public void testBlacklistedGuest() {
+		iConfiguration.createRoom(2, 1.1);
+
+		int disney = createPerson(-12L, DISNEY);
+		int stalin = createPerson(-1L, STALIN);
+		iPersonReg.addToBlacklist(stalin);
+
+		MockOrderRequest or = createOrderRequest(new int[] {disney, stalin}, 0, addDays(System.currentTimeMillis(), 1), 2);
+		iOrdering.placeOrder(or);
+	}
+
 	private MockOrderRequest createOrderRequest(int[] guests, int customer, long startDate, int days) {
 		ISearchResult searchResult = iSearch.search(startDate, addDays(startDate, days), guests.length).get(0);
 		List<BookingRequest> brs = new ArrayList<>(searchResult.getBookingSuggestions().size());
