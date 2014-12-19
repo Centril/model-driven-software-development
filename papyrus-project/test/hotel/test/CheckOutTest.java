@@ -84,6 +84,11 @@ public class CheckOutTest {
 		assertTrue(!firstTry && secondTry); //First try should fail and second succeed and booking should be checked out	
 	}
 	
+	@Test
+	public void testSomethingElse() {
+		//TODO: test something else
+	}
+	
 	
 	
 	private int placeOrder(MockOrderRequest order, IPerson person) {

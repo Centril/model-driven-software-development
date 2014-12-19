@@ -36,9 +36,9 @@ public class CheckInTest {
 	private ISearch search;
 	private IConfiguration config;
 	
-	private MockOrderRequest order, newOrder;
+	private MockOrderRequest order;
 	
-	private int bookingID, newBookingID;
+	private int bookingID, lateBookingID, earlyBookingID;
 	
 	Calendar cal;
 	
@@ -86,16 +86,28 @@ public class CheckInTest {
 		hotel.placeOrder(order);
 		bookingID = findBookingIdByContactId(frontdesk, person.getId());
 		
-		ISearchResult newSearchResult = search.search(inTwoDays.getTime(), inThreeDays.getTime(), 1).get(0);
+		searchResult = search.search(inTwoDays.getTime(), inThreeDays.getTime(), 1).get(0);
 		
 		List<BookingRequest> newBookings = new BasicEList<>();
 		List<Integer> newGuests = new ArrayList<>(1);
 		newGuests.add(person2.getId());
-		newBookings.add(new MockBookingRequest(newSearchResult.getBookingSuggestions().get(0), newGuests, person2.getId()));
-		newOrder = new MockOrderRequest(person2.getId(), newBookings);	
+		newBookings.add(new MockBookingRequest(searchResult.getBookingSuggestions().get(0), newGuests, person2.getId()));
+		order = new MockOrderRequest(person2.getId(), newBookings);	
 		
-		hotel.placeOrder(newOrder);
-		newBookingID = findBookingIdByContactId(frontdesk, person2.getId());
+		hotel.placeOrder(order);
+		earlyBookingID = findBookingIdByContactId(frontdesk, person2.getId());
+
+
+		searchResult = search.search(inTwoDays.getTime(), inThreeDays.getTime(), 1).get(0);
+		
+		bookings = new BasicEList<>();
+		guests = new ArrayList<>(1);
+		guests.add(person2.getId());
+		bookings.add(new MockBookingRequest(searchResult.getBookingSuggestions().get(0), newGuests, person2.getId()));
+		order = new MockOrderRequest(person2.getId(), newBookings);	
+		
+		//hotel.placeOrder(order);
+		//lateBookingID = findBookingIdByContactId(frontdesk, person2.getId());
 		
 		
 		
@@ -129,12 +141,13 @@ public class CheckInTest {
 	
 	@Test
 	public void testToEarlyForCheckIn(){
-		assertTrue(!frontdesk.checkIn(newBookingID, 2));
+		assertTrue(!frontdesk.checkIn(earlyBookingID, 2));
 	}
 
 	@Test
 	public void testToLateForCheckIn(){
-		
+		//TODO: Fix changing time in system or skip this test
+		//assertTrue(!frontdesk.checkIn(lateBookingID, 2));
 	}
 	
 	
