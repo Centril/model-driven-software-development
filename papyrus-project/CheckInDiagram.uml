@@ -14,17 +14,17 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_M-KMAHpDEeS2zv6zlhm8qQ" name="h">
       <type xmi:type="uml:Interface" href="Classes.uml#_YptNIHpDEeS2zv6zlhm8qQ"/>
     </ownedAttribute>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_6gKyIHlPEeSA5MODJ_COwQ" name="Lifeline" represents="_vusMkHlPEeSA5MODJ_COwQ" coveredBy="_srVoEHpGEeS2zv6zlhm8qQ _G7SVAYVDEeS8BtwCIX_QHA"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_EjTDEHpEEeS2zv6zlhm8qQ" name="Lifeline0" represents="_M-KMAHpDEeS2zv6zlhm8qQ" coveredBy="_srVoEXpGEeS2zv6zlhm8qQ _G7SVAoVDEeS8BtwCIX_QHA"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_G7SVAYVDEeS8BtwCIX_QHA" name="getBookings_MessageSend" covered="_6gKyIHlPEeSA5MODJ_COwQ" message="_G7SVAIVDEeS8BtwCIX_QHA"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_G7SVAoVDEeS8BtwCIX_QHA" name="getBookings_MessageRecv" covered="_EjTDEHpEEeS2zv6zlhm8qQ" message="_G7SVAIVDEeS8BtwCIX_QHA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_6gKyIHlPEeSA5MODJ_COwQ" name="Lifeline" represents="_vusMkHlPEeSA5MODJ_COwQ" coveredBy="_srVoEHpGEeS2zv6zlhm8qQ _O1YrgYe5EeSwuqneTza0VQ"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_EjTDEHpEEeS2zv6zlhm8qQ" name="Lifeline0" represents="_M-KMAHpDEeS2zv6zlhm8qQ" coveredBy="_srVoEXpGEeS2zv6zlhm8qQ _O1Yrgoe5EeSwuqneTza0VQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_O1YrgYe5EeSwuqneTza0VQ" name="getRelevantCheckInBookings_MessageSend" covered="_6gKyIHlPEeSA5MODJ_COwQ" message="_O1YrgIe5EeSwuqneTza0VQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_O1Yrgoe5EeSwuqneTza0VQ" name="getRelevantCheckInBookings_MessageRecv" covered="_EjTDEHpEEeS2zv6zlhm8qQ" message="_O1YrgIe5EeSwuqneTza0VQ"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_srVoEHpGEeS2zv6zlhm8qQ" name="checkIn_MessageSend" covered="_6gKyIHlPEeSA5MODJ_COwQ" message="_srTL0HpGEeS2zv6zlhm8qQ"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_srVoEXpGEeS2zv6zlhm8qQ" name="checkIn_MessageRecv" covered="_EjTDEHpEEeS2zv6zlhm8qQ" message="_srTL0HpGEeS2zv6zlhm8qQ"/>
     <message xmi:type="uml:Message" xmi:id="_srTL0HpGEeS2zv6zlhm8qQ" name="checkIn_Message" messageSort="asynchCall" receiveEvent="_srVoEXpGEeS2zv6zlhm8qQ" sendEvent="_srVoEHpGEeS2zv6zlhm8qQ">
       <signature xmi:type="uml:Operation" href="Classes.uml#_os-VEHpGEeS2zv6zlhm8qQ"/>
     </message>
-    <message xmi:type="uml:Message" xmi:id="_G7SVAIVDEeS8BtwCIX_QHA" name="getBookings_Message" messageSort="asynchCall" receiveEvent="_G7SVAoVDEeS8BtwCIX_QHA" sendEvent="_G7SVAYVDEeS8BtwCIX_QHA">
-      <signature xmi:type="uml:Operation" href="Classes.uml#_tl3UoHpcEeSgf6-u89OUJA"/>
+    <message xmi:type="uml:Message" xmi:id="_O1YrgIe5EeSwuqneTza0VQ" name="getRelevantCheckInBookings_Message" messageSort="asynchCall" receiveEvent="_O1Yrgoe5EeSwuqneTza0VQ" sendEvent="_O1YrgYe5EeSwuqneTza0VQ">
+      <signature xmi:type="uml:Operation" href="Classes.uml#_7xu8oIbBEeSr6pyyCXGAzQ"/>
     </message>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="__CXc8H1rEeSezLtI9Ootng">
