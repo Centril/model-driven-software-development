@@ -605,7 +605,8 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 					throw new IllegalArgumentException("endTime is before or at the same time as the starTime.");
 				}
 				if (!isRoomAvailable(bs.getRoom(), bs.getStartTime(), bs.getEndTime())) {
-					throw new IllegalArgumentException("One of the rooms is not available for booking at specified time");
+					return false;
+					//throw new IllegalArgumentException("One of the rooms is not available for booking at specified time");
 				}
 			}
 			

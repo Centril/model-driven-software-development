@@ -2,6 +2,7 @@ import hotel.test.mock.MockBookingRequest;
 import hotel.test.mock.MockOrderRequest;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -13,9 +14,8 @@ import org.eclipse.emf.common.util.EList;
 import se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires;
 import se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires;
 import Classes.Hotel.BookingRequest;
-import Classes.Hotel.HotelFactory;
-import Classes.Hotel.Hotel_Hotel;
 import Classes.Hotel.IBooking;
+import Classes.Hotel.IBookingSuggestion;
 import Classes.Hotel.IConfiguration;
 import Classes.Hotel.IFrontDesk;
 import Classes.Hotel.IOrdering;
@@ -50,11 +50,9 @@ public class PresentationMain {
 		setUpAccount(DISNEY);
 		registerPersonInRegistry(iPersonReg, DISNEY, 32);
 		
-		System.out.println("\nSetup (use case maybe): Creates 4 rooms in the newly built hotel.");
+		System.out.println("\nSetup (use case maybe): Creates 2 rooms in the newly built hotel. (We only create 2 to be sure to get back the correct ones)");
 		System.out.println(iConfig.createRoom(1, 400));
 		System.out.println(iConfig.createRoom(1, 450));
-		//System.out.println(iConfig.createRoom(2, 1000));
-		//System.out.println(iConfig.createRoom(3, 1300));
 		
 		
 		// Use case: Search
@@ -159,6 +157,30 @@ public class PresentationMain {
 		} else {
 			System.out.println("Stalin failed to pay for Teslas booking.");
 		}
+		
+		
+		// Simulatenous booking
+		System.out.println("\nSo, what happens if two persons try to book the same room at the same time? Let's find out.");
+		
+		System.out.println("Create a new room to attempt to book.");
+		System.out.println(iConfig.createRoom(2, 1000));
+		
+		EList<ISearchResult> newResults = iSearch.search(today.getTime(), fourDaysFromNow.getTime(), 2);
+		IBookingSuggestion sharedBookingSuggestion = newResults.get(0).getBookingSuggestions().get(0);
+		MockBookingRequest stalinsNewBooking = new MockBookingRequest(sharedBookingSuggestion, Arrays.asList(stalinId, teslaId), stalinId);
+		MockBookingRequest teslasNewBooking = new MockBookingRequest(sharedBookingSuggestion, Arrays.asList(teslaId, stalinId), teslaId);
+		
+		if (iOrdering.placeOrder(new MockOrderRequest(stalinId, Arrays.<BookingRequest>asList(stalinsNewBooking)))) {
+			System.out.println("Comrade Stalin made a booking.");
+		} else {
+			System.out.println("Comrade Stalin failed to make a booking.");
+		}
+		if (iOrdering.placeOrder(new MockOrderRequest(teslaId, Arrays.<BookingRequest>asList(teslasNewBooking)))) {
+			System.out.println("Scientist Tesla made a booking.");
+		} else {
+			System.out.println("Scientist Tesla failed to make a booking");
+		}
+		System.out.println("As we can see Stalin won cause he was first. Poor Tesla gets to stay for free.");
 		
 		System.out.println("\nComputer over.");
 	}
