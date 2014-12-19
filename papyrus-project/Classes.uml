@@ -287,6 +287,12 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mLfzoXpCEeSTh5yDLLqE0Q" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mLfzonpCEeSTh5yDLLqE0Q" value="*"/>
         </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_YiwioIdfEeSwuqneTza0VQ" name="getCurrentOccupancy">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_nX0SYIdfEeSwuqneTza0VQ" name="occupancy" type="_oSNI0Ho_EeSTh5yDLLqE0Q" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_oovHsIdfEeSwuqneTza0VQ" name="addOccupancy">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vk3zYIdfEeSwuqneTza0VQ" name="occupancy" type="_oSNI0Ho_EeSTh5yDLLqE0Q"/>
+        </ownedOperation>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Association" xmi:id="_SEtEg3pCEeSTh5yDLLqE0Q" memberEnd="_SEtEhHpCEeSTh5yDLLqE0Q _SEtEgHpCEeSTh5yDLLqE0Q">
         <ownedEnd xmi:type="uml:Property" xmi:id="_SEtEhHpCEeSTh5yDLLqE0Q" name="occupancy" type="_oSNI0Ho_EeSTh5yDLLqE0Q" association="_SEtEg3pCEeSTh5yDLLqE0Q">
