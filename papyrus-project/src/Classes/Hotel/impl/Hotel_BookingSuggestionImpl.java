@@ -29,6 +29,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class Hotel_BookingSuggestionImpl extends MinimalEObjectImpl.Container implements Hotel_BookingSuggestion {
+
+	private static final long MILLIS_IN_DAY = 86400000L;
+
 	/**
 	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -113,7 +116,10 @@ public class Hotel_BookingSuggestionImpl extends MinimalEObjectImpl.Container im
 	 * @generated NOT
 	 */
 	public double getPrice() {
-		return room.getPrice();
+		long duration = endTime - startTime;
+		long numDays =  (duration % MILLIS_IN_DAY == 0 ? 0 : 1) + (long) (duration / MILLIS_IN_DAY);
+		double price = room.getPrice() * numDays;
+		return price;
 	}
 
 	/**
