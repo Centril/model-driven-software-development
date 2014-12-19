@@ -135,12 +135,10 @@ public class Hotel_OrderImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addBooking(Hotel_Booking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.booking.add(booking);
 	}
 
 	/**
