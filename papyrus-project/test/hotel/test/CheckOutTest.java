@@ -38,8 +38,6 @@ public class CheckOutTest {
 	
 	private MockOrderRequest order;
 	
-	private int bookingID;
-	
 	@Before
 	public void before() {
 		hotel = Hotel_HotelImpl.getInstance();
@@ -69,24 +67,28 @@ public class CheckOutTest {
 		List<Integer> guests = new ArrayList<>(1);
 		guests.add(person.getId());
 		bookings.add(new MockBookingRequest(searchResult.getBookingSuggestions().get(0), guests, person.getId()));
-		order = new MockOrderRequest(person.getId(), bookings);		
-		
-
-		hotel.placeOrder(order);
-		bookingID = findBookingIdByContactId(frontdesk, person.getId());	
+		order = new MockOrderRequest(person.getId(), bookings);			
 	}
 	
 	@Test 
 	public void testCheckOutwithNoBooking() {
-		assertTrue(!frontdesk.checkOut(Integer.MAX_VALUE)); //No booking should have this value
+		assertTrue(!frontdesk.checkOut(Integer.MAX_VALUE)); //No booking should have been done
 	}
 
 	@Test
 	public void testCheckOutWithBooking() {
+		int bookingID = placeOrder(order, person);
 		boolean firstTry = frontdesk.checkOut(bookingID);
 		frontdesk.checkIn(bookingID, 3);
 		boolean secondTry = frontdesk.checkOut(bookingID);
 		assertTrue(!firstTry && secondTry); //First try should fail and second succeed and booking should be checked out	
+	}
+	
+	
+	
+	private int placeOrder(MockOrderRequest order, IPerson person) {
+		hotel.placeOrder(order);
+		return findBookingIdByContactId(frontdesk, person.getId());
 	}
 	
 	

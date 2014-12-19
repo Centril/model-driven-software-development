@@ -276,7 +276,6 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			return false;
 		
 		} catch (SOAPException e) {
-			e.printStackTrace();
 			return false;
 		}
 	}
