@@ -2,12 +2,22 @@ package hotel.test;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
-public class CheckOutTest {
+import Classes.Hotel.IFrontDesk;
 
+public class CheckOutTest {
+	
+	private IFrontDesk frontdesk;
+
+	@Before
+	public void before() {
+		frontdesk = IFrontDesk.instance;
+	}
 	@Test
-	public void test() {
+	public void testCheckOutwithNoBooking() {
+		frontdesk.checkOut(0);
 		fail("Not yet implemented");
 	}
 
