@@ -223,6 +223,10 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 */
 	public double getBill(int bookingID) {
 		IBooking booking = persistenceService.getBookingById(bookingID);
+		if(booking == null) {
+			return -1;
+			//TODO: Ugly solution
+		}
 		return booking.getPrice(); //A bill should include customer and price objects. But double...
 	}
 
@@ -246,6 +250,9 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 */
 	public boolean pay(int bookingID) {
 		IBooking booking = persistenceService.getBookingById(bookingID);
+		if(booking == null) {
+			return false;
+		}
 		IPerson customer = personRegistry.getIPersonByID(booking.getCustomer());
 		ICreditCardInfo creditcard = customer.getCreditCard();
 		double price = getBill(bookingID);
@@ -275,7 +282,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 */
 	public boolean checkOut(int bookingID) {
 		Hotel_Booking booking = persistenceService.getBookingById(bookingID);
-		if(booking.isCheckedIn()){
+		if(booking != null && booking.isCheckedIn()){
 			booking.setCheckedIn(false);
 			return true;
 		}
@@ -337,10 +344,14 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * @generated NOT
 	 */
 	public boolean handInKeys(int bookingId, int nbrKeys) {
-		persistenceService.getBookingById(bookingId).getOccupancy().removeKeys(nbrKeys);
-		if(persistenceService.getBookingById(bookingId).getOccupancy().getNumKeys() > 0) // Not all keys are handed in
-			return false;
-		return true;
+		Hotel_Booking booking = persistenceService.getBookingById(bookingId);
+		if(booking != null) {
+			booking.getOccupancy().removeKeys(nbrKeys);
+			if(persistenceService.getBookingById(bookingId).getOccupancy().getNumKeys() > 0) // Not all keys are handed in
+				return false;
+			return true;
+		}
+		return false;
 	}
 
 	private boolean isRoomAvailable(IRoom room, long startTime, long endTime) {
