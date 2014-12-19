@@ -78,10 +78,12 @@ public class Hotel_StayImpl extends MinimalEObjectImpl.Container implements Hote
 	 * @generated NOT
 	 */
 	public Hotel_Occupancy getCurrentOccupancy() {
-		if(this.occupancy != null)
-			return this.occupancy.get(occupancy.size()-1);
-		else
-			return null;
+		if(this.occupancy != null){
+			if(this.occupancy.size() > 0)
+				return this.occupancy.get(occupancy.size()-1);
+		}
+		
+		return null;
 	}
 
 	/**
