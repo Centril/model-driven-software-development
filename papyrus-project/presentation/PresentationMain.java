@@ -58,6 +58,7 @@ public class PresentationMain {
 		// Use case: Search
 		System.out.println("\nUse Case: Search\nSearches for available rooms from today to 4 days in the future for 2 persons.");
 		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.MINUTE, 15); // Add 15 minutes from now, to prevent "can't book in the past" exceptions from the tests.
 		Date today = cal.getTime();
 		cal.add(Calendar.HOUR, 24*4);
 		Date fourDaysFromNow = cal.getTime();
