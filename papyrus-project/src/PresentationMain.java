@@ -103,7 +103,7 @@ public class PresentationMain {
 		System.out.println("\nUse Case: Check in");
 		int stalinsBookingId = findBookingIdByContactId(iFrontDesk, stalinId);
 		int teslasBookingId = findBookingIdByContactId(iFrontDesk, teslaId);
-		
+
 		if (iFrontDesk.checkIn(stalinsBookingId, 1)) {
 			System.out.println("Stalins check in succeded!");
 		} else {
@@ -114,6 +114,33 @@ public class PresentationMain {
 		} else {
 			System.out.println("Teslas check in failed!");
 		}
+		
+		// Use case: Check out
+		System.out.println("\nUse Case: Check out");
+		System.out.println("It's time for checkout, but Stalin is a sneaky guy and attempts to keep his key.");
+		if (!iFrontDesk.handInKeys(stalinsBookingId, 0)) {
+			System.out.println("Though luck for you Stalin! The system discovered that you still have keys. Now lets wait for the police.");
+			if (iFrontDesk.handInKeys(stalinsBookingId, 1)) {
+				System.out.println("Okay then, since you handed it in so quickly we'll forget about it this time.");
+			} else {
+				System.out.println("Police are here");
+			}
+		} else {
+			System.out.println("Sneaky guy Stalin successfully stole key");
+		}
+		if (iFrontDesk.checkOut(stalinsBookingId)) {
+			System.out.println("Stalins check out succeded!");
+		} else {
+			System.out.println("Stalins check out faield!");
+		}
+		if (iFrontDesk.handInKeys(teslasBookingId, 1)) {
+			System.out.println("Teslas hand in keys succeded");
+		}
+		if (iFrontDesk.checkOut(teslasBookingId)) {
+			System.out.println("Teslas check out succeeded!");
+		}
+		
+		
 		
 		System.out.println("\nComputer over.");
 	}
