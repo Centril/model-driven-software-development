@@ -1,22 +1,24 @@
 package hotel.test;
 
-import static org.junit.Assert.*;
-
-import java.util.ArrayList;
-import java.util.List;
-
+import static org.junit.Assert.assertTrue;
 import hotel.test.mock.MockBookingRequest;
 import hotel.test.mock.MockOrderRequest;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
 import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.Test;
 
 import Classes.Hotel.BookingRequest;
 import Classes.Hotel.Hotel_Hotel;
+import Classes.Hotel.IBooking;
 import Classes.Hotel.IConfiguration;
 import Classes.Hotel.IFrontDesk;
+import Classes.Hotel.IPersistenceService;
 import Classes.Hotel.ISearch;
 import Classes.Hotel.ISearchResult;
 import Classes.Hotel.impl.Hotel_HotelImpl;
@@ -33,6 +35,7 @@ public class CheckOutTest {
 	private IPerson person;
 	private ISearch search;
 	private IConfiguration config;
+	private Calendar cal;
 	
 	private MockOrderRequest order;
 	
@@ -56,29 +59,36 @@ public class CheckOutTest {
 		person.setSSN("somethingTooOld");
 		
 		person.createCreditCard(TESLA.ccNumber, TESLA.ccv, TESLA.expiryMonth, TESLA.expiryYear, TESLA.firstName, TESLA.lastName);
+		cal = Calendar.getInstance();
+		Date today = cal.getTime();
+		cal.add(Calendar.HOUR, 24*2);
+		Date inTwoDays = cal.getTime();
 		
-		ISearchResult searchResult = search.search(System.currentTimeMillis(), System.currentTimeMillis()+1, 1).get(0);
+		ISearchResult searchResult = search.search(today.getTime(), inTwoDays.getTime(), 1).get(0);
 		
 		List<BookingRequest> bookings = new BasicEList<>();
 		List<Integer> guests = new ArrayList<>(1);
 		guests.add(person.getId());
 		bookings.add(new MockBookingRequest(searchResult.getBookingSuggestions().get(0), guests, person.getId()));
 		order = new MockOrderRequest(person.getId(), bookings);		
+		
+
+		hotel.placeOrder(order);
+		bookingID = findBookingIdByContactId(frontdesk, person.getId());	
 	}
 	
 	@Test 
 	public void testCheckOutwithNoBooking() {
-		assertTrue(!frontdesk.checkOut(0));
+		assertTrue(!frontdesk.checkOut(Integer.MAX_VALUE)); //No booking should have this value
 	}
 
 	@Test
-	public void testCheckOutWithNoCheckIn() {
-		hotel.placeOrder(order);
-		bookingID = hotel.getBookings().get(0).getID();
-		assertTrue(!frontdesk.checkOut(bookingID));
+	public void testCheckOutWithBooking() {
+		boolean firstTry = frontdesk.checkOut(bookingID);
+		frontdesk.checkIn(bookingID, 3);
+		boolean secondTry = frontdesk.checkOut(bookingID);
+		assertTrue(!firstTry && secondTry); //First try should fail and second succeed and booking should be checked out	
 	}
-	
-	
 	
 	
 	private static CreditCardDetails ccd (String ccNumber, String ccv, int expiryMonth,
@@ -106,5 +116,14 @@ public class CheckOutTest {
 			this.lastName = lastName;
 			this.initialBalance = initialBalance;
 		}
+	}
+	
+	private static int findBookingIdByContactId(IFrontDesk iFrontDesk, int contactId) {
+		for (IBooking booking : iFrontDesk.getBookings()) {
+			if (booking.getContact() == contactId) {
+				return booking.getID();
+			}
+		}
+		return -1;
 	}
 }
