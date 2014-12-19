@@ -2,16 +2,18 @@
  */
 package Classes.Hotel.impl;
 
-import Classes.Hotel.HotelPackage;
-import Classes.Hotel.Hotel_Occupancy;
-import Classes.Hotel.Hotel_Room;
 import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import Classes.Hotel.HotelPackage;
+import Classes.Hotel.Hotel_Occupancy;
+import Classes.Hotel.Hotel_Room;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,6 +59,14 @@ public class Hotel_OccupancyImpl extends MinimalEObjectImpl.Container implements
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.room = room;
+	}
+	
+	protected Hotel_OccupancyImpl(Hotel_OccupancyImpl occupancy) {
+		super();
+		this.room = occupancy.room;
+		this.startTime = occupancy.startTime;
+		this.endTime = occupancy.endTime;
+		this.room = occupancy.room;
 	}
 
 	/**

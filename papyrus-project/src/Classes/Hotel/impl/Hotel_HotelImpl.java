@@ -580,6 +580,8 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				Hotel_Booking tempBooking = new Hotel_BookingImpl(bookingReq.getGuests(), bookingReq.getContact(), orderRequest.getCustomer(),
 				     bookingReq.getBookingSuggestion().getPrice(), bookingReq.getBookingSuggestion().getStartTime(), bookingReq.getBookingSuggestion().getEndTime(), occupancy);
 				
+				tempBooking.setStay(new Hotel_StayImpl(new Hotel_OccupancyImpl(occupancy))); // TODO: This is a stupid. Stays are bad.
+				
 				creatBookings.add(tempBooking);
 			}
 			

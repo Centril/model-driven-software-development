@@ -48,6 +48,11 @@ public class Hotel_StayImpl extends MinimalEObjectImpl.Container implements Hote
 	protected Hotel_StayImpl() {
 		super();
 	}
+	
+	protected Hotel_StayImpl(Hotel_Occupancy currentOccupancy) {
+		occupancy = new BasicEList<Hotel_Occupancy>();
+		occupancy.add(currentOccupancy);
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
