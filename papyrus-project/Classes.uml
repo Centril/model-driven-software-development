@@ -331,6 +331,18 @@
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
         </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="__PQ3kId-EeSOAqruVTgZ0g" name="setCheckedOut">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_F_0lYId_EeSOAqruVTgZ0g" name="hasCheckedOut">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_I8RIYId_EeSOAqruVTgZ0g" name="getContact">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_I8UywId_EeSOAqruVTgZ0g" name="contact" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_I8WA4Id_EeSOAqruVTgZ0g" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_I8Wn8Id_EeSOAqruVTgZ0g" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
       </nestedClassifier>
       <nestedClassifier xmi:type="uml:Association" xmi:id="_iVwmQHpEEeSTh5yDLLqE0Q" memberEnd="_iVwmQXpEEeSTh5yDLLqE0Q _iVncUHpEEeSTh5yDLLqE0Q">
         <name xsi:nil="true"/>
@@ -560,6 +572,11 @@
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_9Ls0sIbLEeSFtPtunm2T_g" name="isCheckedIn">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_BLiuYIbMEeSFtPtunm2T_g" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_I8LBwId_EeSOAqruVTgZ0g" name="isCheckedOut">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_L5CbgId_EeSOAqruVTgZ0g" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
       </ownedOperation>
