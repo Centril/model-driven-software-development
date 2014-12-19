@@ -115,6 +115,7 @@ public class PresentationMain {
 			System.out.println("Teslas check in failed!");
 		}
 		
+		
 		// Use case: Check out
 		System.out.println("\nUse Case: Check out");
 		System.out.println("It's time for checkout, but Stalin is a sneaky guy and attempts to keep his key.");
@@ -141,6 +142,24 @@ public class PresentationMain {
 		}
 		
 		
+		// Use case (!?): Get Bill
+		System.out.println("\nNow lets hand out the bills!");
+		System.out.println("Cost of Tesla's stay: " + iFrontDesk.getBill(teslasBookingId));
+		System.out.println("Cost of Stalin's stay: " + iFrontDesk.getBill(stalinsBookingId));
+		
+		
+		// Use case: Handle Payment
+		System.out.println("\nUse Case: Pay");
+		if (iFrontDesk.pay(stalinsBookingId)) {
+			System.out.println("Stalin successfully paid for his booking!");
+		} else {
+			System.out.println("Stalin failed to pay for his booking. Police are on their way.");
+		}
+		if (iFrontDesk.pay(teslasBookingId)) {
+			System.out.println("Tesla succesfully paid for his booking!");
+		} else {
+			System.out.println("Tesla failed to pay for his booking. He gets a slap on his hand.");
+		}
 		
 		System.out.println("\nComputer over.");
 	}
