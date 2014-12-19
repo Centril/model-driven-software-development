@@ -15,10 +15,9 @@ public class CheckOutTest {
 	public void before() {
 		frontdesk = IFrontDesk.instance;
 	}
-	@Test
+	@Test 
 	public void testCheckOutwithNoBooking() {
-		frontdesk.checkOut(0);
-		fail("Not yet implemented");
+		assertTrue(!frontdesk.checkOut(0));
 	}
 
 }
