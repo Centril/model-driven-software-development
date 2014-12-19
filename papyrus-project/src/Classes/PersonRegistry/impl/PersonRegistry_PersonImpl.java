@@ -46,6 +46,8 @@ public class PersonRegistry_PersonImpl extends MinimalEObjectImpl.Container impl
 	private String firstName = "";
 	private String lastName = "";
 	private String ssn = "";
+	private String email ="";
+	private String phoneNumber = "";
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,6 +232,42 @@ public class PersonRegistry_PersonImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setPhoneNumber(String number) {
+		this.phoneNumber = number;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -322,6 +360,16 @@ public class PersonRegistry_PersonImpl extends MinimalEObjectImpl.Container impl
 				return null;
 			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___SET_SSN__STRING:
 				setSSN((String)arguments.get(0));
+				return null;
+			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___GET_PHONE_NUMBER:
+				return getPhoneNumber();
+			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___SET_PHONE_NUMBER__STRING:
+				setPhoneNumber((String)arguments.get(0));
+				return null;
+			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___GET_EMAIL:
+				return getEmail();
+			case PersonRegistryPackage.PERSON_REGISTRY_PERSON___SET_EMAIL__STRING:
+				setEmail((String)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

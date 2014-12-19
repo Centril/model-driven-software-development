@@ -111,4 +111,36 @@ public interface IPerson extends EObject {
 	 */
 	void setSSN(String ssn);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getPhoneNumber();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model numberDataType="org.eclipse.uml2.types.String" numberRequired="true" numberOrdered="false"
+	 * @generated
+	 */
+	void setPhoneNumber(String number);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getEmail();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model emailDataType="org.eclipse.uml2.types.String" emailRequired="true" emailOrdered="false"
+	 * @generated
+	 */
+	void setEmail(String email);
+
 } // IPerson

@@ -376,13 +376,49 @@ public interface PersonRegistryPackage extends EPackage {
 	int IPERSON___SET_SSN__STRING = 11;
 
 	/**
+	 * The operation id for the '<em>Get Phone Number</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON___GET_PHONE_NUMBER = 12;
+
+	/**
+	 * The operation id for the '<em>Set Phone Number</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON___SET_PHONE_NUMBER__STRING = 13;
+
+	/**
+	 * The operation id for the '<em>Get Email</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON___GET_EMAIL = 14;
+
+	/**
+	 * The operation id for the '<em>Set Email</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON___SET_EMAIL__STRING = 15;
+
+	/**
 	 * The number of operations of the '<em>IPerson</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON_OPERATION_COUNT = 12;
+	int IPERSON_OPERATION_COUNT = 16;
 
 	/**
 	 * The meta object id for the '{@link Classes.PersonRegistry.impl.PersonRegistry_PersonImpl <em>Person Registry Person</em>}' class.
@@ -519,6 +555,42 @@ public interface PersonRegistryPackage extends EPackage {
 	 * @ordered
 	 */
 	int PERSON_REGISTRY_PERSON___SET_SSN__STRING = IPERSON___SET_SSN__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Phone Number</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_REGISTRY_PERSON___GET_PHONE_NUMBER = IPERSON___GET_PHONE_NUMBER;
+
+	/**
+	 * The operation id for the '<em>Set Phone Number</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_REGISTRY_PERSON___SET_PHONE_NUMBER__STRING = IPERSON___SET_PHONE_NUMBER__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Email</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_REGISTRY_PERSON___GET_EMAIL = IPERSON___GET_EMAIL;
+
+	/**
+	 * The operation id for the '<em>Set Email</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_REGISTRY_PERSON___SET_EMAIL__STRING = IPERSON___SET_EMAIL__STRING;
 
 	/**
 	 * The number of operations of the '<em>Person Registry Person</em>' class.
@@ -1036,6 +1108,46 @@ public interface PersonRegistryPackage extends EPackage {
 	EOperation getIPerson__SetSSN__String();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPerson#getPhoneNumber() <em>Get Phone Number</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Phone Number</em>' operation.
+	 * @see Classes.PersonRegistry.IPerson#getPhoneNumber()
+	 * @generated
+	 */
+	EOperation getIPerson__GetPhoneNumber();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPerson#setPhoneNumber(java.lang.String) <em>Set Phone Number</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Phone Number</em>' operation.
+	 * @see Classes.PersonRegistry.IPerson#setPhoneNumber(java.lang.String)
+	 * @generated
+	 */
+	EOperation getIPerson__SetPhoneNumber__String();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPerson#getEmail() <em>Get Email</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Email</em>' operation.
+	 * @see Classes.PersonRegistry.IPerson#getEmail()
+	 * @generated
+	 */
+	EOperation getIPerson__GetEmail();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.PersonRegistry.IPerson#setEmail(java.lang.String) <em>Set Email</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Email</em>' operation.
+	 * @see Classes.PersonRegistry.IPerson#setEmail(java.lang.String)
+	 * @generated
+	 */
+	EOperation getIPerson__SetEmail__String();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.PersonRegistry.PersonRegistry_Blacklist <em>Person Registry Blacklist</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1422,6 +1534,38 @@ public interface PersonRegistryPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IPERSON___SET_SSN__STRING = eINSTANCE.getIPerson__SetSSN__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Phone Number</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IPERSON___GET_PHONE_NUMBER = eINSTANCE.getIPerson__GetPhoneNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Phone Number</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IPERSON___SET_PHONE_NUMBER__STRING = eINSTANCE.getIPerson__SetPhoneNumber__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Email</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IPERSON___GET_EMAIL = eINSTANCE.getIPerson__GetEmail();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Email</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IPERSON___SET_EMAIL__STRING = eINSTANCE.getIPerson__SetEmail__String();
 
 		/**
 		 * The meta object literal for the '{@link Classes.PersonRegistry.impl.PersonRegistry_BlacklistImpl <em>Person Registry Blacklist</em>}' class.
