@@ -66,9 +66,10 @@ import Classes.PersonRegistry.IPersonRegistry;
 public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hotel_Hotel {
 
 	private static final int MAX_ROOM_COMBINATION = 2;
+	public static final long MILLIS_IN_DAY = 86400000L;
 	private int legalAge = 18;
-	private long maxBookingInterval; //TODO set clever defaults
-	private long maxTimeInFutureBookingIsPossible;
+	private long maxBookingInterval = MILLIS_IN_DAY*31;
+	private long maxTimeInFutureBookingIsPossible = MILLIS_IN_DAY*1333;
 
 	/**
 	 * The cached value of the '{@link #getPersonRegistry() <em>Person Registry</em>}' reference.
@@ -561,7 +562,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 * @generated NOT
 	 */
 	public boolean placeOrder(OrderRequest orderRequest) {
-		
+		//TODO Check if over maxInterval or maxTimeInFuture 
 		// Check if person info is correct
 		IPerson customer = findPerson(orderRequest.getCustomer());
 		if (customer == null) {
@@ -616,6 +617,11 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			
 			EList<Hotel_Booking> creatBookings = new BasicEList<>();
 			for (BookingRequest bookingReq : orderRequest.getBookingRequests()) {
+				
+				if(((bookingReq.getBookingSuggestion().getEndTime() - bookingReq.getBookingSuggestion().getStartTime()) > maxBookingInterval) 
+								|| (bookingReq.getBookingSuggestion().getStartTime() > maxTimeInFutureBookingIsPossible + System.currentTimeMillis())) {
+					return false;
+				}
 				
 				Hotel_OccupancyImpl occupancy = new Hotel_OccupancyImpl(bookingReq.getBookingSuggestion().getStartTime(), bookingReq.getBookingSuggestion().getEndTime(), persistenceService.getRoomById(bookingReq.getBookingSuggestion().getRoom().getId()));
 				
