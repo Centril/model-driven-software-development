@@ -14,6 +14,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Classes.Hotel.BookingRequest;
+import Classes.Hotel.HotelFactory;
 import Classes.Hotel.Hotel_Hotel;
 import Classes.Hotel.IBooking;
 import Classes.Hotel.IConfiguration;
@@ -44,13 +45,13 @@ public class CheckInTest {
 	
 	@Before
 	public void before() {
-		hotel = Hotel_HotelImpl.getInstance();
+		hotel = HotelFactory.eINSTANCE.createHotel_Hotel();
 		frontdesk = hotel;
-		personRegistry = IPersonRegistry.instance;
-		config = IConfiguration.instance;
+		config = hotel;
+		search = hotel;
+		personRegistry = hotel.getPersonRegistry();
 		person = personRegistry.createPerson(0);
 		person2 = personRegistry.createPerson(0);
-		search = ISearch.instance;
 		
 		config.createRoom(2, 400);
 		config.createRoom(1, 400);

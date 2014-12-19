@@ -75,28 +75,24 @@ public class OrderingTest {
 
 	@Test
 	public void testOrdering() {
-		IConfiguration config = IConfiguration.instance;
-		ISearch search = ISearch.instance;
-		IPersonRegistry personReg = IPersonRegistry.instance;
-		IOrdering ordering = IOrdering.instance;
 		
-		config.createRoom(2, 400);
-		config.createRoom(1, 200);
+		iConfiguration.createRoom(2, 400);
+		iConfiguration.createRoom(1, 200);
 		
 		long currentTime = System.currentTimeMillis();
-		ISearchResult firstResult = search.search(currentTime, currentTime+1, 3).get(0);
+		ISearchResult firstResult = iSearch.search(currentTime, currentTime+1, 3).get(0);
 		
-		IPerson personOne = personReg.createPerson(0);
+		IPerson personOne = iPersonReg.createPerson(0);
 		personOne.setFirstName("Nikola");
 		personOne.setLastName("Tesla");
 		personOne.setSSN("somethingTooOld");
 		
-		IPerson personTwo = personReg.createPerson(1);
+		IPerson personTwo = iPersonReg.createPerson(1);
 		personTwo.setFirstName("Herp");
 		personTwo.setLastName("Derp");
 		personTwo.setSSN("somethingModern");
 		
-		IPerson personThree = personReg.createPerson(2);
+		IPerson personThree = iPersonReg.createPerson(2);
 		personThree.setFirstName("Best");
 		personThree.setLastName("Person");
 		personThree.setSSN("Yay~!");
@@ -123,7 +119,7 @@ public class OrderingTest {
 		
 		OrderRequest orderRequest = new MockOrderRequest(personOne.getId(), bookingRequests);
 		
-		assertTrue(ordering.placeOrder(orderRequest));
+		assertTrue(iOrdering.placeOrder(orderRequest));
 	}
 	
 	@Test
