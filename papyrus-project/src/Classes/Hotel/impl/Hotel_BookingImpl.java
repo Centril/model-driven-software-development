@@ -86,6 +86,7 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 		this.checkOutDate = checkOutDate;
 		this.occupancy = occupancy;
 		this.isCheckedIn = false;
+		this.isCheckedOut = false;
 		this.isPaid = false;
 	}
 
