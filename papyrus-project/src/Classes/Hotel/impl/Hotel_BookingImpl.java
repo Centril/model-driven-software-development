@@ -54,8 +54,7 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	//Expected dates for checking in and out
 	private long checkInDate, checkOutDate;
 	
-	private boolean isPaid = false;
-	private boolean isCheckedIn = false;
+	private boolean isPaid, isCheckedIn;
 	
 
 	/**
@@ -87,6 +86,7 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 		this.checkOutDate = checkOutDate;
 		this.occupancy = occupancy;
 		this.isCheckedIn = false;
+		this.isPaid = false;
 	}
 
 	/**
