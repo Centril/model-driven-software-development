@@ -164,7 +164,7 @@ public class OrderingTest {
 		iOrdering.placeOrder(or);
 	}
 
-	@Test(expected=java.lang.IllegalArgumentException.class)
+	@Test
 	public void testDuplicateOrderRequest() {
 		iConfiguration.createRoom(2, 1.0);
 		
@@ -176,14 +176,62 @@ public class OrderingTest {
 		IBookingSuggestion bs = results.get(0).getBookingSuggestions().get(0);
 		MockBookingRequest stalinBr = new MockBookingRequest(bs, Arrays.asList(stalin, tesla), stalin);
 		MockBookingRequest teslaBr = new MockBookingRequest(bs, Arrays.asList(tesla, stalin), tesla);
-		iOrdering.placeOrder(new MockOrderRequest(stalin, Arrays.<BookingRequest>asList(stalinBr)));
-		iOrdering.placeOrder(new MockOrderRequest(tesla, Arrays.<BookingRequest>asList(teslaBr)));
+		assertTrue(iOrdering.placeOrder(new MockOrderRequest(stalin, Arrays.<BookingRequest>asList(stalinBr))));
+		assertFalse(iOrdering.placeOrder(new MockOrderRequest(tesla, Arrays.<BookingRequest>asList(teslaBr))));
+	}
+
+	@Test
+	public void testSimultaneousOrder() {
+		iConfiguration.createRoom(2, 2.0);
+		iConfiguration.createRoom(3, 3.0);
+		iConfiguration.createRoom(4, 4.0);
+
+		int[] group1 = createPersons(1L, 2L, 3L, 4L, 5L);
+		int tesla = group1[0];
+		createCreditCard(iPersonReg.getIPersonByID(tesla), TESLA);
+		int[] group2 = createPersons(1L, 2L, 3L, 4L, 5L, 6L, 7L);
+		int disney = group2[0];
+		createCreditCard(iPersonReg.getIPersonByID(disney), DISNEY);
+
+		long now = System.currentTimeMillis();
+		MockOrderRequest or1 = createOrderRequest(group1, 0, addDays(now, 1), 1);
+		MockOrderRequest or2 = createOrderRequest(group2, 0, addDays(now, 3), 2);
+		assertTrue(iOrdering.placeOrder(or2));
+		assertTrue(iOrdering.placeOrder(or1));
+	}
+
+	private MockOrderRequest createOrderRequest(int[] guests, int customer, long startDate, int days) {
+		ISearchResult searchResult = iSearch.search(startDate, addDays(startDate, days), guests.length).get(0);
+		List<BookingRequest> brs = new ArrayList<>(searchResult.getBookingSuggestions().size());
+		List<Integer> guestList = new ArrayList<>(guests.length);
+		for (int guest : guests) {
+			guestList.add(guest);
+		}
+		for (IBookingSuggestion bs : searchResult.getBookingSuggestions()) {
+			int staying = Math.min(bs.getRoom().getNumBeds(), guestList.size());
+			brs.add(new MockBookingRequest(bs, guestList.subList(0, staying), guests[customer]));
+			guestList = guestList.subList(staying, guestList.size());
+		}
+		return new MockOrderRequest(guests[customer], brs);
+	}
+
+	private int[] createPersons(long... birthDates) {
+		int[] ids = new int[birthDates.length];
+		for (int i = 0; i < birthDates.length; i++) {
+			IPerson person = iPersonReg.createPerson(birthDates[i]);
+			ids[i] = person.getId();
+		}
+		return ids;
 	}
 
 	private int createPerson(long birthDate, CreditCardDetails ccd) {
 		IPerson person = iPersonReg.createPerson(birthDate);
-		person.createCreditCard(ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName);
+		createCreditCard(person, ccd);
 		return person.getId();
+	}
+
+	private void createCreditCard(IPerson person, CreditCardDetails ccd) {
+		person.createCreditCard(ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName);
 	}
 
 	private static long addDays(long date, int days) {
