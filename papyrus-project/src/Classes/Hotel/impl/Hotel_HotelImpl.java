@@ -250,9 +250,10 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 */
 	public boolean pay(int bookingID) {
 		IBooking booking = persistenceService.getBookingById(bookingID);
-		if(booking == null) {
+		if(booking == null || booking.isPaid()) {
 			return false;
 		}
+
 		IPerson customer = personRegistry.getIPersonByID(booking.getCustomer());
 		ICreditCardInfo creditcard = customer.getCreditCard();
 		double price = getBill(bookingID);
