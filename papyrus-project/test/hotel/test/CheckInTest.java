@@ -1,29 +1,23 @@
 package hotel.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 import hotel.test.mock.MockBookingRequest;
 import hotel.test.mock.MockOrderRequest;
 
-import java.beans.PersistenceDelegate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import javax.naming.directory.SearchResult;
-
 import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.Test;
 
 import Classes.Hotel.BookingRequest;
 import Classes.Hotel.Hotel_Hotel;
 import Classes.Hotel.IBooking;
-import Classes.Hotel.IBookingSuggestion;
 import Classes.Hotel.IConfiguration;
 import Classes.Hotel.IFrontDesk;
-import Classes.Hotel.IOrdering;
 import Classes.Hotel.ISearch;
 import Classes.Hotel.ISearchResult;
 import Classes.Hotel.impl.Hotel_HotelImpl;
@@ -32,18 +26,19 @@ import Classes.PersonRegistry.IPersonRegistry;
 
 public class CheckInTest {
 
-private static final CreditCardDetails TESLA = ccd("1212131941431336", "666", 2, 16, "Nikola", "Tesla", 100000);
+	private static final CreditCardDetails TESLA = ccd("1212131941431336", "666", 2, 16, "Nikola", "Tesla", 100000);
+	private static final CreditCardDetails STALIN = ccd("1212666666666666", "111", 3, 16, "Joseph", "Stalin", 10000);
 	
 	private IFrontDesk frontdesk;
 	private Hotel_Hotel hotel;
 	private IPersonRegistry personRegistry;
-	private IPerson person;
+	private IPerson person, person2;
 	private ISearch search;
 	private IConfiguration config;
 	
-	private MockOrderRequest order;
+	private MockOrderRequest order, newOrder;
 	
-	private int bookingID;
+	private int bookingID, newBookingID;
 	
 	Calendar cal;
 	
@@ -54,6 +49,7 @@ private static final CreditCardDetails TESLA = ccd("1212131941431336", "666", 2,
 		personRegistry = IPersonRegistry.instance;
 		config = IConfiguration.instance;
 		person = personRegistry.createPerson(0);
+		person2 = personRegistry.createPerson(0);
 		search = ISearch.instance;
 		
 		config.createRoom(2, 400);
@@ -65,10 +61,19 @@ private static final CreditCardDetails TESLA = ccd("1212131941431336", "666", 2,
 		
 		person.createCreditCard(TESLA.ccNumber, TESLA.ccv, TESLA.expiryMonth, TESLA.expiryYear, TESLA.firstName, TESLA.lastName);
 		
+		person.setFirstName("Joseph");
+		person.setLastName("Stalin");
+		person.setSSN("somethingOlder");
+		
+		person2.createCreditCard(STALIN.ccNumber, STALIN.ccv, STALIN.expiryMonth, STALIN.expiryYear, STALIN.firstName, STALIN.lastName);
+		
+		
 		cal = Calendar.getInstance();
 		Date today = cal.getTime();
 		cal.add(Calendar.HOUR, 24*2);
 		Date inTwoDays = cal.getTime();
+		cal.add(Calendar.HOUR, 24);
+		Date inThreeDays = cal.getTime();
 		
 		ISearchResult searchResult = search.search(today.getTime(), inTwoDays.getTime(), 1).get(0);
 		
@@ -80,6 +85,21 @@ private static final CreditCardDetails TESLA = ccd("1212131941431336", "666", 2,
 		
 		hotel.placeOrder(order);
 		bookingID = findBookingIdByContactId(frontdesk, person.getId());
+		
+		ISearchResult newSearchResult = search.search(inTwoDays.getTime(), inThreeDays.getTime(), 1).get(0);
+		
+		List<BookingRequest> newBookings = new BasicEList<>();
+		List<Integer> newGuests = new ArrayList<>(1);
+		newGuests.add(person2.getId());
+		newBookings.add(new MockBookingRequest(newSearchResult.getBookingSuggestions().get(0), newGuests, person2.getId()));
+		newOrder = new MockOrderRequest(person2.getId(), newBookings);	
+		
+		hotel.placeOrder(newOrder);
+		newBookingID = findBookingIdByContactId(frontdesk, person2.getId());
+		
+		
+		
+		
 	}
 	
 	@Test
@@ -103,13 +123,13 @@ private static final CreditCardDetails TESLA = ccd("1212131941431336", "666", 2,
 	public void testCheckInAndDoubleCheckIn() {
 		boolean first = frontdesk.checkIn(bookingID, 2);
 		boolean second = frontdesk.checkIn(bookingID, 2);
-		assertTrue(first && !second);
+		assertTrue(first && !second); //First checkin should succeed and second should fail
 	}
 	
 	
 	@Test
 	public void testToEarlyForCheckIn(){
-		
+		assertTrue(!frontdesk.checkIn(newBookingID, 2));
 	}
 
 	@Test
