@@ -58,7 +58,6 @@ import Classes.PersonRegistry.IPersonRegistry;
  */
 public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hotel_Hotel {
 
-	private static final int MAX_ROOM_COMBINATION = 2;
 	public static final long MILLIS_IN_DAY = 86400000L;
 	private int legalAge = 18;
 	private long maxBookingInterval = MILLIS_IN_DAY*31;
