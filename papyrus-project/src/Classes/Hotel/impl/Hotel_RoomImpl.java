@@ -237,13 +237,13 @@ public class Hotel_RoomImpl extends MinimalEObjectImpl.Container implements Hote
 		sb.append(", isOutOfOrder=");
 		sb.append(isOutOfOrder());
 		
-		if (getName() != null && getName() != "") {
+		if (getName() != null && getName().length() > 0) {
 			sb.append(", name=\"");
 			sb.append(getName());
 			sb.append("\"");
 		}
 		
-		if (getRoomInfo() != null && getRoomInfo() != "") {
+		if (getRoomInfo() != null && getRoomInfo().length() > 0) {
 			sb.append(", info=\"");
 			sb.append(getRoomInfo());
 			sb.append("\"");
