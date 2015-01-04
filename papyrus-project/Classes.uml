@@ -832,8 +832,8 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nI635oX4EeSgO4VnRKF4fQ" value="1"/>
       </ownedEnd>
     </packagedElement>
-    <packagedElement xmi:type="uml:Usage" xmi:id="_GAJcAIX_EeSgO4VnRKF4fQ" client="_YptNIHpDEeS2zv6zlhm8qQ" supplier="_swvogIQ2EeSXhZNlyip4WA"/>
-    <packagedElement xmi:type="uml:Usage" xmi:id="_GmpbUIX_EeSgO4VnRKF4fQ" client="_YptNIHpDEeS2zv6zlhm8qQ" supplier="_apbBUIQ3EeSXhZNlyip4WA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_GAJcAIX_EeSgO4VnRKF4fQ" client="_Alz5MIRdEeS-E_c58KLc5g" supplier="_swvogIQ2EeSXhZNlyip4WA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_GmpbUIX_EeSgO4VnRKF4fQ" client="_Alz5MIRdEeS-E_c58KLc5g" supplier="_apbBUIQ3EeSXhZNlyip4WA"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_5aq-cIacEeSOfdq9lGlLAw" name="IConfiguration">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_DiMoEIadEeSOfdq9lGlLAw" name="createRoom">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_X2eZkIadEeSOfdq9lGlLAw" name="room" type="_GcRsYIRUEeS_Fud_KU3BbA" direction="return"/>
