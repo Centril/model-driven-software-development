@@ -1,6 +1,6 @@
 package hotel.test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import hotel.test.mock.MockBookingRequest;
 import hotel.test.mock.MockOrderRequest;
 
@@ -138,7 +138,18 @@ public class CheckInTest {
 		boolean second = frontdesk.checkIn(bookingID, 2);
 		assertTrue(first && !second); //First checkin should succeed and second should fail
 	}
-	
+
+	@Test
+	public void checkInCancelledBooking(){
+		IBooking booking = hotel.getRelevantCheckInBookings(person.getId()).get(0);
+
+		assertFalse(booking.isCancelled());
+		assertTrue(frontdesk.cancelBooking(bookingID));
+		assertTrue(booking.isCancelled());
+		
+		// Make sure you can't check in a cancelled booking
+		assertFalse(frontdesk.checkIn(bookingID, 1));
+	}
 	
 	@Test
 	public void testToEarlyForCheckIn(){

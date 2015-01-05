@@ -197,8 +197,8 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	 */
 	public boolean checkIn(int bookingID, int numKeys) {
 		Hotel_Booking booking = persistenceService.getBookingById(bookingID);
-		if(booking == null){
-			return false; //requested booking to check in doesn't exist
+		if (booking == null || booking.isCheckedIn() || booking.isCancelled()) {
+			return false;
 		}
 		
 		Calendar cal = Calendar.getInstance();
@@ -207,12 +207,10 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		Date checkInDate = new Date(booking.getCheckInDate());
 		Date checkOutDate = new Date(booking.getCheckOutDate());
 		if(cal.getTime().after(checkInDate) && cal.getTime().before(checkOutDate)){
-			if(!(booking.isCheckedIn())){
-				//do check in things
-				booking.setCheckedIn(true);
-				booking.getOccupancy().addKeys(numKeys);
-				return true;
-			}	
+			// do check in things
+			booking.setCheckedIn(true);
+			booking.getOccupancy().addKeys(numKeys);
+			return true;
 		}
 		return false;
 	}
