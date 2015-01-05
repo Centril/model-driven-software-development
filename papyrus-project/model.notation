@@ -502,6 +502,10 @@
           <element xmi:type="uml:Operation" href="Classes.uml#__PQ3kId-EeSOAqruVTgZ0g"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="__Qhb0Yd-EeSOAqruVTgZ0g"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_arAWIJTUEeSr5IQiQDfYHg" type="3013">
+          <element xmi:type="uml:Operation" href="Classes.uml#_aq1-EJTUEeSr5IQiQDfYHg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_arAWIZTUEeSr5IQiQDfYHg"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_CWZtuXpEEeSTh5yDLLqE0Q"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_CWZtunpEEeSTh5yDLLqE0Q"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_CWZtu3pEEeSTh5yDLLqE0Q"/>
@@ -662,6 +666,10 @@
           <element xmi:type="uml:Operation" href="Classes.uml#_37ZXsIbWEeSniNhp8xpY-A"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_39fCYYbWEeSniNhp8xpY-A"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_XlQtMJTUEeSr5IQiQDfYHg" type="3007">
+          <element xmi:type="uml:Operation" href="Classes.uml#_XlOQ8JTUEeSr5IQiQDfYHg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_XlQtMZTUEeSr5IQiQDfYHg"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_jG8aOXvGEeSHatiNfZ-sGg"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_jG8aOnvGEeSHatiNfZ-sGg"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_jG8aO3vGEeSHatiNfZ-sGg"/>
@@ -732,6 +740,10 @@
         <children xmi:type="notation:Shape" xmi:id="_JDiOAId_EeSOAqruVTgZ0g" type="3007">
           <element xmi:type="uml:Operation" href="Classes.uml#_I8LBwId_EeSOAqruVTgZ0g"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_JDiOAYd_EeSOAqruVTgZ0g"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_OAiOoJTUEeSr5IQiQDfYHg" type="3007">
+          <element xmi:type="uml:Operation" href="Classes.uml#_N_8_0JTUEeSr5IQiQDfYHg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_OAiOoZTUEeSr5IQiQDfYHg"/>
         </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_MDP_qXvHEeSHatiNfZ-sGg"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_MDP_qnvHEeSHatiNfZ-sGg"/>
