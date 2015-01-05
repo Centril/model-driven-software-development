@@ -358,7 +358,7 @@
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_aq1-EJTUEeSr5IQiQDfYHg" name="setCancelled">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_mq4BcJTUEeSr5IQiQDfYHg" name="cancelled">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedParameter>
         </ownedOperation>
       </nestedClassifier>
@@ -529,7 +529,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_zrh-4JTVEeSr5IQiQDfYHg" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
@@ -602,7 +602,11 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_N_8_0JTUEeSr5IQiQDfYHg" name="isCancelled"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_N_8_0JTUEeSr5IQiQDfYHg" name="isCancelled">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_2NvOMJTbEeSr5IQiQDfYHg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_2IPy8Ho8EeSTh5yDLLqE0Q" name="ISearch">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_zZgvQHpREeSTh5yDLLqE0Q" name="search" visibility="public">
