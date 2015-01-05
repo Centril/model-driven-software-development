@@ -586,6 +586,15 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getHotel_Booking__SetCancelled__boolean() {
+		return hotel_BookingEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIBooking() {
 		return iBookingEClass;
 	}
@@ -696,6 +705,15 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 */
 	public EOperation getIBooking__IsCheckedOut() {
 		return iBookingEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIBooking__IsCancelled() {
+		return iBookingEClass.getEOperations().get(12);
 	}
 
 	/**
@@ -1099,6 +1117,15 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIFrontDesk__CancelBooking__int() {
+		return iFrontDeskEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getISearch() {
 		return iSearchEClass;
 	}
@@ -1360,6 +1387,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		createEOperation(hotel_BookingEClass, HOTEL_BOOKING___SET_CHECKED_IN__BOOLEAN);
 		createEOperation(hotel_BookingEClass, HOTEL_BOOKING___SET_CUSTOMER__INT);
 		createEOperation(hotel_BookingEClass, HOTEL_BOOKING___SET_CHECKED_OUT__BOOLEAN);
+		createEOperation(hotel_BookingEClass, HOTEL_BOOKING___SET_CANCELLED__BOOLEAN);
 
 		iBookingEClass = createEClass(IBOOKING);
 		createEOperation(iBookingEClass, IBOOKING___GET_CONTACT);
@@ -1374,6 +1402,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		createEOperation(iBookingEClass, IBOOKING___GET_IROOM);
 		createEOperation(iBookingEClass, IBOOKING___IS_CHECKED_IN);
 		createEOperation(iBookingEClass, IBOOKING___IS_CHECKED_OUT);
+		createEOperation(iBookingEClass, IBOOKING___IS_CANCELLED);
 
 		hotel_OrderEClass = createEClass(HOTEL_ORDER);
 		createEReference(hotel_OrderEClass, HOTEL_ORDER__BOOKINGS);
@@ -1427,6 +1456,7 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		createEOperation(iFrontDeskEClass, IFRONT_DESK___GET_ORDERS);
 		createEOperation(iFrontDeskEClass, IFRONT_DESK___GET_RELEVANT_CHECK_IN_BOOKINGS__INT);
 		createEOperation(iFrontDeskEClass, IFRONT_DESK___HAND_IN_KEYS__INT_INT);
+		createEOperation(iFrontDeskEClass, IFRONT_DESK___CANCEL_BOOKING__INT);
 
 		iSearchEClass = createEClass(ISEARCH);
 		createEOperation(iSearchEClass, ISEARCH___SEARCH__LONG_LONG_INT);
@@ -1582,6 +1612,9 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		op = initEOperation(getHotel_Booking__SetCheckedOut__boolean(), null, "setCheckedOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "isCheckedOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		op = initEOperation(getHotel_Booking__SetCancelled__boolean(), null, "setCancelled", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getBoolean(), "cancelled", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(iBookingEClass, IBooking.class, "IBooking", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEOperation(getIBooking__GetContact(), ecorePackage.getEInt(), "getContact", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1608,6 +1641,8 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		initEOperation(getIBooking__IsCheckedIn(), ecorePackage.getEBoolean(), "isCheckedIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getIBooking__IsCheckedOut(), ecorePackage.getEBoolean(), "isCheckedOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getIBooking__IsCancelled(), null, "isCancelled", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(hotel_OrderEClass, Hotel_Order.class, "Hotel_Order", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHotel_Order_Bookings(), this.getHotel_Booking(), null, "bookings", null, 0, -1, Hotel_Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1708,6 +1743,9 @@ public class HotelPackageImpl extends EPackageImpl implements HotelPackage {
 		op = initEOperation(getIFrontDesk__HandInKeys__int_int(), ecorePackage.getEBoolean(), "handInKeys", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "bookingId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "nbrKeys", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIFrontDesk__CancelBooking__int(), theTypesPackage.getBoolean(), "cancelBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "bookingId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(iSearchEClass, ISearch.class, "ISearch", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

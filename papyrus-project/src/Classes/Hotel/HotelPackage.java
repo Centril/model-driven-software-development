@@ -630,13 +630,22 @@ public interface HotelPackage extends EPackage {
 	int IBOOKING___IS_CHECKED_OUT = 11;
 
 	/**
+	 * The operation id for the '<em>Is Cancelled</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING___IS_CANCELLED = 12;
+
+	/**
 	 * The number of operations of the '<em>IBooking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_OPERATION_COUNT = 12;
+	int IBOOKING_OPERATION_COUNT = 13;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.impl.Hotel_BookingImpl <em>Hotel Booking</em>}' class.
@@ -784,6 +793,15 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_BOOKING___IS_CHECKED_OUT = IBOOKING___IS_CHECKED_OUT;
 
 	/**
+	 * The operation id for the '<em>Is Cancelled</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_BOOKING___IS_CANCELLED = IBOOKING___IS_CANCELLED;
+
+	/**
 	 * The operation id for the '<em>Set ID</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -820,13 +838,22 @@ public interface HotelPackage extends EPackage {
 	int HOTEL_BOOKING___SET_CHECKED_OUT__BOOLEAN = IBOOKING_OPERATION_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Set Cancelled</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_BOOKING___SET_CANCELLED__BOOLEAN = IBOOKING_OPERATION_COUNT + 4;
+
+	/**
 	 * The number of operations of the '<em>Hotel Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOTEL_BOOKING_OPERATION_COUNT = IBOOKING_OPERATION_COUNT + 4;
+	int HOTEL_BOOKING_OPERATION_COUNT = IBOOKING_OPERATION_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.IOrder <em>IOrder</em>}' class.
@@ -1313,13 +1340,22 @@ public interface HotelPackage extends EPackage {
 	int IFRONT_DESK___HAND_IN_KEYS__INT_INT = 7;
 
 	/**
+	 * The operation id for the '<em>Cancel Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFRONT_DESK___CANCEL_BOOKING__INT = 8;
+
+	/**
 	 * The number of operations of the '<em>IFront Desk</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IFRONT_DESK_OPERATION_COUNT = 8;
+	int IFRONT_DESK_OPERATION_COUNT = 9;
 
 	/**
 	 * The meta object id for the '{@link Classes.Hotel.impl.Hotel_HotelImpl <em>Hotel Hotel</em>}' class.
@@ -1429,6 +1465,15 @@ public interface HotelPackage extends EPackage {
 	 * @ordered
 	 */
 	int HOTEL_HOTEL___HAND_IN_KEYS__INT_INT = IFRONT_DESK___HAND_IN_KEYS__INT_INT;
+
+	/**
+	 * The operation id for the '<em>Cancel Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOTEL_HOTEL___CANCEL_BOOKING__INT = IFRONT_DESK___CANCEL_BOOKING__INT;
 
 	/**
 	 * The operation id for the '<em>Search</em>' operation.
@@ -2379,6 +2424,16 @@ public interface HotelPackage extends EPackage {
 	EOperation getHotel_Booking__SetCheckedOut__boolean();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.Hotel_Booking#setCancelled(boolean) <em>Set Cancelled</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Cancelled</em>' operation.
+	 * @see Classes.Hotel.Hotel_Booking#setCancelled(boolean)
+	 * @generated
+	 */
+	EOperation getHotel_Booking__SetCancelled__boolean();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.IBooking <em>IBooking</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2507,6 +2562,16 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIBooking__IsCheckedOut();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IBooking#isCancelled() <em>Is Cancelled</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Cancelled</em>' operation.
+	 * @see Classes.Hotel.IBooking#isCancelled()
+	 * @generated
+	 */
+	EOperation getIBooking__IsCancelled();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.Hotel_Order <em>Hotel Order</em>}'.
@@ -2952,6 +3017,16 @@ public interface HotelPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIFrontDesk__HandInKeys__int_int();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.Hotel.IFrontDesk#cancelBooking(int) <em>Cancel Booking</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Cancel Booking</em>' operation.
+	 * @see Classes.Hotel.IFrontDesk#cancelBooking(int)
+	 * @generated
+	 */
+	EOperation getIFrontDesk__CancelBooking__int();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.Hotel.ISearch <em>ISearch</em>}'.
@@ -3491,6 +3566,14 @@ public interface HotelPackage extends EPackage {
 		EOperation HOTEL_BOOKING___SET_CHECKED_OUT__BOOLEAN = eINSTANCE.getHotel_Booking__SetCheckedOut__boolean();
 
 		/**
+		 * The meta object literal for the '<em><b>Set Cancelled</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation HOTEL_BOOKING___SET_CANCELLED__BOOLEAN = eINSTANCE.getHotel_Booking__SetCancelled__boolean();
+
+		/**
 		 * The meta object literal for the '{@link Classes.Hotel.IBooking <em>IBooking</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3595,6 +3678,14 @@ public interface HotelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IBOOKING___IS_CHECKED_OUT = eINSTANCE.getIBooking__IsCheckedOut();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Cancelled</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IBOOKING___IS_CANCELLED = eINSTANCE.getIBooking__IsCancelled();
 
 		/**
 		 * The meta object literal for the '{@link Classes.Hotel.impl.Hotel_OrderImpl <em>Hotel Order</em>}' class.
@@ -3965,6 +4056,14 @@ public interface HotelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IFRONT_DESK___HAND_IN_KEYS__INT_INT = eINSTANCE.getIFrontDesk__HandInKeys__int_int();
+
+		/**
+		 * The meta object literal for the '<em><b>Cancel Booking</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IFRONT_DESK___CANCEL_BOOKING__INT = eINSTANCE.getIFrontDesk__CancelBooking__int();
 
 		/**
 		 * The meta object literal for the '{@link Classes.Hotel.ISearch <em>ISearch</em>}' class.

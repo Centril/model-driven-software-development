@@ -105,4 +105,12 @@ public interface Hotel_Booking extends IBooking {
 	 */
 	void setCheckedOut(boolean isCheckedOut);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model cancelledDataType="org.eclipse.uml2.types.Boolean" cancelledRequired="true" cancelledOrdered="false"
+	 * @generated
+	 */
+	void setCancelled(boolean cancelled);
+
 } // Hotel_Booking

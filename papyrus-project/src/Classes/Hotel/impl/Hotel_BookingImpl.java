@@ -294,6 +294,17 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void isCancelled() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public void setID(int id) {
@@ -328,6 +339,17 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	 */
 	public void setCheckedOut(boolean isCheckedOut) {
 		this.isCheckedOut = isCheckedOut;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCancelled(boolean cancelled) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -433,6 +455,9 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 				return isCheckedIn();
 			case HotelPackage.HOTEL_BOOKING___IS_CHECKED_OUT:
 				return isCheckedOut();
+			case HotelPackage.HOTEL_BOOKING___IS_CANCELLED:
+				isCancelled();
+				return null;
 			case HotelPackage.HOTEL_BOOKING___SET_ID__INT:
 				setID((Integer)arguments.get(0));
 				return null;
@@ -444,6 +469,9 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 				return null;
 			case HotelPackage.HOTEL_BOOKING___SET_CHECKED_OUT__BOOLEAN:
 				setCheckedOut((Boolean)arguments.get(0));
+				return null;
+			case HotelPackage.HOTEL_BOOKING___SET_CANCELLED__BOOLEAN:
+				setCancelled((Boolean)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

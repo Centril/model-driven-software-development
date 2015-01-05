@@ -356,6 +356,17 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		return false;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean cancelBooking(int bookingId) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
 	private boolean isRoomAvailable(IRoom room, long startTime, long endTime) {
 		if(room.isOutOfOrder())
 			return false;
@@ -832,6 +843,8 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 				return getRelevantCheckInBookings((Integer)arguments.get(0));
 			case HotelPackage.HOTEL_HOTEL___HAND_IN_KEYS__INT_INT:
 				return handInKeys((Integer)arguments.get(0), (Integer)arguments.get(1));
+			case HotelPackage.HOTEL_HOTEL___CANCEL_BOOKING__INT:
+				return cancelBooking((Integer)arguments.get(0));
 			case HotelPackage.HOTEL_HOTEL___SEARCH__LONG_LONG_INT:
 				return search((Long)arguments.get(0), (Long)arguments.get(1), (Integer)arguments.get(2));
 			case HotelPackage.HOTEL_HOTEL___PLACE_ORDER__ORDERREQUEST:

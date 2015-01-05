@@ -113,4 +113,12 @@ public interface IBooking extends EObject {
 	 */
 	boolean isCheckedOut();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	void isCancelled();
+
 } // IBooking

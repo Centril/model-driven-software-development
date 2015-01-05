@@ -85,4 +85,12 @@ public interface IFrontDesk extends EObject {
 	 */
 	boolean handInKeys(int bookingId, int nbrKeys);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" bookingIdRequired="true" bookingIdOrdered="false"
+	 * @generated
+	 */
+	boolean cancelBooking(int bookingId);
+
 } // IFrontDesk
