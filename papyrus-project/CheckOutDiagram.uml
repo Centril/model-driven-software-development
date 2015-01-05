@@ -13,9 +13,8 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_z51XUHlPEeSA5MODJ_COwQ" name="r">
       <type xmi:type="uml:Component" href="model.uml#_COSpsHcGEeS3Y6dvXnWwog"/>
     </ownedAttribute>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_BsoY0HlQEeSA5MODJ_COwQ" name="Lifeline" represents="_z51XUHlPEeSA5MODJ_COwQ"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_BsoY0HlQEeSA5MODJ_COwQ" name="Lifeline" represents="_z51XUHlPEeSA5MODJ_COwQ" coveredBy="_9BKzQIVYEeS8BtwCIX_QHA _2QJ6wJS0EeSM09fZn33Uzw _nuRwQJS1EeSM09fZn33Uzw"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_bo4nIHpbEeSJULlkSE75Zg" name="h:" coveredBy="_9BLaUIVYEeS8BtwCIX_QHA _2QKh0JS0EeSM09fZn33Uzw _nuSXUJS1EeSM09fZn33Uzw">
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_BsoY0HlQEeSA5MODJ_COwQ" name="Lifeline0" represents="_z51XUHlPEeSA5MODJ_COwQ" coveredBy="_9BKzQIVYEeS8BtwCIX_QHA _2QJ6wJS0EeSM09fZn33Uzw _nuRwQJS1EeSM09fZn33Uzw"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_bo4nIHpbEeSJULlkSE75Zg" name="Lifeline1" coveredBy="_9BLaUIVYEeS8BtwCIX_QHA _2QKh0JS0EeSM09fZn33Uzw _nuSXUJS1EeSM09fZn33Uzw">
       <represents xmi:type="uml:Property" href="CheckInDiagram.uml#_M-KMAHpDEeS2zv6zlhm8qQ"/>
     </lifeline>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_2QJ6wJS0EeSM09fZn33Uzw" name="getBookings_MessageSend" covered="_BsoY0HlQEeSA5MODJ_COwQ" message="_2QFpUJS0EeSM09fZn33Uzw"/>
