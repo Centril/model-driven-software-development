@@ -359,12 +359,16 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean cancelBooking(int bookingId) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Hotel_Booking booking = persistenceService.getBookingById(bookingId);
+		if (booking == null) {
+			return false;
+		}
+
+		booking.setCancelled(true);
+		return true;
 	}
 
 	private boolean isRoomAvailable(IRoom room, long startTime, long endTime) {

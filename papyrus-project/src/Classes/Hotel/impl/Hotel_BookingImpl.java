@@ -57,8 +57,7 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	//Expected dates for checking in and out
 	private long checkInDate, checkOutDate;
 	
-	private boolean isPaid, isCheckedIn, isCheckedOut;
-	
+	private boolean isPaid, isCheckedIn, isCheckedOut, cancelled;
 
 	/**
 	 * The cached value of the '{@link #getOccupancy() <em>Occupancy</em>}' reference.
@@ -294,12 +293,10 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean isCancelled() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return cancelled;
 	}
 
 	/**
@@ -344,12 +341,10 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setCancelled(boolean cancelled) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.cancelled = cancelled;
 	}
 
 	/**
