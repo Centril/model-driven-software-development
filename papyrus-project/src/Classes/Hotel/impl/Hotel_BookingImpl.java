@@ -296,7 +296,7 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void isCancelled() {
+	public boolean isCancelled() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -456,8 +456,7 @@ public class Hotel_BookingImpl extends MinimalEObjectImpl.Container implements H
 			case HotelPackage.HOTEL_BOOKING___IS_CHECKED_OUT:
 				return isCheckedOut();
 			case HotelPackage.HOTEL_BOOKING___IS_CANCELLED:
-				isCancelled();
-				return null;
+				return isCancelled();
 			case HotelPackage.HOTEL_BOOKING___SET_ID__INT:
 				setID((Integer)arguments.get(0));
 				return null;
