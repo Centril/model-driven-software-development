@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Classes.Hotel.HotelFactory;
+import Classes.Hotel.Hotel_Hotel;
 import Classes.Hotel.IBookingSuggestion;
 import Classes.Hotel.IConfiguration;
 import Classes.Hotel.ISearch;
