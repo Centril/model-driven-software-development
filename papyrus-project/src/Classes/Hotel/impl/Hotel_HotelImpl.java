@@ -284,6 +284,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 		Hotel_Booking booking = persistenceService.getBookingById(bookingID);
 		if(booking != null && booking.isCheckedIn()){
 			booking.setCheckedOut(true);
+			booking.getStay().getCurrentOccupancy().setEndTime(Calendar.getInstance().getTime().getTime());
 			return true;
 		}
 		return false;
