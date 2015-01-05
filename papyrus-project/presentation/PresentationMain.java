@@ -29,7 +29,6 @@ import Classes.PersonRegistry.IPersonRegistry;
 public class PresentationMain {
 	private static final CreditCardDetails TESLA = ccd("1212131941431336", "666", 2, 16, "Nikola", "Tesla", 100000);
 	private static final CreditCardDetails STALIN = ccd("1212666666666666", "111", 3, 16, "Joseph", "Stalin", 10000);
-	private static final CreditCardDetails DISNEY = ccd("1212191919191919", "333", 4, 16, "Walt", "Disney", 250000);
 
 	
 	public static void main(String[] args)  {
@@ -47,8 +46,6 @@ public class PresentationMain {
 		registerPersonInRegistry(iPersonReg, TESLA, -3581025132L);
 		setUpAccount(STALIN);
 		registerPersonInRegistry(iPersonReg, STALIN, 25);
-		setUpAccount(DISNEY);
-		registerPersonInRegistry(iPersonReg, DISNEY, 32);
 		
 		System.out.println("\nSetup (use case maybe): Creates 2 rooms in the newly built hotel. (We only create 2 to be sure to get back the correct ones)");
 		System.out.println(iConfig.createRoom(1, 400));
@@ -72,7 +69,7 @@ public class PresentationMain {
 		// Use case: Ordering
 		System.out.println("\nUse Case: Ordering");
 		if (results.get(0).getBookingSuggestions().size() != 2) {
-			throw new AssertionError("This should never happan in presentation exception.");
+			throw new AssertionError("Presentation failed.");
 		}
 		
 		int stalinId = findPersonIdByName(iPersonReg, STALIN.firstName, STALIN.lastName);
@@ -103,7 +100,7 @@ public class PresentationMain {
 		int teslasBookingId = findBookingIdByContactId(iFrontDesk, teslaId);
 
 		if (iFrontDesk.checkIn(stalinsBookingId, 1)) {
-			System.out.println("Stalins check in succeded!");
+			System.out.println("Stalins check in succeeded!");
 		} else {
 			System.out.println("Stalins check in failed!");
 		}
@@ -116,24 +113,22 @@ public class PresentationMain {
 		
 		// Use case: Check out
 		System.out.println("\nUse Case: Check out");
-		System.out.println("It's time for checkout, but Stalin is a sneaky guy and attempts to keep his key.");
+		System.out.println("It's time for checkout, but Stalin forgets to turn in his key.");
 		if (!iFrontDesk.handInKeys(stalinsBookingId, 0)) {
-			System.out.println("Though luck for you Stalin! The system discovered that you still have keys. Now lets wait for the police.");
+			System.out.println("The system discovered that Stalin still has keys.");
 			if (iFrontDesk.handInKeys(stalinsBookingId, 1)) {
-				System.out.println("Okay then, since you handed it in so quickly we'll forget about it this time.");
-			} else {
-				System.out.println("Police are here");
+				System.out.println("Stalin handed in the remaining key.");
 			}
 		} else {
-			System.out.println("Sneaky guy Stalin successfully stole key");
+			System.out.println("System failed to notice Stalin's missing key.");
 		}
 		if (iFrontDesk.checkOut(stalinsBookingId)) {
-			System.out.println("Stalins check out succeded!");
+			System.out.println("Stalins check out succeeded!");
 		} else {
-			System.out.println("Stalins check out faield!");
+			System.out.println("Stalins check out failed!");
 		}
 		if (iFrontDesk.handInKeys(teslasBookingId, 1)) {
-			System.out.println("Teslas hand in keys succeded");
+			System.out.println("Teslas hand in keys succeeded");
 		}
 		if (iFrontDesk.checkOut(teslasBookingId)) {
 			System.out.println("Teslas check out succeeded!");
@@ -141,7 +136,7 @@ public class PresentationMain {
 		
 		
 		// Use case (!?): Get Bill
-		System.out.println("\nNow lets hand out the bills!");
+		System.out.println("\nLets hand out the bills!");
 		System.out.println("Cost of Tesla's stay: " + iFrontDesk.getBill(teslasBookingId));
 		System.out.println("Cost of Stalin's stay: " + iFrontDesk.getBill(stalinsBookingId));
 		
@@ -149,12 +144,12 @@ public class PresentationMain {
 		// Use case: Handle Payment
 		System.out.println("\nUse Case: Pay");
 		if (iFrontDesk.pay(stalinsBookingId)) {
-			System.out.println("Comrade Stalin successfully paid for his booking!");
+			System.out.println("Stalin successfully paid for his booking!");
 		} else {
-			System.out.println("Stalin failed to pay for his booking. Police are on their way.");
+			System.out.println("Stalin failed to pay for his booking.");
 		}
 		if (iFrontDesk.pay(teslasBookingId)) {
-			System.out.println("Comrade Stalin successfully paid for Teslas booking!");
+			System.out.println("Stalin successfully paid for Teslas booking!");
 		} else {
 			System.out.println("Stalin failed to pay for Teslas booking.");
 		}
@@ -172,18 +167,18 @@ public class PresentationMain {
 		MockBookingRequest teslasNewBooking = new MockBookingRequest(sharedBookingSuggestion, Arrays.asList(teslaId, stalinId), teslaId);
 		
 		if (iOrdering.placeOrder(new MockOrderRequest(stalinId, Arrays.<BookingRequest>asList(stalinsNewBooking)))) {
-			System.out.println("Comrade Stalin made a booking.");
+			System.out.println("Stalin made a booking.");
 		} else {
-			System.out.println("Comrade Stalin failed to make a booking.");
+			System.out.println("Stalin failed to make a booking.");
 		}
 		if (iOrdering.placeOrder(new MockOrderRequest(teslaId, Arrays.<BookingRequest>asList(teslasNewBooking)))) {
-			System.out.println("Scientist Tesla made a booking.");
+			System.out.println("Tesla made a booking.");
 		} else {
-			System.out.println("Scientist Tesla failed to make a booking");
+			System.out.println("Tesla failed to make a booking");
 		}
-		System.out.println("As we can see Stalin won cause he was first. Poor Tesla gets to stay for free.");
+		System.out.println("Stalin succeeded since he placed the order before Tesla.");
 		
-		System.out.println("\nComputer over.");
+		System.out.println("\nPresentation done!");
 	}
 	
 	private static int findBookingIdByContactId(IFrontDesk iFrontDesk, int contactId) {
