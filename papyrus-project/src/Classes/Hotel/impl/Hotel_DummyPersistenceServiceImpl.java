@@ -4,7 +4,6 @@ package Classes.Hotel.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
-import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.eclipse.emf.common.util.BasicEList;
@@ -20,7 +19,6 @@ import Classes.Hotel.Hotel_Occupancy;
 import Classes.Hotel.Hotel_Order;
 import Classes.Hotel.Hotel_Room;
 import Classes.Hotel.Hotel_Stay;
-import Classes.Hotel.IOrder;
 
 /**
  * <!-- begin-user-doc -->

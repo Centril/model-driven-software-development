@@ -230,7 +230,7 @@ public class PersonRegistry_PersonRegistryImpl extends MinimalEObjectImpl.Contai
 	 */
 	public IPerson getIPersonBySSN(String ssn) {
 		for (PersonRegistry_Person person : people) {
-			if (person.getSSN() == ssn) {
+			if (person.getSSN().equals(ssn)) {
 				return person;
 			}
 		}
