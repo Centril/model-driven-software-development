@@ -210,6 +210,7 @@ public class Hotel_HotelImpl extends MinimalEObjectImpl.Container implements Hot
 			// do check in things
 			booking.setCheckedIn(true);
 			booking.getOccupancy().addKeys(numKeys);
+			booking.getStay().getCurrentOccupancy().setStartTime(Calendar.getInstance().getTime().getTime());
 			return true;
 		}
 		return false;
