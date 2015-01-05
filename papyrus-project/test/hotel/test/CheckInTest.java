@@ -70,6 +70,10 @@ public class CheckInTest {
 		
 		
 		cal = Calendar.getInstance();
+		
+		// Offset one hour into future (dirty fix)
+		cal.add(Calendar.HOUR, 1);
+		
 		Date today = cal.getTime();
 		cal.add(Calendar.HOUR, 24*2);
 		Date inTwoDays = cal.getTime();
