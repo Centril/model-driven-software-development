@@ -7,7 +7,6 @@ import java.util.List;
 import org.junit.Test;
 
 import Classes.Hotel.IConfiguration;
-import Classes.Hotel.IFrontDesk;
 import Classes.Hotel.IRoom;
 
 public class RoomConfigTest {

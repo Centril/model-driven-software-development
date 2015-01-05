@@ -31,7 +31,6 @@ import Classes.Hotel.ISearchResult;
 import Classes.Hotel.OrderRequest;
 import Classes.PersonRegistry.IPerson;
 import Classes.PersonRegistry.IPersonRegistry;
-import Classes.PersonRegistry.PersonRegistryFactory;
 
 public class OrderingTest {
 	private static final CreditCardDetails TESLA = ccd("1212131941431336", "666", 2, 16, "Nikola", "Tesla", 100000);

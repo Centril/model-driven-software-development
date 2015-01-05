@@ -21,7 +21,6 @@ import Classes.Hotel.IConfiguration;
 import Classes.Hotel.IFrontDesk;
 import Classes.Hotel.ISearch;
 import Classes.Hotel.ISearchResult;
-import Classes.Hotel.impl.Hotel_HotelImpl;
 import Classes.PersonRegistry.IPerson;
 import Classes.PersonRegistry.IPersonRegistry;
 

@@ -2,8 +2,6 @@ package hotel.test;
 
 import static org.junit.Assert.*;
 
-import hotel.test.mock.MockOrderRequest;
-
 import javax.xml.soap.SOAPException;
 
 import org.junit.Before;
