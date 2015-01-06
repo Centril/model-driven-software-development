@@ -4,6 +4,8 @@ import static org.junit.Assert.assertTrue;
 import hotel.test.mock.MockOrderRequest;
 import hotel.test.util.CreditCardDetails;
 
+import java.util.List;
+
 import javax.xml.soap.SOAPException;
 
 import se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires;
@@ -57,20 +59,26 @@ public abstract class BaseTest {
 
 		return person;
 	}
+	
+	protected void removeCCD( CreditCardDetails ccd ) throws SOAPException {
+		assertTrue( adminRequires.removeCreditCard(
+				ccd.ccNumber, ccd.ccv,
+				ccd.expiryMonth, ccd.expiryYear, ccd.firstName,
+				ccd.lastName) );
+	}
 
 	protected void setUpAccount(CreditCardDetails ccd) throws SOAPException {
 		if (customerRequires.isCreditCardValid(ccd.ccNumber, ccd.ccv,
 				ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName)) {
-			assertTrue(adminRequires.removeCreditCard(ccd.ccNumber, ccd.ccv,
-					ccd.expiryMonth, ccd.expiryYear, ccd.firstName,
-					ccd.lastName));
+			removeCCD( ccd );
 		}
+
 		assertTrue(adminRequires.addCreditCard(ccd.ccNumber, ccd.ccv,
-				ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName));
-		adminRequires
-				.makeDeposit(ccd.ccNumber, ccd.ccv, ccd.expiryMonth,
-						ccd.expiryYear, ccd.firstName, ccd.lastName,
-						ccd.initialBalance);
+			ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName));
+
+		adminRequires.makeDeposit(ccd.ccNumber, ccd.ccv, ccd.expiryMonth,
+			ccd.expiryYear, ccd.firstName, ccd.lastName,
+			ccd.initialBalance);
 	}
 
 	protected int placeOrder(MockOrderRequest order, IPerson person) {

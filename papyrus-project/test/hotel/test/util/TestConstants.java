@@ -16,4 +16,6 @@ public class TestConstants {
 
 	public static final CreditCardDetails VREESWIJK = ccd(
 		"1212999999999999", "111", 3, 16, "Cornelis", "Wreeswijk", 1);
+
+	public static final CreditCardDetails[] ALL = new CreditCardDetails[] { TESLA, STALIN, VREESWIJK };
 }
