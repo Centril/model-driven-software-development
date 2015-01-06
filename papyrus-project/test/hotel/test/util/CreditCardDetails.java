@@ -1,13 +1,13 @@
 package hotel.test.util;
 
 public class CreditCardDetails {
-	final String ccNumber;
-	final String ccv;
-	final int expiryMonth;
-	final int expiryYear;
-	final String firstName;
-	final String lastName;
-	final double initialBalance;
+	public final String ccNumber;
+	public final String ccv;
+	public final int expiryMonth;
+	public final int expiryYear;
+	public final String firstName;
+	public final String lastName;
+	public final double initialBalance;
 
 	public CreditCardDetails(String ccNumber, String ccv, int expiryMonth,
 			int expiryYear, String firstName, String lastName,
