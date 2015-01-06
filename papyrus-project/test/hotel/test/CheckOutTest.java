@@ -100,7 +100,7 @@ public class CheckOutTest {
 		int bookingID = placeOrder(order, person);
 		frontdesk.checkIn(bookingID, 3);
 		boolean first = frontdesk.handInKeys(bookingID, 2);
-		boolean second = frontdesk.handInKeys(bookingID, 3);
+		boolean second = frontdesk.handInKeys(bookingID, 1);
 		assertTrue(!first && second); //Should fail with wrong number of keys, but work with right number
 		frontdesk.checkOut(bookingID); // For good measure
 	}
