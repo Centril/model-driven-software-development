@@ -4,37 +4,28 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 import hotel.test.mock.MockBookingRequest;
 import hotel.test.mock.MockOrderRequest;
+import hotel.test.util.CreditCardDetails;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import javax.xml.soap.SOAPException;
+
 import org.eclipse.emf.common.util.BasicEList;
 import org.junit.Before;
 import org.junit.Test;
 
 import Classes.Hotel.BookingRequest;
-import Classes.Hotel.Hotel_Hotel;
-import Classes.Hotel.IBooking;
-import Classes.Hotel.IConfiguration;
-import Classes.Hotel.IFrontDesk;
-import Classes.Hotel.ISearch;
 import Classes.Hotel.ISearchResult;
-import Classes.Hotel.impl.Hotel_HotelImpl;
 import Classes.PersonRegistry.IPerson;
-import Classes.PersonRegistry.IPersonRegistry;
 
-public class CheckOutTest {
+public class CheckOutTest extends BaseTest {
 	
-	private static final CreditCardDetails TESLA = ccd("1212131941431336", "666", 2, 16, "Nikola", "Tesla", 100000);
+	private static final CreditCardDetails TESLA = CreditCardDetails.ccd("1212131941431336", "666", 2, 16, "Nikola", "Tesla", 100000);
 	
-	private IFrontDesk frontdesk;
-	private Hotel_Hotel hotel;
-	private IPersonRegistry personRegistry;
 	private IPerson person;
-	private ISearch search;
-	private IConfiguration config;
 	private Calendar cal;
 	private Date today;
 	private Date inTwoDays;
@@ -42,18 +33,13 @@ public class CheckOutTest {
 	private MockOrderRequest order;
 	
 	@Before
-	public void before() {
-		hotel = Hotel_HotelImpl.getInstance();
-		frontdesk = hotel;
-		personRegistry = IPersonRegistry.instance;
-		config = IConfiguration.instance;
-		person = personRegistry.createPerson(0);
-		search = ISearch.instance;
+	public void before() throws SOAPException {
+		setupBefore();
 		
 		config.createRoom(2, 400);
 		config.createRoom(1, 400);
 		
-
+		person = personRegistry.createPerson(0);
 		person.setFirstName("Nikola");
 		person.setLastName("Tesla");
 		person.setSSN("somethingTooOld");
@@ -104,48 +90,5 @@ public class CheckOutTest {
 		assertTrue(!first && second); //Should fail with wrong number of keys, but work with right number
 		frontdesk.checkOut(bookingID); // For good measure
 	}
-	
-	
-	
-	private int placeOrder(MockOrderRequest order, IPerson person) {
-		hotel.placeOrder(order);
-		return findBookingIdByContactId(frontdesk, person.getId());
-	}
-	
-	
-	private static CreditCardDetails ccd (String ccNumber, String ccv, int expiryMonth,
-			int expiryYear, String firstName, String lastName, double initialBalance) {
-		return new CreditCardDetails(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, initialBalance);
-	}
-	
-	private static class CreditCardDetails {
-		final String ccNumber;
-		final String ccv;
-		final int expiryMonth;
-		final int expiryYear;
-		final String firstName;
-		final String lastName;
-		final double initialBalance;
 
-		public CreditCardDetails(String ccNumber, String ccv, int expiryMonth,
-				int expiryYear, String firstName, String lastName,
-				double initialBalance) {
-			this.ccNumber = ccNumber;
-			this.ccv = ccv;
-			this.expiryMonth = expiryMonth;
-			this.expiryYear = expiryYear;
-			this.firstName = firstName;
-			this.lastName = lastName;
-			this.initialBalance = initialBalance;
-		}
-	}
-	
-	private static int findBookingIdByContactId(IFrontDesk iFrontDesk, int contactId) {
-		for (IBooking booking : iFrontDesk.getBookings()) {
-			if (booking.getContact() == contactId) {
-				return booking.getID();
-			}
-		}
-		return -1;
-	}
 }

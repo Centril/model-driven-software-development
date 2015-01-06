@@ -1,17 +1,22 @@
 package hotel.test;
 
 import static org.junit.Assert.*;
+import javax.xml.soap.SOAPException;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import Classes.PersonRegistry.IPerson;
-import Classes.PersonRegistry.IPersonRegistry;
 
-public class PersonRegistryTest {
+public class PersonRegistryTest extends BaseTest {
 
+	@Before
+	public void before() throws SOAPException {
+		setupBefore();
+	}
+	
 	@Test
 	public void testSuccessfullyStoringPerson() {
-		IPersonRegistry registry = IPersonRegistry.instance;
 		
 		String firstName = "Nikola";
 		String lastName = "Tesla";
@@ -23,7 +28,7 @@ public class PersonRegistryTest {
 		
 		// Send in data
 		long birthDate = -3581025132L;
-		IPerson created = registry.createPerson(birthDate);
+		IPerson created = personRegistry.createPerson(birthDate);
 		created.setFirstName(firstName);
 		created.setLastName(lastName);
 		created.setSSN(ssn);
@@ -32,7 +37,7 @@ public class PersonRegistryTest {
 		int personID = created.getId();
 		
 		// Validate that the same is sent back when asking
-		IPerson sentBack = registry.getIPersonByID(personID);
+		IPerson sentBack = personRegistry.getIPersonByID(personID);
 		assertEquals(birthDate, sentBack.getBirthDate());
 		assertEquals(firstName, sentBack.getFirstName());
 		assertEquals(lastName, sentBack.getLastName());
