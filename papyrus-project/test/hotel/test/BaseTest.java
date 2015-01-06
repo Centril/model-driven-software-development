@@ -1,5 +1,9 @@
 package hotel.test;
 
+import static org.junit.Assert.assertTrue;
+import hotel.test.mock.MockOrderRequest;
+import hotel.test.util.CreditCardDetails;
+
 import javax.xml.soap.SOAPException;
 
 import org.junit.Before;
@@ -13,6 +17,7 @@ import Classes.Hotel.IConfiguration;
 import Classes.Hotel.IFrontDesk;
 import Classes.Hotel.IOrdering;
 import Classes.Hotel.ISearch;
+import Classes.PersonRegistry.IPerson;
 import Classes.PersonRegistry.IPersonRegistry;
 import Classes.PersonRegistry.PersonRegistryFactory;
 
@@ -43,14 +48,45 @@ public abstract class BaseTest {
 		personRegistry = PersonRegistryFactory.eINSTANCE.createPersonRegistry_PersonRegistry();
 		hotel.setPersonRegistry(personRegistry);
 	}
-	
-	protected static int findBookingIdByContactId(IFrontDesk iFrontDesk, int contactId) {
-		for (IBooking booking : iFrontDesk.getBookings()) {
+
+	protected IPerson setupPerson( CreditCardDetails ccd, String ssn, int birthDate ) throws SOAPException {
+		setUpAccount( ccd );
+
+		IPerson person = personRegistry.createPerson( birthDate );
+		person.setFirstName( ccd.firstName );
+		person.setLastName( ccd.lastName );
+		person.setSSN( ssn );
+		person.createCreditCard( ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName);
+
+		return person;
+	}
+
+	protected void setUpAccount(CreditCardDetails ccd) throws SOAPException {
+		if (customerRequires.isCreditCardValid(ccd.ccNumber, ccd.ccv,
+				ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName)) {
+			assertTrue(adminRequires.removeCreditCard(ccd.ccNumber, ccd.ccv,
+					ccd.expiryMonth, ccd.expiryYear, ccd.firstName,
+					ccd.lastName));
+		}
+		assertTrue(adminRequires.addCreditCard(ccd.ccNumber, ccd.ccv,
+				ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName));
+		adminRequires
+				.makeDeposit(ccd.ccNumber, ccd.ccv, ccd.expiryMonth,
+						ccd.expiryYear, ccd.firstName, ccd.lastName,
+						ccd.initialBalance);
+	}
+
+	protected int placeOrder(MockOrderRequest order, IPerson person) {
+		ordering.placeOrder(order);
+		return findBookingIdByContactId(person.getId());
+	}
+
+	protected int findBookingIdByContactId(int contactId) {
+		for (IBooking booking : frontdesk.getBookings()) {
 			if (booking.getContact() == contactId) {
 				return booking.getID();
 			}
 		}
 		return -1;
 	}
-	
 }
