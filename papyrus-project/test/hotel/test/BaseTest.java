@@ -55,6 +55,12 @@ public abstract class BaseTest {
 		personRegistry = PersonRegistryFactory.eINSTANCE.createPersonRegistry_PersonRegistry();
 		hotel.setPersonRegistry(personRegistry);
 	}
+	
+	protected Calendar cal() {
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.MINUTE, 1);
+		return cal;
+	}
 
 	protected int setupBooking( IPerson p, int numPersons, Date from, Date to ) {
 		ISearchResult searchResult = search.search(from.getTime(), to.getTime(), 1).get(0);
