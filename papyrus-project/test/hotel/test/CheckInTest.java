@@ -1,9 +1,10 @@
 package hotel.test;
 
+import static hotel.test.util.TestConstants.TESLA;
+import static hotel.test.util.TestConstants.STALIN;
 import static org.junit.Assert.*;
 import hotel.test.mock.MockBookingRequest;
 import hotel.test.mock.MockOrderRequest;
-import hotel.test.util.CreditCardDetails;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -22,45 +23,26 @@ import Classes.Hotel.ISearchResult;
 import Classes.PersonRegistry.IPerson;
 
 public class CheckInTest extends BaseTest {
-
-	private static final CreditCardDetails TESLA = CreditCardDetails.ccd("1212131941431336", "666", 2, 16, "Nikola", "Tesla", 100000);
-	private static final CreditCardDetails STALIN = CreditCardDetails.ccd("1212666666666666", "111", 3, 16, "Joseph", "Stalin", 10000);
-	
 	private IPerson person, person2;
-	
+
 	private MockOrderRequest order;
-	
+
 	private int bookingID, lateBookingID, earlyBookingID;
-	
+
 	Calendar cal;
 	
 	@Before
 	public void before() throws SOAPException {
 		setupBefore();
-		person = personRegistry.createPerson(0);
-		person2 = personRegistry.createPerson(0);
-		
 		config.createRoom(2, 400);
 		config.createRoom(1, 400);
 
-		person.setFirstName("Nikola");
-		person.setLastName("Tesla");
-		person.setSSN("somethingTooOld");
-		
-		person.createCreditCard(TESLA.ccNumber, TESLA.ccv, TESLA.expiryMonth, TESLA.expiryYear, TESLA.firstName, TESLA.lastName);
-		
-		person.setFirstName("Joseph");
-		person.setLastName("Stalin");
-		person.setSSN("somethingOlder");
-		
-		person2.createCreditCard(STALIN.ccNumber, STALIN.ccv, STALIN.expiryMonth, STALIN.expiryYear, STALIN.firstName, STALIN.lastName);
-		
-		
-		cal = Calendar.getInstance();
-		
+		person = setupPerson( TESLA, "somethingTooOld", 0 );
+		person2 = setupPerson( STALIN, "somethingOld", 0 );
+
 		// Offset one hour into future (dirty fix)
+		cal = Calendar.getInstance();		
 		cal.add(Calendar.HOUR, 1);
-		
 		Date today = cal.getTime();
 		cal.add(Calendar.HOUR, 24*2);
 		Date inTwoDays = cal.getTime();
@@ -75,9 +57,8 @@ public class CheckInTest extends BaseTest {
 		bookings.add(new MockBookingRequest(searchResult.getBookingSuggestions().get(0), guests, person.getId()));
 		order = new MockOrderRequest(person.getId(), bookings);	
 		
-		ordering.placeOrder(order);
-		bookingID = findBookingIdByContactId(person.getId());
-		
+		bookingID = placeOrder(order, person);
+	
 		searchResult = search.search(inTwoDays.getTime(), inThreeDays.getTime(), 1).get(0);
 		
 		List<BookingRequest> newBookings = new BasicEList<>();
@@ -85,10 +66,8 @@ public class CheckInTest extends BaseTest {
 		newGuests.add(person2.getId());
 		newBookings.add(new MockBookingRequest(searchResult.getBookingSuggestions().get(0), newGuests, person2.getId()));
 		order = new MockOrderRequest(person2.getId(), newBookings);	
-		
-		ordering.placeOrder(order);
-		earlyBookingID = findBookingIdByContactId(person2.getId());
 
+		earlyBookingID = placeOrder(order, person2);
 
 		searchResult = search.search(inTwoDays.getTime(), inThreeDays.getTime(), 1).get(0);
 		
@@ -97,13 +76,8 @@ public class CheckInTest extends BaseTest {
 		guests.add(person2.getId());
 		bookings.add(new MockBookingRequest(searchResult.getBookingSuggestions().get(0), newGuests, person2.getId()));
 		order = new MockOrderRequest(person2.getId(), newBookings);	
-		
-		//hotel.placeOrder(order);
-		//lateBookingID = findBookingIdByContactId(frontdesk, person2.getId());
-		
-		
-		
-		
+	
+		//lateBookingID = placeOrder(order, person2);
 	}
 	
 	@Test
@@ -146,11 +120,4 @@ public class CheckInTest extends BaseTest {
 	public void testToEarlyForCheckIn(){
 		assertTrue(!frontdesk.checkIn(earlyBookingID, 2));
 	}
-
-	@Test
-	public void testToLateForCheckIn(){
-		//TODO: Fix changing time in system or skip this test
-		//assertTrue(!frontdesk.checkIn(lateBookingID, 2));
-	}
-
 }
