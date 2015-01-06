@@ -11,11 +11,7 @@ import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.Test;
 
-import Classes.Hotel.HotelFactory;
-import Classes.Hotel.Hotel_Hotel;
 import Classes.Hotel.IBookingSuggestion;
-import Classes.Hotel.IConfiguration;
-import Classes.Hotel.ISearch;
 import Classes.Hotel.ISearchResult;
 
 public class SearchTest extends BaseTest {
