@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_iNSvEH1rEeSezLtI9Ootng" name="RemoveBookingDiagram">
-  <packagedElement xmi:type="uml:Interaction" xmi:id="_CLTuUHlPEeSA5MODJ_COwQ" name="RemoveBooking">
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_CLTuUHlPEeSA5MODJ_COwQ" name="CancelBooking">
     <ownedComment xmi:type="uml:Comment" xmi:id="_t9iGAJTwEeSXKePc5B81LA">
       <body>Return true if booking was successfully cancelled</body>
     </ownedComment>

@@ -34,7 +34,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d5ZbdHlOEeSA5MODJ_COwQ"/>
       </children>
       <element xmi:type="uml:Interaction" href="CheckInDiagram.uml#_dLS_UHlOEeSA5MODJ_COwQ"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d5ZbdXlOEeSA5MODJ_COwQ" width="551" height="412"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_d5ZbdXlOEeSA5MODJ_COwQ" width="551" height="317"/>
     </children>
     <styles xmi:type="notation:StringValueStyle" xmi:id="_d5ZbdnlOEeSA5MODJ_COwQ" name="diagram_compatibility_version" stringValue="1.0.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_d5Zbd3lOEeSA5MODJ_COwQ"/>

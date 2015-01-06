@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_hk5SUH1rEeSezLtI9Ootng" name="HandlePaymentDiagram">
   <packagedElement xmi:type="uml:Interaction" xmi:id="_9U6AEHlOEeSA5MODJ_COwQ" name="HandlePayment">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_WbVxgJW1EeSWGrZxAcNvYQ">
+      <body>One booking is selected</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_UczLwJW2EeSWGrZxAcNvYQ">
+      <body>Return true if payment was successful</body>
+    </ownedComment>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_i7Q9YHlPEeSA5MODJ_COwQ" name="c">
       <type xmi:type="uml:Component" href="model.uml#_F8--cHcFEeS3Y6dvXnWwog"/>
     </ownedAttribute>
@@ -14,8 +20,8 @@
       <type xmi:type="uml:Interface" href="model.uml#_4lxCgHcAEeS3Y6dvXnWwog"/>
     </ownedAttribute>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_EXYu4HlQEeSA5MODJ_COwQ" name="Lifeline" represents="_i7Q9YHlPEeSA5MODJ_COwQ" coveredBy="_49y2MXpcEeSgf6-u89OUJA _6-7ngXpcEeSgf6-u89OUJA _eZ3PEHpdEeSgf6-u89OUJA"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_KhEAAHpaEeSgf6-u89OUJA" name="Lifeline0" represents="_C6pBMHpaEeSgf6-u89OUJA" coveredBy="_qyse4XpbEeSgf6-u89OUJA _6ld0EXpbEeSgf6-u89OUJA _APU_kXpcEeSgf6-u89OUJA _49y2MnpcEeSgf6-u89OUJA _6-7ngnpcEeSgf6-u89OUJA _eZ3PEXpdEeSgf6-u89OUJA"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_XLFbkHpaEeSgf6-u89OUJA" name="Lifeline1" represents="_Nf0QIHpaEeSgf6-u89OUJA" coveredBy="_APU_knpcEeSgf6-u89OUJA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_KhEAAHpaEeSgf6-u89OUJA" name="Lifeline0" represents="_C6pBMHpaEeSgf6-u89OUJA" coveredBy="_qyse4XpbEeSgf6-u89OUJA _6ld0EXpbEeSgf6-u89OUJA _49y2MnpcEeSgf6-u89OUJA _6-7ngnpcEeSgf6-u89OUJA _eZ3PEXpdEeSgf6-u89OUJA _eJNcIJW1EeSWGrZxAcNvYQ"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_XLFbkHpaEeSgf6-u89OUJA" name="Lifeline1" represents="_Nf0QIHpaEeSgf6-u89OUJA" coveredBy="_eJODMJW1EeSWGrZxAcNvYQ"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_aXZmkHpaEeSgf6-u89OUJA" name="Lifeline2" represents="_RpZ7sHpaEeSgf6-u89OUJA" coveredBy="_qyse4npbEeSgf6-u89OUJA _6ld0EnpbEeSgf6-u89OUJA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_49y2MXpcEeSgf6-u89OUJA" name="getBookings_MessageSend" covered="_EXYu4HlQEeSA5MODJ_COwQ" message="_49y2MHpcEeSgf6-u89OUJA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_49y2MnpcEeSgf6-u89OUJA" name="getBookings_MessageRecv" covered="_KhEAAHpaEeSgf6-u89OUJA" message="_49y2MHpcEeSgf6-u89OUJA"/>
@@ -23,8 +29,8 @@
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_6-7ngnpcEeSgf6-u89OUJA" name="getInvoice_MessageRecv" covered="_KhEAAHpaEeSgf6-u89OUJA" message="_6-7ngHpcEeSgf6-u89OUJA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_eZ3PEHpdEeSgf6-u89OUJA" name="pay_MessageSend" covered="_EXYu4HlQEeSA5MODJ_COwQ" message="_eZteEHpdEeSgf6-u89OUJA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_eZ3PEXpdEeSgf6-u89OUJA" name="pay_MessageRecv" covered="_KhEAAHpaEeSgf6-u89OUJA" message="_eZteEHpdEeSgf6-u89OUJA"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_APU_kXpcEeSgf6-u89OUJA" name="getPerson_MessageSend" covered="_KhEAAHpaEeSgf6-u89OUJA" message="_APU_kHpcEeSgf6-u89OUJA"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_APU_knpcEeSgf6-u89OUJA" name="getPerson_MessageRecv" covered="_XLFbkHpaEeSgf6-u89OUJA" message="_APU_kHpcEeSgf6-u89OUJA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_eJNcIJW1EeSWGrZxAcNvYQ" name="getIPersonByID_MessageSend" covered="_KhEAAHpaEeSgf6-u89OUJA" message="_eJMOAJW1EeSWGrZxAcNvYQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_eJODMJW1EeSWGrZxAcNvYQ" name="getIPersonByID_MessageRecv" covered="_XLFbkHpaEeSgf6-u89OUJA" message="_eJMOAJW1EeSWGrZxAcNvYQ"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qyse4XpbEeSgf6-u89OUJA" name="isCreditCardValid_MessageSend" covered="_KhEAAHpaEeSgf6-u89OUJA" message="_qyse4HpbEeSgf6-u89OUJA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qyse4npbEeSgf6-u89OUJA" name="isCreditCardValid_MessageRecv" covered="_aXZmkHpaEeSgf6-u89OUJA" message="_qyse4HpbEeSgf6-u89OUJA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_6ld0EXpbEeSgf6-u89OUJA" name="makePayment_MessageSend" covered="_KhEAAHpaEeSgf6-u89OUJA" message="_6ld0EHpbEeSgf6-u89OUJA"/>
@@ -35,9 +41,6 @@
     <message xmi:type="uml:Message" xmi:id="_6ld0EHpbEeSgf6-u89OUJA" name="makePayment_Message" messageSort="asynchCall" receiveEvent="_6ld0EnpbEeSgf6-u89OUJA" sendEvent="_6ld0EXpbEeSgf6-u89OUJA">
       <signature xmi:type="uml:Operation" href="model.uml#_4lxCgXcAEeS3Y6dvXnWwog"/>
     </message>
-    <message xmi:type="uml:Message" xmi:id="_APU_kHpcEeSgf6-u89OUJA" name="getPerson_Message" messageSort="asynchCall" receiveEvent="_APU_knpcEeSgf6-u89OUJA" sendEvent="_APU_kXpcEeSgf6-u89OUJA">
-      <signature xmi:type="uml:Operation" href="Classes.uml#_ihUGGHowEeS_Y-yub0PNVA"/>
-    </message>
     <message xmi:type="uml:Message" xmi:id="_49y2MHpcEeSgf6-u89OUJA" name="getBookings_Message" messageSort="asynchCall" receiveEvent="_49y2MnpcEeSgf6-u89OUJA" sendEvent="_49y2MXpcEeSgf6-u89OUJA">
       <signature xmi:type="uml:Operation" href="Classes.uml#_tl3UoHpcEeSgf6-u89OUJA"/>
     </message>
@@ -46,6 +49,9 @@
     </message>
     <message xmi:type="uml:Message" xmi:id="_eZteEHpdEeSgf6-u89OUJA" name="pay_Message" messageSort="asynchCall" receiveEvent="_eZ3PEXpdEeSgf6-u89OUJA" sendEvent="_eZ3PEHpdEeSgf6-u89OUJA">
       <signature xmi:type="uml:Operation" href="Classes.uml#_HrziwHpdEeSgf6-u89OUJA"/>
+    </message>
+    <message xmi:type="uml:Message" xmi:id="_eJMOAJW1EeSWGrZxAcNvYQ" name="getIPersonByID_Message" messageSort="asynchCall" receiveEvent="_eJODMJW1EeSWGrZxAcNvYQ" sendEvent="_eJNcIJW1EeSWGrZxAcNvYQ">
+      <signature xmi:type="uml:Operation" href="Classes.uml#_M4h60IXYEeSJdqLpcn16zw"/>
     </message>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_AA8lEH1sEeSezLtI9Ootng">

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_fHv6cH1rEeSezLtI9Ootng" name="SearchDiagram">
   <packagedElement xmi:type="uml:Interaction" xmi:id="_poWyYHlNEeSA5MODJ_COwQ" name="Search">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_SNQSYJWzEeSWGrZxAcNvYQ">
+      <body>Return a list of SearchResult</body>
+    </ownedComment>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_cHDeoHlPEeSA5MODJ_COwQ" name="c">
       <type xmi:type="uml:Component" href="model.uml#_F8--cHcFEeS3Y6dvXnWwog"/>
     </ownedAttribute>
