@@ -20,4 +20,9 @@ public class CreditCardDetails {
 		this.lastName = lastName;
 		this.initialBalance = initialBalance;
 	}
+
+	public static CreditCardDetails ccd(String ccNumber, String ccv, int expiryMonth,
+			int expiryYear, String firstName, String lastName, double initialBalance) {
+		return new CreditCardDetails(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, initialBalance);
+	}
 }
