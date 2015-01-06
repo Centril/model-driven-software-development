@@ -28,7 +28,7 @@ import Classes.PersonRegistry.IPersonRegistry;
 
 public class PresentationMain {
 	private static final CreditCardDetails TESLA = ccd("1212131941431336", "666", 2, 16, "Nikola", "Tesla", 100000);
-	private static final CreditCardDetails STALIN = ccd("1212666666666666", "111", 3, 16, "Joseph", "Stalin", 10000);
+	private static final CreditCardDetails TORVALDS = ccd("12126664214166", "111", 3, 16, "Linus", "Torvalds", 10000);
 
 	
 	public static void main(String[] args)  {
@@ -44,10 +44,10 @@ public class PresentationMain {
 		System.out.println("\nSetup bank account for some famous people and register them in hotel.");
 		setUpAccount(TESLA);
 		registerPersonInRegistry(iPersonReg, TESLA, -3581025132L);
-		setUpAccount(STALIN);
-		registerPersonInRegistry(iPersonReg, STALIN, 25);
+		setUpAccount(TORVALDS);
+		registerPersonInRegistry(iPersonReg, TORVALDS, 25);
 		
-		System.out.println("\nSetup (use case maybe): Creates 2 rooms in the newly built hotel. (We only create 2 to be sure to get back the correct ones)");
+		System.out.println("\nSetup: Creates 2 rooms in the newly built hotel. (We only create 2 to be sure to get back the correct ones)");
 		System.out.println(iConfig.createRoom(1, 400));
 		System.out.println(iConfig.createRoom(1, 450));
 		
@@ -72,10 +72,10 @@ public class PresentationMain {
 			throw new AssertionError("Presentation failed.");
 		}
 		
-		int stalinId = findPersonIdByName(iPersonReg, STALIN.firstName, STALIN.lastName);
+		int torvaldsId = findPersonIdByName(iPersonReg, TORVALDS.firstName, TORVALDS.lastName);
 		List<Integer> firstRoomGuests = new ArrayList<>();
-		firstRoomGuests.add(stalinId);
-		MockBookingRequest firstRoom = new MockBookingRequest(results.get(0).getBookingSuggestions().get(0), firstRoomGuests, stalinId);
+		firstRoomGuests.add(torvaldsId);
+		MockBookingRequest firstRoom = new MockBookingRequest(results.get(0).getBookingSuggestions().get(0), firstRoomGuests, torvaldsId);
 		
 		int teslaId = findPersonIdByName(iPersonReg, TESLA.firstName, TESLA.lastName);
 		List<Integer> secondRoomGuests = new ArrayList<>();
@@ -85,7 +85,7 @@ public class PresentationMain {
 		List<BookingRequest> bookingRequests = new ArrayList<>();
 		bookingRequests.add(firstRoom);
 		bookingRequests.add(secondRoom);
-		MockOrderRequest orderRequest = new MockOrderRequest(stalinId, bookingRequests);
+		MockOrderRequest orderRequest = new MockOrderRequest(torvaldsId, bookingRequests);
 		
 		if (iOrdering.placeOrder(orderRequest)) {
 			System.out.println("placeOrder() succeeded!");
@@ -96,36 +96,36 @@ public class PresentationMain {
 		
 		// Use case: Check in
 		System.out.println("\nUse Case: Check in");
-		int stalinsBookingId = findBookingIdByContactId(iFrontDesk, stalinId);
+		int torvaldsBookingId = findBookingIdByContactId(iFrontDesk, torvaldsId);
 		int teslasBookingId = findBookingIdByContactId(iFrontDesk, teslaId);
 
-		if (iFrontDesk.checkIn(stalinsBookingId, 1)) {
-			System.out.println("Stalins check in succeeded!");
+		if (iFrontDesk.checkIn(torvaldsBookingId, 1)) {
+			System.out.println("Torvalds check in succeeded!");
 		} else {
-			System.out.println("Stalins check in failed!");
+			System.out.println("Torvalds check in failed!");
 		}
 		if (iFrontDesk.checkIn(teslasBookingId, 1)) {
-			System.out.println("Teslas check in succeeded!");
+			System.out.println("Torvalds check in succeeded!");
 		} else {
-			System.out.println("Teslas check in failed!");
+			System.out.println("Torvalds check in failed!");
 		}
 		
 		
 		// Use case: Check out
 		System.out.println("\nUse Case: Check out");
-		System.out.println("It's time for checkout, but Stalin forgets to turn in his key.");
-		if (!iFrontDesk.handInKeys(stalinsBookingId, 0)) {
-			System.out.println("The system discovered that Stalin still has keys.");
-			if (iFrontDesk.handInKeys(stalinsBookingId, 1)) {
-				System.out.println("Stalin handed in the remaining key.");
+		System.out.println("It's time for checkout, but Torvalds forgets to turn in his key.");
+		if (!iFrontDesk.handInKeys(torvaldsBookingId, 0)) {
+			System.out.println("The system discovered that Torvalds still has keys.");
+			if (iFrontDesk.handInKeys(torvaldsBookingId, 1)) {
+				System.out.println("Torvalds handed in the remaining key.");
 			}
 		} else {
-			System.out.println("System failed to notice Stalin's missing key.");
+			System.out.println("System failed to notice Torvalds missing key.");
 		}
-		if (iFrontDesk.checkOut(stalinsBookingId)) {
-			System.out.println("Stalins check out succeeded!");
+		if (iFrontDesk.checkOut(torvaldsBookingId)) {
+			System.out.println("Torvalds check out succeeded!");
 		} else {
-			System.out.println("Stalins check out failed!");
+			System.out.println("Torvalds check out failed!");
 		}
 		if (iFrontDesk.handInKeys(teslasBookingId, 1)) {
 			System.out.println("Teslas hand in keys succeeded");
@@ -138,24 +138,24 @@ public class PresentationMain {
 		// Use case (!?): Get Bill
 		System.out.println("\nLets hand out the bills!");
 		System.out.println("Cost of Tesla's stay: " + iFrontDesk.getBill(teslasBookingId));
-		System.out.println("Cost of Stalin's stay: " + iFrontDesk.getBill(stalinsBookingId));
+		System.out.println("Cost of Torvalds's stay: " + iFrontDesk.getBill(torvaldsBookingId));
 		
 		
 		// Use case: Handle Payment
-		System.out.println("\nUse Case: Pay");
-		if (iFrontDesk.pay(stalinsBookingId)) {
-			System.out.println("Stalin successfully paid for his booking!");
+		System.out.println("\nUse Case: Handle Payment");
+		if (iFrontDesk.pay(torvaldsBookingId)) {
+			System.out.println("Torvalds successfully paid for his booking!");
 		} else {
-			System.out.println("Stalin failed to pay for his booking.");
+			System.out.println("Torvalds failed to pay for his booking.");
 		}
 		if (iFrontDesk.pay(teslasBookingId)) {
-			System.out.println("Stalin successfully paid for Teslas booking!");
+			System.out.println("Torvalds successfully paid for Teslas booking!");
 		} else {
-			System.out.println("Stalin failed to pay for Teslas booking.");
+			System.out.println("Torvalds failed to pay for Teslas booking.");
 		}
 		
 		
-		// Simulatenous booking
+		// Simultaneous booking
 		System.out.println("\nSo, what happens if two persons try to book the same room at the same time? Let's find out.");
 		
 		System.out.println("Create a new room to attempt to book.");
@@ -163,20 +163,20 @@ public class PresentationMain {
 		
 		EList<ISearchResult> newResults = iSearch.search(today.getTime(), fourDaysFromNow.getTime(), 2);
 		IBookingSuggestion sharedBookingSuggestion = newResults.get(0).getBookingSuggestions().get(0);
-		MockBookingRequest stalinsNewBooking = new MockBookingRequest(sharedBookingSuggestion, Arrays.asList(stalinId, teslaId), stalinId);
-		MockBookingRequest teslasNewBooking = new MockBookingRequest(sharedBookingSuggestion, Arrays.asList(teslaId, stalinId), teslaId);
+		MockBookingRequest torvaldssNewBooking = new MockBookingRequest(sharedBookingSuggestion, Arrays.asList(torvaldsId, teslaId), torvaldsId);
+		MockBookingRequest teslasNewBooking = new MockBookingRequest(sharedBookingSuggestion, Arrays.asList(teslaId, torvaldsId), teslaId);
 		
-		if (iOrdering.placeOrder(new MockOrderRequest(stalinId, Arrays.<BookingRequest>asList(stalinsNewBooking)))) {
-			System.out.println("Stalin made a booking.");
+		if (iOrdering.placeOrder(new MockOrderRequest(torvaldsId, Arrays.<BookingRequest>asList(torvaldssNewBooking)))) {
+			System.out.println("Torvalds made a booking.");
 		} else {
-			System.out.println("Stalin failed to make a booking.");
+			System.out.println("Torvalds failed to make a booking.");
 		}
 		if (iOrdering.placeOrder(new MockOrderRequest(teslaId, Arrays.<BookingRequest>asList(teslasNewBooking)))) {
 			System.out.println("Tesla made a booking.");
 		} else {
 			System.out.println("Tesla failed to make a booking");
 		}
-		System.out.println("Stalin succeeded since he placed the order before Tesla.");
+		System.out.println("Torvalds succeeded since he placed the order before Tesla.");
 		
 		System.out.println("\nPresentation done!");
 	}
