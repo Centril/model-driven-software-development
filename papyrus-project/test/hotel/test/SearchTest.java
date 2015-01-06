@@ -14,10 +14,9 @@ import org.junit.Test;
 import Classes.Hotel.IBookingSuggestion;
 import Classes.Hotel.ISearchResult;
 
-public class SearchTest extends BaseTest {
-	
-	private static final long MILLIS_IN_DAY = 86400000L;
+import static hotel.test.util.TestConstants.MILLIS_IN_DAY;
 
+public class SearchTest extends BaseTest {
 	@Before
 	public void before() throws SOAPException {
 		setupBefore();

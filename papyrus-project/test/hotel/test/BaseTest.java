@@ -39,6 +39,9 @@ public abstract class BaseTest {
 	protected CustomerRequires customerRequires;
 	protected AdministratorRequires adminRequires;
 
+	protected Calendar cal;
+	protected Date today, inTwoDays;
+
 	public void setupBefore() throws SOAPException {
 		// ISearch.instance, and similar, would be used for real implementation,
 		// for testing purposes though, we use the generated factory to get a
@@ -55,12 +58,26 @@ public abstract class BaseTest {
 		// If not for tests, IPersonRegistry.instance would be used
 		personRegistry = PersonRegistryFactory.eINSTANCE.createPersonRegistry_PersonRegistry();
 		hotel.setPersonRegistry(personRegistry);
+
+		cal = cal();
+		today = cal.getTime();
+		cal.add(Calendar.HOUR, 24*2);
+		inTwoDays = cal.getTime();
+	}
+	
+	protected void defaultRooms() {
+		config.createRoom(2, 400);
+		config.createRoom(1, 400);
 	}
 	
 	protected Calendar cal() {
 		Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.MINUTE, 1);
 		return cal;
+	}
+
+	protected int setupBooking( IPerson p ) {
+		return setupBooking( p, 1, today, inTwoDays );
 	}
 
 	protected int setupBooking( IPerson p, int numPersons, Date from, Date to ) {

@@ -26,7 +26,6 @@ import Classes.Hotel.OrderRequest;
 import Classes.PersonRegistry.IPerson;
 
 public class OrderingTest extends BaseTest {
-
 	@Before
 	public void before() throws SOAPException {
 		setupBefore();
@@ -37,10 +36,8 @@ public class OrderingTest extends BaseTest {
 
 	@Test
 	public void testOrdering() {
-		
-		config.createRoom(2, 400);
-		config.createRoom(1, 200);
-		
+		defaultRooms();
+
 		long currentTime = System.currentTimeMillis();
 		ISearchResult firstResult = search.search(currentTime, currentTime+1, 3).get(0);
 		
