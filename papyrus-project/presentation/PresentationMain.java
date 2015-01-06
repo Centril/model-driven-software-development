@@ -34,12 +34,17 @@ public class PresentationMain {
 	public static void main(String[] args)  {
 		System.out.println("Hello, welcome to group 12's presentation!\n");
 		
-		System.out.println("\nBuilt a new hotel!");
 		IConfiguration iConfig = IConfiguration.instance;
 		ISearch iSearch = ISearch.instance;
 		IOrdering iOrdering = IOrdering.instance;
 		IPersonRegistry iPersonReg = IPersonRegistry.instance;
 		IFrontDesk iFrontDesk = IFrontDesk.instance;
+
+		System.out.println("Setup: Creates 2 rooms in the newly built hotel. (We only create 2 to be sure to get back the correct ones)");
+		System.out.println(iConfig.createRoom(1, 400));
+		System.out.println(iConfig.createRoom(1, 450));
+		
+		System.out.println("\nBuilt a new hotel!");
 		
 		System.out.println("\nSetup bank account for some famous people and register them in hotel.");
 		setUpAccount(TESLA);
@@ -47,11 +52,7 @@ public class PresentationMain {
 		setUpAccount(TORVALDS);
 		registerPersonInRegistry(iPersonReg, TORVALDS, 25);
 		
-		System.out.println("\nSetup: Creates 2 rooms in the newly built hotel. (We only create 2 to be sure to get back the correct ones)");
-		System.out.println(iConfig.createRoom(1, 400));
-		System.out.println(iConfig.createRoom(1, 450));
-		
-		
+
 		// Use case: Search
 		System.out.println("\nUse Case: Search\nSearches for available rooms from fifteen minutes from now to 4 days in the future for 2 persons.");
 		Calendar cal = Calendar.getInstance();
@@ -105,9 +106,9 @@ public class PresentationMain {
 			System.out.println("Torvalds check in failed!");
 		}
 		if (iFrontDesk.checkIn(teslasBookingId, 1)) {
-			System.out.println("Torvalds check in succeeded!");
+			System.out.println("Tesla check in succeeded!");
 		} else {
-			System.out.println("Torvalds check in failed!");
+			System.out.println("Tesla check in failed!");
 		}
 		
 		
