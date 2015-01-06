@@ -894,6 +894,7 @@
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_ZoB8gJWgEeS3ScK0Wj3oBQ" name="Realization3" client="_dA6awHo_EeSTh5yDLLqE0Q" supplier="_5aq-cIacEeSOfdq9lGlLAw" contract="_5aq-cIacEeSOfdq9lGlLAw"/>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_yWHgwHyPEeSahu9FXjYTpw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yYNLcHyPEeSahu9FXjYTpw" source="http://www.eclipse.org/uml2/2.0.0/UML">
