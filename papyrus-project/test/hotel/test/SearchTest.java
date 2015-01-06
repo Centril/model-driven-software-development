@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.xml.soap.SOAPException;
+
 import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,20 +18,13 @@ import Classes.Hotel.IConfiguration;
 import Classes.Hotel.ISearch;
 import Classes.Hotel.ISearchResult;
 
-public class SearchTest {
+public class SearchTest extends BaseTest {
 	
 	private static final long MILLIS_IN_DAY = 86400000L;
 
-	private ISearch search;
-	private IConfiguration configuration;
-
 	@Before
-	public void before() {
-		// ISearch.instance, and similar, would be used for real implementation, for testing
-		// purposes though, we create a new instance for each test
-		Hotel_Hotel hotel = HotelFactory.eINSTANCE.createHotel_Hotel();
-		search = hotel;
-		configuration = hotel;
+	public void before() throws SOAPException {
+		setupBefore();
 	}
 
 	@Test(expected=IllegalArgumentException.class)
@@ -125,7 +120,7 @@ public class SearchTest {
 	// Make a number of dummy rooms with fixed price
 	private void makeRoomsAvailable(int numBeds, int amount) {
 		for(int i = 0; i < amount; i++) {
-			configuration.createRoom(numBeds, 100.0);
+			config.createRoom(numBeds, 100.0);
 		}
 	}
 

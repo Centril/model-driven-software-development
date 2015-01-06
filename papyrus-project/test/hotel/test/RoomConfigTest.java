@@ -1,16 +1,22 @@
 package hotel.test;
 
 import static org.junit.Assert.*;
-
 import java.util.List;
 
+import javax.xml.soap.SOAPException;
+
+import org.junit.Before;
 import org.junit.Test;
 
-import Classes.Hotel.IConfiguration;
 import Classes.Hotel.IRoom;
 
-public class RoomConfigTest {
+public class RoomConfigTest extends BaseTest {
 
+	@Before
+	public void before() throws SOAPException {
+		setupBefore();		
+	}
+	
 	@Test
 	public void testAddingValidRooms() {
 		
@@ -21,17 +27,16 @@ public class RoomConfigTest {
 		double firstPrice = 100.0;
 		double secondPrice = 200.0;
 
-		IConfiguration configuration = IConfiguration.instance;
-		IRoom room1 = configuration.createRoom(firstNumBeds, firstPrice);
+		IRoom room1 = config.createRoom(firstNumBeds, firstPrice);
 		room1.setName(firstRoomName);
-		IRoom room2 = configuration.createRoom(secondNumBeds, secondPrice);
+		IRoom room2 = config.createRoom(secondNumBeds, secondPrice);
 		room2.setName(secondRoomName);
 		
 		int room1Id = room1.getId();
 		int room2Id = room2.getId();
 		
 		// Check if room available when getting all rooms 
-		List<IRoom> rooms = configuration.getRooms();
+		List<IRoom> rooms = config.getRooms();
 		IRoom returnedRoom1 = null;
 		IRoom returnedRoom2 = null;
 		for (IRoom r : rooms) {
