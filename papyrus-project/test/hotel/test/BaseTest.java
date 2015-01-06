@@ -6,8 +6,6 @@ import hotel.test.util.CreditCardDetails;
 
 import javax.xml.soap.SOAPException;
 
-import org.junit.Before;
-
 import se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires;
 import se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires;
 import Classes.Hotel.HotelFactory;
@@ -30,8 +28,7 @@ public abstract class BaseTest {
 	protected CustomerRequires customerRequires;
 	protected AdministratorRequires adminRequires;
 
-	@Before
-	public void before() throws SOAPException {
+	public void setupBefore() throws SOAPException {
 		// ISearch.instance, and similar, would be used for real implementation,
 		// for testing purposes though, we use the generated factory to get a
 		// new instance of the hotel for each test
