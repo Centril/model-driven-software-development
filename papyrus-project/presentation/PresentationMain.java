@@ -24,13 +24,10 @@ import Classes.Hotel.ISearchResult;
 import Classes.PersonRegistry.IPerson;
 import Classes.PersonRegistry.IPersonRegistry;
 
-
-
 public class PresentationMain {
 	private static final CreditCardDetails TESLA = ccd("1212131941431336", "666", 2, 16, "Nikola", "Tesla", 100000);
 	private static final CreditCardDetails TORVALDS = ccd("12126664214166", "111", 3, 16, "Linus", "Torvalds", 10000);
 
-	
 	public static void main(String[] args)  {
 		System.out.println("Hello, welcome to group 12's presentation!\n");
 		
@@ -114,7 +111,8 @@ public class PresentationMain {
 		
 		// Use case: Check out
 		System.out.println("\nUse Case: Check out");
-		System.out.println("It's time for checkout, but Torvalds forgets to turn in his key.");
+		System.out
+				.println("It's time for checkout, but Torvalds forgets to turn in his key.");
 		if (!iFrontDesk.handInKeys(torvaldsBookingId, 0)) {
 			System.out.println("The system discovered that Torvalds still has keys.");
 			if (iFrontDesk.handInKeys(torvaldsBookingId, 1)) {
