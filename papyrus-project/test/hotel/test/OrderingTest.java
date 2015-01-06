@@ -3,6 +3,7 @@ package hotel.test;
 import static org.junit.Assert.*;
 import hotel.test.mock.MockBookingRequest;
 import hotel.test.mock.MockOrderRequest;
+import hotel.test.util.CreditCardDetails;
 import hotel.test.util.TestConstants;
 
 import java.util.ArrayList;
@@ -25,24 +26,13 @@ import Classes.Hotel.OrderRequest;
 import Classes.PersonRegistry.IPerson;
 
 public class OrderingTest extends BaseTest {
-	private static final CreditCardDetails TESLA = ccd("1212131941431336", "666", 2, 16, "Nikola", "Tesla", 100000);
-	private static final CreditCardDetails STALIN = ccd("1212666666666666", "111", 3, 16, "Joseph", "Stalin", 10000);
-	private static final CreditCardDetails DISNEY = ccd("1212191919191919", "333", 4, 16, "Walt", "Disney", 250000);
 
 	@Before
 	public void before() throws SOAPException {
 		setupBefore();
-		for (CreditCardDetails ccd : Arrays.asList(TESLA, STALIN, DISNEY)) {
+		for (CreditCardDetails ccd : TestConstants.ALL) {
 			setUpAccount(ccd);
 		}
-	}
-
-	private void setUpAccount(CreditCardDetails ccd) throws SOAPException {
-		if (customerRequires.isCreditCardValid(ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName)) {
-			assertTrue(adminRequires.removeCreditCard(ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName));
-		}
-		assertTrue(adminRequires.addCreditCard(ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName));
-		adminRequires.makeDeposit(ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName, ccd.initialBalance);
 	}
 
 	@Test
@@ -69,7 +59,7 @@ public class OrderingTest extends BaseTest {
 		personThree.setLastName("Person");
 		personThree.setSSN("Yay~!");
 		
-		personOne.createCreditCard(TESLA.ccNumber, TESLA.ccv, TESLA.expiryMonth, TESLA.expiryYear, TESLA.firstName, TESLA.lastName);
+		createCreditCard(personOne, TestConstants.TESLA);
 		
 		List<Integer> guestsInRoomOne = new ArrayList<>(2);
 		guestsInRoomOne.add(personOne.getId());
@@ -99,7 +89,7 @@ public class OrderingTest extends BaseTest {
 		config.createRoom(1, 1);
 		
 		IPerson person = personRegistry.createPerson(0);
-		person.createCreditCard(TESLA.ccNumber, TESLA.ccv, TESLA.expiryMonth, TESLA.expiryYear, TESLA.firstName, TESLA.lastName);
+		createCreditCard(person, TestConstants.TESLA);
 		int personID = person.getId();
 
 		long now = System.currentTimeMillis();
@@ -126,7 +116,7 @@ public class OrderingTest extends BaseTest {
 	public void testForgetBookingSuggestion() {
 		config.createRoom(1, 1.0);
 
-		int id = createPerson(0L, DISNEY);
+		int id = createPerson(0L, TestConstants.DISNEY);
 
 		long now = System.currentTimeMillis();
 		search.search(addDays(now, 1), addDays(now, 5), 1);
@@ -139,8 +129,8 @@ public class OrderingTest extends BaseTest {
 	public void testDuplicateOrderRequest() {
 		config.createRoom(2, 1.0);
 		
-		int stalin = createPerson(0L, STALIN);
-		int tesla = createPerson(-1L, TESLA);
+		int stalin = createPerson(0L, TestConstants.STALIN);
+		int tesla = createPerson(-1L, TestConstants.TESLA);
 
 		long now = System.currentTimeMillis();
 		EList<ISearchResult> results = search.search(addDays(now, 1), addDays(now, 2), 2);
@@ -159,10 +149,10 @@ public class OrderingTest extends BaseTest {
 
 		int[] group1 = createPersons(1L, 2L, 3L, 4L, 5L);
 		int tesla = group1[0];
-		createCreditCard(personRegistry.getIPersonByID(tesla), TESLA);
+		createCreditCard(personRegistry.getIPersonByID(tesla), TestConstants.TESLA);
 		int[] group2 = createPersons(1L, 2L, 3L, 4L, 5L, 6L, 7L);
 		int disney = group2[0];
-		createCreditCard(personRegistry.getIPersonByID(disney), DISNEY);
+		createCreditCard(personRegistry.getIPersonByID(disney), TestConstants.DISNEY);
 
 		long now = System.currentTimeMillis();
 		MockOrderRequest or1 = createOrderRequest(group1, 0, addDays(now, 1), 1);
@@ -175,7 +165,7 @@ public class OrderingTest extends BaseTest {
 	public void testBlacklistedCustomer() {
 		config.createRoom(1, 1.1);
 
-		int disney = createPerson(-12L, DISNEY);
+		int disney = createPerson(-12L, TestConstants.DISNEY);
 		personRegistry.addToBlacklist(disney);
 
 		MockOrderRequest or = createOrderRequest(new int[] {disney}, 0, addDays(System.currentTimeMillis(), 1), 2);
@@ -186,8 +176,8 @@ public class OrderingTest extends BaseTest {
 	public void testBlacklistedGuest() {
 		config.createRoom(2, 1.1);
 
-		int disney = createPerson(-12L, DISNEY);
-		int stalin = createPerson(-1L, STALIN);
+		int disney = createPerson(-12L, TestConstants.DISNEY);
+		int stalin = createPerson(-1L, TestConstants.STALIN);
 		personRegistry.addToBlacklist(stalin);
 
 		MockOrderRequest or = createOrderRequest(new int[] {disney, stalin}, 0, addDays(System.currentTimeMillis(), 1), 2);
@@ -218,44 +208,6 @@ public class OrderingTest extends BaseTest {
 		return ids;
 	}
 
-	private int createPerson(long birthDate, CreditCardDetails ccd) {
-		IPerson person = personRegistry.createPerson(birthDate);
-		createCreditCard(person, ccd);
-		return person.getId();
-	}
+	
 
-	private void createCreditCard(IPerson person, CreditCardDetails ccd) {
-		person.createCreditCard(ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName);
-	}
-
-	private static long addDays(long date, int days) {
-		return date + days * TestConstants.MILLIS_IN_DAY;
-	}
-
-	private static CreditCardDetails ccd (String ccNumber, String ccv, int expiryMonth,
-			int expiryYear, String firstName, String lastName, double initialBalance) {
-		return new CreditCardDetails(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, initialBalance);
-	}
-
-	private static class CreditCardDetails {
-		final String ccNumber;
-		final String ccv;
-		final int expiryMonth;
-		final int expiryYear;
-		final String firstName;
-		final String lastName;
-		final double initialBalance;
-
-		public CreditCardDetails(String ccNumber, String ccv, int expiryMonth,
-				int expiryYear, String firstName, String lastName,
-				double initialBalance) {
-			this.ccNumber = ccNumber;
-			this.ccv = ccv;
-			this.expiryMonth = expiryMonth;
-			this.expiryYear = expiryYear;
-			this.firstName = firstName;
-			this.lastName = lastName;
-			this.initialBalance = initialBalance;
-		}
-	}
 }

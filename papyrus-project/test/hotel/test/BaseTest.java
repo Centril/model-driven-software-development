@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 import hotel.test.mock.MockBookingRequest;
 import hotel.test.mock.MockOrderRequest;
 import hotel.test.util.CreditCardDetails;
+import hotel.test.util.TestConstants;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -118,4 +119,19 @@ public abstract class BaseTest {
 		}
 		return -1;
 	}
+	
+	protected static long addDays(long date, int days) {
+		return date + days * TestConstants.MILLIS_IN_DAY;
+	}
+
+	protected int createPerson(long birthDate, CreditCardDetails ccd) {
+		IPerson person = personRegistry.createPerson(birthDate);
+		createCreditCard(person, ccd);
+		return person.getId();
+	}
+	
+	protected void createCreditCard(IPerson person, CreditCardDetails ccd) {
+		person.createCreditCard(ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName);
+	}
+
 }
