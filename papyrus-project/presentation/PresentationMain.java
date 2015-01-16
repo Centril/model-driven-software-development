@@ -55,9 +55,10 @@ public class PresentationMain {
 		Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.MINUTE, 15); // Add 15 minutes from now, to prevent "can't book in the past" exceptions from the tests.
 		Date today = cal.getTime();
-		cal.add(Calendar.HOUR, 24*4);
+		cal.add(Calendar.HOUR, 24 * 4);
 		Date fourDaysFromNow = cal.getTime();
-		List<ISearchResult> results = iSearch.search(today.getTime(), fourDaysFromNow.getTime(), 2);
+		List<ISearchResult> results = iSearch.search(today.getTime(),
+				fourDaysFromNow.getTime(), 2);
 		System.out.println("Got back " + results.size() + " search results.");
 		for (ISearchResult result : results) {
 			System.out.println(result.toString());
@@ -217,6 +218,7 @@ public class PresentationMain {
 			adminRequires.addCreditCard(ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName);
 			adminRequires.makeDeposit(ccd.ccNumber, ccd.ccv, ccd.expiryMonth, ccd.expiryYear, ccd.firstName, ccd.lastName, ccd.initialBalance);
 		} catch (SOAPException e) {
+			throw new RuntimeException(e);
 		}
 	}
 	
