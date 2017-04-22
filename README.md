@@ -1,6 +1,6 @@
 [![badge: Build Status]][badge url: Build Status] [![badge: Semver 2.0.0]][badge url: Semver 2.0.0]
 
-# [model-driven-software-development]
+# [cirkus]
 
 Repo for the course [TDA593].
 
